@@ -1,0 +1,11 @@
+<svg version="1.1"
+        baseprofile="full"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:ev="http://www.w3.org/2001/xml-events">
+    <svg viewBox="0 0 18 18" width="100%" height="100%">
+        <path
+            d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"
+        ></path>
+    </svg>
+</svg>

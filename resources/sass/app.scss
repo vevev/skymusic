@@ -1,0 +1,353 @@
+body {
+    background: #f2f2f2;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.42857;
+    margin: 0 auto;
+}
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.container {
+    max-width: 710px;
+    margin: auto;
+}
+a {
+    color: #00e;
+}
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 15px;
+    margin: 0 0 15px 0;
+    .logo-wrapper {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    }
+}
+#header > form:focus ~ .logo-wrapper {
+    display: none;
+}
+
+#page {
+    background: #fff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#content {
+    padding: 0 15px;
+    background: #fff;
+
+    .song-info {
+        height: 60px;
+        position: relative;
+        padding-left: 75px;
+        margin-bottom: 15px;
+
+        h1.song-name {
+            font-size: 18px;
+            max-height: 40px;
+            line-height: 20px;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            white-space: normal;
+            display: flex;
+        }
+
+        .statistic {
+            p.song-single {
+                font-size: 13px;
+                color: #656565;
+                font-weight: 300;
+            }
+        }
+
+        .thumbnail {
+            position: absolute;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 3px;
+            overflow: hidden;
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .action {
+        margin: 15px 0;
+        .btn-download {
+            display: flex;
+            width: fit-content;
+            align-self: center;
+            margin: auto;
+            padding: 10px 20px;
+            font-size: 15px;
+            line-height: 15px;
+            color: #fff;
+            background: #00d800;
+            border-radius: 3px;
+            align-items: center;
+
+            &:before {
+                content: '\A018';
+                font-family: fonts;
+                margin-right: 5px;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+div#lyric {
+    background: #fcfcfc;
+    padding: 0 15px;
+    ul {
+        li {
+            &:not(#lr-more) {
+                min-height: 24px;
+                line-height: 24px;
+                font-size: 15px;
+                color: #000;
+                border-bottom: 1px dashed #efefef;
+            }
+            &:first-child {
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+
+        #lr-more {
+            font-size: 15px;
+            margin-top: 5px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .expand:before {
+            content: '\A008';
+            font-family: 'fonts';
+            font-size: 10px;
+            padding-right: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .collapse:before {
+            content: '\A010';
+            font-family: 'fonts';
+            font-size: 10px;
+            padding-right: 5px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+ul.list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    background: #fff;
+    li {
+        &:not(:first-child) {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            height: 80px;
+            position: relative;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+                background: #fafafa;
+                .list-item {
+                    background: #fefefe;
+                    .thumb {
+                    }
+                    .song-info {
+                        .song-name {
+                            a {
+                                color: #e00;
+                            }
+                        }
+
+                        .statistic {
+                            color: #000;
+                            p {
+                                &:before,
+                                &:after {
+                                    color: #888;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .list-item {
+                display: flex;
+                flex: 1;
+                padding: 5px;
+                border-radius: 3px;
+                transition: all 0.1s ease-in-out;
+
+                .thumb {
+                    width: 60px;
+                    height: 60px;
+                    margin-right: 15px;
+                    flex-shrink: 0;
+                    overflow: hidden;
+                    border-radius: 3px;
+                    transition: all 0.5s ease-in-out;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .song-info {
+                    width: 100%;
+                    height: fit-content;
+                    overflow: hidden;
+                    align-self: center;
+                    .song-name {
+                        font-size: 16px;
+                        max-height: 44px;
+                        overflow: hidden;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        text-overflow: ellipsis;
+                        white-space: normal;
+                        display: flex;
+                        a {
+                            text-decoration: none;
+                            transition: all 0.1s ease-in-out;
+                        }
+                    }
+
+                    .statistic {
+                        font-size: 12px;
+                        color: #999;
+                        padding-top: 0px;
+                        display: flex;
+                        flex-wrap: nowrap;
+                        width: 100%;
+                        transition: all 0.1s ease-in-out;
+                        p {
+                            flex: 0 0 auto;
+                            &:before,
+                            &:after {
+                                font-family: fonts;
+                                padding-right: 2px;
+                                color: #888;
+                                transition: all 0.1s ease-in-out;
+                            }
+                            &:not(:last-child) {
+                                margin-right: 10px;
+                            }
+                        }
+                        .single {
+                            &:before {
+                                content: '\A022';
+                            }
+                        }
+                        .listen {
+                            &:before {
+                                content: '\A001';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:not(:last-child) {
+            border-bottom: 1px solid #f5f5f5;
+        }
+        &.title {
+            padding: 5px 15px;
+            font-size: 20px;
+            display: flex;
+            margin-top: 10px;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+    }
+}
+
+ul.tiny {
+    li {
+        margin-left: 0 !important;
+        height: auto !important;
+        padding-left: 15px !important;
+    }
+}
+
+// search page
+h1.search-name {
+    font-size: 20px;
+    display: flex;
+    // padding: 5px 15px;
+    // margin-top: 10px;
+    text-transform: capitalize;
+    &:before {
+        content: '\A006';
+        font-family: 'fonts';
+        font-style: normal;
+        font-weight: normal;
+        margin-right: 5px;
+    }
+}
+
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        -o-transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+    to {
+        -webkit-transform: translateX(-50%) translateY(-50%) rotate(360deg);
+        -o-transform: translateX(-50%) translateY(-50%) rotate(360deg);
+        transform: translateX(-50%) translateY(-50%) rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        -moz-transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        -webkit-transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        -o-transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+    to {
+        -ms-transform: translateX(-50%) translateY(-50%) rotate(360deg);
+        -moz-transform: translateX(-50%) translateY(-50%) rotate(360deg);
+        -webkit-transform: translateX(-50%) translateY(-50%) rotate(360deg);
+        -o-transform: translateX(-50%) translateY(-50%) rotate(360deg);
+        transform: translateX(-50%) translateY(-50%) rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+}
