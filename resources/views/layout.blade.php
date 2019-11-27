@@ -30,10 +30,21 @@
     <div class="container">
         <div id="page" class="col-lg-9">
             <div id="header" class="scroll-down px-3">
-                <div class="logo-wrapper">
-                    <a class="logo" href="/">
-                        LOGO
-                    </a>
+                <div class="sub-head">
+                    <div class="logo-wrapper">
+                        <a class="logo" href="/">
+                            TAINHAC123.COM
+                        </a>
+                    </div>
+                    <div class="menu-btn-wrapprer">
+                        <label class="menu-btn" for="checkbox"> </label>
+                    </div>
+                    <input type="checkbox" id="checkbox" name="checkbox">
+                    <div class="menu-head">
+                        <a href="#" class="menu-item">BXH</a>
+                        <a href="#" class="menu-item">Top Download</a>
+                        <a href="#" class="menu-item">Trending</a>
+                    </div>
                 </div>
                 <div id="search-form" action="{{ route('search-post') }}" query="{{ !isset($query) ? '' : $query }}"></div>
             </div>

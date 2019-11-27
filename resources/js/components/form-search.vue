@@ -78,7 +78,7 @@ export default {
          * @return     {string}  { description_of_the_return_value }
          */
         suggestLink(query) {
-            return '/download/' + query.toSlug();
+            return '/search/' + query.toSlug();
         },
 
         /**

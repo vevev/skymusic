@@ -49,7 +49,7 @@ export default {
         },
 
         lyricRows: function() {
-            return this.lyric.split(/\r|\n|\t/);
+            return this.lyric ? this.lyric.split(/\r|\n|\t/) : ['Đang Cập Nhật'];
         },
     },
 };

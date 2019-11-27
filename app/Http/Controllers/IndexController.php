@@ -10,7 +10,7 @@ class IndexController extends Controller
 
     public function index(Request $request)
     {
-        $data = $this->loadIndexData->execute();
+        $data = []; //$this->loadIndexData->execute();
 
         return view('index', ['data' => $data]);
     }
