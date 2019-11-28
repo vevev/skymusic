@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Acme\Core;
 use Illuminate\Http\Request;
 use App\Acme\Services\Adapters\LoadSearchData;
 
@@ -27,11 +28,12 @@ class SearchController extends Controller
      *
      * @return     View
      */
-    public function index(Request $request)
+    public function index(Request $request, Core $core)
     {
-        $data = $this->loadSearchData->execute($request->query_string, $request->page ?? 1);
+        $data           = $this->loadSearchData->execute($request->query_string, $request->page ?? 1);
+        $data['__core'] = $core;
 
-        return view('search', $data);
+        return view(Core::viewPath('search'), $data);
     }
 
     /**

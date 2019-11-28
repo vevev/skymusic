@@ -19,6 +19,8 @@ return [
 
     'search_by_sky_music' => env('APP_SEARCH_BY_SKY_MUSIC', false),
 
+    'template'            => env('APP_TEMPLATE', 'default'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -230,6 +232,7 @@ return [
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
 
+        'Core'         => App\Acme\Core::class,
     ],
 
 ];

@@ -12,27 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js/app.min.js')
-    .sass('resources/sass/app.scss', 'public/css/app.min.css')
+    .sass('resources/sass/' + process.env.APP_TEMPLATE + '.scss', 'public/css/app.min.css')
     // .copyDirectory('resources/svg', 'public/svg')
     .copyDirectory('resources/fontello', 'public/fonts')
     .copyDirectory('resources/fontello', 'public/fonts')
     .copyDirectory('resources/svg', 'public/svg');
-// .webpackConfig({
-//     module: {
-//         rules: [
-//             {
-//                 test: /\.css$/,
-//                 loaders: [
-//                     'vue-style-loader',
-//                     {
-//                         loader: 'css-loader',
-//                         options: {
-//                             modules: true,
-//                             localIdentName: '[local]_[hash:base64:8]',
-//                         },
-//                     },
-//                 ],
-//             },
-//         ],
-//     },
-// });
