@@ -45,7 +45,7 @@
                         @endif
                         <div class="sinfo">
                             <p>
-                                <a title=" {{ $song->name }}" class="button-download" href="{{route('download', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"><b></b>Download Mp3</a>
+                                <a title=" {{ $song->name }}" class="button-download" href="{{route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"><b></b>Download Mp3</a>
                             </p>
                         </div>
                     </div>

@@ -87,7 +87,7 @@
         ">
                         <div class="navbar-brand mx-auto">
                             <a class="logo" href="/">
-                                <b>DOWNLOADLAGU-MP3.NET</b>
+                                <img src="{{ asset('/images/tainhac.png') }}"
                             </a>
                         </div>
                         <div class="w-100">

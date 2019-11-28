@@ -21,7 +21,7 @@
             <nav class="navbar navbar-expand-md header-navbar navbar-light">
                 <div class="navbar-brand mx-auto">
                     <a class="logo" href="/">
-                        <img style="max-width: 300px; padding: 10px 0;" src="{{ asset('/images/download-lagu.png?v=' . config('app.version')) }}" title="Download Lagu Terbaik 2019, Gudang Lagu Mp3 Terbaru Gratis" alt="Download Lagu Terbaik 2019, Gudang Lagu Mp3 Terbaru Gratis">
+                        <img style="max-width: 300px; padding: 10px 0;" src="{{ asset('/images/tainhac.png?v=' . config('app.version')) }}" title="Download Lagu Terbaik 2019, Gudang Lagu Mp3 Terbaru Gratis" alt="Download Lagu Terbaik 2019, Gudang Lagu Mp3 Terbaru Gratis">
                     </a>
                 </div>
                 <div class="d-flex flex-row" style="flex-grow: 1;">
