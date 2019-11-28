@@ -4,6 +4,13 @@
 
 @section('description', $song->name . ' - ' . $song->single)
 
+@section('nav')
+<div class="nav">
+    <a href="#" class="link">Tải Nhạc</a>
+    <span class="text">{{$song->name}}</span>
+</div>
+@endsection
+
 @section('main_content')
     <div id="content">
         <div class="song-info">

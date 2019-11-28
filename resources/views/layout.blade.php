@@ -36,10 +36,10 @@
                             TAINHAC123.COM
                         </a>
                     </div>
-                    <div class="menu-btn-wrapprer">
+                    {{-- <div class="menu-btn-wrapprer">
                         <label class="menu-btn" for="checkbox"> </label>
                     </div>
-                    <input type="checkbox" id="checkbox" name="checkbox">
+                    <input type="checkbox" id="checkbox" name="checkbox"> --}}
                     <div class="menu-head">
                         <a href="#" class="menu-item">BXH</a>
                         <a href="#" class="menu-item">Top Download</a>
@@ -48,6 +48,7 @@
                 </div>
                 <div id="search-form" action="{{ route('search-post') }}" query="{{ !isset($query) ? '' : $query }}"></div>
             </div>
+            @yield('nav')
             <div id="main" class="bc">
                 @yield('main_content')
                 @yield('search_keywords')

@@ -37,7 +37,7 @@ export default {
         },
 
         viewMoreText: function() {
-            return this.isOpening ? 'CLOSE' : 'MORE';
+            return this.isOpening ? ' Thu gọn' : ' ... Xem thêm ';
         },
 
         showViewMore: function() {

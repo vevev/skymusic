@@ -11,7 +11,7 @@ body {
     text-decoration: none;
 }
 .container {
-    max-width: 710px;
+    max-width: 500px;
     margin: auto;
 }
 a {
@@ -21,7 +21,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px 15px;
+    padding: 0 15px 15px;
     margin: 0 0 15px 0;
     border-bottom: 1px solid #ebebeb;
 
@@ -35,11 +35,13 @@ a {
 
         .menu-head {
             display: flex;
+            flex-grow: 1;
             justify-content: space-between;
             transition: all 0.5s ease-in-out;
+            margin-top: 10px;
             .menu-item {
                 padding: 3px 15px;
-                margin-left: 10px;
+                margin-left: 0px;
                 border-radius: 3px;
                 // border: 1px solid #f5f5f5;
                 font-weight: 400;
@@ -48,30 +50,48 @@ a {
                 color: white;
             }
         }
-        .menu-btn-wrapprer {
-            display: flex;
-            .menu-btn {
-                display: none;
-            }
-        }
-        input {
-            display: none;
-            &:checked {
-                ~ .menu-head {
-                    .menu-item {
-                        display: flex;
-                        margin-left: 0px;
-                        margin-top: 15px;
-                    }
-                }
-            }
-        }
+        // .menu-btn-wrapprer {
+        //     display: flex;
+        //     .menu-btn {
+        //         display: none;
+        //     }
+        // }
+        // input {
+        //     display: none;
+        //     &:checked {
+        //         ~ .menu-head {
+        //             .menu-item {
+        //                 display: flex;
+        //                 margin-left: 0px;
+        //                 margin-top: 15px;
+        //             }
+        //         }
+        //     }
+        // }
 
         .logo-wrapper {
             display: flex;
-            align-items: center;
-            padding: 0 0px;
             flex-grow: 1;
+            justify-content: center;
+            padding: 0 0px;
+            margin-top: 10px;
+        }
+    }
+}
+
+.nav {
+    margin: -15px 0 15px 0;
+    padding: 5px 15px;
+    font-size: 13px;
+    border-bottom: 1px solid #ebebeb;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    .link {
+        &:after {
+            content: '>';
+            color: #000;
+            margin: 0px 5px;
         }
     }
 }
@@ -186,25 +206,30 @@ div#lyric {
             height: 18px;
             display: flex;
             align-items: center;
+            color: #385898;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
-        .expand:before {
-            content: '\A008';
-            font-family: 'fonts';
-            font-size: 10px;
-            padding-right: 5px;
-            display: flex;
-            align-items: center;
-        }
+        // .expand:before {
+        //     content: '\A008';
+        //     font-family: 'fonts';
+        //     font-size: 10px;
+        //     padding-right: 5px;
+        //     display: flex;
+        //     align-items: center;
+        // }
 
-        .collapse:before {
-            content: '\A010';
-            font-family: 'fonts';
-            font-size: 10px;
-            padding-right: 5px;
-            display: flex;
-            align-items: center;
-        }
+        // .collapse:before {
+        //     content: '\A010';
+        //     font-family: 'fonts';
+        //     font-size: 10px;
+        //     padding-right: 5px;
+        //     display: flex;
+        //     align-items: center;
+        // }
     }
 }
 
@@ -218,9 +243,9 @@ ul.list {
             position: relative;
             transition: all 0.5s ease-in-out;
             &:hover {
-                background: #fafafa;
+                background: #fff;
                 .list-item {
-                    background: #fefefe;
+                    background: #fafafa;
                     .thumb {
                     }
                     .song-info {
@@ -397,36 +422,36 @@ h1.search-name {
 }
 
 @media (max-width: 500px) {
-    .sub-head {
-    }
-    .menu-head {
-        width: 100%;
-        .menu-item {
-            display: none;
-        }
-    }
-    .menu-btn {
-        width: 20px;
-        height: 2px;
-        background: #ccc;
-        align-self: center;
-        position: relative;
-        display: flex !important;
-        flex-shrink: 0;
+    // .sub-head {
+    // }
+    // .menu-head {
+    //     width: 100%;
+    //     .menu-item {
+    //         display: none;
+    //     }
+    // }
+    // .menu-btn {
+    //     width: 20px;
+    //     height: 2px;
+    //     background: #ccc;
+    //     align-self: center;
+    //     position: relative;
+    //     display: flex !important;
+    //     flex-shrink: 0;
 
-        &:before,
-        &:after {
-            position: absolute;
-            content: '';
-            width: 20px;
-            height: 2px;
-            background: #ccc;
-        }
-        &:before {
-            top: 5px;
-        }
-        &:after {
-            top: -5px;
-        }
-    }
+    //     &:before,
+    //     &:after {
+    //         position: absolute;
+    //         content: '';
+    //         width: 20px;
+    //         height: 2px;
+    //         background: #ccc;
+    //     }
+    //     &:before {
+    //         top: 5px;
+    //     }
+    //     &:after {
+    //         top: -5px;
+    //     }
+    // }
 }
