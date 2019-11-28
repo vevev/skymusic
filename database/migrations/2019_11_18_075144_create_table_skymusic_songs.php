@@ -15,11 +15,15 @@ class CreateTableSkymusicSongs extends Migration
     {
         Schema::create('skymusic_songs', function (Blueprint $table) {
             $table->string("key", 255)->unique();
+            $table->string("skyKey", 255)->unique();
             $table->string("title", 255);
             $table->string("slug", 255);
             $table->string("artists", 255);
             $table->integer("duration");
             $table->integer("kbit");
+            $table->integer("songType");
+            $table->integer("relatedRight");
+            $table->integer("copyRight");
             $table->bigInteger("dateModifire");
             $table->string("streamUrl", 255);
         });

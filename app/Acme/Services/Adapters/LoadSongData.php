@@ -41,7 +41,7 @@ class LoadSongData
         }
 
         if ($song->relates->count()) {
-            return $song;
+            return $song->load('sky');
         }
 
         $html = $this->fetchHtmlSong->execute($song);
@@ -64,7 +64,7 @@ class LoadSongData
             throw new CreateRelationFailException;
         }
 
-        $song->load('relates');
+        $song->load(['relates', 'sky']);
 
         return $song;
     }

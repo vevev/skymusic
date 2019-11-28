@@ -47,6 +47,7 @@ export default {
     props: {
         query: String,
         action: String,
+        suggestRoute: String,
     },
     mounted() {
         this.$refs.input.value = this.query;
@@ -78,7 +79,7 @@ export default {
          * @return     {string}  { description_of_the_return_value }
          */
         suggestLink(query) {
-            return '/search/' + query.toSlug();
+            return this.suggestRoute + '/' + query;
         },
 
         /**

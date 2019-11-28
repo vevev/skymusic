@@ -24,14 +24,14 @@
         </div>
 
         <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
- {{--    <audio src="https://aredir.nixcdn.com/NhacCuaTui988/DiDuDuaDi-BichPhuong-6059493_hq.mp3?st=4f35BX37yIQCRIeXEp-XhQ&e=1574735906" preload="none" controls></audio> --}}
+
         <div class="action">
             <a href="{{route('download', ['slug'=>$song->slug, 'id'=>$song->song_id])}}" class="btn-download">TẢI NHẠC</a>
         </div>
     </div>
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>
     <ul id="relates" class="list">
-        <li class="title">Bai Hat Lien Quan</li>
+        <li class="title">Bài Hát Liên Quan</li>
         @foreach($song->relates as $song)
             <li>
                 <div class="list-item">

@@ -4,13 +4,16 @@ namespace App\Acme\Services\Adapters;
 
 use App\Acme\Services\Interacts\CacheSearchSkymusic;
 use App\Acme\Services\Interacts\CreateSongsSkymusic;
+use App\Exceptions\FetchJsonSearchSkymusicException;
 use App\Acme\Services\Fetchs\FetchJsonSearchSkyMusic;
+use App\Acme\Services\Extracts\ExtractDataSearchSkymusic;
 
 class SkymusicLoadSearchData
 {
     private $cacheSearchSkymusic;
     private $fetchJsonSearchSkymusic;
     private $createSongsSkymusic;
+    private $extractDataSearchSkymusic;
 
     /**
      * Constructs a new instance.
@@ -24,11 +27,13 @@ class SkymusicLoadSearchData
     public function __construct(
         CacheSearchSkymusic $cacheSearchSkymusic,
         FetchJsonSearchSkyMusic $fetchJsonSearchSkymusic,
-        CreateSongsSkymusic $createSongsSkymusic
+        CreateSongsSkymusic $createSongsSkymusic,
+        ExtractDataSearchSkymusic $extractDataSearchSkymusic
     ) {
-        $this->cacheSearchSkymusic     = $cacheSearchSkymusic;
-        $this->fetchJsonSearchSkymusic = $fetchJsonSearchSkymusic;
-        $this->createSongsSkymusic     = $createSongsSkymusic;
+        $this->cacheSearchSkymusic       = $cacheSearchSkymusic;
+        $this->fetchJsonSearchSkymusic   = $fetchJsonSearchSkymusic;
+        $this->createSongsSkymusic       = $createSongsSkymusic;
+        $this->extractDataSearchSkymusic = $extractDataSearchSkymusic;
     }
 
     /**
@@ -42,9 +47,8 @@ class SkymusicLoadSearchData
      *
      * @return     array
      */
-    public function execute(string $query, int $page)
+    public function execute(string $query, int $page = 0)
     {
-
         if ($songs = $this->cacheSearchSkymusic->get($query, $page)) {
             return $songs;
         }
@@ -53,10 +57,16 @@ class SkymusicLoadSearchData
             throw new FetchJsonSearchSkymusicException;
         }
 
-        if ( ! isset($json->code) && ! $this->createSongsSkymusic->execute($json)) {
+        if (isset($json->code)) {
+            throw new FetchJsonSearchSkymusicException;
+        }
+
+        [$keys, $songs] = $this->extractDataSearchSkymusic->execute($json);
+
+        if ( ! $this->createSongsSkymusic->execute($keys, $songs)) {
             throw new CreateSongsSkymusicException;
         }
 
-        return ['results' => $json, 'query' => $query, 'page' => $page];
+        return ['results' => $songs, 'query' => $query, 'page' => $page];
     }
 }

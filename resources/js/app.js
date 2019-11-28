@@ -22,9 +22,10 @@ if ((vm = document.getElementById('search-form'))) {
         data: {
             action: vm.attributes.action.value,
             query: vm.attributes.query.value,
+            suggestRoute: vm.attributes['suggest-route'].value,
         },
         components: { 'search-form': Search },
-        template: `<search-form :action="action" :query="query"> </search-form>`,
+        template: `<search-form :action="action" :query="query" :suggest-route="suggestRoute"> </search-form>`,
     });
 }
 

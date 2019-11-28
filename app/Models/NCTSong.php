@@ -46,4 +46,9 @@ class NCTSong extends Model
     {
         return number_format(random_int(10000, 900000), 0, ',', ',');
     }
+
+    public function sky()
+    {
+        return $this->hasOne(SKYMUSIC_Song::class, 'key', 'song_id');
+    }
 }

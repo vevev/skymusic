@@ -11,12 +11,13 @@
 |
  */
 
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@index')->name('index');
 
+Route::get('/tai-nhac/{slug}/{id}.html', 'SongController@index')->name('song');
 Route::get('/mp3/{slug}/{id}.html', 'SongSkymusicController@index')->name('song-skymusic');
-Route::get('/song/{slug}/{id}.html', 'SongController@index')->name('song');
+
 Route::get('/listen/{slug}.{id}.html', 'DownloadController@play')->name('listen');
 Route::get('/download/{slug}.{id}.html', 'DownloadController@link')->name('download');
-Route::get('/search/{query_string}', 'SearchController@index')->name('search-get');
-Route::get('/search-song/{query_string}', 'SkymusicSearchController@index')->name('search-skymusic-get');
+Route::get('/tim-kiem/{query_string}', 'SearchController@index')->name('search-get');
+Route::get('/search/{query_string}', 'SkymusicSearchController@index')->name('search-skymusic-get');
 Route::post('/search/', 'SearchController@post')->name('search-post');

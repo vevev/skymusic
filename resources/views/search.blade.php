@@ -4,6 +4,14 @@
 
 @section('description', $query)
 
+@section('nav')
+<div class="nav">
+    <a href="{{ route('index') }}" class="link">Tải Nhạc</a>
+    <a href="" class="link">Tìm kiếm</a>
+    <span class="text">{{$query}}</span>
+</div>
+@endsection
+
 @section('main_content')
     {{-- <div id="search-header">
         <h1 class="search-name">{{ $query }}</h1>
@@ -12,7 +20,7 @@
         {{ $results->msg }}
     @else
     <ul id="search-results-wrapper" class="list">
-        <li class="title"><h1 class="search-name">{{ $query }}</h1></li>
+        <li class="title search-query"><h1 class="search-name">{{ $query }}</h1></li>
         @foreach($results as $song)
             <li>
                 <div class="list-item">

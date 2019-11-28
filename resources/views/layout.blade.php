@@ -46,7 +46,7 @@
                         <a href="#" class="menu-item">Trending</a>
                     </div>
                 </div>
-                <div id="search-form" action="{{ route('search-post') }}" query="{{ !isset($query) ? '' : $query }}"></div>
+                <div id="search-form" action="{{ route('search-post') }}" query="{{ !isset($query) ? '' : $query }}" suggest-route="{{ route('search-get', ['query_string' => '']) }}"></div>
             </div>
             @yield('nav')
             <div id="main" class="bc">

@@ -17,6 +17,13 @@ class CreateSongs
         $this->song = $song;
     }
 
+    /**
+     * { function_description }
+     *
+     * @param      array   $songs  The songs
+     *
+     * @return     <type>  ( description_of_the_return_value )
+     */
     public function execute(array $songs)
     {
         $song_ids = [];

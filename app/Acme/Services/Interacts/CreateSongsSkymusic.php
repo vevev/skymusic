@@ -18,25 +18,8 @@ class CreateSongsSkymusic
         $this->song = $song;
     }
 
-    public function execute(array $songs)
+    public function execute(array $keys, array $songs)
     {
-        $keys = [];
-        foreach ($songs as $index => $song) {
-            $song->slug        = Str::slug($song->title);
-            $songs[$song->key] = [
-                'key'          => $song->key,
-                'title'        => $song->title,
-                'slug'         => $song->slug,
-                'artists'      => $song->artists,
-                'duration'     => $song->duration,
-                'kbit'         => $song->kbit,
-                'dateModifire' => $song->dateModifire,
-                'streamUrl'    => $song->streamUrl,
-            ];
-            unset($songs[$index]);
-            $keys[] = $song->key;
-        }
-
         $savedSongs = $this->song->findBySongKeys($keys);
         if ($savedSongs->count() === count($songs)) {
             return $savedSongs;
