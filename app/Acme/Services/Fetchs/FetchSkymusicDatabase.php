@@ -32,7 +32,7 @@ class FetchSkymusicDatabase
             $jsonString = $this->httpRequest->get($url);
             $json       = json_decode($jsonString);
             if ( ! isset($json->data)) {
-                echo $url_format;
+                echo $url;
                 dd($json);
             }
 
