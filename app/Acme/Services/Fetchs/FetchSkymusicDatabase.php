@@ -31,7 +31,7 @@ class FetchSkymusicDatabase
             $url        = sprintf($url_format, $page < 1 ? 1 : $page);
             $jsonString = $this->httpRequest->get($url);
             $json       = json_decode($jsonString);
-            if ( ! $json->data) {
+            if ( ! isset($json->data)) {
                 echo $url_format;
                 dd($json);
             }
