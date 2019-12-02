@@ -16,7 +16,6 @@ class MergeSkyMusic
      */
     public function __construct(SkymusicLoadSearchData $skymusicLoadSearchData)
     {
-
         $this->skymusicLoadSearchData = $skymusicLoadSearchData;
     }
 
