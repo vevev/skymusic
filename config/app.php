@@ -233,6 +233,7 @@ return [
         'View'         => Illuminate\Support\Facades\View::class,
 
         'Core'         => App\Acme\Core::class,
+        'Page'         => App\Acme\Page::class,
     ],
 
 ];

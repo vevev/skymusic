@@ -1,8 +1,8 @@
 require('./bootstrap');
 
-const Lyric = require('./components/' + process.env.APP_TEMPLATE + 'show-song-lyric').default;
-const Search = require('./components/' + process.env.APP_TEMPLATE + 'form-search').default;
-const AudioPlayer = require('./components/' + process.env.APP_TEMPLATE + 'audio-player').default;
+const Lyric = require('./components/downloadlagu123/show-song-lyric').default;
+const Search = require('./components/downloadlagu123/form-search').default;
+const AudioPlayer = require('./components/downloadlagu123/audio-player').default;
 var vm = null;
 
 if ((vm = document.getElementById('lyric'))) {

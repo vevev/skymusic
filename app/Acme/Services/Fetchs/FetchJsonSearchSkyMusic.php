@@ -32,7 +32,7 @@ class FetchJsonSearchSkyMusic
             $jsonString = $this->httpRequest->get($url);
             $json       = json_decode($jsonString);
 
-            return isset($json->data) ? $json->data : $json->error;
+            return $json->data ?? $json->error;
         } catch (Throwable $e) {
             return;
         }
