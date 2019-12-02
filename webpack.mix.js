@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js/app.min.js')
+mix.js('resources/js/' + process.env.APP_TEMPLATE + '.js', 'public/js/app.min.js')
     .sass('resources/sass/' + process.env.APP_TEMPLATE + '.scss', 'public/css/app.min.css')
     .copyDirectory('resources/images', 'public/images')
     .copyDirectory('resources/svg', 'public/svg')
