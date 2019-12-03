@@ -13,14 +13,8 @@
             </h1>
             <br><b>Gợi ý: </b>Nhập tên bài hát vào ô tìm kiếm để tìm &amp; tải miễn phí bất kì bài hát nào bạn muốn tải về máy.<br>
         </div>
-        <div class="search">
-            <form id="qr" action="{{ route('search-post') }}" method="post">
-                <input id="q" type="text" name="q" placeholder="Nhập tên bài hát rồi bấm nút TÌM..." />
-                @csrf
-                <button type="submit" class="search_btn" title="Cari Lagu">TÌM</button>
-            </form>
-            <i class="search_arrow"></i>
-        </div>
+        <div id="search-form" action="{{ route('search-post') }}" query="{{ !isset($query) ? '' : $query }}" suggest-route="{{ route('search-get', ['query_string' => '']) }}"></div>
+
         <div class="clear"></div>
     </div>
 </div>
