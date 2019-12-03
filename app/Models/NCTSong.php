@@ -65,7 +65,13 @@ class NCTSong extends Model
      */
     public function getListenAttribute()
     {
-        return number_format($this->listens->listen ?? 0, 0, ',', ',');
+        $listen = 0;
+
+        if (isset($this->relations['listens'])) {
+            $listen = $this->listens->listen;
+        }
+
+        return number_format($listen, 0, ',', ',');
     }
 
     /**
