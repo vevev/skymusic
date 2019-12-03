@@ -22,7 +22,7 @@ class CreateTableNctSongs extends Migration
             $table->bigInteger('listen')->default(0);
             $table->string('slug', 255);
             $table->text('lyric')->nullable();
-            $table->string('key', 255);
+            $table->string('key', 255)->nullable();
             $table->string('thumbnail', 255)->nullable();
             $table->timestamps();
         });

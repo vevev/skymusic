@@ -2,6 +2,7 @@
 
 namespace App\Acme\Services\Fetchs;
 
+use Throwable;
 use App\Acme\Services\HttpRequest\HttpRequest;
 
 class FetchJsonListen
@@ -22,11 +23,9 @@ class FetchJsonListen
         try {
             $url_format = 'https://www.nhaccuatui.com/interaction/api/counter?listSongIds=%s';
             $url        = sprintf($url_format, implode(',', $real_ids));
-            $json       = $this->httpRequest->getMobile($url);
-            $json       = json_decode($json);
-            $result     = trim($json->data);
+            $json       = $this->httpRequest->get($url);
 
-            return $result;
+            return json_decode($json)->data->songs;
         } catch (Throwable $e) {
             return;
         }

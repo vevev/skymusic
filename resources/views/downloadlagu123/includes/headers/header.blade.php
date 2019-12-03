@@ -1,21 +1,11 @@
 <div id="header">
-    @if (Page::$currentRouteName === 'index')
     <div class="logo">
         <div class="pc90">
             <a href="/">
-                <img src="/ico/{{ Page::$logo['src'] ? Page::$logo['src'] : 'download-lagu-123.png' }}" alt="{{ Page::$logo['alt'] ? Page::$logo['alt'] : 'Download lagu Mp3, Gudang lagu - Mp3 download lagu terbaru 2019' }}" />
+                <img src="{{ asset(Page::$logo['src'] ?? '/images/tainhac.png') }}" alt="{{ Page::$logo['alt'] ? Page::$logo['alt'] : 'Download lagu Mp3, Gudang lagu - Mp3 download lagu terbaru 2019' }}" />
             </a>
         </div>
     </div>
-    @else
-    <div class="logo">
-        <div class="pc90">
-            <a href="/">
-                <img src="/ico/{{ Page::$logo['src'] ? Page::$logo['src'] : 'download-lagu-123.png' }}" alt="{{ Page::$logo['alt'] ? Page::$logo['alt'] : 'Download lagu, Gudang lagu - download lagu terbaru 2019' }}" />
-            </a>
-        </div>
-    </div>
-    @endif
     <div class="pc90">
         <div class="header_info">
             <h1 class="f18 center">

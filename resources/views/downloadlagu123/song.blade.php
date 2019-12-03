@@ -12,8 +12,8 @@
         </div>
         <div class="bh-info">
             <h2>{{ $song->name }}</h2>
-            {{-- <b class="play-count">{{ $song->listen }}</b> --}}
-            <b class="single"> - Thể hiện: {{ $song->single }} </b>
+            <b class="play-count">{{ $song->listen }}</b>
+            <b class="single">{{ $song->single }} </b>
             <br/>
         </div>
     </div>
@@ -43,6 +43,7 @@
     <br>
 
     <div class="ht"><b>Bài Hát Liên Quan :</b></div>
+
     @foreach($song->relates as $_song)
     <div class="menu">
         <div class="detail-thumb">
@@ -52,13 +53,13 @@
         </div>
         <div class="detail-info">
             <b class="ab ellipsis dli block">
-                <a href="{{ route('song', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" title="Download Mp3 {{ $_song->name }}">
+                <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download Mp3 {{ $_song->name }}">
                     {{ $_song->name }}
                 </a>
             </b>
             <span class="sg">
-                {{-- <b class="play-count">{{ number_format($_song->listen) }}</b> --}}
                 <b class="single">{{ $_song->single }}</b>
+                <b class="play-count">{{ $_song->listen }}</b>
             </span>
         </div>
     </div>
@@ -74,7 +75,7 @@
     {{-- @foreach($terbaru as $video)
         <div class="menu">
             <div class="detail-thumb">
-                <a href="{{ route('video', ['video_id' => $song->video_id, 'slug' => $song->slug]) }}" title="Download Mp3 {{ $song->name }}">
+                <a href="{{ route('video', ['video_id' => $_song->video_id, 'slug' => $song->slug]) }}" title="Download Mp3 {{ $song->name }}">
                     <img src="{{ Helper::src($song->video_id) }}" alt="Download Mp3 {{ $song->name }}" title="Download Mp3 {{ $song->name }}" />
                 </a>
             </div>

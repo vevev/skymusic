@@ -2,30 +2,24 @@
 
 namespace App\Acme\Services\Adapters;
 
-use App\Models\NCTSong;
 use App\Acme\Services\Interacts\GetSong;
 use App\Exceptions\SongNotFoundException;
 use App\Exceptions\CrawlSongFailException;
 use App\Acme\Services\Fetchs\FetchHtmlSong;
 use App\Acme\Services\Interacts\CreateSongs;
-use App\Acme\Services\HttpRequest\HttpRequest;
 use App\Acme\Services\Extracts\ExtractSongHtml;
 use App\Acme\Services\Interacts\CreateRelations;
 
 class LoadSongData
 {
-    private $httpRequest;
-    private $nctSongModel;
     private $fetchHtmlSong;
     private $getSong;
     private $extractSongHtml;
     private $createSongs;
     private $createRelations;
 
-    public function __construct(HttpRequest $httpRequest, NCTSong $nctSongModel, FetchHtmlSong $fetchHtmlSong, GetSong $getSong, ExtractSongHtml $extractSongHtml, CreateSongs $createSongs, CreateRelations $createRelations)
+    public function __construct(FetchHtmlSong $fetchHtmlSong, GetSong $getSong, ExtractSongHtml $extractSongHtml, CreateSongs $createSongs, CreateRelations $createRelations)
     {
-        $this->httpRequest     = $httpRequest;
-        $this->nctSongModel    = $nctSongModel;
         $this->fetchHtmlSong   = $fetchHtmlSong;
         $this->getSong         = $getSong;
         $this->extractSongHtml = $extractSongHtml;
@@ -38,10 +32,12 @@ class LoadSongData
         $song = $this->getSong->execute($id);
         if ( ! $song) {
             throw new SongNotFoundException;
+        } else {
+            $song->load('relates.listens');
         }
 
-        if ($song->relates->count()) {
-            return $song->load('sky');
+        if ($song->key && $song->relates->count()) {
+            return $song->load(['sky', 'listens']);
         }
 
         $html = $this->fetchHtmlSong->execute($song);
@@ -51,7 +47,7 @@ class LoadSongData
             throw new CrawlSongFailException;
         }
 
-        list($_song, $_songs) = $data;
+        [$_song, $_songs] = $data;
         if ( ! $song->fill($_song)->save()) {
             throw new UpdateSongFailException;
         }
@@ -64,8 +60,6 @@ class LoadSongData
             throw new CreateRelationFailException;
         }
 
-        $song->load(['relates', 'sky']);
-
-        return $song;
+        return $song->load(['relates', 'sky', 'listens']);
     }
 }
