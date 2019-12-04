@@ -1,23 +1,21 @@
 <template>
     <div class="load-more-container">
-        <div class="results" v-for="song in songs">
-            <div class="menu">
-                <div class="detail-thumb">
+        <div class="menu" v-for="song in songs">
+            <div class="detail-thumb">
+                <a :title="song.name" :href="song.detail_url">
+                    <img :alt="song.name" :title="song.name" :src="song.thumbnail" />
+                </a>
+            </div>
+            <div class="detail-info">
+                <h3 class="ab ellipsis dli">
                     <a :title="song.name" :href="song.detail_url">
-                        <img :alt="song.name" :title="song.name" :src="song.thumbnail" />
+                        {{ song.name }}
                     </a>
-                </div>
-                <div class="detail-info">
-                    <h3 class="ab ellipsis dli">
-                        <a :title="song.name" :href="song.detail_url">
-                            {{ song.name }}
-                        </a>
-                    </h3>
-                    <span class="sg">
-                        <b class="single">{{ song.single }}</b>
-                        <b class="play-count" v-if="song.listen">{{ song.listen }}</b>
-                    </span>
-                </div>
+                </h3>
+                <span class="sg">
+                    <b class="single">{{ song.single }}</b>
+                    <b class="play-count" v-if="song.listen">{{ song.listen }}</b>
+                </span>
             </div>
         </div>
         <div :class="{ 'icon-loading': true, show: loading }" ref="container"></div>
