@@ -44,10 +44,13 @@ class LoadTop20Song
             throw new ExtractTop20SongFailException;
         }
 
-        if ( ! $this->createSongs->execute($searchData)) {
+        if ( ! $songs = $this->createSongs->execute($searchData, true)) {
             throw new CreateSongsFailException;
         }
 
-        $this->cacheBXH->set($country, $type, $searchData);
+        $songs->load('listens');
+        $this->cacheBXH->set($country, $type, $songs->toArray());
+
+        return response()->json($songs)->send();
     }
 }

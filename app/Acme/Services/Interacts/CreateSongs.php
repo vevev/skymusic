@@ -24,7 +24,7 @@ class CreateSongs
      *
      * @return     <type>  ( description_of_the_return_value )
      */
-    public function execute(array $songs)
+    public function execute(array $songs, bool $returnModels = false)
     {
         $song_ids = [];
         foreach ($songs as $index => $song) {
@@ -42,6 +42,14 @@ class CreateSongs
             unset($songs[$song->song_id]);
         });
 
-        return $this->song->insert($songs);
+        if ( ! $this->song->insert($songs)) {
+            return false;
+        }
+
+        if ($returnModels) {
+            return $this->song->findBySongIds($song_ids);
+        }
+
+        return true;
     }
 }

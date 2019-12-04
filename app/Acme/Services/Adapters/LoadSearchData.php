@@ -60,7 +60,7 @@ class LoadSearchData
         }
 
         $array_id = array_column($searchData, 'song_id');
-        $song     = $this->songModel->getSongWithRelationBySongIds($array_id);
+        $song     = $this->songModel->findBySongIds($array_id);
 
         return ['results' => $song, 'query' => $query, 'page' => $page];
     }

@@ -508,6 +508,7 @@ dd,dl,dt{
     display:inline
 }
 .ht{
+    display: block;
     padding:10px;
     color:#000;
     font-size:18px;

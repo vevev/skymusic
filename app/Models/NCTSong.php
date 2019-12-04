@@ -21,20 +21,15 @@ class NCTSong extends Model
         return $query->whereIn('song_id', $song_ids);
     }
 
-    public function getSongWithRelationBySongIds(array $song_ids)
-    {
-        return $this->with('listens')->withSongIds($song_ids)->get();
-    }
-
     /**
      * [findBySongIds description]
      *
      * @param  array  $song_ids       [description]
      * @return [type] [description]
      */
-    public function findBySongIds(array $song_ids)
+    public function findBySongIds(array $song_ids, array $get = ['*'])
     {
-        return $this->with('listens')->withSongIds($song_ids)->get();
+        return $this->withSongIds($song_ids)->get();
     }
 
     /**
