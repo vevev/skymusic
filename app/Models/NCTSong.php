@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\NCTListen;
+use App\Acme\Helpers\Helper;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -60,13 +61,11 @@ class NCTSong extends Model
      */
     public function getListenAttribute()
     {
-        $listen = 0;
-
         if (isset($this->relations['listens'])) {
-            $listen = $this->listens->listen;
+            return Helper::formatView($this->listens->listen) . ' lượt nghe';
         }
 
-        return number_format($listen, 0, ',', ',');
+        return 0;
     }
 
     /**

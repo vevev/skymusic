@@ -51,10 +51,6 @@
      margin: 0;
      list-style: none
 }
-ul,li,p,h1,h2,h3,h4{
-    padding:0;
-    margin:0
-}
 body,img{
     max-width:100%
 }
@@ -75,20 +71,17 @@ body,img{
     text-decoration:none
 }
 body{
-    background:#F2F2F2;
+    background: #f2f2f2;
     padding:0;
-    font-family:Roboto,"Helvetica Neue",Arial,sans-serif;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
     font-weight:400;
-    line-height:1.3;
-    font-size:16px;
-    color:#000
+    line-height: 1.42857;
+    font-size:15px;
+    color:#000;
 }
 #report>form>div,.download,.download-s,.plmenu a,.table{
     font-weight:700
-}
-h1,h2,h3,h4,h5,h6,p{
-    padding:0;
-    margin:0
 }
 h1{
     font-size:18px
@@ -445,7 +438,7 @@ td>.play-count{
     margin-top: 2px;
 }
 .sg,.sg a{
-    color:#737373;
+    color:#606060;
     font-size:11px;
     margin:0px;
     display:block;
@@ -453,7 +446,7 @@ td>.play-count{
 }
 .sg b{
     font-weight:400;
-    font-size:14px;
+    font-size:13px;
      display: block;
     white-space: nowrap;
      text-overflow: ellipsis;

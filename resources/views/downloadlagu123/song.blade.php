@@ -12,7 +12,9 @@
         </div>
         <div class="bh-info">
             <h2>{{ $song->name }}</h2>
+            @if($song->listen)
             <b class="play-count">{{ $song->listen }}</b>
+            @endif
             <b class="single">{{ $song->single }} </b>
         </div>
     </div>

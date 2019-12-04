@@ -12,6 +12,14 @@ class Helper
         return number_format($size / pow(1024, $power), 2, '.', ',') . ' ' . $units[$power];
     }
 
+    public static function formatView(int $view)
+    {
+        $units = ['', 'Nghìn', 'Triệu', 'Tỉ'];
+        $power = $view > 0 ? floor(log((Int) $view, 1000)) : 0;
+
+        return number_format($view / pow(1000, $power), 0, '.', ',') . ' ' . $units[$power];
+    }
+
     public static function parseTitle($title)
     {
         $title = preg_replace('#video#i', 'mp3', $title);
