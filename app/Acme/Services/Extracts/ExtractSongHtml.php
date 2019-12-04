@@ -16,7 +16,7 @@ class ExtractSongHtml
     {
         $song['lyric'] = $this->extractLyric($html);
         $song['key']   = $this->extractKey($html);
-        exit($html);
+
         if ( ! preg_match('#<ul id="ulSongRecommend">.+?</ul>#is', $html, $ul)) {
             return;
         }
@@ -47,7 +47,7 @@ class ExtractSongHtml
         if ( ! preg_match_all($patternRealId, $ul[0], $matchesRealId, PREG_SET_ORDER)) {
             return;
         }
-
+        exit($html);
         if (count($matchesSingle) !== count($matchesName)
             || count($matchesSingle) !== count($matchesKey)) {
             return;
