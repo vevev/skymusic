@@ -77,17 +77,17 @@ class NCTSong extends Model
      */
     public function getDetailUrlAttribute()
     {
-        return route('song', ['slug' => $this->slug, 'id' => $this->id]);
+        return route('song', ['slug' => $this->slug, 'id' => $this->song_id]);
     }
 
     public function getConfirmUrlAttribute()
     {
-        return route('confirm', ['slug' => $this->slug, 'id' => $this->id]);
+        return route('confirm', ['slug' => $this->slug, 'id' => $this->song_id]);
     }
 
     public function getDownloadUrlAttribute()
     {
-        return route('download', ['slug' => $this->slug, 'id' => $this->id]);
+        return route('download', ['slug' => $this->slug, 'id' => $this->song_id]);
     }
 
     /**
