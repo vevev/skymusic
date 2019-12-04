@@ -485,7 +485,7 @@ dd,dt{
 }
 .ab a{
     color:#00f;
-    font-size:16px;
+    font-size:18px;
     font-weight:500;
     line-height:1.25;
     overflow:hidden;
@@ -493,7 +493,7 @@ dd,dt{
     -webkit-line-clamp:1;
     white-space:normal;
     display:-webkit-box;
-    max-height:40px;
+    max-height:44px;
     -webkit-line-clamp:2;
     -webkit-box-orient:vertical
 }
