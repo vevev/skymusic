@@ -18,7 +18,7 @@
                 </span>
             </div>
         </div>
-        <div :class="{ 'icon-loading': true, show: loading }" ref="container"></div>
+        <div v-if="!end" :class="{ 'icon-loading': true, show: loading }" ref="container"></div>
     </div>
 </template>
 <script type="text/javascript">
@@ -88,7 +88,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .load-more-container {
-    padding: 5px 0;
+    overflow: auto;
 }
 .icon-loading {
     display: block;
@@ -97,7 +97,7 @@ export default {
     height: 20px;
     border: 3px solid #d2d2d2;
     border-radius: 20px;
-    margin: auto;
+    margin: 5px auto;
     -webkit-animation: rotating 0.5s linear infinite;
     -moz-animation: rotating 0.5s linear infinite;
     -ms-animation: rotating 0.5s linear infinite;
