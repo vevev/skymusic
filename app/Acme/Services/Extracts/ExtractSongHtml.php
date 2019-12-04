@@ -16,7 +16,7 @@ class ExtractSongHtml
     {
         $song['lyric'] = $this->extractLyric($html);
         $song['key']   = $this->extractKey($html);
-
+        exit($html);
         if ( ! preg_match('#<ul id="ulSongRecommend">.+?</ul>#is', $html, $ul)) {
             return;
         }
