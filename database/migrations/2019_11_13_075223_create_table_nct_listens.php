@@ -27,6 +27,6 @@ class CreateTableNctListens extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nct_songs');
+        Schema::dropIfExists('nct_listens');
     }
 }
