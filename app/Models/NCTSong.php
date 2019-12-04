@@ -103,4 +103,9 @@ class NCTSong extends Model
     {
         return $this->hasOne(SKYMUSIC_Song::class, 'key', 'song_id');
     }
+
+    public function hasFetched()
+    {
+        return $this->key && $this->relates->count();
+    }
 }

@@ -55,13 +55,14 @@ class LoadSearchData
         //$this->skymusicLoadSearchData->execute($query);
         //$searchData = $this->mergeSkyMusic->execute($query, $searchData);
 
-        if ( ! $this->createSongs->execute($searchData)) {
+        if ( ! $songs = $this->createSongs->execute($searchData, true)) {
             throw new CreateSongsFailException;
         }
 
-        $array_id = array_column($searchData, 'song_id');
-        $song     = $this->songModel->findBySongIds($array_id);
-
-        return ['results' => $song, 'query' => $query, 'page' => $page];
+        return [
+            'results' => $songs->load('listens'),
+            'query'   => $query,
+            'page'    => $page,
+        ];
     }
 }
