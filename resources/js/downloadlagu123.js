@@ -3,6 +3,7 @@ require('./bootstrap');
 const Lyric = require('./components/downloadlagu123/show-song-lyric').default;
 const Search = require('./components/downloadlagu123/form-search').default;
 const AudioPlayer = require('./components/downloadlagu123/audio-player').default;
+const LoadMoreSearchSong = require('./components/downloadlagu123/load-more-search-song').default;
 var vm = null;
 
 if ((vm = document.getElementById('lyric'))) {
@@ -35,5 +36,17 @@ if ((vm = document.getElementById('audio-player-container'))) {
         data: { src: vm.dataset.src },
         components: { AudioPlayer },
         template: `<AudioPlayer :src="src"></AudioPlayer>`,
+    });
+}
+
+if ((vm = document.getElementById('load-more-result'))) {
+    const loadMoreSearchSong = new Vue({
+        el: '#load-more-result',
+        data: {
+            query: vm.dataset.query,
+            api: vm.dataset.api,
+        },
+        components: { LoadMoreSearchSong },
+        template: `<LoadMoreSearchSong  :query="query" :api="api"> </LoadMoreSearchSong>`,
     });
 }

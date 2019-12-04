@@ -13,9 +13,11 @@ class NCTSong extends Model
     public $incrementing = true;
     public $primaryKey   = 'real_id';
     public $timestamps   = true;
-    protected $hidden    = ['pivot'];
+    protected $hidden    = ['pivot', 'listens', 'id', 'created_at', 'updated_at', 'real_id', 'key', 'lyric'];
 
-    protected $fillable = ['lyric', 'listen', 'thumbnail', 'key', 'listen'];
+    protected $fillable = ['lyric', 'listen', 'thumbnail', 'key'];
+
+    protected $appends = ['detail_url'];
 
     public function scopeWithSongIds(Builder $query, array $song_ids)
     {
@@ -66,6 +68,26 @@ class NCTSong extends Model
         }
 
         return 0;
+    }
+
+    /**
+     * Gets the detail url attribute.
+     *
+     * @return     <type>  The detail url attribute.
+     */
+    public function getDetailUrlAttribute()
+    {
+        return route('song', ['slug' => $this->slug, 'id' => $this->id]);
+    }
+
+    public function getConfirmUrlAttribute()
+    {
+        return route('confirm', ['slug' => $this->slug, 'id' => $this->id]);
+    }
+
+    public function getDownloadUrlAttribute()
+    {
+        return route('download', ['slug' => $this->slug, 'id' => $this->id]);
     }
 
     /**
