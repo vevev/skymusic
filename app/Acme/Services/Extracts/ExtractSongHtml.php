@@ -46,8 +46,7 @@ class ExtractSongHtml
             return;
         }
 
-        if (count($matchesSingle) !== count($matchesName)
-            || count($matchesSingle) !== count($matchesKey)) {
+        if (count($matchesSingle) !== count($matchesName)) {
             return;
         }
 
