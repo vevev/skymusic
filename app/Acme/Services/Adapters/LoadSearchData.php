@@ -48,6 +48,10 @@ class LoadSearchData
             throw new CrawlSongFailException;
         }
 
+        if (1 === $html) {
+            return ['error' => 'NOTHING'];
+        }
+
         if ( ! $searchData = $this->extractSearchHtml->execute($html)) {
             throw new ExtractSearchHtmlFailException;
         }
