@@ -32,7 +32,6 @@ class ExtractSongHtml
         if ( ! preg_match_all($patternSingle, $ul[0], $matchesSingle, PREG_SET_ORDER)) {
             return;
         }
-        exit($html);
         $patternKey = '#(?=<span keyEncrypt="([^"]+?)")#is';
         if ( ! preg_match_all($patternKey, $ul[0], $matchesKey, PREG_SET_ORDER)) {
             return;
@@ -42,6 +41,7 @@ class ExtractSongHtml
         if ( ! preg_match_all($patternSrc, $ul[0], $matchesSrc, PREG_SET_ORDER)) {
             return;
         }
+        dd($matchesSrc, $matchesKey);
 
         $patternRealId = '#(?=song_img_(\d+))#i';
         if ( ! preg_match_all($patternRealId, $ul[0], $matchesRealId, PREG_SET_ORDER)) {
