@@ -158,7 +158,9 @@ button,input,textarea{
 }
 .main_search{
     background:#fff;
-    box-shadow:0 0 5px 1px rgba(204,204,204,.61)
+    box-shadow:0 0 5px 1px rgba(204,204,204,.61);
+    max-width: 700px;
+    margin: auto;
 }
 #footer{
     -webkit-box-shadow:0 1px 1px rgba(0,0,0,.04);
@@ -321,7 +323,6 @@ button,input,textarea{
 }
 .plmenu{
     padding:5px 0;
-    overflow:auto
 }
 .plmenu:nth-child(2n+1)>td:nth-child(1){
     width:40px;
@@ -559,7 +560,6 @@ dd{
     border:0;
     padding:8px 6px;
     margin:6px auto;
-    overflow:auto
 }
 .bxh-ico,.lr{
     border-radius:0px
@@ -608,7 +608,6 @@ dd{
     cursor:pointer
 }
 .bh-show{
-    overflow:auto
 }
 .bxh-ico{
     font-size:20px;
@@ -645,7 +644,7 @@ dd{
     color:#474747
 }
 .tkbh-top{
-    padding:5px;
+    padding:10px;
     color:#ADADAD;
     border-bottom:1px solid #F2F2F2;
     font-size:12px;
@@ -884,7 +883,6 @@ a.lcbtn{
     color:#0000b5
 }
 #suggest,#ytsuggest{
-    overflow:auto
 }
 #suggest>ul,#ytsuggest>ul{
     margin:0;

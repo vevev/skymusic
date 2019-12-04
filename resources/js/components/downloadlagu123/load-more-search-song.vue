@@ -88,7 +88,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .load-more-container {
-    overflow: auto;
 }
 .icon-loading {
     display: block;
