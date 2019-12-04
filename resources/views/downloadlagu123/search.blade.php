@@ -22,8 +22,10 @@
                 <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">{{ $song['name'] }}</a>
             </h3>
             <span class="sg">
-                <b class="play-count">{{ $song['listen'] }}</b>
                 <b class="auth">{{ $song['single'] }}</b>
+                @if($song['listen'])
+                <b class="play-count">{{ $song['listen'] }}</b>
+                @endif
             </span>
         </div>
     </div>
