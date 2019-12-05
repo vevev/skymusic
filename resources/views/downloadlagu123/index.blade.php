@@ -5,6 +5,7 @@
     <div class="cate">
         <h2 class="ht">Tải Nhạc Mp3 Hay - BXH</h2>
     </div>
+    <div class="collapse-menu">
     @foreach($data['main'] as $song)
     <div class="menu">
         <div class="detail-thumb">
@@ -25,6 +26,8 @@
         </div>
     </div>
     @endforeach
+    <div class="collapse-view-more">Xem Thêm ...</div>
+    </div>
 </div>
 @endsection
 
@@ -33,6 +36,7 @@
         <div class="cate">
             <b class="ht">Tải Nhạc Mp3 Hay khác</b>
         </div>
+        <div class="collapse-menu">
         @foreach($data['sidebar']['primary'] as $song)
         <div class="menu">
             <div class="detail-thumb">
@@ -53,10 +57,13 @@
             </div>
         </div>
         @endforeach
+        <div class="collapse-view-more">Xem Thêm ...</div>
+        </div>
 
         <div class="cate">
             <b class="ht">Tải Nhạc Mp3 Hay khác</b>
         </div>
+        <div class="collapse-menu">
         @foreach($data['sidebar']['secondary'] as $song)
         <div class="menu">
             <div class="detail-thumb">
@@ -77,6 +84,7 @@
             </div>
         </div>
         @endforeach
-
+        <div class="collapse-view-more">Xem Thêm ...</div>
+        </div>
     </div>
 @endsection

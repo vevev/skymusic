@@ -159,7 +159,7 @@ button,input,textarea{
 .main_search{
     background:#fff;
     box-shadow:0 0 5px 1px rgba(204,204,204,.61);
-    max-width: 700px;
+    max-width: 600px;
     margin: auto;
 }
 #footer{
@@ -268,27 +268,7 @@ button,input,textarea{
     width:45%;
     float:right
 }
-@media screen and (max-width:768px){
-    #main{
-        max-width:100%
-    }
-    .left-bar,.right-bar{
-        width:98%;
-        background:#fff;
-        float:none;
-        margin:10px 1%
-    }
-    .pc90{
-        width:100%;
-        margin:auto;
-        background:0 0;
-        display:block
-    }
-    .header_info,.search{
-        width:100%;
-        float:none
-    }
-}
+
 .bh-thumb,.left{
     float:left
 }
@@ -340,14 +320,39 @@ button,input,textarea{
 td>.play-count{
     color:#666
 }
+
+.collapse-menu {
+    position: relative;
+}
+
+.collapse-view-more {
+    display: none;
+    width: 100%;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px 10px;
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    color: #0194dc;
+    text-decoration: underline;
+}
+
 .menu{
-    border:0;
+    display:block;
+    height:100%;
     padding:10px 0;
     margin:0 10px;
     overflow:hidden;
-    height:100%;
+    border: none;
     border-bottom:1px solid #EDEDED;
-    display:block
+    transition: all 0.5s ease;
+}
+.menu:last-child{
+    border-bottom: none;
+}
+.menu:first-child{
+    padding-top: 0;
 }
 .detail-thumb,.detail-thumb img{
     width:60px;
@@ -357,8 +362,8 @@ td>.play-count{
 .menu:last-child{
     border:0
 }
-.menu:nth-child(event){
-    border-bottom:0
+.menu:nth-child(even){
+
 }
 .menu>p{
     margin-left:38px
@@ -789,7 +794,7 @@ form#qr{
 .cate{
     background:rgba(255,255,255,0);
     color:rgba(3,119,243,.99)!important;
-    padding:10px
+    padding:10px 0;
 }
 .ytquery{
     width:100%;
@@ -1046,6 +1051,52 @@ ul .loading .thumbnail{
         background-position:750px 0
     }
 }
+@media screen and (max-width:768px){
+    #main{
+        max-width:600px;
+    }
+    .left-bar,.right-bar{
+        width:98%;
+        background:#fff;
+        float:none;
+        margin:10px 1%
+    }
 
+    .pc90{
+        width:100%;
+        margin:auto;
+        background:0 0;
+        display:block
+    }
+
+    .header_info,.search{
+        width:100%;
+        float:none
+    }
+
+    .collapse-menu {
+        position: relative;
+        padding-bottom: 40px;
+    }
+
+    .collapse-view-more {
+        display: block;
+    }
+
+    .collapse-menu .menu:nth-of-type(n+8){
+        display: none;
+        height: 0%;
+    }
+    .expand .menu:nth-of-type(n+6){
+        display: block;
+        height: 100%;
+    }
+    .expand .collapse-view-more{
+        display: none;
+    }
+    .expand.collapse-menu{
+        padding-bottom: 0;
+    }
+}
 
 </style>

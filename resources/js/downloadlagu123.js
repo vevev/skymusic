@@ -50,3 +50,10 @@ if ((vm = document.getElementById('load-more-result'))) {
         template: `<LoadMoreSearchSong  :query="query" :api="api"> </LoadMoreSearchSong>`,
     });
 }
+
+const view_more_elements = document.getElementsByClassName('collapse-view-more');
+[].slice.call(view_more_elements).map(e =>
+    e.addEventListener('click', function(e) {
+        e.target.parentElement.classList.add('expand');
+    })
+);
