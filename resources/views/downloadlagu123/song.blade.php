@@ -21,10 +21,10 @@
 
     <div class="bh-audio">
         Nghe nhạc online (Bấm <i class="fa fa-play"></i> để nghe nhạc ...)<br>
-        <audio controls preload="none" src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}">
+        {{-- <audio controls preload="none" src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}">
             Trình duyệt của bạn không hỗ trợ nghe online !
-        </audio>
-        {{-- <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div> --}}
+        </audio> --}}
+        <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
     </div>
 
 

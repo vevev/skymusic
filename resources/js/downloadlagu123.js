@@ -2,7 +2,7 @@ require('./bootstrap');
 
 const Lyric = require('./components/downloadlagu123/show-song-lyric').default;
 const Search = require('./components/downloadlagu123/form-search').default;
-const AudioPlayer = require('./components/downloadlagu123/audio-player').default;
+const AudioPlayer = require('./components/downloadlagu123/audio-player-default').default;
 const LoadMoreSearchSong = require('./components/downloadlagu123/load-more-search-song').default;
 var vm = null;
 

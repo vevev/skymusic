@@ -22,14 +22,10 @@
 
 <body>
     <div class="header">
-        @if ($__core->mobileDetect->isMobile())
-        <a href="/download-lagu-terbaru.html"><img src="/ico/download-lagu-123.png?v=1" /> </a>
-        @else
-        <a href="/"><img src="/ico/download-lagu-123.png?v=1" /> </a>
-        @endif
+        <a href="/"><img src="{{ asset('/images/tainhac.png') }}" alt="" /></a>
         <div class="sub">
             <p><i style="color: red; font-size: 14px
-                ">Save-Download lagu tombol below / dibawah...</i></p>
+                ">Tai nhac mien phi...</i></p>
         </div>
     </div>
     <div id="main">
@@ -38,7 +34,7 @@
                 <table class="name">
                     <tbody>
                         <tr>
-                            <td colspan="2">Armada - Harusnya Aku</td>
+                            <td colspan="2">{{$song->name}}</td>
                         </tr>
                         <tr>
                             <td>File Type</td>

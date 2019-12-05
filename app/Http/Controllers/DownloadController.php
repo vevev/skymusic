@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\NCTSong;
+use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Request;
 use App\Acme\Services\Fetchs\CrawlDownloadLink;
 
 class DownloadController extends Controller
@@ -25,15 +25,16 @@ class DownloadController extends Controller
      *
      * @return void
      */
-    public function __construct(CrawlDownloadLink $crawler, NCTSong $song, Carbon $carbon)
+    public function __construct(CrawlDownloadLink $crawler, NCTSong $song, Carbon $carbon, Request $request)
     {
-        $this->crawler = $crawler;
-        $this->song    = $song;
-        $this->carbon  = $carbon;
-
-        $this->slug      = Request::route('slug');
-        $this->id        = Request::route('id');
-        $this->cache_key = 'dl:' . $this->id;
+        $this->crawler   = $crawler;
+        $this->song      = $song;
+        $this->carbon    = $carbon;
+        $this->request   = $request;
+        $this->slug      = $request->route('slug');
+        $this->id        = $request->route('id');
+        $this->cache_key = 'link:' . $this->id;
+        $this->re_cache  = $this->request->header('ReCache');
     }
 
     /**
@@ -43,9 +44,10 @@ class DownloadController extends Controller
      */
     public function play()
     {
-        // Kiểm tra xem trong REDIS co link hay chua, neu co roi thi tra lai link
-        if ($dl = Cache::get($this->cache_key)) {
-            return redirect($dl);
+        $link = $this->getLinkFromCache();
+
+        if ($link) {
+            return redirect($link);
         }
 
         // Kiểm tra xem trong DB có bài hát này hay chưa, nếu chưa sẽ trả lại //
@@ -53,18 +55,44 @@ class DownloadController extends Controller
             return '//';
         }
 
-        $dl = $this->crawler->crawl($song->song_id);
-        if (is_string($dl)) {
-            Cache::put($this->cache_key, $dl, $this->carbon->addMinutes(self::CACHE_EXPIRES_MINUTES));
-
-            return redirect($dl);
+        $link = $this->crawler->crawl($song->song_id);
+        if (is_string($link)) {
+            $this->setCacheLink($link);
+        } elseif ($link = $this->crawler->crawlLinkPlay($song->key)) {
+            $this->setCacheLink($link);
         }
 
-        if ($dl = $this->crawler->crawlLinkPlay($song->key)) {
-            Cache::put($this->cache_key, $dl, $this->carbon->addMinutes(self::CACHE_EXPIRES_MINUTES));
-
-            return redirect($dl);
+        if ($link) {
+            return $this->re_cache ? '' : redirect($link);
         }
+    }
+
+    /**
+     * Gets the link from cache.
+     *
+     * @return     <type>  The link from cache.
+     */
+    private function getLinkFromCache()
+    {
+        if ($this->re_cache) {
+            return null;
+        }
+
+        return Cache::get($this->cache_key);
+    }
+
+    /**
+     * Sets the cache link.
+     *
+     * @param      string  $link     The new value
+     */
+    private function setCacheLink(string $link)
+    {
+        Cache::put(
+            $this->cache_key,
+            $link,
+            $this->carbon->addMinutes(self::CACHE_EXPIRES_MINUTES)
+        );
     }
 
     /**
@@ -74,9 +102,10 @@ class DownloadController extends Controller
      */
     public function link()
     {
-        // Kiểm tra xem trong REDIS co link hay chua, neu co roi thi tra lai link
-        if ($dl = Cache::get($this->cache_key)) {
-            return redirect($dl);
+        $link = $this->getLinkFromCache();
+
+        if ($link) {
+            return redirect($link);
         }
 
         // Kiểm tra xem trong DB có bài hát này hay chưa, nếu chưa sẽ trả lại //
@@ -84,17 +113,17 @@ class DownloadController extends Controller
             return '//';
         }
 
-        $dl = $this->crawler->crawl($song->song_id);
-        if (is_string($dl)) {
-            Cache::put($this->cache_key, $dl, $this->carbon->addMinutes(self::CACHE_EXPIRES_MINUTES));
+        $link = $this->crawler->crawl($song->song_id);
+        if (is_string($link)) {
+            Cache::put($this->cache_key, $link, $this->carbon->addMinutes(self::CACHE_EXPIRES_MINUTES));
 
-            return redirect($dl);
+            return redirect($link);
         }
 
-        if (604 != $dl && $dl = $this->crawler->crawlLinkPlay($song->key)) {
-            Cache::put($this->cache_key, $dl, $this->carbon->addMinutes(self::CACHE_EXPIRES_MINUTES));
+        if (604 != $link && $link = $this->crawler->crawlLinkPlay($song->key)) {
+            Cache::put($this->cache_key, $link, $this->carbon->addMinutes(self::CACHE_EXPIRES_MINUTES));
 
-            return redirect($dl);
+            return redirect($link);
         }
     }
 }
