@@ -2,8 +2,6 @@
 
 namespace App\Acme\Services\Extracts;
 
-use Throwable;
-
 class ExtractSearchHtml
 {
     /**
@@ -30,7 +28,10 @@ class ExtractSearchHtml
             return;
         }
 
-        $patternSrc = '#(?=data-src="([^"]+?)")#i';
+        $patternSrc = '#(?=src="([^"]+?)")#i';
+        preg_match_all($patternSrc, $html, $matchesPrimarySrc, PREG_SET_ORDER);
+
+        $patternSrc = '#(?=data-src="([^"]*?)")#i';
         if ( ! preg_match_all($patternSrc, $html, $matchesSrc, PREG_SET_ORDER)) {
             return;
         }
@@ -44,22 +45,20 @@ class ExtractSearchHtml
             || count($matchesSingle) !== count($matchesKey)) {
             return;
         }
-        try {
-            $songs = [];
-            foreach ($matchesName as $index => $match) {
-                preg_match_all('#(?=<a[^>]+?>(.+?)</a>)#', $matchesSingle[$index][0], $single);
 
-                $songs[] = [
-                    'slug'      => $match[1],
-                    'real_id'   => $matchesRealId[$index][1],
-                    'thumbnail' => $matchesSrc[$index][1],
-                    'song_id'   => $match[2],
-                    'name'      => $match[3],
-                    'key'       => $matchesKey[$index][1],
-                    'single'    => implode(',', $single[1]),
-                ];
-            }} catch (Throwable $e) {
-            dd($matchesSrc, $html);
+        $songs = [];
+        foreach ($matchesName as $index => $match) {
+            preg_match_all('#(?=<a[^>]+?>(.+?)</a>)#', $matchesSingle[$index][0], $single);
+
+            $songs[] = [
+                'slug'      => $match[1],
+                'real_id'   => $matchesRealId[$index][1],
+                'thumbnail' => $matchesSrc[$index][1] ?? $matchesPrimarySrc[$index][1],
+                'song_id'   => $match[2],
+                'name'      => $match[3],
+                'key'       => $matchesKey[$index][1],
+                'single'    => implode(',', $single[1]),
+            ];
         }
 
         return $songs;
