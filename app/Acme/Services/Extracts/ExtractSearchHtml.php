@@ -2,6 +2,8 @@
 
 namespace App\Acme\Services\Extracts;
 
+use Throwable;
+
 class ExtractSearchHtml
 {
     /**
@@ -42,20 +44,22 @@ class ExtractSearchHtml
             || count($matchesSingle) !== count($matchesKey)) {
             return;
         }
+        try {
+            $songs = [];
+            foreach ($matchesName as $index => $match) {
+                preg_match_all('#(?=<a[^>]+?>(.+?)</a>)#', $matchesSingle[$index][0], $single);
 
-        $songs = [];
-        foreach ($matchesName as $index => $match) {
-            preg_match_all('#(?=<a[^>]+?>(.+?)</a>)#', $matchesSingle[$index][0], $single);
-
-            $songs[] = [
-                'slug'      => $match[1],
-                'real_id'   => $matchesRealId[$index][1],
-                'thumbnail' => $matchesSrc[$index][1],
-                'song_id'   => $match[2],
-                'name'      => $match[3],
-                'key'       => $matchesKey[$index][1],
-                'single'    => implode(',', $single[1]),
-            ];
+                $songs[] = [
+                    'slug'      => $match[1],
+                    'real_id'   => $matchesRealId[$index][1],
+                    'thumbnail' => $matchesSrc[$index][1],
+                    'song_id'   => $match[2],
+                    'name'      => $match[3],
+                    'key'       => $matchesKey[$index][1],
+                    'single'    => implode(',', $single[1]),
+                ];
+            }} catch (Throwable $e) {
+            dd($matchesSrc, $matchesKey, $matchesSingle, $matchesName);
         }
 
         return $songs;
