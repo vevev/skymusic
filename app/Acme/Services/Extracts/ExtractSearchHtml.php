@@ -59,7 +59,7 @@ class ExtractSearchHtml
                     'single'    => implode(',', $single[1]),
                 ];
             }} catch (Throwable $e) {
-            dd($matchesSrc, $matchesKey, $matchesSingle, $matchesName);
+            dd($matchesSrc, $html);
         }
 
         return $songs;
