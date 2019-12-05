@@ -491,7 +491,7 @@ dd,dt{
 }
 .ab a{
     color:#00f;
-    font-size:18px;
+    font-size:16px;
     font-weight:500;
     line-height:1.25;
     overflow:hidden;
