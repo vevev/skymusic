@@ -14,15 +14,12 @@ class ExtractPlaylistHtml
 
     public function execute(string $html)
     {
-        $song['lyric'] = $this->extractLyric($html);
-        $song['key']   = $this->extractKey($html);
-
-        if ( ! preg_match('#<ul id="ulSongRecommend">.+?</ul>#is', $html, $ul)) {
+        if ( ! preg_match('#<ul id="ulListSongItem".+?</ul>#is', $html, $ul)) {
             return;
         }
 
         // Lọc ra các row bài hát, nếu không có thì trả lại null
-        $patternName = '#(?=<h3.*href=".*/bai-hat/([^/]+?)\.([^/]+?).html">(.+?)</a></h3>)#';
+        $patternName = '#(?=<h3[^<>]+id="songInPlaylist_(\d+)"[^><]+><a[^><]+?href="[^"]*\/bai-hat\/([^"\/]+?)\.([^"\/]+?).html">(.+?)<\/a><\/h3>)#';
         if ( ! preg_match_all($patternName, $ul[0], $matchesName, PREG_SET_ORDER)) {
             return;
         }
@@ -36,16 +33,6 @@ class ExtractPlaylistHtml
         $patternKey = '#(?=<span keyEncrypt="([^"]+?)")#is';
         preg_match_all($patternKey, $ul[0], $matchesKey, PREG_SET_ORDER);
 
-        $patternSrc = '#(?=data-src="([^"]+?)")#i';
-        if ( ! preg_match_all($patternSrc, $ul[0], $matchesSrc, PREG_SET_ORDER)) {
-            return;
-        }
-
-        $patternRealId = '#(?=song_img_(\d+))#i';
-        if ( ! preg_match_all($patternRealId, $ul[0], $matchesRealId, PREG_SET_ORDER)) {
-            return;
-        }
-
         if (count($matchesSingle) !== count($matchesName)) {
             return;
         }
@@ -57,7 +44,7 @@ class ExtractPlaylistHtml
             $songs[] = [
                 'slug'      => $match[1],
                 'real_id'   => $matchesRealId[$index][1],
-                'thumbnail' => $matchesSrc[$index][1],
+                'thumbnail' => 'NO_THUMBNAIL',
                 'song_id'   => $match[2],
                 'name'      => $match[3],
                 'key'       => $matchesKey[$index][1] ?? null,

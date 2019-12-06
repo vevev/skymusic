@@ -4,7 +4,6 @@ namespace App\Acme\Services\Adapters;
 
 use App\Models\NCTPlaylist;
 use App\Acme\Services\Interacts\GetSong;
-use App\Exceptions\CrawlSongFailException;
 use App\Acme\Services\Fetchs\FetchHtmlSong;
 use App\Exceptions\SetRelatesFailException;
 use App\Exceptions\UpdateSongFailException;
@@ -12,6 +11,7 @@ use App\Acme\Services\Interacts\CreateSongs;
 use App\Acme\Services\Interacts\GetPlaylist;
 use App\Acme\Services\Adapters\LoadTop20Song;
 use App\Exceptions\PlaylistNotFoundException;
+use App\Exceptions\CrawlPlaylistFailException;
 use App\Acme\Services\Fetchs\FetchHtmlPlaylist;
 use App\Exceptions\CreateRelationFailException;
 use App\Acme\Services\Interacts\CreateRelations;
@@ -94,7 +94,7 @@ class LoadPlaylistData
 
         $data = $this->extractPlaylistHtml->execute($html);
         if ( ! is_array($data)) {
-            throw new CrawlSongFailException;
+            throw new CrawlPlaylistFailException;
         }
 
         [$_song, $_songs] = $data;

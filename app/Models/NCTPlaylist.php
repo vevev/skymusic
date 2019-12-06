@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\NCTSong;
 use App\Models\NCTListen;
 use App\Acme\Helpers\Helper;
 use Illuminate\Database\Eloquent\Model;
@@ -52,9 +53,16 @@ class NCTPlaylist extends Model
      *
      * @return     <type>  ( description_of_the_return_value )
      */
-    public function relates()
+    public function songs()
     {
-        return $this->belongsToMany($this, 'nct_song_song', 'song_id', 'relate_id', 'song_id', 'song_id');
+        return $this->belongsToMany(
+            NCTSong::class,
+            'nct_playlist_song',
+            'playlist_id',
+            'song_id',
+            'playlist_id',
+            'song_id'
+        );
     }
 
     /**
@@ -103,6 +111,6 @@ class NCTPlaylist extends Model
      */
     public function hasFetched()
     {
-        return $this->relates->count();
+        return $this->songs->count();
     }
 }

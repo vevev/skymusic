@@ -11,10 +11,3 @@
 @endif
 <div id="uptop">
 <a href="#"><span class="up_arrow"></span>Top</a></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-@if (Page::$currentRouteName == 'video')
-<script src="/lib/audioxhr.js" async></script>
-@endif
-<script src="../../lib/jquery.min.js?v=1.1.8" async></script>
-<script src="/lib/ads.js" async></script>
-<link href="/static/fonts.css" rel="stylesheet" media="screen">
