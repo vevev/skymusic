@@ -17,7 +17,7 @@ class NCTSong extends Model
 
     protected $fillable = ['lyric', 'listen', 'thumbnail', 'key'];
 
-    protected $appends = ['detail_url'];
+    protected $appends = ['detail_url', 'listen'];
 
     public function scopeWithSongIds(Builder $query, array $song_ids)
     {
