@@ -25,7 +25,7 @@ class ExtractPlaylistHtml
         }
 
         // Lọc ra các single bài hát, nếu không có thì trả lại null
-        $patternSingle = '#<h4 class="singer_song">.+?</h4>#is';
+        $patternSingle = '#<h4 class="singer_song">(.+?)</h4>#is';
         if ( ! preg_match_all($patternSingle, $ul[0], $matchesSingle, PREG_SET_ORDER)) {
             return;
         }
@@ -39,8 +39,6 @@ class ExtractPlaylistHtml
 
         $songs = [];
         foreach ($matchesName as $index => $match) {
-            preg_match_all('#(?=<a[^>]+?>(.+?)</a>)#', $matchesSingle[$index][0], $single);
-
             $songs[] = [
                 'slug'      => $match[1],
                 'real_id'   => $matchesRealId[$index][1],
@@ -48,7 +46,7 @@ class ExtractPlaylistHtml
                 'song_id'   => $match[2],
                 'name'      => $match[3],
                 'key'       => $matchesKey[$index][1] ?? null,
-                'single'    => implode(',', $single[1]),
+                'single'    => $matchesSingle[$index][1],
             ];
         }
 

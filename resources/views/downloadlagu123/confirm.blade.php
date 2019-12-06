@@ -79,21 +79,12 @@
         </div>
     </div>
     <div id="footer">
-    <div class="center"><h3 class="f15">Trang web tải bài hát mới nhất, Tải kho Kho bài hát pop miễn phí</h3></div>
-
-    <p align="center">
-    </p><br />
-    <p align="center"><b><a href="/">TaiNhac123.Mobi</a></b> là trang web <i><u>Tải nhạc Mp3 Miễn Phí</u></i>, tải nhạc mp3 chất lượng cao, trang web cập nhật bảng xếp hạng âm nhạc chính xác và nhanh nhất,  kho bài hát lớn nhất có thể đáp ứng tất cả các nhu cầu của bạn, là lựa chọn hàng đầu cho bạn.
-    <br></p>
-    <p class="center">
-
-    <a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a> | <a href="/terms.html" style="color:blue">Hướng dẫn tải nhạc</a>
-    <br><br>
-      <a href="/"><img src="/images/icon-tainhac.png" width="50px" alt=""></a><br>
-    Blog <b><a href="/">TaiNhac123</a></b> <font size="4">✪</font><br>
-    Contact: tainhac123@gmail.com<br>
-    ♪ <b>FULL SONG FOR YOU</b> ♫<br>
-    <font size="5">💖</font></p>
+        <p class="center">
+            <span class="life">▂ ▅ ▇ ♪♫ MUSIC IS MY LIFE ♪♫ ▇ ▅ ▂</span><br><br>
+            <a href="/"><img src="/images/icon-tainhac.png" width="50px"></a><br>
+            <b><a href="/">Tai nhac 123</a></b></br><br>
+            Contact: tainhac123@gmail.com<br>
+        </p>
     </div>
     <script type="text/javascript" src="{{ asset("/js/app.min.js?v=" . config('app.version')) }}"></script>
 
