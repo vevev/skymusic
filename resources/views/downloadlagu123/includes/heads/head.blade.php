@@ -195,6 +195,7 @@ button,input,textarea{
 .header_info .tip{
     font-weight: 400;
     color: #444;
+    padding: 15px 0;
 }
 .search{
     width:45%;
@@ -334,7 +335,7 @@ td>.play-count{
 }
 .download,.download-s{
     color:#FFF;
-    background:#4b8441;
+    background:#1FCC00;
     border-radius:3px;
     padding:8px 12px;
     font-size:15px!important;
@@ -525,7 +526,8 @@ dd{
 }
 .lr{
     padding:10px 10px 30px 10px;
-    box-sizing:border-box
+    box-sizing:border-box;
+        margin-bottom: 10px;
 }
 .lr>p{
     height:223px;
@@ -1000,7 +1002,7 @@ ul .loading .thumbnail{
         max-width: 600px;
         margin:auto;
         display:block;
-        padding: 0 1%;
+        padding: 10px 1%;
     }
 
     .header_info,.search{

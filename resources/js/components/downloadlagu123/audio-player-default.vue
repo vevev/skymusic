@@ -1,5 +1,5 @@
 <template>
-    <audio controls preload="none" :src="src" @error="onError" ref="audio">
+    <audio controls loop preload="none" :src="src" @error="onError" ref="audio">
         Trình duyệt của bạn không hỗ trợ nghe online !
     </audio>
 </template>
