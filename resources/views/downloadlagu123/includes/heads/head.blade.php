@@ -136,7 +136,7 @@ button,input,textarea{
 .main_search{
     background:#fff;
     box-shadow:0 0 5px 1px rgba(204,204,204,.61);
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
 }
 #footer{
