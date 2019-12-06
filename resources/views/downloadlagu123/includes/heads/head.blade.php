@@ -82,8 +82,8 @@ body{
 h1{
     font-size:18px
 }
-h1>a{
-    color:red!important
+h1 a{
+    color:red
 }
 hr{
     margin-top:7px;
@@ -443,6 +443,13 @@ dd,dl,dt{
     border-bottom:1px solid #EDEDED;
     background:0 0
 }
+h1.ht{
+    padding-top: 10px;
+    text-transform: capitalize;
+}
+#main h1.ht>a{
+    color: blue;
+}
 .ht h1,.lbh{
     font-size:17px
 }
@@ -494,6 +501,11 @@ dd{
     padding:8px 6px;
     margin:6px auto;
 }
+.bh-top:after {
+    display: block;
+    content: '';
+    clear: both;
+}
 .bxh-ico,.lr{
     border-radius:0px
 }
@@ -503,8 +515,8 @@ dd{
     margin:0
 }
 .bh-info h2{
-    font-size:18px!important;
-     line-height: 1;
+    font-size:16px!important;
+    line-height: 1;
 }
 
 .bh-info{
@@ -993,7 +1005,8 @@ ul .loading .thumbnail{
         float:none;
         margin:10px 0;
     }
-    .ht{
+    h1.ht{
+        text-align:center;
     }
     .lr{
     }

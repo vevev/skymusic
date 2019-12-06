@@ -12,6 +12,7 @@ use App\Acme\Services\Interacts\CreateSongs;
 use App\Acme\Services\Interacts\GetPlaylist;
 use App\Acme\Services\Adapters\LoadTop20Song;
 use App\Exceptions\PlaylistNotFoundException;
+use App\Acme\Services\Fetchs\FetchHtmlPlaylist;
 use App\Exceptions\CreateRelationFailException;
 use App\Acme\Services\Interacts\CreateRelations;
 use App\Acme\Services\Extracts\ExtractPlaylistHtml;
