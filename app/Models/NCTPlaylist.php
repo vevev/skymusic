@@ -19,20 +19,20 @@ class NCTPlaylist extends Model
 
     protected $appends = ['detail_url'];
 
-    public function scopeWithSongIds(Builder $query, array $song_ids)
+    public function scopeWithPlaylistIds(Builder $query, array $playlist_ids)
     {
-        return $query->whereIn('song_id', $song_ids);
+        return $query->whereIn('song_id', $playlist_ids);
     }
 
     /**
-     * [findBySongIds description]
+     * [findByPlaylistIds description]
      *
-     * @param  array  $song_ids       [description]
+     * @param  array  $playlist_ids       [description]
      * @return [type] [description]
      */
-    public function findBySongIds(array $song_ids, array $get = ['*'])
+    public function findByPlaylistIds(array $playlist_ids, array $get = ['*'])
     {
-        return $this->withSongIds($song_ids)->get();
+        return $this->withPlaylistIds($playlist_ids)->get();
     }
 
     /**

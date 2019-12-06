@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "https://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="vi">
-
 <head>
     <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="{{ asset("/fonts/css/fonts.css?v=" . config('app.version')) }}" media="screen" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="id" />
     <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
@@ -50,7 +50,7 @@
                             <td colspan="2">
                                 <div id="vue-container" style="width: auto; max-width: 100%;">
                                     <a class="btn-a" href="{{ route('download', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}">
-                                        <img src="https://lagu123.blog/static/ico/dl.png" class="dlico">
+                                        <i class="icon-download"></i>
                                         DOWNLOAD
                                     </a>
                                 </div>

@@ -338,6 +338,7 @@ td>.play-count{
 }
 .download,.download-s{
     color:#FFF;
+    font-weight: 600;
     background:#1FCC00;
     border-radius:3px;
     padding:8px 12px;
