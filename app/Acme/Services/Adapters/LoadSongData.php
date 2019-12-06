@@ -58,6 +58,8 @@ class LoadSongData
 
         if ( ! $song) {
             throw new SongNotFoundException;
+        } else {
+            $song->load('listens');
         }
 
         if ( ! $song->hasFetched()) {

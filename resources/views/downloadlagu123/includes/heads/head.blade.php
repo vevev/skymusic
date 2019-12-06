@@ -358,7 +358,7 @@ td>.play-count{
 }
 .info{
     border-bottom:1px solid #e9e9e9;
-    padding-bottom:10px
+    padding-bottom:30px
 }
 .info>h2{
     font-size:17px
@@ -375,7 +375,7 @@ td>.play-count{
 }
 .sg b{
     font-weight:400;
-    font-size:13px;
+    font-size:12px;
      display: block;
     white-space: nowrap;
      text-overflow: ellipsis;
@@ -497,10 +497,11 @@ dd{
     display:inline-block;
     margin:0
 }
-.bh-info>h2{
+.bh-info h2{
     font-size:18px!important;
      line-height: 1;
 }
+
 .bh-info{
     margin-left:70px;
     color:#333;
@@ -508,18 +509,22 @@ dd{
     text-transform:capitalize;
     margin-top:0px
 }
-.bh-info .fb-like{
-    line-height:1.6
+
+.bh-info .play-count{
+    display: block;
+    padding: 0;
+    margin-top: 10px;
 }
+
 .bh-audio{
-    padding:5px
+    padding: 30px 10px;
 }
 .bh-lyric{
     padding:2px 5px;
     overflow-y:hidden
 }
 .lr{
-    padding:10px;
+    padding:10px 10px 30px 10px;
     box-sizing:border-box
 }
 .lr>p{

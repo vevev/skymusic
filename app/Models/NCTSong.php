@@ -64,7 +64,7 @@ class NCTSong extends Model
     public function getListenAttribute()
     {
         if (isset($this->relations['listens'])) {
-            return Helper::formatView($this->listens->listen) . ' lượt nghe';
+            return Helper::formatView($this->listens->listen);
         }
 
         return 0;

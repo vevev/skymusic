@@ -11,11 +11,11 @@
             <img  src="{{ $song->thumbnail }}" alt="{{ $song->name }}" />
         </div>
         <div class="bh-info">
-            <h2>{{ $song->name }}</h2>
+            <h2>{{ $song->name }} - {{ $song->single }}</h2>
             @if($song->listen)
             <b class="play-count">{{ $song->listen }}</b>
             @endif
-            <b class="single">{{ $song->single }} </b>
+            {{-- <b class="single">{{ $song->single }} </b> --}}
         </div>
     </div>
 
