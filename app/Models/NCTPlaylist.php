@@ -7,9 +7,9 @@ use App\Acme\Helpers\Helper;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
-class NCTSong extends Model
+class NCTPlaylist extends Model
 {
-    protected $table     = 'nct_songs';
+    protected $table     = 'nct_playlists';
     public $incrementing = true;
     public $primaryKey   = 'real_id';
     public $timestamps   = true;
@@ -36,14 +36,15 @@ class NCTSong extends Model
     }
 
     /**
-     * [findBySongIds description]
+     * { function_description }
      *
-     * @param  array  $song_ids       [description]
-     * @return [type] [description]
+     * @param      string  $playlist_id  The playlist identifier
+     *
+     * @return     <type>  ( description_of_the_return_value )
      */
-    public function findById(string $song_id)
+    public function findById(string $playlist_id)
     {
-        return $this->where('song_id', $song_id)->first();
+        return $this->where('playlist_id', $playlist_id)->first();
     }
 
     /**
@@ -68,26 +69,6 @@ class NCTSong extends Model
         }
 
         return 0;
-    }
-
-    /**
-     * Gets the detail url attribute.
-     *
-     * @return     <type>  The detail url attribute.
-     */
-    public function getDetailUrlAttribute()
-    {
-        return route('song', ['slug' => $this->slug, 'id' => $this->song_id]);
-    }
-
-    public function getConfirmUrlAttribute()
-    {
-        return route('confirm', ['slug' => $this->slug, 'id' => $this->song_id]);
-    }
-
-    public function getDownloadUrlAttribute()
-    {
-        return route('download', ['slug' => $this->slug, 'id' => $this->song_id]);
     }
 
     /**
@@ -116,17 +97,12 @@ class NCTSong extends Model
     }
 
     /**
-     * { function_description }
+     * Determines if it has fetched.
      *
-     * @return     <type>  ( description_of_the_return_value )
+     * @return     boolean  True if has fetched, False otherwise.
      */
-    public function sky()
-    {
-        return $this->hasOne(SKYMUSIC_Song::class, 'key', 'song_id');
-    }
-
     public function hasFetched()
     {
-        return $this->key && $this->relates->count();
+        return $this->relates->count();
     }
 }

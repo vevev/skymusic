@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableNctSongs extends Migration
+class CreateTableNctPlaylists extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateTableNctSongs extends Migration
      */
     public function up()
     {
-        Schema::create('nct_songs', function (Blueprint $table) {
-            $table->string('song_id', 20)->unique();
+        Schema::create('nct_playlists', function (Blueprint $table) {
+            $table->string('playlist_id', 20)->unique();
             $table->integer('real_id')->unique();
             $table->bigIncrements('id');
             $table->string('name', 255);
             $table->string('single', 255);
             $table->string('slug', 255);
-            $table->text('lyric')->nullable();
-            $table->string('key', 255)->nullable();
             $table->string('thumbnail', 255)->nullable();
             $table->timestamps();
         });
@@ -34,6 +32,6 @@ class CreateTableNctSongs extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nct_songs');
+        Schema::dropIfExists('nct_playlists');
     }
 }

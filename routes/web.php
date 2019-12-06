@@ -14,6 +14,7 @@
 Route::get('/', 'IndexController@index')->name('index');
 
 Route::get('/tai-nhac/{slug}/{id}.html', 'SongController@index')->name('song');
+Route::get('/playlist/{slug}/{id}.html', 'PlaylistController@index')->name('playlist');
 Route::get('/mp3/{slug}/{id}.html', 'SongSkymusicController@index')->name('song-skymusic');
 
 Route::match(['get', 'post'], '/listen/{slug}.{id}.html', 'DownloadController@play')->name('listen');

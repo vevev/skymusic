@@ -41,7 +41,7 @@
 @yield('link')
 {{-- <link href="{{ mix('css/base/app.css') }}" rel="stylesheet"> --}}
 <link rel="stylesheet" href="{{ asset("/fonts/css/fonts.css?v=" . config('app.version')) }}" media="screen" />
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+{{-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet"> --}}
 @yield('inject_script')
 @yield('social')
 <style>
@@ -72,7 +72,7 @@ body{
     background: #f2f2f2;
     padding:0;
     margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
+    font-family: arial, sans-serif;
     font-weight:400;
     line-height: 1.42857;
     font-size:15px;
@@ -415,7 +415,7 @@ dd,dt{
 .ab a{
     color:#00f;
     font-size:16px;
-    font-weight:500;
+    font-weight:600;
     line-height:1.25;
     overflow:hidden;
     max-height:16px;
@@ -714,7 +714,7 @@ form#qr{
 .cate{
     background:rgba(255,255,255,0);
     color:rgba(3,119,243,.99)!important;
-    padding:10px 0;
+    padding-top:10px;
 }
 .ytquery{
     width:100%;
