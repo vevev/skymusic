@@ -171,7 +171,9 @@ button,input,textarea{
     width:39%;
     float:right
 }
-
+.right-bar:not(:first-child) {
+    margin-top: 10px;
+}
 .center,.table{
     text-align:center
 }
@@ -269,10 +271,10 @@ td>.play-count{
     border-bottom:1px solid #EDEDED;
     transition: all 0.5s ease;
 }
-.menu:last-child{
+.menu:nth-last-of-type(1), .menu:last-child{
     border-bottom: none;
 }
-.menu:first-child{
+.menu:first-child, .menu:nth-first-of-type(1){
     padding-top: 0;
 }
 .detail-thumb,.detail-thumb img{

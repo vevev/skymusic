@@ -26,7 +26,7 @@
         </div>
     </div>
     @endforeach
-    <div class="collapse-view-more">Xem Thêm ...</div>
+    <p class="collapse-view-more">Xem Thêm ...</p>
     </div>
 </div>
 @endsection
@@ -57,9 +57,10 @@
             </div>
         </div>
         @endforeach
-        <div class="collapse-view-more">Xem Thêm ...</div>
+        <p class="collapse-view-more">Xem Thêm ...</p>
         </div>
-
+    </div>
+    <div class="right-bar">
         <div class="cate">
             <b class="ht">Tải Nhạc Mp3 Hay khác</b>
         </div>
@@ -84,7 +85,7 @@
             </div>
         </div>
         @endforeach
-        <div class="collapse-view-more">Xem Thêm ...</div>
+        <p class="collapse-view-more">Xem Thêm ...</p>
         </div>
     </div>
 @endsection

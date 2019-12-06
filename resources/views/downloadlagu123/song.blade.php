@@ -36,6 +36,7 @@
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>
 
     <div class="ht"><b>Bài Hát Liên Quan :</b></div>
+    <div class="collapse-menu">
     @foreach($song->relates as $_song)
     <div class="menu">
         <div class="detail-thumb">
@@ -58,6 +59,8 @@
         </div>
     </div>
     @endforeach
+    <p class="collapse-view-more">Xem Thêm ...</p>
+    </div>
 </div>
 @endsection
 
@@ -87,7 +90,7 @@
         </div>
     </div>
     @endforeach
-    <div class="collapse-view-more">Xem Thêm ...</div>
+    <p class="collapse-view-more">Xem Thêm ...</p>
     </div>
 </div>
 @endsection
