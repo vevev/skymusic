@@ -23,4 +23,5 @@ Blog <b><a href="/">TaiNhac123</a></b> <font size="4">✪</font><br>
 Contact: tainhac123@gmail.com<br>
 ♪ <b>FULL SONG FOR YOU</b> ♫<br>
 <font size="5">💖</font></p>
+��
 </div>

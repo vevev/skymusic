@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" type="text/css" href="https://lagu123.click/css/dlbtn.css?v={{ config('app.version') }}" defer="">
     <style type="text/css">
-    body{background:#F2F2F2;font-family:sans-serif;margin:0}a#mp3ring{background:#2d7eb8;padding:6px 10px;border-radius:3px;color:#fff}a#mp3ring:active{background:#000}a{text-decoration:none}div#main{background:#fff;margin:10px auto;max-width:600px;border:1px solid #c5c5c5;padding:10px}.header{background:#1BB5F3;color:#fff;text-align:center;font-size:20px;font-weight:700;padding:10px 20px;border-bottom:1px solid #fff}.name{text-align:center;margin:0 auto;border-collapse:collapse;box-sizing:border-box}.name td{border:1px solid #d9d9d9;padding:11px}@keyframes changewidth{from{background:#3e1b7a}to{background:#cedfb1;color:#3e1b7a}}.dl3{animation-duration:2s;animation-name:changewidth;animation-iteration-count:infinite;animation-direction:alternate}.name tr>td:first-child{font-weight:700}.name tr:nth-child(2n){background:#f8f8f8}.btn-a,.btn-b,.btn-c{font-weight:700;color:#FFF;background:#1FCC00;border-radius:3px;padding:10px;font-size:15px!important;display:inline-block;border:1px solid transparent}.btn-a:active,.btn-b:active,.btn-c:active{color:#f70000;background:#fff;border:1px solid red}.btn-a>b:before,.btn-b>b:before,.btn-c>b:before{content:url(ico/dl.png);display:inline-block;vertical-align:top;line-height:15px;height:15px}.btn-b{background:#3e1b7a}.btn-c{background:#7a1b1b}.table{display:table;background-color:#fff;border-collapse:collapse;margin:5px auto;text-align:center;font-weight:700;border-radius:5px;width:99%}.td{padding:10px 2px;border:1px solid #d5d5d5}.back{display:inline-block;padding:6px 15px;#background:#045e38;background:linear-gradient(to right,#252cb7,#32d2bc);color:#fff;margin:10px auto;font-weight:700;border-radius:5px;position:relative}a.back:before{content:"\00ab";left:3px;top:4px;position:absolute;content:\00ab}.sub{background:#fff;color:#000;margin:10px -20px -15px;padding:5px 10px;box-shadow:0 0 10px 0 rgba(0,0,0,0.16)}div#footer{background:#D4D4D4;text-align:center;padding:20px 10px}img{max-width:300px}p{margin:0}.life{color:green}#mainad{background-color:#fff;box-shadow:0 0 0 0 #000;margin:0 -5px}.game img{border:3px solid #ddd;border-radius:15px}#button-convert-mp3 btn-a{font-weight:700;color:#FFF;background:#1FCC00;border-radius:3px;padding:10px;font-size:15px!important;display:inline-block;border:1px solid transparent;height:auto;width:auto;box-shadow:none}@keyframes changewidth{from{background:#3e1b7a}to{background:#cedfb1;color:#3e1b7a}}.dl3{animation-duration:2s;animation-name:changewidth;animation-iteration-count:infinite;animation-direction:alternate}#button-convert-mp3 button:hover{border-color:transparent;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.1)none;box-shadow:none}
+    body{background:#F2F2F2;font-family:sans-serif;margin:0}a#mp3ring{background:#2d7eb8;padding:6px 10px;border-radius:3px;color:#fff}a#mp3ring:active{background:#000}a{text-decoration:none}div#main{background:#fff;margin:10px auto;max-width:600px;border:1px solid #c5c5c5;padding:10px}.header{background:#1BB5F3;color:#fff;text-align:center;font-size:20px;font-weight:700;padding:10px 20px;border-bottom:1px solid #fff}.name{text-align:center;margin:0 auto;border-collapse:collapse;box-sizing:border-box}.name td{border:1px solid #d9d9d9;padding:11px}@keyframes changewidth{from{background:#3e1b7a}to{background:#cedfb1;color:#3e1b7a}}.dl3{animation-duration:2s;animation-name:changewidth;animation-iteration-count:infinite;animation-direction:alternate}.name tr>td:first-child{font-weight:700}.name tr:nth-child(2n){background:#f8f8f8}.btn-a,.btn-b,.btn-c{font-weight:700;color:#FFF;background:#1FCC00;border-radius:3px;padding:10px;font-size:15px!important;display:inline-block;border:1px solid transparent}.btn-a:active,.btn-b:active,.btn-c:active{color:#f70000;background:#fff;border:1px solid red}.btn-a>b:before,.btn-b>b:before,.btn-c>b:before{content:url(ico/dl.png);display:inline-block;vertical-align:top;line-height:15px;height:15px}.btn-b{background:#3e1b7a}.btn-c{background:#7a1b1b}.table{display:table;background-color:#fff;border-collapse:collapse;margin:5px auto;text-align:center;font-weight:700;border-radius:5px;width:99%}.td{padding:10px 2px;border:1px solid #d5d5d5}.back{display:inline-block;padding:6px 15px;#background:#045e38;background:linear-gradient(to right,#252cb7,#32d2bc);color:#fff;margin:10px auto;font-weight:700;border-radius:5px;position:relative}a.back:before{content:"\00ab";left:3px;top:4px;position:absolute;content:\00ab}.sub{background:#fff;color:#000;margin:10px -20px -15px;padding:5px 10px;box-shadow:0 0 10px 0 rgba(0,0,0,0.16)}div#footer{background:#D4D4D4;text-align:center;padding:20px 10px}img{max-width:250px}p{margin:0}.life{color:green}#mainad{background-color:#fff;box-shadow:0 0 0 0 #000;margin:0 -5px}.game img{border:3px solid #ddd;border-radius:15px}#button-convert-mp3 btn-a{font-weight:700;color:#FFF;background:#1FCC00;border-radius:3px;padding:10px;font-size:15px!important;display:inline-block;border:1px solid transparent;height:auto;width:auto;box-shadow:none}@keyframes changewidth{from{background:#3e1b7a}to{background:#cedfb1;color:#3e1b7a}}.dl3{animation-duration:2s;animation-name:changewidth;animation-iteration-count:infinite;animation-direction:alternate}#button-convert-mp3 button:hover{border-color:transparent;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.1)none;box-shadow:none}
     </style>
 </head>
 
@@ -79,25 +79,24 @@
         </div>
     </div>
     <div id="footer">
-        <p class="center">
-            <span class="life">▂ ▅ ▇ ♪♫ MUSIC IS MY LIFE ♪♫ ▇ ▅ ▂</span><br><br>
-            <a href="/"><img src="/images/icon-tainhac.png" width="50px"></a><br>
-            <b><a href="/">Download Lagu 123</a></b></br><br>
-            Contact: dlaguaz1@gmail.com<br>
-        </p>
+    <div class="center"><h3 class="f15">Trang web tải bài hát mới nhất, Tải kho Kho bài hát pop miễn phí</h3></div>
+
+    <p align="center">
+    </p><br />
+    <p align="center"><b><a href="/">TaiNhac123.Mobi</a></b> là trang web <i><u>Tải nhạc Mp3 Miễn Phí</u></i>, tải nhạc mp3 chất lượng cao, trang web cập nhật bảng xếp hạng âm nhạc chính xác và nhanh nhất,  kho bài hát lớn nhất có thể đáp ứng tất cả các nhu cầu của bạn, là lựa chọn hàng đầu cho bạn.
+    <br></p>
+    <p class="center">
+
+    <a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a> | <a href="/terms.html" style="color:blue">Hướng dẫn tải nhạc</a>
+    <br><br>
+      <a href="/"><img src="/images/icon-tainhac.png" width="50px" alt=""></a><br>
+    Blog <b><a href="/">TaiNhac123</a></b> <font size="4">✪</font><br>
+    Contact: tainhac123@gmail.com<br>
+    ♪ <b>FULL SONG FOR YOU</b> ♫<br>
+    <font size="5">💖</font></p>
     </div>
     <script type="text/javascript" src="{{ asset("/js/app.min.js?v=" . config('app.version')) }}"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137588084-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
 
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-137588084-1');
-
-    </script>
 </body>
 
 </html>
