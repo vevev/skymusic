@@ -20,7 +20,7 @@
     </div>
 
     <div class="bh-audio">
-        Nghe nhạc online (Bấm <i class="fa fa-play"></i> để nghe nhạc ...)<br>
+        Nghe nhạc online (Bấm <i class="icon-play"></i> để nghe nhạc ...)<br>
         {{-- <audio controls preload="none" src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}">
             Trình duyệt của bạn không hỗ trợ nghe online !
         </audio> --}}

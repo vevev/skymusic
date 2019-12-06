@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Acme\Core;
+use App\Acme\Page;
 use Illuminate\Http\Request;
 use App\Acme\Services\Adapters\LoadSearchData;
 
@@ -32,6 +33,9 @@ class SearchController extends Controller
     {
         $data           = $this->loadSearchData->execute($request->query_string, $request->page ?? 1);
         $data['__core'] = $core;
+
+        Page::$title       = $request->query_string . ' | Tai nhac 123';
+        Page::$description = $request->query_string . ' | Tai nhac 123';
 
         return view(Core::viewPath('search'), $data);
     }

@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="Lagu123" />
 <meta property="og:see_also" content="{{ URL::current() }}" />
 @if (Page::$currentRouteName == 'index')
-<meta name="keywords" content="download lagu, gudang lagu, download lagu gratis, lagu, lagu mp3, lagu terbaru, download lagu terbaru, download lagu dangdut, download lagu barat, download lagu mp3, lagu pop, indo pop, gudang lagu pop, download mp3, mp3 download" />
+<meta name="keywords" content="" />
 {{--Neu nhu nguoi dung dang o index, su dung trinh duyet mobile, nguoi dung toi tu google--}}
-@if(Page::$IS_MOBILE && Page::$CLIENT_FROM_GOOGLE)
+{{-- @if(Page::$IS_MOBILE && Page::$CLIENT_FROM_GOOGLE)
 <script type="text/javascript" src="/system/lagu9.js"></script>
 <script type="text/javascript" src="/system/dlmp3.js"></script>
-@endif
+@endif --}}
 @endif
 <link rel="shortcut icon" href="/ico/favicon.ico">
 <meta name="theme-color" content="#186f92">
