@@ -10,6 +10,7 @@ use App\Acme\Services\Fetchs\FetchHtmlSong;
 use App\Exceptions\SetRelatesFailException;
 use App\Exceptions\UpdateSongFailException;
 use App\Acme\Services\Interacts\CreateSongs;
+use App\Acme\Services\Adapters\LoadTop20Song;
 use App\Acme\Services\Extracts\ExtractSongHtml;
 use App\Exceptions\CreateRelationFailException;
 use App\Acme\Services\Interacts\CreateRelations;
@@ -21,6 +22,7 @@ class LoadSongData
     private $extractSongHtml;
     private $createSongs;
     private $createRelations;
+    private $loadTop20Song;
 
     /**
      * Constructs a new instance.
@@ -31,13 +33,14 @@ class LoadSongData
      * @param      \App\Acme\Services\Interacts\CreateSongs      $createSongs      The create songs
      * @param      \App\Acme\Services\Interacts\CreateRelations  $createRelations  The create relations
      */
-    public function __construct(FetchHtmlSong $fetchHtmlSong, GetSong $getSong, ExtractSongHtml $extractSongHtml, CreateSongs $createSongs, CreateRelations $createRelations)
+    public function __construct(FetchHtmlSong $fetchHtmlSong, GetSong $getSong, ExtractSongHtml $extractSongHtml, CreateSongs $createSongs, CreateRelations $createRelations, LoadTop20Song $loadTop20Song)
     {
         $this->fetchHtmlSong   = $fetchHtmlSong;
         $this->getSong         = $getSong;
         $this->extractSongHtml = $extractSongHtml;
         $this->createSongs     = $createSongs;
         $this->createRelations = $createRelations;
+        $this->loadTop20Song   = $loadTop20Song;
     }
 
     /**
@@ -63,7 +66,12 @@ class LoadSongData
 
         $song->load(['sky'])->relates->load('listens');
 
-        return $song;
+        return [
+            'song'    => $song,
+            'sidebar' => [
+                'primary' => $this->loadTop20Song->execute('vn', 'bai-hat'),
+            ],
+        ];
     }
 
     /**

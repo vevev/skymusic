@@ -17,8 +17,11 @@ class SongController extends Controller
 
     public function index(Request $request, Core $core)
     {
-        $song = $this->loadSongData->execute($request->id);
+        $data = $this->loadSongData->execute($request->id);
 
-        return view(Core::viewPath('song'), ['song' => $song, '__core' => $core]);
+        return view(
+            Core::viewPath('song'),
+            array_merge(['__core' => $core], $data)
+        );
     }
 }

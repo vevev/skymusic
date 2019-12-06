@@ -64,9 +64,7 @@ body,img{
 .ab a,.ellipsis{
     text-overflow:ellipsis
 }
-#report>form>div,.lr,.search,#qr{
-    position:relative
-}
+
 #uptop a:hover,a{
     text-decoration:none
 }
@@ -80,9 +78,7 @@ body{
     font-size:15px;
     color:#000;
 }
-#report>form>div,.download,.download-s,.plmenu a,.table{
-    font-weight:700
-}
+
 h1{
     font-size:18px
 }
@@ -133,28 +129,9 @@ button,input,textarea{
     max-width:600px;
     padding:10px 0
 }
-#main{
-    max-width:1100px;
-    margin:10px auto;
-    background:0 0;
-    padding:5px;
-    box-shadow:0 0 0 0 #000
-}
-#header,.yts{
-    box-shadow:0 0 10px 0 rgba(0,0,0,.16);
-    background:#fff
-}
 #header{
-    color:#000;
-    padding:5px
-}
-.yts{
-    width:98%;
-    margin:30px auto 0
-}
-.yts>.search{
-    width:100%;
-    float:none
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
 }
 .main_search{
     background:#fff;
@@ -169,100 +146,53 @@ button,input,textarea{
     color:#222;
     text-align:justify
 }
-.center,.table{
-    text-align:center
+#main{
+    max-width:1100px;
+    margin:1vw auto;
+    box-shadow:0 0 0 0 #000
 }
-#report{
-    display:none;
-    margin:20px auto;
-    max-width:500px;
-    position:fixed;
-    left:5%;
-    right:5%;
-    top:20%;
-    background:rgba(28,28,28,.9);
-    padding:5px 10px;
-    border-radius:5px
+#main::after, .pc90::after{
+    content: '';
+    display: block;
+    clear: both;
 }
-#report>form{
-    display:block;
-    padding:0
-}
-#report input,#report textarea{
-    width:100%;
-    box-sizing:border-box;
-    padding:10px;
-    margin:5px auto;
-    outline:0;
-    border:1px solid #e6e6e6;
-    border-radius:3px;
-    resize:vertical;
-    font-family:tahoma;
-    font-size:18px;
-    display:block
-}
-#report p{
-    background:rgba(90,90,90,.8);
-    padding:0 2px;
-    border-radius:3px
-}
-#report b::before{
-    content:"\00d7";
-    position:absolute;
-    right:30px;
-    top:5px;
-    font-size:20px;
-    color:#fff;
-    display:block;
-    width:0;
-    height:0;
-    cursor:pointer
-}
-#report p>input{
-    padding:2px;
-    display:inline;
-    font-size:13px;
-    width:25px
-}
-#report p>input[type=submit]{
-    width:auto;
-    float:right
-}
-#report>form>div{
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
-    font-family:Nunito;
-    color:#fff;
-    font-size:20px;
-    background:#222;
-    padding:5px 5px 5px 12px;
-    margin:-10px -10px 10px;
-    display:block
-}
+
 .left-bar,.right-bar{
     background:#fff;
-    margin:10px 1%;
+    margin:0px 0.5%;
     box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
     box-sizing:border-box
 }
 .left-bar{
-    width:58%;
+    width:59%;
     float:left
 }
 .right-bar{
-    width:38%;
+    width:39%;
     float:right
 }
+
+.center,.table{
+    text-align:center
+}
+
 .pc90{
     max-width:1100px;
-    padding:0 1%;
+    padding:10px 1%;
     margin:auto;
-    background:0 0;
     display:block
 }
 .header_info{
     width:45%;
-    float:left
+    float:left;
+    padding-right: 10px;
+}
+.header_info .slog{
+
+}
+.header_info .tip{
+    font-weight: 400;
+    color: #444;
 }
 .search{
     width:45%;
@@ -272,13 +202,7 @@ button,input,textarea{
 .bh-thumb,.left{
     float:left
 }
-.report{
-    padding:2px 5px;
-    background:rgba(213,68,7,1);
-    color:#fff;
-    border-radius:4px;
-    -moz-border-radius:4px
-}
+
 .inline-block{
     display:inline-block
 }
@@ -287,9 +211,6 @@ button,input,textarea{
 }
 .inline{
     display:inline
-}
-.clear{
-    clear:both
 }
 .table{
     border-collapse:collapse;
@@ -334,7 +255,7 @@ td>.play-count{
     position: absolute;
     cursor: pointer;
     bottom: 0;
-    color: #0194dc;
+    color: #065fd4;
     text-decoration: underline;
 }
 
@@ -508,7 +429,7 @@ dd,dl,dt{
 }
 .ht{
     display: block;
-    padding:10px;
+    padding:0 10px 10px 10px;
     color:#000;
     font-size:18px;
     text-transform:none;
@@ -701,10 +622,8 @@ dd{
 }
 .logo{
     background:#1bb5f3;
-    margin:-5px -5px 10px;
     min-width:30%;
-    font-size:100%;
-    padding:15px 2px
+    padding:10px 0px;
 }
 .logo img{
     max-width:250px;
@@ -720,7 +639,6 @@ dd{
     overflow:hidden;
     border:0;
     box-sizing:border-box;
-    background:0 0;
     padding:5px 0
 }
 .search form{
@@ -1054,24 +972,33 @@ ul .loading .thumbnail{
 @media screen and (max-width:768px){
     #main{
         max-width:600px;
+        padding: 0 1%;
     }
     .left-bar,.right-bar{
-        width:98%;
+        width: 100%;
         background:#fff;
         float:none;
-        margin:10px 1%
+        margin:10px 0;
+    }
+    .ht{
+    }
+    .lr{
+        margin-bottom: 10px;
+    }
+    .form{
+        padding-bottom: 10px;
     }
 
     .pc90{
-        width:100%;
+        max-width: 600px;
         margin:auto;
-        background:0 0;
-        display:block
+        display:block;
+        padding: 0 1%;
     }
 
     .header_info,.search{
         width:100%;
-        float:none
+        float: none;
     }
 
     .collapse-menu {
@@ -1096,6 +1023,15 @@ ul .loading .thumbnail{
     }
     .expand.collapse-menu{
         padding-bottom: 0;
+    }
+    .header_info{
+        padding: 0;
+    }
+    .header_info .slog{
+        text-align: center;
+    }
+    .header_info .tip{
+        font-style: italic;
     }
 }
 

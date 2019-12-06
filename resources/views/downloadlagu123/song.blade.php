@@ -66,22 +66,28 @@
     <div class="cate">
         <h3 class="ht">Nhac HOT</h3>
     </div>
-    {{-- @foreach($terbaru as $video)
-        <div class="menu">
-            <div class="detail-thumb">
-                <a href="{{ route('video', ['video_id' => $_song->video_id, 'slug' => $song->slug]) }}" title="Download Mp3 {{ $song->name }}">
-                    <img src="{{ Helper::src($song->video_id) }}" alt="Download Mp3 {{ $song->name }}" title="Download Mp3 {{ $song->name }}" />
-                </a>
-            </div>
-            <div class="detail-info">
-                <b class="ab ellipsis dli block">
-                    <a href="{{ route('video', ['video_id' => $song->video_id, 'slug' => $song->slug]) }}" title="Download musik {{ $song->name }}">{{ $song->name }}</a>
-                </b>
-                <span class="sg">
-                    <b class="play-count">{{ $song->listen }}</b>
-                </span>
-            </div>
+    <div class="collapse-menu">
+    @foreach($sidebar['primary'] as $song)
+    <div class="menu">
+        <div class="detail-thumb">
+            <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
+                <img alt="{{ $song['name'] }}" title="{{ $song['name'] }}" src="{{ $song['thumbnail'] }}" />
+            </a>
         </div>
-    @endforeach --}}
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">{{ $song['name'] }}</a>
+            </h3>
+            <span class="sg">
+                <b class="single">{{ $song['single'] }}</b>
+                @if($song['listen'])
+                <b class="play-count">{{ $song['listen'] }}</b>
+                @endif
+            </span>
+        </div>
+    </div>
+    @endforeach
+    <div class="collapse-view-more">Xem Thêm ...</div>
+    </div>
 </div>
 @endsection
