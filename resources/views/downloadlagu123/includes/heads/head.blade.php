@@ -194,8 +194,11 @@ button,input,textarea{
 }
 .header_info .tip{
     font-weight: 400;
-    color: #444;
-    padding: 15px 0;
+    color: #000;
+    padding: 15px 0 0 0;
+}
+.pc90 .form{
+    margin: 15px 0;
 }
 .search{
     width:45%;
@@ -992,10 +995,9 @@ ul .loading .thumbnail{
     .ht{
     }
     .lr{
-        margin-bottom: 10px;
     }
     .form{
-        padding-bottom: 10px;
+
     }
 
     .pc90{
