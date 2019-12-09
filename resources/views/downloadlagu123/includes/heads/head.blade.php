@@ -4,9 +4,9 @@
 <meta name="MobileOptimized" content="width" />
 <meta content="yes" name="apple-mobile-web-app-capable" />
 <title>{{ Page::$title }}</title>
-{{-- @if(Page::$NO_INDEX) --}}
+@if(Page::$NO_INDEX)
 <meta name="robots" content="noindex">
-{{-- @endif --}}
+@endif
 <meta name="description" content="{{ Page::$description }}" />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="{{ asset('/images/tai-nhac-123.jpg') }}" />

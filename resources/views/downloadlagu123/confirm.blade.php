@@ -3,6 +3,9 @@
 <head>
     <link rel="stylesheet" href="" />
     <link rel="stylesheet" href="{{ asset("/fonts/css/fonts.css?v=" . config('app.version')) }}" media="screen" />
+    @if(Page::$NO_INDEX)
+    <meta name="robots" content="noindex">
+    @endif
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="id" />
     <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />

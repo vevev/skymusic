@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Acme\Core;
+use App\Acme\Page;
 use App\Models\NCTSong;
 
 class ConfirmController extends Controller
@@ -31,6 +32,8 @@ class ConfirmController extends Controller
         if ( ! $song = $this->song->findById($id)) {
             abort(404);
         }
+
+        Page::$NO_INDEX = 1;
 
         return view(Core::viewPath('confirm'), ['song' => $song, '__core' => $this->core]);
     }

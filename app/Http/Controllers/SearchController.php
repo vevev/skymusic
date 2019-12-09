@@ -31,11 +31,13 @@ class SearchController extends Controller
      */
     public function index(Request $request, Core $core)
     {
+
         $data           = $this->loadSearchData->execute($request->query_string, $request->page ?? 1);
         $data['__core'] = $core;
 
         Page::$title       = "Kết quả cho: " . $request->query_string;
         Page::$description = "Kết quả cho: " . $request->query_string;
+        Page::$NO_INDEX    = 1;
 
         return view(Core::viewPath('search'), $data);
     }
