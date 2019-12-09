@@ -318,7 +318,7 @@ td > .play-count {
 
     b {
         &::before {
-            content: '\A022';
+            content: '\A020';
             font-family: 'fonts';
             display: inline-block;
             vertical-align: top;
@@ -632,7 +632,8 @@ a.lcbtn {
     margin: 5px 10px;
 }
 .btnind:before {
-    content: url(/ico/home.png);
+    content: '\A047';
+    font-family: fonts;
     display: inline-block;
     background-size: 100% 100%;
     width: 13px;

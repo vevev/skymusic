@@ -3,12 +3,12 @@
 <div class="btnbox">
 @if (Page::$currentRouteName !== 'index')
 <br />
-<a href="/"  title="Tai nhac 123" class="btnind center">« Home Page</a>
+<a href="/"  title="Tai nhac 123" class="btnind center">Home Page</a>
 </div><br />
 @endif
 
 <div id="footer">
-    <div class="center"><h3 class="f15">Trang web tải bài hát mới nhất, Tải kho Kho bài hát pop miễn phí</h3></div>
+    <div class="center"><h3 class="f15">Trang web tải bài hát mới nhất, Tải kho bài hát mp3 miễn phí</h3></div>
 
 <p align="center">
 </p><br />
