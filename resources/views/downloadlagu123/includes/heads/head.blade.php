@@ -30,7 +30,3 @@
 <link rel="stylesheet" href="{{ asset("/css/app.min.css?v=" . config('app.version')) }}" media="screen" />
 @yield('inject_script')
 @yield('social')
-<style>
-
-
-</style>

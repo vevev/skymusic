@@ -1,7 +1,6 @@
 @extends('downloadlagu123.layouts.app')
 
 @section('link')
-<link rel="stylesheet" href="{{ asset('/css/base/player.css') }}">
 @endsection
 
 @section('content')
