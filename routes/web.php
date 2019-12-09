@@ -14,6 +14,7 @@ Route::get('/mp3/{slug}/{id}.html', 'SongSkymusicController@index')->name('song-
 
 Route::match(['get', 'post'], '/listen/{slug}.{id}.html', 'DownloadController@play')->name('listen');
 Route::get('/{slug}~{id}.html', 'ConfirmController@index')->name('confirm');
+Route::get('/disclaimers.html', 'ConfirmController@disclaimers')->name('disclaimers');
 Route::get('/download/{slug}.{id}.html', 'DownloadController@link')->name('download');
 Route::get('/tim-kiem/{query_string}', 'SearchController@index')->name('search-get');
 Route::get('/search/{query_string}', 'SkymusicSearchController@index')->name('search-skymusic-get');

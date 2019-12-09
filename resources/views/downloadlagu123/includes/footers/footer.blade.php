@@ -16,7 +16,7 @@
 <br></p>
 <p class="center">
 
-<a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a> | <a href="/terms.html" style="color:blue">Hướng dẫn tải nhạc</a>
+<a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a>
 <br><br>
   <a href="/"><img src="/images/icon-tainhac.png" width="50px" alt=""></a><br>
 Blog <b><a href="/">TaiNhac123</a></b> <font size="4">✪</font><br>

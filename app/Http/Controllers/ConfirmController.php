@@ -18,6 +18,14 @@ class ConfirmController extends Controller
         $this->core = $core;
     }
 
+    /**
+     * { function_description }
+     *
+     * @param      string  $slug   The slug
+     * @param      string  $id     The identifier
+     *
+     * @return     <type>  ( description_of_the_return_value )
+     */
     public function index(string $slug, string $id)
     {
         if ( ! $song = $this->song->findById($id)) {
@@ -25,5 +33,18 @@ class ConfirmController extends Controller
         }
 
         return view(Core::viewPath('confirm'), ['song' => $song, '__core' => $this->core]);
+    }
+
+    /**
+     * { function_description }
+     *
+     * @param      string  $slug   The slug
+     * @param      string  $id     The identifier
+     *
+     * @return     <type>  ( description_of_the_return_value )
+     */
+    public function disclaimers()
+    {
+        return view(Core::viewPath('rule'));
     }
 }
