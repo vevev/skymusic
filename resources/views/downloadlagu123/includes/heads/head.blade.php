@@ -19,6 +19,7 @@
 <meta http-equiv="content-language" content="vi"/>
 <link rel="canonical" href="{{ URL::current() }}" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="google-site-verification" content="eYW7hlOMPEryvJXAOdwvh-Q0Hln63WENSZrhbfmlgbg" />
 @yield('meta')
 @yield('link')
 <link rel="stylesheet" href="{{ asset("/fonts/css/fonts.css?v=" . config('app.version')) }}" media="screen" />

@@ -5,6 +5,7 @@
     <p>
     <b>BẢN QUYỀN</b><br />
     • Bản quyền nội dung trên TaiNhac123.Com được cung cấp bởi SkyMusic cùng nhiều nguồn từ internet.
+    </br>
     • Nếu bạn là chủ sở hữu của nội dung xuất hiện trên TaiNhac123.Com mà bạn không mong muốn<br />
     • Xin vui lòng liên hệ qua email <b>ad.tainhac123@gmail.com</b> để được gỡ xuống<br />
     <br />
@@ -12,7 +13,7 @@
     <p style="background-color:#80A5D5"><div class="khung">Giới thiệu về <b>TaiNhac123.Com</b></div></p><br />
     <b>TaiNhac123.Com</b> là một trang web có tính năng tìm và tải nhạc, giúp các bạn có thể tải nhạc về máy 1 cách dễ dàng hơn, tải nhạc hoàn toàn miễn phí trên mobile và cả máy tính PC laptop.<br /><br />
 
-    Bạn có thể tải nhạc trực tiếp về các máy điện thoại: Nokia JAVA, Samsung, LG, HTC, Asus, Oppo, Nokia Windows Phone Lumia</b>.<br/><br/>
+    Bạn có thể tải nhạc trực tiếp về các máy điện thoại: Nokia JAVA, Samsung, LG, HTC, Asus, Oppo, Iphone IOS 13</b>.<br/><br/>
 
     <br /><br />
     <b>* Điều kiện và điều khoản</b><br/><br/>
