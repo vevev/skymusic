@@ -17,6 +17,7 @@ class ExtractPlaylistHtml
         if ( ! preg_match('#<ul id="ulListSongItem".+?</ul>#is', $html, $ul)) {
             return;
         }
+        //https://www.nhaccuatui.com/ajax/get-media-info?key2=79e36a956d4f2b764a7ad25d329b6219
 
         // Lọc ra các row bài hát, nếu không có thì trả lại null
         $patternName = '#(?=<h3[^<>]+id="songInPlaylist_(\d+)"[^><]+><a[^><]+?href="[^"]*\/bai-hat\/([^"\/]+?)\.([^"\/]+?).html">(.+?)<\/a><\/h3>)#';
@@ -40,17 +41,17 @@ class ExtractPlaylistHtml
         $songs = [];
         foreach ($matchesName as $index => $match) {
             $songs[] = [
-                'slug'      => $match[1],
-                'real_id'   => $matchesRealId[$index][1],
+                'slug'      => $match[2],
+                'real_id'   => $match[1],
                 'thumbnail' => 'NO_THUMBNAIL',
-                'song_id'   => $match[2],
-                'name'      => $match[3],
+                'song_id'   => $match[3],
+                'name'      => $match[4],
                 'key'       => $matchesKey[$index][1] ?? null,
                 'single'    => $matchesSingle[$index][1],
             ];
         }
 
-        return [$song, $songs];
+        return [$playlist = null, $songs];
     }
 
     /**

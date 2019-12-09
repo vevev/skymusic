@@ -98,6 +98,7 @@ class LoadPlaylistData
         }
 
         [$_song, $_songs] = $data;
+        dd($_song, $_songs);
         if ( ! $playlist->fill($_song)->save()) {
             throw new UpdateSongFailException;
         }

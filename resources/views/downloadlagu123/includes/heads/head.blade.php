@@ -9,39 +9,24 @@
 {{-- @endif --}}
 <meta name="description" content="{{ Page::$description }}" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="https://lagu123.mobi/ico/download-lagu-gratis.jpg" />
+<meta property="og:image" content="{{ asset('/images/tai-nhac-123.jpg') }}" />
 <meta property="og:title" content="{{ Page::$title }}" />
 <meta property="og:description" content="{{ Page::$description }}" />
 <meta property="og:locale" content="id_ID" />
 <meta property="og:url" content="{{ URL::current() }}" />
-<meta property="og:site_name" content="Lagu123" />
+<meta property="og:site_name" content="Tainhac123" />
 <meta property="og:see_also" content="{{ URL::current() }}" />
-@if (Page::$currentRouteName == 'index')
-<meta name="keywords" content="" />
-{{--Neu nhu nguoi dung dang o index, su dung trinh duyet mobile, nguoi dung toi tu google--}}
-{{-- @if(Page::$IS_MOBILE && Page::$CLIENT_FROM_GOOGLE)
-<script type="text/javascript" src="/system/lagu9.js"></script>
-<script type="text/javascript" src="/system/dlmp3.js"></script>
-@endif --}}
-@endif
 <link rel="shortcut icon" href="/ico/favicon.ico">
 <meta name="theme-color" content="#186f92">
 <meta name="msapplication-navbutton-color" content="#186f92">
 <meta name="apple-mobile-web-app-status-bar-style" content="#186f92">
-<meta name="Language" content="Indonesia"/>
-<meta http-equiv="content-language" content="id"/>
-<meta name="geo.placename" content="Indonesia"/>
-<meta name="geo.position" content="-0.7892750;113.9213270" />
-<meta name="geo.region" content="ID"/>
-<meta name="ICBM" content="-0.7892750, 113.9213270" />
-<meta property="fb:app_id" content="1883823418309926" />
+<meta name="Language" content="Vietnamese"/>
+<meta http-equiv="content-language" content="vi"/>
 <link rel="alternate" href="{{ URL::current() }}" hreflang="id-id" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @yield('meta')
 @yield('link')
-{{-- <link href="{{ mix('css/base/app.css') }}" rel="stylesheet"> --}}
 <link rel="stylesheet" href="{{ asset("/fonts/css/fonts.css?v=" . config('app.version')) }}" media="screen" />
-{{-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet"> --}}
 @yield('inject_script')
 @yield('social')
 <style>

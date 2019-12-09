@@ -5,6 +5,7 @@ namespace App\Acme\Services\Adapters;
 use App\Models\NCTSong;
 use App\Acme\Services\Interacts\GetSong;
 use App\Exceptions\SongNotFoundException;
+use App\Acme\Services\Interacts\CacheSong;
 use App\Exceptions\CrawlSongFailException;
 use App\Acme\Services\Fetchs\FetchHtmlSong;
 use App\Exceptions\SetRelatesFailException;
@@ -22,6 +23,7 @@ class LoadSongData
     private $extractSongHtml;
     private $createSongs;
     private $createRelations;
+    private $cacheSong;
     private $loadTop20Song;
 
     /**
@@ -33,7 +35,7 @@ class LoadSongData
      * @param      \App\Acme\Services\Interacts\CreateSongs      $createSongs      The create songs
      * @param      \App\Acme\Services\Interacts\CreateRelations  $createRelations  The create relations
      */
-    public function __construct(FetchHtmlSong $fetchHtmlSong, GetSong $getSong, ExtractSongHtml $extractSongHtml, CreateSongs $createSongs, CreateRelations $createRelations, LoadTop20Song $loadTop20Song)
+    public function __construct(FetchHtmlSong $fetchHtmlSong, GetSong $getSong, ExtractSongHtml $extractSongHtml, CreateSongs $createSongs, CreateRelations $createRelations, LoadTop20Song $loadTop20Song, CacheSong $cacheSong)
     {
         $this->fetchHtmlSong   = $fetchHtmlSong;
         $this->getSong         = $getSong;
@@ -41,6 +43,7 @@ class LoadSongData
         $this->createSongs     = $createSongs;
         $this->createRelations = $createRelations;
         $this->loadTop20Song   = $loadTop20Song;
+        $this->cacheSong       = $cacheSong;
     }
 
     /**
@@ -55,18 +58,19 @@ class LoadSongData
     public function execute(string $id)
     {
         $song = $this->getSong->execute($id);
-
         if ( ! $song) {
             throw new SongNotFoundException;
-        } else {
-            $song->load('listens');
         }
 
-        if ( ! $song->hasFetched()) {
+        // Neu bai hat da crawl thi tra lai
+        elseif ( ! $song->hasFetched()) {
             $this->fetchAndSaveSong($song);
+            $song->loadCount(['sky'])->relates->load('listens');
         }
 
-        $song->load(['sky'])->relates->load('listens');
+        if ( ! $song->cached) {
+            $this->cacheSong->set($song);
+        }
 
         return [
             'song'    => $song,

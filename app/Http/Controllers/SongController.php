@@ -20,8 +20,8 @@ class SongController extends Controller
     {
         $data = $this->loadSongData->execute($request->id);
 
-        Page::$title       = $data['song']->name . ' | Tai nhac 123';
-        Page::$description = $data['song']->name . ' | Tai nhac 123';
+        Page::$title       = 'Tải bài hát ' . $data['song']->name . ' - Tải nhạc Mp3';
+        Page::$description = 'Tải nhạc Mp3, Tải về bài hát ' . $data['song']->name . ' - tên ca sỹ.  Miễn phí tải về máy, Tải dễ dàng và nhanh chóng.';
 
         return view(
             Core::viewPath('song'),

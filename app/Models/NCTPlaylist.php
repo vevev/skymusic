@@ -14,15 +14,31 @@ class NCTPlaylist extends Model
     public $incrementing = true;
     public $primaryKey   = 'real_id';
     public $timestamps   = true;
-    protected $hidden    = ['pivot', 'listens', 'id', 'created_at', 'updated_at', 'real_id', 'key', 'lyric'];
+    protected $hidden    = [
+        'pivot',
+        'listens',
+        'id',
+        'real_id',
+        'key',
+        'lyric',
+        'created_at',
+        'updated_at',
+    ];
 
-    protected $fillable = ['lyric', 'listen', 'thumbnail', 'key'];
+    protected $fillable = [
+        'lyric',
+        'listen',
+        'thumbnail',
+        'key',
+        'created_at',
+        'updated_at',
+    ];
 
     protected $appends = ['detail_url'];
 
     public function scopeWithPlaylistIds(Builder $query, array $playlist_ids)
     {
-        return $query->whereIn('song_id', $playlist_ids);
+        return $query->whereIn('playlist_id', $playlist_ids);
     }
 
     /**
