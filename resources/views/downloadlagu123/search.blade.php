@@ -4,7 +4,7 @@
 @section('content')
 <div class="main_search">
     <div class="tkbh-top">
-        <h1>Kết quả cho: {{ $query }} mp3</h1>
+        <h1>Kết quả cho: {{ $query }}</h1>
     </div>
 
     @if (isset($results->msg))

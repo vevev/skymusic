@@ -302,8 +302,7 @@ td > .play-count {
 .dli {
     margin: 0;
 }
-.download,
-.download-s {
+.download {
     color: #fff;
     font-weight: 600;
     background: #1fcc00;
@@ -311,22 +310,22 @@ td > .play-count {
     padding: 8px 12px;
     font-size: 15px !important;
     display: inline-block;
-}
-.download-s {
-    background-color: #603ece;
-}
-.download:active,
-.download:hover,
-.download:visited {
-    background: #0f2333;
-}
-.download-s > b::before,
-.download > b::before {
-    content: url(/ico/dl.png);
-    display: inline-block;
-    vertical-align: top;
-    line-height: 15px;
-    height: 15px;
+    &:active,
+    &:hover,
+    &:visited {
+        background: #0f2333;
+    }
+
+    b {
+        &::before {
+            content: '\A022';
+            font-family: 'fonts';
+            display: inline-block;
+            vertical-align: top;
+            line-height: 15px;
+            height: 15px;
+        }
+    }
 }
 .listen::before {
     content: '';
