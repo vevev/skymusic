@@ -8,9 +8,9 @@
     <div class="collapse-menu">
     @foreach($data['main'] as $song)
     <div class="menu">
-        <div class="detail-thumb">
+        <div class="detail-thumb thumb">
             <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
-                <img alt="{{ $song['name'] }}" title="{{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" class="thumb" />
+                <img alt="{{ $song['name'] }}" title="{{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
             </a>
         </div>
         <div class="detail-info">
@@ -39,7 +39,7 @@
         <div class="collapse-menu">
         @foreach($data['sidebar']['primary'] as $song)
         <div class="menu">
-            <div class="detail-thumb">
+            <div class="detail-thumb thumb">
                 <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
                     <img alt="{{ $song['name'] }}" title="{{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" class="thumb" />
                 </a>
