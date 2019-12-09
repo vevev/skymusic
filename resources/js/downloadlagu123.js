@@ -61,7 +61,6 @@ const view_more_elements = document.getElementsByClassName('collapse-view-more')
 function loadImage(img) {
     img.setAttribute('src', img.dataset.src);
     img.dataset.loaded = true;
-    console.log('load');
 }
 
 function lazyLoadImg(thumb) {
