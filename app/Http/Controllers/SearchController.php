@@ -49,21 +49,16 @@ class SearchController extends Controller
      */
     public function post(Request $request)
     {
-        if ($query_string = $request->get('q')) {
-            if ($request->ajax()) {
-                return response()
-                    ->json(
-                        $this->loadSearchData
-                             ->execute(
-                                  $query_string,
-                                  $request->page ?? 1
-                              )
-                    );
-            }
-
-            return redirect(route('search-get', ['query_string' => $query_string]), 301);
+        if ( ! $query_string = $request->get('q')) {
+            return view('search-query-error');
         }
 
-        return view('search-query-error');
+        if ($request->ajax()) {
+            $response = $this->loadSearchData->execute($query_string, $request->page ?? 1);
+
+            return response()->json($response);
+        }
+
+        return redirect(route('search-get', ['query_string' => $query_string]), 301);
     }
 }
