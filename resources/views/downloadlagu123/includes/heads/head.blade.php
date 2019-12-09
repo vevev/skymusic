@@ -12,13 +12,12 @@
 <meta property="og:image" content="{{ asset('/images/tai-nhac-123.jpg') }}" />
 <meta property="og:title" content="{{ Page::$title }}" />
 <meta property="og:description" content="{{ Page::$description }}" />
-<link rel="shortcut icon" href="/ico/favicon.ico">
+<link rel="shortcut icon" href="/images/favicon.ico">
 <meta name="theme-color" content="#186f92">
 <meta name="msapplication-navbutton-color" content="#186f92">
 <meta name="apple-mobile-web-app-status-bar-style" content="#186f92">
 <meta http-equiv="content-language" content="vi"/>
 <link rel="canonical" href="{{ URL::current() }}" />
-<link rel="alternate" href="{{ URL::current() }}" hreflang="id-id" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @yield('meta')
 @yield('link')
