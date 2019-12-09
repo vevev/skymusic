@@ -34,8 +34,8 @@ class SearchController extends Controller
         $data           = $this->loadSearchData->execute($request->query_string, $request->page ?? 1);
         $data['__core'] = $core;
 
-        Page::$title       = $request->query_string . ' | Tai nhac 123';
-        Page::$description = $request->query_string . ' | Tai nhac 123';
+        Page::$title       = "Kết quả cho: " . $request->query_string;
+        Page::$description = "Kết quả cho: " . $request->query_string;
 
         return view(Core::viewPath('search'), $data);
     }
