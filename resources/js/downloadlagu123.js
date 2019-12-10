@@ -58,25 +58,25 @@ const view_more_elements = document.getElementsByClassName('collapse-view-more')
     })
 );
 
-function loadImage(img) {
+const loadImage = img => {
     img.setAttribute('src', img.dataset.src);
     img.dataset.loaded = true;
-}
+};
 
-function lazyLoadImg(thumb) {
-    new IntersectionObserver(function(e) {
+const lazyLoadImage = thumb => {
+    new IntersectionObserver(e => {
         var img = e[0].target.querySelector('img');
         if (e[0].isIntersecting && !img.dataset.loaded) {
             loadImage(img);
         }
     }).observe(thumb);
-}
+};
 
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', event => {
     var lazyLoad = 0,
         thumbs = document.getElementsByClassName('thumb');
     if ('IntersectionObserver' in window) lazyLoad = 1;
-    [].slice.call(thumbs).forEach(function(thumb) {
-        lazyLoad ? lazyLoadImg(thumb) : loadImage(thumb.querySelector('img'));
+    [].slice.call(thumbs).forEach(thumb => {
+        lazyLoad ? lazyLoadImage(thumb) : loadImage(thumb.querySelector('img'));
     });
 });
