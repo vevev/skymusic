@@ -104,6 +104,7 @@ textarea {
     margin: 0px 0.5%;
     box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
     box-sizing: border-box;
+    border-radius: 3px;
 }
 .left-bar {
     width: 59%;
@@ -112,10 +113,11 @@ textarea {
 .right-bar {
     width: 39%;
     float: right;
+    &:not(:first-child) {
+        margin-top: 10px;
+    }
 }
-.right-bar:not(:first-child) {
-    margin-top: 10px;
-}
+
 .center,
 .table {
     text-align: center;
@@ -355,10 +357,7 @@ textarea {
     font-family: fonts;
     padding-right: 5px;
 }
-dd,
-dt {
-    margin: 0;
-}
+
 .ab a {
     color: #1a0dab;
     font-size: 16px;
@@ -373,11 +372,7 @@ dt {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-dd,
-dl,
-dt {
-    display: inline;
-}
+
 .ht {
     display: block;
     padding: 0 10px 10px 10px;
@@ -403,70 +398,81 @@ h1.ht {
     color: #555;
     padding-left: 5px;
 }
+
 dd,
 dl,
 dt {
+    display: inline;
     padding: 0;
 }
-a {
-    color: #00f;
-}
+
 dl {
     margin: 0 3px 0 0;
     font-size: 12px;
+    dd,
+    dt {
+        margin: 0;
+    }
+    dt {
+        color: #8f8f8f;
+    }
+    dd {
+        color: #4f4f4f;
+        font-size: 14px;
+    }
 }
-dt {
-    color: #8f8f8f;
-}
-dd {
-    color: #4f4f4f;
-    font-size: 14px;
-}
-.bh-thumb,
-.bh-thumb img {
-    width: 60px;
-    height: 60px;
-    margin-top: 0px;
+
+a {
+    color: #00f;
 }
 .bh-thumb {
     text-align: center;
     display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin-top: 0px;
+    .bh-thumb img {
+        padding: 0;
+        border: 4px solid rgba(0, 0, 0, 0.04);
+        box-sizing: border-box;
+        border-radius: 2px;
+        width: 60px;
+        height: 60px;
+        margin-top: 0px;
+    }
 }
-.bh-info,
-.bxh-top,
-.bxh-top-firt {
-    text-align: justify;
-}
-.bh-thumb img {
-    padding: 0;
-    border: 4px solid rgba(0, 0, 0, 0.04);
-    box-sizing: border-box;
-    border-radius: 2px;
-}
+
 .lr,
 audio {
     width: 100%;
 }
-.bh-caption,
+
 .bh-top {
     border: 0;
     padding: 0px 10px;
     margin: 5px auto;
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
 }
-.bh-top:after {
-    display: block;
-    content: '';
-    clear: both;
+
+.bh-caption {
+    border: 0;
+    padding: 0px 10px;
+    margin: 5px auto;
+    h2,
+    h3 {
+        font-size: 15px;
+        display: inline-block;
+        margin: 0;
+    }
 }
+
 .bxh-ico,
 .lr {
     border-radius: 0px;
-}
-.bh-caption > h2,
-.bh-caption > h3 {
-    font-size: 15px;
-    display: inline-block;
-    margin: 0;
 }
 
 .bh-info {
@@ -489,10 +495,12 @@ audio {
 .bh-audio {
     padding: 30px 10px;
 }
+
 .bh-lyric {
     padding: 2px 5px;
     overflow-y: hidden;
 }
+
 .lr {
     padding: 10px 10px 30px 10px;
     box-sizing: border-box;
@@ -557,10 +565,10 @@ a.lcbtn {
     border-bottom: 1px solid #f2f2f2;
     font-size: 12px;
     font-style: normal !important;
-}
-.tkbh-top h1 {
-    font-size: 18px;
-    color: #000;
+    h1 {
+        font-size: 18px;
+        color: #000;
+    }
 }
 .btnind,
 .btnl,
