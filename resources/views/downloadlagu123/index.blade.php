@@ -32,7 +32,7 @@
 @endsection
 
 @section('sidebar')
-    <div class="right-bar">
+{{--     <div class="right-bar">
         <div class="cate">
             <b class="ht">Tải Nhạc Mp3 Hay khác</b>
         </div>
@@ -59,8 +59,8 @@
         @endforeach
         <p class="collapse-view-more">Xem Thêm ...</p>
         </div>
-    </div>
-{{--     <div class="right-bar">
+    </div> --}}
+    <div class="right-bar">
         <div class="cate">
             <b class="ht">Tải Nhạc Mp3 Hay khác</b>
         </div>
@@ -87,5 +87,5 @@
         @endforeach
         <p class="collapse-view-more">Xem Thêm ...</p>
         </div>
-    </div> --}}
+    </div>
 @endsection

@@ -53,10 +53,10 @@ class Handler extends ExceptionHandler
             Page::$title       = "Không tìm thấy nội dung !";
             Page::$description = "Không tìm thấy nội dung !";
 
-            return view(
+            return response()->make(view(
                 Core::viewPath('404'),
                 ['message' => 'Bai Hat Khong Ton Tai']
-            );
+            ), 404);
         }
 
         return parent::render($request, $exception);
