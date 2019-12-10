@@ -3,7 +3,7 @@
 <div class="btnbox">
 @if (Page::$currentRouteName !== 'index')
 <br />
-<a href="/"  title="Tai nhac 123" class="btnind center">Home Page</a>
+<a href="/"  title="Tải nhạc mp3 miễn phí" class="btnind center">Home Page</a>
 </div><br />
 @endif
 
@@ -18,7 +18,7 @@
 
 <a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a>
 <br><br>
-  <a href="/"><img src="/images/icon-tainhac.png" width="50px" alt=""></a><br>
+  <a href="/" aria-label="Tải nhạc mp3 miễn phí"><img src="/images/icon-tainhac.png" width="50px" alt="Tải nhạc 123"></a><br>
 Blog <b><a href="/">TaiNhac123</a></b> <font size="4">✪</font><br>
 Contact: ad.tainhac123@gmail.com<br>
 ♪ <b>FULL SONG FOR YOU</b> ♫<br>
