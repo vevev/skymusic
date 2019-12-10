@@ -51,8 +51,8 @@ class CreateSongs
 
         if ($returnModels) {
             return $this->song
-                        ->findBySongIds($song_ids)
-                        ->sortBy(function ($song) use ($song_ids) {
+                        ->findBySongIds($array_song_ids)
+                        ->sortBy(function ($song) use ($array_song_ids) {
                             return array_search($song->song_id, $array_song_ids);
                         })->values();
         }
