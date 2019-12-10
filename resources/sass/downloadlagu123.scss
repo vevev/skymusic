@@ -26,7 +26,7 @@ body {
     background: #f2f2f2;
     padding: 0;
     margin: 0 auto;
-    font-family: arial, sans-serif;
+    font-family: helvetica, arial, sans-serif;
     font-weight: 400;
     line-height: 1.42857;
     font-size: 15px;
@@ -275,16 +275,10 @@ textarea {
     padding: 8px 12px;
     font-size: 15px !important;
     display: inline-block;
-    &:active,
-    &:hover,
-    &:visited {
-        background: #0f2333;
-    }
-
     b {
         &::before {
-            content: '\A020';
-            font-family: 'fonts';
+            //content: '\A020';
+            //font-family: 'fonts';
             display: inline-block;
             vertical-align: top;
         }
@@ -872,10 +866,10 @@ ul .item {
     }
 
     .collapse-view-more {
-        display: block;
+        display: none;
     }
 
-    .collapse-menu .menu:nth-of-type(n + 8) {
+    .collapse-menu .menu:nth-of-type(n + 30) {
         display: none;
         height: 0%;
     }

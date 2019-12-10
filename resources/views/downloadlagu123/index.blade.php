@@ -5,7 +5,7 @@
     <div class="cate">
         <h2 class="ht">Tải Nhạc Mp3 Hay - BXH</h2>
     </div>
-    <div class="collapse-menu">
+    {{-- <div class="collapse-menu"> --}}
     @foreach($data['main'] as $song)
     <div class="menu">
         <div class="detail-thumb thumb">
@@ -26,8 +26,8 @@
         </div>
     </div>
     @endforeach
-    <p class="collapse-view-more">Xem Thêm ...</p>
-    </div>
+    {{-- <p class="collapse-view-more">Xem Thêm ...</p>
+    </div> --}}
 </div>
 @endsection
 

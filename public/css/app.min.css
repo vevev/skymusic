@@ -31,7 +31,7 @@ body {
   background: #f2f2f2;
   padding: 0;
   margin: 0 auto;
-  font-family: arial, sans-serif;
+  font-family: helvetica, arial, sans-serif;
   font-weight: 400;
   line-height: 1.42857;
   font-size: 15px;
@@ -306,15 +306,7 @@ textarea {
   display: inline-block;
 }
 
-.download:active,
-.download:hover,
-.download:visited {
-  background: #0f2333;
-}
-
 .download b::before {
-  content: "ꀠ";
-  font-family: "fonts";
   display: inline-block;
   vertical-align: top;
 }
@@ -965,10 +957,10 @@ ul .item {
   }
 
   .collapse-view-more {
-    display: block;
+    display: none;
   }
 
-  .collapse-menu .menu:nth-of-type(n + 8) {
+  .collapse-menu .menu:nth-of-type(n + 30) {
     display: none;
     height: 0%;
   }
