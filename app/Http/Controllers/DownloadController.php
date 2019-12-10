@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Acme\Services\Fetchs\CrawlDownloadLink;
 use App\Models\NCTSong;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
-<<<<<<< HEAD
-use Illuminate\Support\Facades\Request;
-=======
 use App\Acme\Services\Fetchs\CrawlDownloadLink;
->>>>>>> origin/master
 
 class DownloadController extends Controller
 {
@@ -32,15 +27,7 @@ class DownloadController extends Controller
      */
     public function __construct(CrawlDownloadLink $crawler, NCTSong $song, Carbon $carbon, Request $request)
     {
-<<<<<<< HEAD
-        $this->crawler = $crawler;
-        $this->song = $song;
-        $this->carbon = $carbon;
 
-        $this->slug = Request::route('slug');
-        $this->id = Request::route('id');
-        $this->cache_key = 'dl:' . $this->id;
-=======
         $this->crawler   = $crawler;
         $this->song      = $song;
         $this->carbon    = $carbon;
@@ -49,7 +36,6 @@ class DownloadController extends Controller
         $this->id        = $request->route('id');
         $this->cache_key = 'link:' . $this->id;
         $this->re_cache  = $this->request->header('ReCache');
->>>>>>> origin/master
     }
 
     /**
@@ -66,7 +52,7 @@ class DownloadController extends Controller
         }
 
         // Kiểm tra xem trong DB có bài hát này hay chưa, nếu chưa sẽ trả lại //
-        if (!$song = $this->song->findById($this->id)) {
+        if ( ! $song = $this->song->findById($this->id)) {
             return '//';
         }
 
@@ -93,7 +79,7 @@ class DownloadController extends Controller
     /**
      * Gets the link from cache.
      *
-     * @return     <type>  The link from cache.
+     * @return <type> The link from cache.
      */
     private function getLinkFromCache()
     {
@@ -107,7 +93,7 @@ class DownloadController extends Controller
     /**
      * Sets the cache link.
      *
-     * @param      string  $link     The new value
+     * @param string $link The new value
      */
     private function setCacheLink(string $link)
     {
@@ -132,7 +118,7 @@ class DownloadController extends Controller
         }
 
         // Kiểm tra xem trong DB có bài hát này hay chưa, nếu chưa sẽ trả lại //
-        if (!$song = $this->song->findById($this->id)) {
+        if ( ! $song = $this->song->findById($this->id)) {
             return '//';
         }
 
