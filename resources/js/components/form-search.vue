@@ -244,7 +244,7 @@ form {
             background: transparent;
         }
         .search-btn {
-            background: #22a6f7;
+            background: #0000ff;
             color: #fff;
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
