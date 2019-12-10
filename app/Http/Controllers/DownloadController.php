@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Acme\Services\Fetchs\CrawlDownloadLink;
 use App\Models\NCTSong;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
+<<<<<<< HEAD
+use Illuminate\Support\Facades\Request;
+=======
 use App\Acme\Services\Fetchs\CrawlDownloadLink;
+>>>>>>> origin/master
 
 class DownloadController extends Controller
 {
@@ -27,6 +32,15 @@ class DownloadController extends Controller
      */
     public function __construct(CrawlDownloadLink $crawler, NCTSong $song, Carbon $carbon, Request $request)
     {
+<<<<<<< HEAD
+        $this->crawler = $crawler;
+        $this->song = $song;
+        $this->carbon = $carbon;
+
+        $this->slug = Request::route('slug');
+        $this->id = Request::route('id');
+        $this->cache_key = 'dl:' . $this->id;
+=======
         $this->crawler   = $crawler;
         $this->song      = $song;
         $this->carbon    = $carbon;
@@ -35,6 +49,7 @@ class DownloadController extends Controller
         $this->id        = $request->route('id');
         $this->cache_key = 'link:' . $this->id;
         $this->re_cache  = $this->request->header('ReCache');
+>>>>>>> origin/master
     }
 
     /**
@@ -51,14 +66,22 @@ class DownloadController extends Controller
         }
 
         // Kiểm tra xem trong DB có bài hát này hay chưa, nếu chưa sẽ trả lại //
-        if ( ! $song = $this->song->findById($this->id)) {
+        if (!$song = $this->song->findById($this->id)) {
             return '//';
         }
 
-        $link = $this->crawler->crawl($song->song_id);
-        if (is_string($link)) {
+        // Lay link iframe
+        if ($link = $this->crawler->getLinkIframe($song->key)) {
             $this->setCacheLink($link);
-        } elseif ($link = $this->crawler->crawlLinkPlay($song->key)) {
+        }
+
+        // Lay link download
+        elseif ($link = $this->crawler->crawl($song->song_id)) {
+            $this->setCacheLink($link);
+        }
+
+        // lay link play
+        elseif ($link = $this->crawler->crawlLinkPlay($song->key)) {
             $this->setCacheLink($link);
         }
 
@@ -109,7 +132,7 @@ class DownloadController extends Controller
         }
 
         // Kiểm tra xem trong DB có bài hát này hay chưa, nếu chưa sẽ trả lại //
-        if ( ! $song = $this->song->findById($this->id)) {
+        if (!$song = $this->song->findById($this->id)) {
             return '//';
         }
 

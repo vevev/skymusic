@@ -5,17 +5,17 @@
     <div class="cate">
         <h2 class="ht">Tải Nhạc Mp3 Hay - BXH</h2>
     </div>
-    <div class="collapse-menu">
+    {{-- <div class="collapse-menu"> --}}
     @foreach($data['main'] as $song)
     <div class="menu">
         <div class="detail-thumb thumb">
-            <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
-                <img alt="{{ $song['name'] }}" title="{{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
+            <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
+                <img alt="Tải bài hát {{ $song['name'] }}" title="Tải bài hát {{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
             </a>
         </div>
         <div class="detail-info">
             <h3 class="ab ellipsis dli">
-                <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">{{ $song['name'] }}</a>
+                <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">{{ $song['name'] }}</a>
             </h3>
             <span class="sg">
                 <b class="single">{{ $song['single'] }}</b>
@@ -26,13 +26,13 @@
         </div>
     </div>
     @endforeach
-    <p class="collapse-view-more">Xem Thêm ...</p>
-    </div>
+    {{-- <p class="collapse-view-more">Xem Thêm ...</p>
+    </div> --}}
 </div>
 @endsection
 
 @section('sidebar')
-    <div class="right-bar">
+{{--     <div class="right-bar">
         <div class="cate">
             <b class="ht">Tải Nhạc Mp3 Hay khác</b>
         </div>
@@ -40,13 +40,13 @@
         @foreach($data['sidebar']['primary'] as $song)
         <div class="menu">
             <div class="detail-thumb thumb">
-                <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
-                    <img alt="{{ $song['name'] }}" title="{{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
+                <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
+                    <img alt="Tải bài hát {{ $song['name'] }}" title="Tải bài hát {{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
                 </a>
             </div>
             <div class="detail-info">
                 <h3 class="ab ellipsis dli">
-                    <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">{{ $song['name'] }}</a>
+                    <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">{{ $song['name'] }}</a>
                 </h3>
                 <span class="sg">
                     <b class="single">{{ $song['single'] }}</b>
@@ -59,8 +59,8 @@
         @endforeach
         <p class="collapse-view-more">Xem Thêm ...</p>
         </div>
-    </div>
-{{--     <div class="right-bar">
+    </div> --}}
+    <div class="right-bar">
         <div class="cate">
             <b class="ht">Tải Nhạc Mp3 Hay khác</b>
         </div>
@@ -87,5 +87,5 @@
         @endforeach
         <p class="collapse-view-more">Xem Thêm ...</p>
         </div>
-    </div> --}}
+    </div>
 @endsection

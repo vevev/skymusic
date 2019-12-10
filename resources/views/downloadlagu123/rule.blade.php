@@ -4,7 +4,7 @@
 <div class="main_search" style="padding: 10px">
     <p>
     <b>BẢN QUYỀN</b><br />
-    • Bản quyền nội dung trên TaiNhac123.Com được cung cấp bởi SkyMusic cùng nhiều nguồn từ internet.
+    • Bản quyền nội dung trên TaiNhac123.Com được cung cấp bởi SkyMusic.
     </br>
     • Nếu bạn là chủ sở hữu của nội dung xuất hiện trên TaiNhac123.Com mà bạn không mong muốn<br />
     • Xin vui lòng liên hệ qua email <b>ad.tainhac123@gmail.com</b> để được gỡ xuống<br />
@@ -19,7 +19,7 @@
     <b>* Điều kiện và điều khoản</b><br/><br/>
     <b>Khuyến cáo: không khuyến khích trẻ em dưới 16 tuổi sử dụng website này.</b>
     <br/><br/>
-    - Nguồn nhạc trên trang được hỗ trợ bởi <b>SkyMusic</b>, <b>Zing Mp3</b> , <b>NhacCuaTui</b> và <b>NhacVui</b>. Tải về điện thoại và máy tính hoàn toàn miễn phí. Chúng tôi không thu bất cứ 1 khoản phí nào.<br/>
+    - Nguồn nhạc trên trang được hỗ trợ bởi <b>SkyMusic</b>. Tải về điện thoại và máy tính hoàn toàn miễn phí. Chúng tôi không thu bất cứ 1 khoản phí nào.<br/>
     - Nghiêm cấm việc hành vi tải nhạc về để kinh doanh buôn bán dưới mọi hình thức khi chưa có sự cho phép của tác giả bài hát.<br/>
     - Để tải được nhạc và các ứng dụng các bạn sẽ phải trả cước phí intenet, 3G cho các nhà mạng. Chúng tôi không thu bất kỳ 1 khoản phí nào cả từ việc tải nhạc.<br/><br />
     <b>* Chính sách bảo mật</b><br />
