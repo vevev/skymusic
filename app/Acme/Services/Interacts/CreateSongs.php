@@ -28,21 +28,24 @@ class CreateSongs
     {
         $songs = collect($songs);
 
-        $song_ids = $songs->pluck('song_id')->toArray();
+        $collect_song_ids = $songs->pluck('song_id');
+        $array_song_ids   = $collect_song_ids->toArray();
 
-        $savedSongs = $this->song->findBySongIds($song_ids);
+        $savedSongs = $this->song->findBySongIds($array_song_ids);
 
         if ($savedSongs->count() === count($songs)) {
-            return $savedSongs->sortBy(function ($song) use ($song_ids) {
-                return array_search($song->song_id, $song_ids);
+            return $savedSongs->sortBy(function ($song) use ($array_song_ids) {
+                return array_search($song->song_id, $array_song_ids);
             })->values();
         }
 
-        $savedSongs->map(function ($song) use (&$songs) {
-            unset($songs[$song->song_id]);
+        $keys = $savedSongs->map(function ($song) use ($array_song_ids) {
+            return array_search($song->song_id, $array_song_ids);
+        })->map(function ($key) use (&$songs) {
+            $songs->forget($key);
         });
 
-        if ( ! $this->song->insert($songs)) {
+        if ( ! $this->song->insert($songs->toArray())) {
             return false;
         }
 
@@ -50,7 +53,7 @@ class CreateSongs
             return $this->song
                         ->findBySongIds($song_ids)
                         ->sortBy(function ($song) use ($song_ids) {
-                            return array_search($song->song_id, $song_ids);
+                            return array_search($song->song_id, $array_song_ids);
                         })->values();
         }
 
