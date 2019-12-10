@@ -249,8 +249,8 @@ form {
             color: #fff;
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
-            padding: 0px 15px;
-            font-size: 14px;
+            padding: 0px 20px;
+            font-size: 16px;
             font-weight: 600;
             &:before {
                 content: '\A005';

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Acme\Core;
+use App\Acme\Page;
 use Illuminate\Http\Request;
 use App\Acme\Services\Adapters\LoadSongData;
 
@@ -17,8 +18,14 @@ class SongController extends Controller
 
     public function index(Request $request, Core $core)
     {
-        $song = $this->loadSongData->execute($request->id);
+        $data = $this->loadSongData->execute($request->id);
 
-        return view(Core::viewPath('song'), ['song' => $song, '__core' => $core]);
+        Page::$title       = 'Tải bài hát ' . $data['song']->name . ' - Tải nhạc Mp3';
+        Page::$description = 'Tải nhạc Mp3, Tải về bài hát ' . $data['song']->name . ' - ' . $data['song']->single . '.  Miễn phí tải về máy, Tải dễ dàng và nhanh chóng.';
+
+        return view(
+            Core::viewPath('song'),
+            array_merge(['__core' => $core], $data)
+        );
     }
 }

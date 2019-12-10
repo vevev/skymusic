@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class NCTRelate extends Model
 {
-    protected $table     = 'nct_relates';
+    protected $table     = 'nct_song_song';
     public $incrementing = true;
     public $primaryKey   = 'song_id';
     public $timestamps   = true;

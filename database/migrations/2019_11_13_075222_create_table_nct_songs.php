@@ -19,12 +19,12 @@ class CreateTableNctSongs extends Migration
             $table->bigIncrements('id');
             $table->string('name', 255);
             $table->string('single', 255);
-            $table->bigInteger('listen')->default(0);
             $table->string('slug', 255);
             $table->text('lyric')->nullable();
             $table->string('key', 255)->nullable();
             $table->string('thumbnail', 255)->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

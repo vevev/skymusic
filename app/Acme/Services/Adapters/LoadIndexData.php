@@ -18,7 +18,11 @@ class LoadIndexData
         $main = $this->loadTop20Song->execute('vn', 'bai-hat');
 
         return [
-            'main' => $main,
+            'main'    => $main,
+            'sidebar' => [
+                'primary'   => $this->loadTop20Song->execute('us', 'bai-hat'),
+                'secondary' => $this->loadTop20Song->execute('kr', 'bai-hat'),
+            ],
         ];
     }
 }

@@ -2,7 +2,7 @@ require('./bootstrap');
 
 const Lyric = require('./components/downloadlagu123/show-song-lyric').default;
 const Search = require('./components/downloadlagu123/form-search').default;
-const AudioPlayer = require('./components/downloadlagu123/audio-player').default;
+const AudioPlayer = require('./components/downloadlagu123/audio-player-default').default;
 const LoadMoreSearchSong = require('./components/downloadlagu123/load-more-search-song').default;
 var vm = null;
 
@@ -50,3 +50,33 @@ if ((vm = document.getElementById('load-more-result'))) {
         template: `<LoadMoreSearchSong  :query="query" :api="api"> </LoadMoreSearchSong>`,
     });
 }
+
+const view_more_elements = document.getElementsByClassName('collapse-view-more');
+[].slice.call(view_more_elements).map(e =>
+    e.addEventListener('click', function(e) {
+        e.target.parentElement.classList.add('expand');
+    })
+);
+
+const loadImage = img => {
+    img.setAttribute('src', img.dataset.src);
+    img.dataset.loaded = true;
+};
+
+const lazyLoadImage = thumb => {
+    new IntersectionObserver(e => {
+        var img = e[0].target.querySelector('img');
+        if (e[0].isIntersecting && !img.dataset.loaded) {
+            loadImage(img);
+        }
+    }).observe(thumb);
+};
+
+document.addEventListener('DOMContentLoaded', event => {
+    var lazyLoad = 0,
+        thumbs = document.getElementsByClassName('thumb');
+    if ('IntersectionObserver' in window) lazyLoad = 1;
+    [].slice.call(thumbs).forEach(thumb => {
+        lazyLoad ? lazyLoadImage(thumb) : loadImage(thumb.querySelector('img'));
+    });
+});

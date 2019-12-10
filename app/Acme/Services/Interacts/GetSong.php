@@ -20,13 +20,12 @@ class GetSong
 
     public function execute(string $id)
     {
-        $song = Cache::store('file')->get($id);
-        if (null != $song) {
+        if ($song = Cache::store('redis')->get('song:' . $id)) {
+            $song->cached = true;
+
             return $song;
         }
 
-        if ($song = $this->song->findById($id)) {
-            return $song;
-        }
+        return $this->song->findById($id);
     }
 }

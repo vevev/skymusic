@@ -28,7 +28,10 @@ class ExtractSearchHtml
             return;
         }
 
-        $patternSrc = '#(?=data-src="([^"]+?)")#i';
+        $patternSrc = '#(?=src="([^"]+?)")#i';
+        preg_match_all($patternSrc, $html, $matchesPrimarySrc, PREG_SET_ORDER);
+
+        $patternSrc = '#(?=data-src="([^"]*?)")#i';
         if ( ! preg_match_all($patternSrc, $html, $matchesSrc, PREG_SET_ORDER)) {
             return;
         }
@@ -46,11 +49,11 @@ class ExtractSearchHtml
         $songs = [];
         foreach ($matchesName as $index => $match) {
             preg_match_all('#(?=<a[^>]+?>(.+?)</a>)#', $matchesSingle[$index][0], $single);
-
+            $thumb   = $matchesSrc[$index][1] ? $matchesSrc[$index][1] : $matchesPrimarySrc[$index][1];
             $songs[] = [
                 'slug'      => $match[1],
                 'real_id'   => $matchesRealId[$index][1],
-                'thumbnail' => $matchesSrc[$index][1],
+                'thumbnail' => $thumb,
                 'song_id'   => $match[2],
                 'name'      => $match[3],
                 'key'       => $matchesKey[$index][1],

@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'fonts';
-  src: url('../font/fonts.eot?55821547');
-  src: url('../font/fonts.eot?55821547#iefix') format('embedded-opentype'),
-       url('../font/fonts.woff2?55821547') format('woff2'),
-       url('../font/fonts.woff?55821547') format('woff'),
-       url('../font/fonts.ttf?55821547') format('truetype'),
-       url('../font/fonts.svg?55821547#fonts') format('svg');
+  src: url('../font/fonts.eot?59797760');
+  src: url('../font/fonts.eot?59797760#iefix') format('embedded-opentype'),
+       url('../font/fonts.woff2?59797760') format('woff2'),
+       url('../font/fonts.woff?59797760') format('woff'),
+       url('../font/fonts.ttf?59797760') format('truetype'),
+       url('../font/fonts.svg?59797760#fonts') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fonts';
-    src: url('../font/fonts.svg?55821547#fonts') format('svg');
+    src: url('../font/fonts.svg?59797760#fonts') format('svg');
   }
 }
 */
@@ -99,3 +99,6 @@
 .icon-menu-2:before { content: '\a044'; } /* 'ꁄ' */
 .icon-menu:before { content: '\a045'; } /* 'ꁅ' */
 .icon-menu-1:before { content: '\a046'; } /* 'ꁆ' */
+.icon-home:before { content: '\a047'; } /* 'ꁇ' */
+.icon-home-1:before { content: '\a048'; } /* 'ꁈ' */
+.icon-home-2:before { content: '\a049'; } /* 'ꁉ' */

@@ -43,3 +43,6 @@
 .icon-menu-2:before { content: '\a044'; } /* 'ꁄ' */
 .icon-menu:before { content: '\a045'; } /* 'ꁅ' */
 .icon-menu-1:before { content: '\a046'; } /* 'ꁆ' */
+.icon-home:before { content: '\a047'; } /* 'ꁇ' */
+.icon-home-1:before { content: '\a048'; } /* 'ꁈ' */
+.icon-home-2:before { content: '\a049'; } /* 'ꁉ' */

@@ -38,6 +38,6 @@ class SKYMUSIC_Song extends Model
 
     public function relates()
     {
-        return $this->belongsToMany(NCTSong::class, 'nct_relates', 'key', 'relate_id', 'key', 'key');
+        return $this->belongsToMany(NCTSong::class, 'nct_song_song', 'key', 'relate_id', 'key', 'key');
     }
 }

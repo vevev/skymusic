@@ -17,7 +17,7 @@ class NCTSong extends Model
 
     protected $fillable = ['lyric', 'listen', 'thumbnail', 'key'];
 
-    protected $appends = ['detail_url'];
+    protected $appends = ['detail_url', 'listen'];
 
     public function scopeWithSongIds(Builder $query, array $song_ids)
     {
@@ -41,9 +41,9 @@ class NCTSong extends Model
      * @param  array  $song_ids       [description]
      * @return [type] [description]
      */
-    public function findById(string $song_id)
+    public function findById(string $song_id, array $get = ['*'])
     {
-        return $this->where('song_id', $song_id)->first();
+        return $this->with('listens')->where('song_id', $song_id)->first($get);
     }
 
     /**
@@ -53,7 +53,11 @@ class NCTSong extends Model
      */
     public function relates()
     {
-        return $this->belongsToMany($this, 'nct_relates', 'song_id', 'relate_id', 'song_id', 'song_id');
+        return $this->belongsToMany($this, 'nct_song_song', 'song_id', 'relate_id', 'song_id', 'song_id')->select(
+            array_map(function ($column) {
+                return 'nct_songs.' . $column;
+            }, ['song_id', 'real_id', 'name', 'slug', 'single', 'thumbnail', 'key'])
+        );
     }
 
     /**
@@ -64,7 +68,7 @@ class NCTSong extends Model
     public function getListenAttribute()
     {
         if (isset($this->relations['listens'])) {
-            return Helper::formatView($this->listens->listen) . ' lượt nghe';
+            return Helper::formatView($this->listens->listen);
         }
 
         return 0;
@@ -80,11 +84,21 @@ class NCTSong extends Model
         return route('song', ['slug' => $this->slug, 'id' => $this->song_id]);
     }
 
+    /**
+     * Gets the confirm url attribute.
+     *
+     * @return     <type>  The confirm url attribute.
+     */
     public function getConfirmUrlAttribute()
     {
         return route('confirm', ['slug' => $this->slug, 'id' => $this->song_id]);
     }
 
+    /**
+     * Gets the download url attribute.
+     *
+     * @return     <type>  The download url attribute.
+     */
     public function getDownloadUrlAttribute()
     {
         return route('download', ['slug' => $this->slug, 'id' => $this->song_id]);
@@ -125,6 +139,11 @@ class NCTSong extends Model
         return $this->hasOne(SKYMUSIC_Song::class, 'key', 'song_id');
     }
 
+    /**
+     * Determines if it has fetched.
+     *
+     * @return     boolean  True if has fetched, False otherwise.
+     */
     public function hasFetched()
     {
         return $this->key && $this->relates->count();
