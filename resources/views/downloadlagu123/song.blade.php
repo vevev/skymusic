@@ -43,7 +43,7 @@
     <div class="menu">
         <div class="detail-thumb thumb">
             <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download Mp3 {{ $_song->name }}">
-                <img data-src="{{ $_song->thumbnail }}" alt="Download Mp3 {{ $_song->name }}" title="Download Mp3 {{ $_song->name }}" src="{{ asset('/images/audio_default.png') }}" />
+                <img data-src="{{ $_song->thumbnail }}" alt="Download Mp3 {{ $_song->name }}" title="Download Mp3 {{ $_song->name }}" src="{{ asset('/images/audio_default.png') }}"" />
             </a>
         </div>
         <div class="detail-info">
@@ -76,7 +76,7 @@
     <div class="menu">
         <div class="detail-thumb thumb">
             <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
-                <img alt="{{ $song['name'] }}" title="{{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
+                <img alt="{{ $song['name'] }}" title="{{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src={{ asset('/images/audio_default.png') }}"" />
             </a>
         </div>
         <div class="detail-info">
