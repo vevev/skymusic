@@ -60,32 +60,23 @@ const view_more_elements = document.getElementsByClassName('collapse-view-more')
 
 function loadImage(img) {
     img.setAttribute('src', img.dataset.src);
-    img.style.display = 'initial';
-
-    if (img.naturalWidth == 120 && img.naturalHeight == 90) {
-        var parent = img.parentElement.parentElement.parentElement;
-        parent.parentElement.removeChild(parent);
-    }
+    img.dataset.loaded = true;
 }
 
 function lazyLoadImg(thumb) {
-    const io = new IntersectionObserver(function(entries) {
-        var img = entries[0].target.querySelector('img');
-
-        if (!entries[0].isIntersecting || (entries[0].isIntersecting && img.src)) {
-            return;
+    new IntersectionObserver(function(e) {
+        var img = e[0].target.querySelector('img');
+        if (e[0].isIntersecting && !img.dataset.loaded) {
+            loadImage(img);
         }
-
-        loadImage(img);
-    });
-
-    io.observe(thumb);
+    }).observe(thumb);
 }
 
 document.addEventListener('DOMContentLoaded', function(event) {
-    var lazyLoad = 0;
+    var lazyLoad = 0,
+        thumbs = document.getElementsByClassName('thumb');
     if ('IntersectionObserver' in window) lazyLoad = 1;
-    [].slice.call(document.getElementsByClassName('thumb')).forEach(function(thumb) {
+    [].slice.call(thumbs).forEach(function(thumb) {
         lazyLoad ? lazyLoadImg(thumb) : loadImage(thumb.querySelector('img'));
     });
 });
