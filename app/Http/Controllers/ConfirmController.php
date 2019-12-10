@@ -20,10 +20,13 @@ class ConfirmController extends Controller
 
     public function index(string $slug, string $id)
     {
-        if ( ! $song = $this->song->findById($id)) {
+        if (!$song = $this->song->findById($id)) {
             abort(404);
         }
 
-        return view(Core::viewPath('confirm'), ['song' => $song, '__core' => $this->core]);
+        return view(
+            Core::viewPath('confirm'),
+            ['song' => $song, '__core' => $this->core]
+        );
     }
 }

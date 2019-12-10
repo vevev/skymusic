@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Acme\Services\Fetchs\CrawlDownloadLink;
 use App\Models\NCTSong;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Request;
-use App\Acme\Services\Fetchs\CrawlDownloadLink;
 
 class DownloadController extends Controller
 {
@@ -28,11 +28,11 @@ class DownloadController extends Controller
     public function __construct(CrawlDownloadLink $crawler, NCTSong $song, Carbon $carbon)
     {
         $this->crawler = $crawler;
-        $this->song    = $song;
-        $this->carbon  = $carbon;
+        $this->song = $song;
+        $this->carbon = $carbon;
 
-        $this->slug      = Request::route('slug');
-        $this->id        = Request::route('id');
+        $this->slug = Request::route('slug');
+        $this->id = Request::route('id');
         $this->cache_key = 'dl:' . $this->id;
     }
 
@@ -49,7 +49,7 @@ class DownloadController extends Controller
         }
 
         // Kiểm tra xem trong DB có bài hát này hay chưa, nếu chưa sẽ trả lại //
-        if ( ! $song = $this->song->findById($this->id)) {
+        if (!$song = $this->song->findById($this->id)) {
             return '//';
         }
 
@@ -80,7 +80,7 @@ class DownloadController extends Controller
         }
 
         // Kiểm tra xem trong DB có bài hát này hay chưa, nếu chưa sẽ trả lại //
-        if ( ! $song = $this->song->findById($this->id)) {
+        if (!$song = $this->song->findById($this->id)) {
             return '//';
         }
 
