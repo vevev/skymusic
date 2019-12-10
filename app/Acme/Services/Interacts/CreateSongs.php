@@ -26,16 +26,16 @@ class CreateSongs
      */
     public function execute(array $songs, bool $returnModels = false)
     {
-        $song_ids = [];
-        foreach ($songs as $index => $song) {
-            $songs[$song['song_id']] = $song;
-            unset($songs[$index]);
-            $song_ids[] = $song['song_id'];
-        }
+        $songs = collect($songs);
+
+        $song_ids = $songs->pluck('song_id')->toArray();
 
         $savedSongs = $this->song->findBySongIds($song_ids);
+
         if ($savedSongs->count() === count($songs)) {
-            return $savedSongs;
+            return $savedSongs->sortBy(function ($song) use ($song_ids) {
+                return array_search($song->song_id, $song_ids);
+            })->values();
         }
 
         $savedSongs->map(function ($song) use (&$songs) {
@@ -47,7 +47,11 @@ class CreateSongs
         }
 
         if ($returnModels) {
-            return $this->song->findBySongIds($song_ids);
+            return $this->song
+                        ->findBySongIds($song_ids)
+                        ->sortBy(function ($song) use ($song_ids) {
+                            return array_search($song->song_id, $song_ids);
+                        })->values();
         }
 
         return true;
