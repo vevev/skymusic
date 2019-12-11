@@ -26,28 +26,24 @@ class CreatePlaylists
      */
     public function execute(array $playlists, bool $returnModels = false)
     {
-        $playlist_ids = [];
-        foreach ($playlists as $index => $playlist) {
-            $playlists[$playlist['playlist_id']] = $playlist;
-            unset($playlists[$index]);
-            $playlist_ids[] = $playlist['playlist_id'];
-        }
+        $playlist_ids = array_column($playlists, 'song_id');
 
-        $savedSongs = $this->playlist->findByPlaylistIds($playlist_ids);
-        if ($savedSongs->count() === count($playlists)) {
+        $savedSongs = $this->song->findBySongIdsWithOrder($playlist_ids);
+
+        if ($savedSongs->count() === count($songs)) {
             return $savedSongs;
         }
 
-        $savedSongs->map(function ($playlist) use (&$playlists) {
-            unset($playlists[$playlist->playlist_id]);
-        });
+        foreach ($savedSongs as $song) {
+            unset($songs[array_search($song->song_id, $playlist_ids)]);
+        }
 
-        if ( ! $this->playlist->insert($playlists)) {
+        if ( ! $this->song->insert($songs)) {
             return false;
         }
 
         if ($returnModels) {
-            return $this->playlist->findByPlaylistIds($playlist_ids);
+            return $this->song->findBySongIdsWithOrder($playlist_ids);
         }
 
         return true;

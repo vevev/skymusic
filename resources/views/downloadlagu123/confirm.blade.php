@@ -51,12 +51,12 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                {{-- <div id="vue-container" style="width: auto; max-width: 100%;">
+                                <div id="vue-container" style="width: auto; max-width: 100%;">
                                     <a class="btn-a" href="{{ route('download', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}">
                                         <i class="icon-download"></i>
                                         DOWNLOAD
                                     </a>
-                                </div> --}}
+                                </div>
                             </td>
                         </tr>
                         {{-- <tr>

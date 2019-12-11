@@ -30,10 +30,10 @@
     </div>
 
 
-    <div class="info center">
+    {{-- <div class="info center">
         <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
             <b></b>&nbsp;Download Mp3&nbsp;</a>
-    </div>
+    </div> --}}
 
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>
 
