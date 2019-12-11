@@ -30,23 +30,20 @@ class ExtractPlaylistSongs
     // }
     public function execute(array $songs)
     {
-        return array_filter(array_map(function ($song) {
-            if ( ! preg_match('#/([^/]+?)\..{12}\.html#', $song->info, $match)) {
-                return;
+        $songs = array_map(function ($song) {
+            if (preg_match('#/([^/]+?)\..{12}\.html#', $song->info, $match)) {
+                return [
+                    'slug'      => $match[1],
+                    'real_id'   => $song->key,
+                    'thumbnail' => $song->thumb,
+                    'song_id'   => $song->songKey,
+                    'name'      => $song->title,
+                    'key'       => null,
+                    'single'    => $song->singerTitle,
+                ];
             }
+        }, $songs);
 
-            return [
-                'slug'      => $match[1],
-                'real_id'   => $song->key,
-                'thumbnail' => $song->thumb,
-                'song_id'   => $song->songKey,
-                'name'      => $song->title,
-                'key'       => null,
-                'single'    => $song->singerTitle,
-            ];
-        }, $songs),
-            function ($song) {
-                return $song;
-            });
+        return array_filter($songs, function ($song) {return $song;});
     }
 }

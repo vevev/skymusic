@@ -156,6 +156,7 @@ class LoadPlaylistData
         }
 
         $songs = $this->extractPlaylistSongs->execute($array_song);
+        dd($songs);
         if ( ! is_array($songs)) {
             throw new CrawlSongOfPlaylistFailedException;
         }
