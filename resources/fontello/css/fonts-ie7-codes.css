@@ -46,3 +46,6 @@
 .icon-home { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xa047;&nbsp;'); }
 .icon-home-1 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xa048;&nbsp;'); }
 .icon-home-2 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xa049;&nbsp;'); }
+.icon-pause { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xa050;&nbsp;'); }
+.icon-pause-1 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe051;&nbsp;'); }
+.icon-pause-2 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf052;&nbsp;'); }

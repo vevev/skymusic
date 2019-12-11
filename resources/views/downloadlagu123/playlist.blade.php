@@ -23,45 +23,7 @@
 
     <div class="bh-audio">
         Nghe nhạc online (Bấm <i class="icon-play"></i> để nghe nhạc ...)<br>
-        <audio controls preload="none" src="{{route('listen', ['slug'=>$playlist->songs[0]->slug, 'id'=>$playlist->songs[0]->song_id])}}">
-            Trình duyệt của bạn không hỗ trợ nghe online !
-        </audio>
-        {{-- <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div> --}}
-    </div>
-
-
-    {{-- <div class="info center">
-        <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
-            <b></b>&nbsp;Download Mp3&nbsp;</a>
-    </div> --}}
-
-    <div id="lyric" data-lyric=""></div>
-
-    <div class="ht"><b>Bài Hát Liên Quan :</b></div>
-    <div class="collapse-menu">
-    @foreach($playlist->songs as $song)
-    <div class="menu playlist-item">
-        <div class="detail-thumb thumb">
-            <a href="{{ $song->detail_url }}" title="Download Mp3 {{ $song->name }}">
-                <img data-src="{{ $song->thumbnail }}" alt="Download Mp3 {{ $song->name }}" title="Download Mp3 {{ $song->name }}" src="{{ asset('/images/audio_default.png') }}" />
-            </a>
-        </div>
-        <div class="detail-info">
-            <b class="ab ellipsis dli block">
-                <a href="{{ $song->detail_url }}" title="Download Mp3 {{ $song->name }}">
-                    {{ $song->name }}
-                </a>
-            </b>
-            <span class="sg">
-                <b class="single">{{ $song->single }}</b>
-                @if($song->listen)
-                <b class="play-count">{{ $song->listen }}</b>
-                @endif
-            </span>
-        </div>
-    </div>
-    @endforeach
-    <p class="collapse-view-more">Xem Thêm ...</p>
+        <div id="playlist-container" data-src="{{ route('listen', ['slug'=>$playlist->songs[0]->slug, 'id'=>$playlist->songs[0]->song_id]) }}" data-songs="{{ $playlist->songs }}"></div>
     </div>
 </div>
 @endsection

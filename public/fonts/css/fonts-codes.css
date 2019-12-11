@@ -46,3 +46,6 @@
 .icon-home:before { content: '\a047'; } /* 'ꁇ' */
 .icon-home-1:before { content: '\a048'; } /* 'ꁈ' */
 .icon-home-2:before { content: '\a049'; } /* 'ꁉ' */
+.icon-pause:before { content: '\a050'; } /* 'ꁐ' */
+.icon-pause-1:before { content: '\e051'; } /* '' */
+.icon-pause-2:before { content: '\f052'; } /* '' */

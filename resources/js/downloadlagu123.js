@@ -3,6 +3,8 @@ require('./bootstrap');
 const Lyric = require('./components/downloadlagu123/show-song-lyric').default;
 const Search = require('./components/downloadlagu123/form-search').default;
 const AudioPlayer = require('./components/downloadlagu123/audio-player-default').default;
+const AudioPlayerPlaylist = require('./components/downloadlagu123/audio-player-playlist-default')
+    .default;
 const LoadMoreSearchSong = require('./components/downloadlagu123/load-more-search-song').default;
 var vm = null;
 
@@ -39,6 +41,15 @@ if ((vm = document.getElementById('audio-player-container'))) {
     });
 }
 
+if ((vm = document.getElementById('playlist-container'))) {
+    const audioPlayerPlaylist = new Vue({
+        el: '#playlist-container',
+        data: { src: vm.dataset.src, songs: JSON.parse(vm.dataset.songs) },
+        components: { AudioPlayerPlaylist },
+        template: `<AudioPlayerPlaylist :src="src" :prop-songs="songs"></AudioPlayerPlaylist>`,
+    });
+}
+
 if ((vm = document.getElementById('load-more-result'))) {
     const loadMoreSearchSong = new Vue({
         el: '#load-more-result',
@@ -57,22 +68,6 @@ const view_more_elements = document.getElementsByClassName('collapse-view-more')
         e.target.parentElement.classList.add('expand');
     })
 );
-
-// const playlist_song_elements = document.getElementsByClassName('playlist-item');
-// [].slice.call(playlist_song_elements).map(e =>
-//     e.addEventListener('click', function(event) {
-//         event.stopPropagation();
-//         event.preventDefault();
-//         let url = e.querySelector('a').href.replace('tai-bai-hat', 'listen/');
-//         event.target.dispatchEvent(
-//             new MouseEvent('playlist-song-play', {
-//                 bubbles: true,
-//                 cancelable: true,
-//                 url: url,
-//             })
-//         );
-//     })
-// );
 
 const loadImage = img => {
     img.setAttribute('src', img.dataset.src);
