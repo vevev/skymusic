@@ -8,7 +8,7 @@ Route::pattern('slug', '.*');
 
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('/tai-bai-hat-{slug}-mp3/{id}.html', 'SongController@index')->name('song');
-Route::get('/playlist/{slug}/{id}.html', 'PlaylistController@playlist')->name('playlist');
+Route::get('/danh-sach-phat-{slug}/{id}.html', 'PlaylistController@playlist')->name('playlist');
 Route::get('/playlists/{page?}', 'PlaylistController@index')->name('playlists');
 Route::get('/mp3/{slug}/{id}.html', 'SongSkymusicController@index')->name('song-skymusic');
 

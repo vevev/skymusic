@@ -29,6 +29,12 @@ export default {
             }
         },
     },
+
+    created() {
+        document.addEventListener('playlist-song-play', function(event) {
+            console.log(event);
+        });
+    },
 };
 </script>
 <style type="text/css" lang="scss" scoped></style>

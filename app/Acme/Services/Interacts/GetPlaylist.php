@@ -20,13 +20,12 @@ class GetPlaylist
 
     public function execute(string $id)
     {
-        $playlist = Cache::store('file')->get($id);
-        if (null != $playlist) {
+        if ($playlist = Cache::store('redis')->get('playlist:' . $id)) {
+            $playlist->cached = true;
+
             return $playlist;
         }
 
-        if ($playlist = $this->playlist->findById($id)) {
-            return $playlist;
-        }
+        return $this->playlist->findById($id);
     }
 }

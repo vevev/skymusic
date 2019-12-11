@@ -65,10 +65,10 @@ class LoadSongData
         // Neu bai hat da crawl thi tra lai
         elseif ( ! $song->hasFetched()) {
             $this->fetchAndSaveSong($song);
-            $song->loadCount(['sky'])->relates->load('listens');
         }
 
         if ( ! $song->cached) {
+            $song->loadCount(['sky'])->relates->load('listens');
             $this->cacheSong->set($song);
         }
 

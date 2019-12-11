@@ -35,7 +35,7 @@ class PlaylistController extends Controller
         Page::$description = $data['song']->name . ' | Tai nhac 123';
 
         return view(
-            Core::viewPath('song'),
+            Core::viewPath('playlists'),
             array_merge(['__core' => $core], $data)
         );
     }
@@ -52,11 +52,11 @@ class PlaylistController extends Controller
     {
         $data = $this->loadPlaylistData->execute($request->id);
 
-        Page::$title       = $data['song']->name . ' | Tai nhac 123';
-        Page::$description = $data['song']->name . ' | Tai nhac 123';
+        Page::$title       = 'Playlist ' . $data['playlist']->name;
+        Page::$description = 'Playlist ' . $data['playlist']->name;
 
         return view(
-            Core::viewPath('song'),
+            Core::viewPath('playlist'),
             array_merge(['__core' => $core], $data)
         );
     }

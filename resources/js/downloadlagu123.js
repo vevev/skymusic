@@ -58,6 +58,22 @@ const view_more_elements = document.getElementsByClassName('collapse-view-more')
     })
 );
 
+// const playlist_song_elements = document.getElementsByClassName('playlist-item');
+// [].slice.call(playlist_song_elements).map(e =>
+//     e.addEventListener('click', function(event) {
+//         event.stopPropagation();
+//         event.preventDefault();
+//         let url = e.querySelector('a').href.replace('tai-bai-hat', 'listen/');
+//         event.target.dispatchEvent(
+//             new MouseEvent('playlist-song-play', {
+//                 bubbles: true,
+//                 cancelable: true,
+//                 url: url,
+//             })
+//         );
+//     })
+// );
+
 const loadImage = img => {
     img.setAttribute('src', img.dataset.src);
     img.dataset.loaded = true;

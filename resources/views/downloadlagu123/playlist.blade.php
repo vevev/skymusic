@@ -6,16 +6,16 @@
 @section('content')
 <div class="left-bar">
     <h1 class="ht">
-        <a href="">Tải bài hát {{ $song->name }} MP3 về máy</a>
+        <a href="">Tải bài hát {{ $playlist->name }} MP3 về máy</a>
     </h1>
     <div class="bh-top">
         <div class="bh-thumb detail-thumb">
-            <img  src="{{ $song->thumbnail }}" alt="{{ $song->name }}" />
+            <img  src="{{ $playlist->thumbnail }}" alt="{{ $playlist->name }}" />
         </div>
         <div class="bh-info">
-            <h2>{{ $song->name }} - {{ $song->single }}</h2>
-            @if($song->listen)
-            <b class="play-count">{{ $song->listen }}</b>
+            <h2>{{ $playlist->name }} - {{ $playlist->single }}</h2>
+            @if($playlist->listen)
+            <b class="play-count">{{ $playlist->listen }}</b>
             @endif
             {{-- <b class="single">{{ $song->single }} </b> --}}
         </div>
@@ -23,10 +23,10 @@
 
     <div class="bh-audio">
         Nghe nhạc online (Bấm <i class="icon-play"></i> để nghe nhạc ...)<br>
-        {{-- <audio controls preload="none" src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}">
+        <audio controls preload="none" src="{{route('listen', ['slug'=>$playlist->songs[0]->slug, 'id'=>$playlist->songs[0]->song_id])}}">
             Trình duyệt của bạn không hỗ trợ nghe online !
-        </audio> --}}
-        <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
+        </audio>
+        {{-- <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div> --}}
     </div>
 
 
@@ -35,27 +35,27 @@
             <b></b>&nbsp;Download Mp3&nbsp;</a>
     </div> --}}
 
-    <div id="lyric" data-lyric="{{ $song->lyric }}"></div>
+    <div id="lyric" data-lyric=""></div>
 
     <div class="ht"><b>Bài Hát Liên Quan :</b></div>
     <div class="collapse-menu">
-    @foreach($song->relates as $_song)
-    <div class="menu">
+    @foreach($playlist->songs as $song)
+    <div class="menu playlist-item">
         <div class="detail-thumb thumb">
-            <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download Mp3 {{ $_song->name }}">
-                <img data-src="{{ $_song->thumbnail }}" alt="Download Mp3 {{ $_song->name }}" title="Download Mp3 {{ $_song->name }}" src="{{ asset('/images/audio_default.png') }}" />
+            <a href="{{ $song->detail_url }}" title="Download Mp3 {{ $song->name }}">
+                <img data-src="{{ $song->thumbnail }}" alt="Download Mp3 {{ $song->name }}" title="Download Mp3 {{ $song->name }}" src="{{ asset('/images/audio_default.png') }}" />
             </a>
         </div>
         <div class="detail-info">
             <b class="ab ellipsis dli block">
-                <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download Mp3 {{ $_song->name }}">
-                    {{ $_song->name }}
+                <a href="{{ $song->detail_url }}" title="Download Mp3 {{ $song->name }}">
+                    {{ $song->name }}
                 </a>
             </b>
             <span class="sg">
-                <b class="single">{{ $_song->single }}</b>
-                @if($_song->listen)
-                <b class="play-count">{{ $_song->listen }}</b>
+                <b class="single">{{ $song->single }}</b>
+                @if($song->listen)
+                <b class="play-count">{{ $song->listen }}</b>
                 @endif
             </span>
         </div>

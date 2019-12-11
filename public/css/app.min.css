@@ -384,7 +384,7 @@ textarea {
 }
 
 .ab a {
-  color: #1a0dab;
+  color: blue;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.25;
@@ -834,6 +834,10 @@ a.lcbtn {
   border-top: 0;
   top: -14px;
   left: -23px;
+}
+
+.ab a:visited {
+  color: #1a0dab;
 }
 
 .progress {

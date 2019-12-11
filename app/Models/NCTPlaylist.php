@@ -49,7 +49,22 @@ class NCTPlaylist extends Model
      */
     public function findByPlaylistIds(array $playlist_ids, array $get = ['*'])
     {
-        return $this->withPlaylistIds($playlist_ids)->get();
+        return $this->withPlaylistIds($playlist_ids)->get($get);
+    }
+
+    /**
+     * { function_description }
+     *
+     * @param      array   $playlist_ids  The song identifiers
+     * @param      array   $get       The get
+     *
+     * @return     <type>  ( description_of_the_return_value )
+     */
+    public function findByPlaylistIdsWithOrder(array $playlist_ids, array $get = ['*'])
+    {
+        return $this->withPlaylistIds($playlist_ids)
+                    ->orderByRaw('FIELD(playlist_id,\'' . implode('\',\'', $playlist_ids) . '\' )')
+                    ->get($get);
     }
 
     /**
@@ -78,6 +93,10 @@ class NCTPlaylist extends Model
             'song_id',
             'playlist_id',
             'song_id'
+        )->select(
+            array_map(function ($column) {
+                return 'nct_songs.' . $column;
+            }, ['song_id', 'real_id', 'name', 'slug', 'single', 'thumbnail', 'key'])
         );
     }
 
@@ -117,7 +136,7 @@ class NCTPlaylist extends Model
      */
     public function listens()
     {
-        return $this->hasOne(NCTListen::class, 'real_id', 'real_id');
+        return $this->hasOne(NCTListen::class, 'real_id', 'real_id')->where('type', 'playlist');
     }
 
     /**

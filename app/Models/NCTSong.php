@@ -32,7 +32,7 @@ class NCTSong extends Model
      */
     public function findBySongIds(array $song_ids, array $get = ['*'])
     {
-        return $this->withSongIds($song_ids)->get();
+        return $this->withSongIds($song_ids)->get($get);
     }
 
     /**
@@ -45,7 +45,7 @@ class NCTSong extends Model
     {
         return $this->withSongIds($song_ids)
                     ->orderByRaw('FIELD(song_id,\'' . implode('\',\'', $song_ids) . '\' )')
-                    ->get();
+                    ->get($get);
     }
 
     /**
