@@ -74,6 +74,7 @@ textarea {
   background: #d4d4d4;
   color: #222;
   text-align: justify;
+  padding: 20px;
 }
 
 .main_search {
