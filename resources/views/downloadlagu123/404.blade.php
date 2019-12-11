@@ -4,8 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
     <body>
-        <center>Không tìm thấy nội dung<p>
-        Nội dung này không tồn tại. <a href="/">Nhấn vào đây</a>để trở về trang chủ
+        <center>Không tìm thấy nội dung
+            <p>
+        Nội dung này không tồn tại. <a href="/">Nhấn vào đây</a> để trở về trang chủ</p>
         </center>
 
     <style>
@@ -21,7 +22,7 @@
     }
     center>p{
         font-size: 13px;
-
+        font-weight: normal;
     }
     </style>
 </body><style id="igor_ext_nofollow">a[rel~='nofollow']{text-decoration: underline;
