@@ -30,8 +30,10 @@ class ExtractPlaylistSongs
     // }
     public function execute(array $songs)
     {
-        return array_map(function ($song) {
-            preg_match('#/([^/]+?)\..{12}\.html#', $song->info, $match);
+        return array_filter(array_map(function ($song) {
+            if ( ! preg_match('#/([^/]+?)\..{12}\.html#', $song->info, $match)) {
+                return;
+            }
 
             return [
                 'slug'      => $match[1],
@@ -42,6 +44,9 @@ class ExtractPlaylistSongs
                 'key'       => null,
                 'single'    => $song->singerTitle,
             ];
-        }, $songs);
+        }, $songs),
+            function ($song) {
+                return $song;
+            });
     }
 }

@@ -104,6 +104,8 @@ class LoadPlaylistData
             $this->cachePlaylist->set($playlist);
         }
 
+        return response()->json($playlist->songs)->send();
+
         return [
             'playlist' => $playlist,
             'sidebar'  => [
