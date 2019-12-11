@@ -28,11 +28,10 @@ class CreateSongs
     {
         $song_ids = array_column($songs, 'song_id');
 
-        $savedSongs = $this->song->findBySongIds($song_ids);
+        $savedSongs = $this->song->findBySongIdsWithOrder($song_ids);
+
         if ($savedSongs->count() === count($songs)) {
-            return $savedSongs->sortBy(function ($song) use ($song_ids) {
-                return array_search($song->song_id, $song_ids);
-            })->values();
+            return $savedSongs;
         }
 
         foreach ($savedSongs as $song) {
@@ -44,10 +43,7 @@ class CreateSongs
         }
 
         if ($returnModels) {
-            return $this->song->findBySongIds($song_ids)
-                        ->sortBy(function ($song) use ($song_ids) {
-                            return array_search($song->song_id, $song_ids);
-                        })->values();
+            return $this->song->findBySongIdsWithOrder($song_ids);
         }
 
         return true;

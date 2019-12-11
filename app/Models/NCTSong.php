@@ -41,6 +41,19 @@ class NCTSong extends Model
      * @param  array  $song_ids       [description]
      * @return [type] [description]
      */
+    public function findBySongIdsWithOrder(array $song_ids, array $get = ['*'])
+    {
+        return $this->withSongIds($song_ids)
+                    ->orderByRaw('FIELD(song_id,\'' . implode('\',\'', $song_ids) . '\' )')
+                    ->get();
+    }
+
+    /**
+     * [findBySongIds description]
+     *
+     * @param  array  $song_ids       [description]
+     * @return [type] [description]
+     */
     public function findById(string $song_id, array $get = ['*'])
     {
         return $this->with('listens')->where('song_id', $song_id)->first($get);
