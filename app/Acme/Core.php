@@ -2,8 +2,9 @@
 
 namespace App\Acme;
 
-use App\Acme\Helpers\MobileDetect;
 use Illuminate\Http\Request;
+use Illuminate\Cookie\CookieJar;
+use App\Acme\Helpers\MobileDetect;
 
 class Core
 {
@@ -18,10 +19,14 @@ class Core
      * @param      [type]
      * @return     [type]
      */
-    public function __construct(MobileDetect $mobileDetect, Request $request)
+    public function __construct(MobileDetect $mobileDetect, Request $request, CookieJar $cookieJar)
     {
         $this->mobileDetect = $mobileDetect;
-        $this->request = $request;
+        $this->request      = $request;
+
+        if ( ! $request->cookie('logo_actived')) {
+            $cookieJar->queue(cookie('logo_actived', 1, 86400));
+        }
     }
 
     /**
@@ -45,7 +50,7 @@ class Core
     {
         static $isUc;
 
-        if (!is_null($isUc)) {
+        if ( ! is_null($isUc)) {
             return $isUc;
         }
 
@@ -61,7 +66,7 @@ class Core
     {
         static $accessFromGoogle;
 
-        if (!is_null($accessFromGoogle)) {
+        if ( ! is_null($accessFromGoogle)) {
             return $accessFromGoogle;
         }
 

@@ -614,13 +614,25 @@ a.lcbtn {
     padding: 10px 0px;
     img {
         max-width: 250px;
-        display: block;
-        margin: 10px auto;
+        position: absolute;
+        transition: all 1s ease-in-out;
+        bottom: -100%;
+        left: 0;
     }
     a {
-        display: block;
         padding: 0;
         color: #38157a;
+        height: 35px;
+        width: 250px;
+        display: block;
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+    }
+    .actived {
+        img {
+            bottom: 0;
+        }
     }
 }
 

@@ -25,4 +25,9 @@ class IndexController extends Controller
 
         return view(Core::viewPath('index'), $data);
     }
+
+    public function logos()
+    {
+        return view(Core::viewPath('logos'));
+    }
 }

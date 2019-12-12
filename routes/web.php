@@ -32,3 +32,5 @@ Route::get('/unpublish/{country}/{type}.html', 'BXHController@renew')->name('ren
 Route::get('/unpublish/crawl-listen', 'CrawlListenController@index')->name('crawl-listen');
 
 Route::get('/unpublish/crawl-skymusic-database', 'UnpublishController@index')->name('crawl-skymusic-database');
+
+Route::get('/logos', 'IndexController@logos');
