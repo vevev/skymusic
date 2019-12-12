@@ -1,10 +1,8 @@
 <div id="header">
     <div class="logo">
-        <div class="pc90">
-            <a href="/">
-                <img src="{{ asset(Page::$logo['src'] ?? '/images/tainhac.png?v=' . config('app.version')) }}" alt="{{ Page::$logo['alt'] ? Page::$logo['alt'] : 'Tai nhac 123' }}" />
-            </a>
-        </div>
+        <a href="/">
+            <img src="{{ asset(Page::$logo['src'] ?? '/images/tainhac.png?v=' . config('app.version')) }}" alt="{{ Page::$logo['alt'] ? Page::$logo['alt'] : 'Tainhac123 - Tải nhạc mp3 miễn phí - Tai nhac 123' }}" />
+        </a>
     </div>
     <div class="pc90">
         <div class="header_info">
