@@ -76,7 +76,7 @@
             </div>
             <br>
             <center>
-                <a onclick="window.history.back();" class="back" href="{{ Request::header('HTTP_REFERER', '/') }}">&nbsp;&nbsp;Back&nbsp;&nbsp;</a>
+                <a onclick="window.history.back();" class="back" href="{{ Request::header('referer', '/') }}">&nbsp;&nbsp;Back&nbsp;&nbsp;</a>
             </center>
         </div>
     </div>
