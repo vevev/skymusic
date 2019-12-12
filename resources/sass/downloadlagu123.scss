@@ -614,9 +614,11 @@ a.lcbtn {
     padding: 10px 0px;
     img {
         max-width: 250px;
-        margin: auto;
+        display: block;
+        margin: 10px auto;
     }
     a {
+        display: block;
         padding: 0;
         color: #38157a;
     }
