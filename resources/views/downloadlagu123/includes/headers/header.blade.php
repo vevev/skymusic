@@ -2,7 +2,7 @@
     <div class="logo">
         <div class="pc90">
             <a href="/">
-                <img src="{{ asset(Page::$logo['src'] ?? '/images/tainhac.png') }}" alt="{{ Page::$logo['alt'] ? Page::$logo['alt'] : 'Tai nhac 123' }}" />
+                <img src="{{ asset(Page::$logo['src'] ?? '/images/tainhac.png?v=' . config('app.version')) }}" alt="{{ Page::$logo['alt'] ? Page::$logo['alt'] : 'Tai nhac 123' }}" />
             </a>
         </div>
     </div>
