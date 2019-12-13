@@ -23,10 +23,6 @@ class Core
     {
         $this->mobileDetect = $mobileDetect;
         $this->request      = $request;
-
-        if ( ! $request->cookie('logo_actived')) {
-            $cookieJar->queue(cookie('logo_actived', 1, 86400));
-        }
     }
 
     /**
@@ -71,5 +67,25 @@ class Core
         }
 
         return $accessFromGoogle = preg_match('#google#i', $this->request->header('referer'));
+    }
+
+    /**
+     * Determines if animate logo.
+     *
+     * @return     boolean  True if animate logo, False otherwise.
+     */
+    public function isAnimateLogo()
+    {
+        static $return = null;
+
+        if ( ! is_null($return)) {
+            return $return;
+        }
+
+        if ($this->request->is('/')) {
+            return $return = true;
+        }
+
+        return $return = false;
     }
 }

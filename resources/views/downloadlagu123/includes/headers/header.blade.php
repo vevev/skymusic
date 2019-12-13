@@ -1,19 +1,19 @@
 <div id="header">
     <div class="logo">
-        @if(!Request::cookie('logo_actived'))
         <a href="/" id="logowrapper">
             <img src="{{ asset(Page::$logo['src'] ?? '/images/tainhac.png?v=' . config('app.version')) }}" alt="{{ Page::$logo['alt'] ? Page::$logo['alt'] : 'Tainhac123 - Tải nhạc mp3 miễn phí - Tai nhac 123' }}" />
         </a>
         <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", e => {
-                document.getElementById('logowrapper').classList.add('actived')
-            });
+            var logowrapper = document.getElementById('logowrapper');
+            var execAnimate = e => {
+                logowrapper.classList.add('actived')
+            }
+            @if($__core->isAnimateLogo())
+            document.addEventListener("DOMContentLoaded", execAnimate);
+            @else
+            execAnimate();
+            @endif
         </script>
-        @else
-            <a href="/" id="logowrapper" class="actived">
-                <img src="{{ asset(Page::$logo['src'] ?? '/images/tainhac.png?v=' . config('app.version')) }}" alt="{{ Page::$logo['alt'] ? Page::$logo['alt'] : 'Tainhac123 - Tải nhạc mp3 miễn phí - Tai nhac 123' }}" />
-            </a>
-        @endif
     </div>
     <div class="pc90">
         <div class="header_info">
