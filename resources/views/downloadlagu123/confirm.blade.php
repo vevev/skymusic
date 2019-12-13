@@ -84,7 +84,7 @@
         <p class="center">
             <span class="life">▂ ▅ ▇ ♪♫ MUSIC IS MY LIFE ♪♫ ▇ ▅ ▂</span><br><br>
             <a href="/"><img src="/images/icon-tainhac.png" width="50px"></a><br>
-            <b><a href="/">TaiNhac123</a></b></br><br>
+            <b><a href="/">TaiNhac123.Com</a></b></br><br>
             Contact: ad.tainhac123@gmail.com<br>
         </p>
     </div>
