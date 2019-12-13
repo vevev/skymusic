@@ -56,7 +56,7 @@ class DownloadController extends Controller
             return '//';
         }
 
-        if ($song->sky->count()) {
+        if (optional($song->sky)->count()) {
             if ($link = $this->crawler->getLinkSkymusic($song->sky->skyKey)) {
                 $this->setCacheLink($link);
             }
