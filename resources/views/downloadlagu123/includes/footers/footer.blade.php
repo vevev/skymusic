@@ -3,7 +3,7 @@
 <div class="btnbox">
 @if (Page::$currentRouteName !== 'index')
 <br />
-<a href="/"  title="Tải nhạc mp3 miễn phí" class="btnind center">Home Page</a>
+<a href="/"  title="Tải nhạc mp3 miễn phí" class="btnind center">Trang Chủ</a>
 </div><br />
 @endif
 

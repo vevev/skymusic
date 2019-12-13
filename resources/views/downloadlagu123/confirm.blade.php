@@ -7,11 +7,11 @@
     <meta name="robots" content="noindex">
     @endif
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Language" content="id" />
+    <meta http-equiv="Content-Language" content="vi" />
     <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
     <title>Tai nhac {{ $song->name }}</title>
-    <link rel="shortcut icon" href="/ico/favicon.ico">
-    <meta name="google-site-verification" content="QxV3ai5XAkkJe3kJ3DW6mFriXTsGgzvkie6J5hn_OX4" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta name="google-site-verification" content="eYW7hlOMPEryvJXAOdwvh-Q0Hln63WENSZrhbfmlgbg" />
     @csrf
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="HandheldFriendly" content="true" />
