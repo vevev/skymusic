@@ -52,7 +52,7 @@ class SearchController extends Controller
     public function post(Request $request)
     {
         if ( ! $query_string = $request->get('q')) {
-            return view('search-query-error');
+            return ['error'];
         }
 
         if ($request->ajax()) {
