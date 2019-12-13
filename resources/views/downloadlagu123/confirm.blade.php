@@ -25,7 +25,7 @@
 
 <body>
     <div class="header">
-        <a href="/"><img src="{{ asset('/images/tainhac.png') }}" alt="" /></a>
+        <a href="/"><img src="{{ asset('/images/tainhac.old.png') }}" alt="" /></a>
         <div class="sub">
             <p><i style="color: red; font-size: 14px
                 ">Tai nhac mien phi...</i></p>

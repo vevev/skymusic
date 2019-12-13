@@ -2,6 +2,8 @@
 
 namespace App\Acme\Services\Fetchs;
 
+use stdClass;
+use Throwable;
 use App\Acme\Services\HttpRequest\HttpRequest;
 
 class CrawlDownloadLink
@@ -27,6 +29,21 @@ class CrawlDownloadLink
     {
         $url_format = 'https://www.nhaccuatui.com/flash/xml?html5=true&key1=%s';
         $url        = sprintf($url_format, $key);
+
+        return $this->http_request->get($url);
+    }
+
+    /**
+     * Fetches a html.
+     *
+     * @param      string  $key  The song identifier
+     *
+     * @return     <type>  The html.
+     */
+    private function fetchSkymusic(string $skyKey)
+    {
+        $url_format = 'http://api.skysoundtrack.vn/song/detail?token=eyJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIyNjcxIiwibmJmIjoxNTczMjA3Mzc3LCJleHAiOjE2MDQ3NDMzNzcsImlhdCI6MTU3MzIwNzM3NywiZGlkIjoiU0tZTVVTSUNBOTFFN0JGQUVGQjY3M0M3MkVGMzJFQTUiLCJqdGkiOiIyMDU2YzNjODdhMzI0ODE5ODRlYTlkNmMyYWI1YjE4NiJ9.R6rxBV-tzOSkpUusPo38VCqOYFiT2SkOJhboMqcx-fA&client_id=9&timestamp=1573442753256&checksum=4039f084bd8637e2f750d906b0670af4e50524fe04633b89ab40a44c440afd1e&skyKey=%s';
+        $url        = sprintf($url_format, $skyKey);
 
         return $this->http_request->get($url);
     }
@@ -113,5 +130,48 @@ class CrawlDownloadLink
         if (preg_match($regex, $xml_string, $matches)) {
             return $matches[1];
         }
+    }
+
+    /**
+     * Gets the link skymusic.
+     *
+     * @param      string   $skyKey  The sky key
+     *
+     * @return     boolean  The link skymusic.
+     */
+    public function getLinkSkymusic(string $skyKey)
+    {
+        try {
+            $json_string = $this->fetchSkymusic($skyKey);
+            $song_object = json_decode($json_string);
+
+            if ($this->isSongObjectValid($song_object)) {
+                return $song_object->data[0]->streamUrl;
+            }
+
+            return false;
+        } catch (Throwable $e) {
+            Log::error(
+                'CRAWL_LINK_STREAM_SKY_MUSIC_BY_ERROR',
+                [
+                    'skyKey'   => $skyKey,
+                    'response' => $song_object,
+                ]
+            );
+
+            return false;
+        }
+    }
+
+    /**
+     * Determines whether the specified object is song object valid.
+     *
+     * @param      stdClass  $obj    The object
+     *
+     * @return     boolean   True if the specified object is song object valid, False otherwise.
+     */
+    private function isSongObjectValid(stdClass $obj)
+    {
+        return 'ok' === $obj->status && 1 == $obj->totalRecords;
     }
 }

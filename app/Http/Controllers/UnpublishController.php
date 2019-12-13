@@ -22,6 +22,11 @@ class UnpublishController extends Controller
         $this->request              = $request;
     }
 
+    /**
+     * { function_description }
+     *
+     * @return     <type>  ( description_of_the_return_value )
+     */
     public function index()
     {
         return $this->skymusicSaveDatabase->execute(1, $this->request->reload ?? false);
