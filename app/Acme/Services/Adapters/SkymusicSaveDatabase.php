@@ -49,8 +49,12 @@ class SkymusicSaveDatabase
      *
      * @return     array
      */
-    public function execute(string $query, int $page = 1)
+    public function execute(string $query, int $page = 1, bool $reload = false)
     {
+        if ($reload) {
+            Cache::forget($this->cache_key);
+        }
+
         if (Cache::has($this->cache_key)) {
             $page = Cache::get($this->cache_key) + 1;
         }

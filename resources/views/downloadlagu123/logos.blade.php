@@ -1,13 +1,13 @@
 <style type="text/css">
-    #logo path{
-        stroke-dasharray: 100%;
-        stroke-dashoffset: 100%;
+    #logo path:nth-of-type(1){
+        stroke-dasharray: 149;
+        stroke-dashoffset: 149;
         animation: line-anim 2s ease forwards;
     }
 
     @keyframes line-anim{
         to {
-            stroke-dashoffset: 0;
+            stroke-dashoffset: 1;
         }
     }
 </style>

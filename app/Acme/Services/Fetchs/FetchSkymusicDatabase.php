@@ -2,6 +2,8 @@
 
 namespace App\Acme\Services\Fetchs;
 
+use Throwable;
+use Illuminate\Support\Facades\Log;
 use App\Acme\Services\HttpRequest\HttpRequest;
 
 class FetchSkymusicDatabase
@@ -34,6 +36,11 @@ class FetchSkymusicDatabase
 
             return $json->data ?? $json->error;
         } catch (Throwable $e) {
+            Log::error('FETCH_SKYMUSIC', [
+                'json'  => $json,
+                'error' => $e->getMessage(),
+            ]);
+
             return;
         }
     }
