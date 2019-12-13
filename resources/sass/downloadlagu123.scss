@@ -611,9 +611,9 @@ a.lcbtn {
 .logo {
     background: #1bb5f3;
     min-width: 30%;
-    padding: 15px 0px;
+    padding: 20px 0px;
     img {
-        max-width: 250px;
+        max-width: 100%;
         position: absolute;
         transition: all 1s ease-in-out;
         bottom: -100%;
@@ -623,7 +623,7 @@ a.lcbtn {
         padding: 0;
         color: #38157a;
         height: 35px;
-        width: 250px;
+        width: 300px;
         display: block;
         position: relative;
         margin: auto;
