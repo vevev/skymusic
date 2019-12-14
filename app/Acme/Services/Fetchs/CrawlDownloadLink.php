@@ -4,16 +4,17 @@ namespace App\Acme\Services\Fetchs;
 
 use stdClass;
 use Throwable;
-use App\Acme\Services\HttpRequest\HttpRequest;
+use App\Acme\Services\HttpRequest\HttpRequestByVpsProxy;
 
 class CrawlDownloadLink
 {
+
     /**
-     * Constructs a new instance.
+     * [__construct description]
      *
-     * @param      \App\Acme\Services\HttpRequest\HttpRequest  $http_request  The http request
+     * @param HttpRequestByVpsProxy $http_request [description]
      */
-    public function __construct(HttpRequest $http_request)
+    public function __construct(HttpRequestByVpsProxy $http_request)
     {
         $this->http_request = $http_request;
     }
@@ -21,9 +22,8 @@ class CrawlDownloadLink
     /**
      * Fetches a html.
      *
-     * @param      string  $key  The song identifier
-     *
-     * @return     <type>  The html.
+     * @param  string $key The song identifier
+     * @return <type> The html.
      */
     private function fetchIframe(string $key)
     {
@@ -36,9 +36,8 @@ class CrawlDownloadLink
     /**
      * Fetches a html.
      *
-     * @param      string  $key  The song identifier
-     *
-     * @return     <type>  The html.
+     * @param  string $key The song identifier
+     * @return <type> The html.
      */
     private function fetchSkymusic(string $skyKey)
     {
@@ -51,9 +50,8 @@ class CrawlDownloadLink
     /**
      * Fetches a html.
      *
-     * @param      string  $song_id  The song identifier
-     *
-     * @return     <type>  The html.
+     * @param  string $song_id The song identifier
+     * @return <type> The html.
      */
     private function fetchHtml(string $song_id)
     {
@@ -66,9 +64,8 @@ class CrawlDownloadLink
     /**
      * Fetches a json.
      *
-     * @param      string  $key    The key
-     *
-     * @return     <type>  The json.
+     * @param  string $key The key
+     * @return <type> The json.
      */
     private function fetchJson(string $key)
     {
@@ -81,9 +78,8 @@ class CrawlDownloadLink
     /**
      * { function_description }
      *
-     * @param      string  $song_id  The song identifier
-     *
-     * @return     <type>  ( description_of_the_return_value )
+     * @param  string $song_id The song identifier
+     * @return <type> ( description_of_the_return_value )
      */
     public function crawl(string $song_id)
     {
@@ -103,9 +99,8 @@ class CrawlDownloadLink
     /**
      * { function_description }
      *
-     * @param      string  $key    The key
-     *
-     * @return     <type>  ( description_of_the_return_value )
+     * @param  string $key The key
+     * @return <type> ( description_of_the_return_value )
      */
     public function crawlLinkPlay(string $key)
     {
@@ -121,7 +116,7 @@ class CrawlDownloadLink
     /**
      * Gets the link iframe.
      *
-     * @param      string  $key    The key
+     * @param string $key The key
      */
     public function getLinkIframe(string $key)
     {
@@ -135,9 +130,8 @@ class CrawlDownloadLink
     /**
      * Gets the link skymusic.
      *
-     * @param      string   $skyKey  The sky key
-     *
-     * @return     boolean  The link skymusic.
+     * @param  string  $skyKey The sky key
+     * @return boolean The link skymusic.
      */
     public function getLinkSkymusic(string $skyKey)
     {
@@ -166,9 +160,8 @@ class CrawlDownloadLink
     /**
      * Determines whether the specified object is song object valid.
      *
-     * @param      stdClass  $obj    The object
-     *
-     * @return     boolean   True if the specified object is song object valid, False otherwise.
+     * @param  stdClass $obj The object
+     * @return boolean  True if the specified object is song object valid, False otherwise.
      */
     private function isSongObjectValid(stdClass $obj)
     {
