@@ -13,7 +13,11 @@
             Trình duyệt của bạn không hỗ trợ nghe online !
         </audio>
         <div id="songs-container">
-            <div v-for="(song, i) in songs" class="song" @click.stop="onCLickMenu(i)">
+            <div
+                v-for="(song, i) in songs"
+                :class="{ song: true, songplay: song.play }"
+                @click.stop="onCLickMenu(i)"
+            >
                 <div class="status">
                     <div class="playing icon-play" v-if="!song.play"></div>
                     <div class="pause icon-pause" v-if="song.play"></div>
@@ -93,6 +97,12 @@ export default {
         },
     },
 
+    watch: {
+        index(n, o) {
+            this.$set(this.songs[o], 'play', false);
+        },
+    },
+
     created() {
         this.audio_src = this.src;
         this.songs = this.propSongs.slice();
@@ -101,7 +111,8 @@ export default {
 </script>
 <style type="text/css" lang="scss" scoped>
 .song {
-    display: block;
+    display: flex;
+    position: relative;
     height: 100%;
     padding: 10px 0;
     margin: 0 10px;
@@ -109,6 +120,7 @@ export default {
     border: none;
     border-bottom: 1px solid #ededed;
     transition: all 0.5s ease;
+
     .status {
         height: 40px;
         width: 40px;
@@ -150,6 +162,25 @@ export default {
         content: '';
         display: block;
         clear: both;
+    }
+    &:before {
+        content: '';
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+.songplay {
+    background: #ededed;
+    .info {
+        .name {
+            a {
+                color: red;
+            }
+        }
     }
 }
 </style>

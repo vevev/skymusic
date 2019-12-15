@@ -26,17 +26,15 @@ class LoadTopicsData
     /**
      * { function_description }
      *
-     * @param      string                                 $id     The identifier
-     *
-     * @throws     \App\Exceptions\PlaylistNotFoundException  (description)
-     *
-     * @return     <type>                                 ( description_of_the_return_value )
+     * @param  string                                    $id             The identifier
+     * @throws \App\Exceptions\PlaylistNotFoundException (description)
+     * @return <type>                                    ( description_of_the_return_value )
      */
-    public function execute(int $id, int $page = 1)
+    public function execute(string $slug, int $page = 1)
     {
-        $html      = $this->fetchHtmlTopics->execute($id, $page);
+        $html      = $this->fetchHtmlTopics->execute($slug, $page);
         $playlists = $this->extractTopicsHtml->execute($html);
-        dd($playlists);
+
         if ( ! is_array($playlists)) {
             throw new CrawlPlaylistFailException;
         }
@@ -51,12 +49,11 @@ class LoadTopicsData
     /**
      * Fetches and save song.
      *
-     * @param      NCTPlaylist                                      $playlist   The song
-     *
-     * @throws     \App\Exceptions\CrawlSongFailException       (description)
-     * @throws     \App\Exceptions\CreateRelationFailException  (description)
-     * @throws     \App\Exceptions\SetRelatesFailException      (description)
-     * @throws     \App\Exceptions\UpdateSongFailException      (description)
+     * @param  NCTPlaylist                                 $playlist       The song
+     * @throws \App\Exceptions\CrawlSongFailException      (description)
+     * @throws \App\Exceptions\CreateRelationFailException (description)
+     * @throws \App\Exceptions\SetRelatesFailException     (description)
+     * @throws \App\Exceptions\UpdateSongFailException     (description)
      */
     private function fetchAndSavePlaylist(NCTPlaylist $playlist)
     {

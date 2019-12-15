@@ -4,6 +4,30 @@
         stroke-dashoffset: 100%;
         animation: line-anim 10s ease forwards;
     }
+    #loading{
+        -webkit-animation: rotating 2s linear infinite;
+        -moz-animation: rotating 2s linear infinite;
+        -ms-animation: rotating 2s linear infinite;
+        -o-animation: rotating 2s linear infinite;
+        animation: rotating 2s linear infinite;
+    }
+    #loading circle{
+        stroke-dasharray: 0 1382;
+        animation: loading 2s ease infinite;
+        stroke-dashoffset: 0;
+    }
+
+    @keyframes loading{
+        30% {
+            stroke-dasharray: 1200 1382;
+            stroke-dashoffset: 0;
+        }
+
+        100% {
+            stroke-dasharray: 0 1382;
+            stroke-dashoffset: -1382;
+        }
+    }
 
     @keyframes line-anim{
         from {
@@ -13,7 +37,50 @@
             stroke-dashoffset: 0%;
         }
     }
+
+    @-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
 </style>
+
+
+
+<svg id="loading" width="40" height="40" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="500" height="500" fill="white"/>
+<circle cx="250" cy="250" r="220" stroke="#0007a2" stroke-width="60"/>
+</svg>
 
 <svg id="logo" width="300" height="35" viewBox="0 0 1645 238" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="path-1-outside-1" maskUnits="userSpaceOnUse" x="-2.12" y="0.359985" width="1648" height="238" fill="black">

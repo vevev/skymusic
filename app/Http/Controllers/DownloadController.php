@@ -62,13 +62,13 @@ class DownloadController extends Controller
             }
         }
 
-        // Lay link iframe
-        if ($link = $this->crawler->getLinkIframe($song->key)) {
+        // Lay link download
+        if ($link = $this->crawler->crawl($song->song_id)) {
             $this->setCacheLink($link);
         }
 
-        // Lay link download
-        elseif ($link = $this->crawler->crawl($song->song_id)) {
+        // Lay link iframe
+        elseif ($link = $this->crawler->getLinkIframe($song->key)) {
             $this->setCacheLink($link);
         }
 

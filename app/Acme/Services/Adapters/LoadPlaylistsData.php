@@ -26,11 +26,9 @@ class LoadPlaylistsData
     /**
      * { function_description }
      *
-     * @param      string                                 $id     The identifier
-     *
-     * @throws     \App\Exceptions\PlaylistNotFoundException  (description)
-     *
-     * @return     <type>                                 ( description_of_the_return_value )
+     * @param  string                                    $id             The identifier
+     * @throws \App\Exceptions\PlaylistNotFoundException (description)
+     * @return <type>                                    ( description_of_the_return_value )
      */
     public function execute(int $page = 1)
     {
@@ -45,18 +43,17 @@ class LoadPlaylistsData
             throw new CreatePlaylistsFailException;
         }
 
-        dd($playlists);
+        return $playlists;
     }
 
     /**
      * Fetches and save song.
      *
-     * @param      NCTPlaylist                                      $playlist   The song
-     *
-     * @throws     \App\Exceptions\CrawlSongFailException       (description)
-     * @throws     \App\Exceptions\CreateRelationFailException  (description)
-     * @throws     \App\Exceptions\SetRelatesFailException      (description)
-     * @throws     \App\Exceptions\UpdateSongFailException      (description)
+     * @param  NCTPlaylist                                 $playlist       The song
+     * @throws \App\Exceptions\CrawlSongFailException      (description)
+     * @throws \App\Exceptions\CreateRelationFailException (description)
+     * @throws \App\Exceptions\SetRelatesFailException     (description)
+     * @throws \App\Exceptions\UpdateSongFailException     (description)
      */
     private function fetchAndSavePlaylist(NCTPlaylist $playlist)
     {

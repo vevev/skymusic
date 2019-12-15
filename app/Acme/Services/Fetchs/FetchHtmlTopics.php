@@ -17,14 +17,12 @@ class FetchHtmlTopics
         $this->httpRequest = $httpRequest;
     }
 
-    public function execute(int $id, int $page = 1)
+    public function execute(string $slug, int $page = 1)
     {
-        $url_format = 'https://www.nhaccuatui.com/ajax/get-topic-detail-playlist?id=%d&page=%d';
-        $url        = sprintf($url_format, $id, $page);
+        $url_format = 'https://www.nhaccuatui.com/playlist/%s.%d.html';
+        $url        = sprintf($url_format, $slug, $page);
         $html       = $this->httpRequest->get($url);
-        $json       = json_decode($html);
-        $result     = trim($json->data->content);
 
-        return $result ? $result : false;
+        return $html;
     }
 }

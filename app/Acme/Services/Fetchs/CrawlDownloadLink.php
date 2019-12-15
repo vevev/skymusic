@@ -84,7 +84,6 @@ class CrawlDownloadLink
     public function crawl(string $song_id)
     {
         try {
-
             $response = $this->fetchHtml($song_id);
             $json     = json_decode($response);
 

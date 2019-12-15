@@ -22,10 +22,9 @@ class PlaylistController extends Controller
     /**
      * { function_description }
      *
-     * @param      \Illuminate\Http\Request  $request  The request
-     * @param      \App\Acme\Core            $core     The core
-     *
-     * @return     <type>                    ( description_of_the_return_value )
+     * @param  \Illuminate\Http\Request $request The request
+     * @param  \App\Acme\Core           $core    The core
+     * @return <type>                   ( description_of_the_return_value )
      */
     public function index(Request $request, Core $core)
     {
@@ -43,10 +42,9 @@ class PlaylistController extends Controller
     /**
      * { function_description }
      *
-     * @param      \Illuminate\Http\Request  $request  The request
-     * @param      \App\Acme\Core            $core     The core
-     *
-     * @return     <type>                    ( description_of_the_return_value )
+     * @param  \Illuminate\Http\Request $request The request
+     * @param  \App\Acme\Core           $core    The core
+     * @return <type>                   ( description_of_the_return_value )
      */
     public function playlist(Request $request, Core $core)
     {

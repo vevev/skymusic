@@ -36,13 +36,13 @@ class LoadPlaylistData
     /**
      * Constructs a new instance.
      *
-     * @param      \App\Acme\Services\Fetchs\FetchHtmlSong       $fetchHtmlPlaylist  The fetch html
      *                                                                               song
-     * @param      \App\Acme\Services\Interacts\GetSong          $getPlaylist        The get song
-     * @param      \App\Acme\Services\Extracts\ExtractPlaylistHtml   $extractPlaylistHtml    The extract song html
-     * @param      \App\Acme\Services\Interacts\CreateSongs      $createSongs        The create songs
-     * @param      \App\Acme\Services\Interacts\CreateRelations  $createRelations    The create relations
-     * @param      \App\Acme\Services\Adapters\LoadTop20Song     $loadTop20Song      The load top 20 song
+     * @param \App\Acme\Services\Fetchs\FetchHtmlSong         $fetchHtmlPlaylist   The fetch html
+     * @param \App\Acme\Services\Interacts\GetSong            $getPlaylist         The get song
+     * @param \App\Acme\Services\Extracts\ExtractPlaylistHtml $extractPlaylistHtml The extract song html
+     * @param \App\Acme\Services\Interacts\CreateSongs        $createSongs         The create songs
+     * @param \App\Acme\Services\Interacts\CreateRelations    $createRelations     The create relations
+     * @param \App\Acme\Services\Adapters\LoadTop20Song       $loadTop20Song       The load top 20 song
      */
     public function __construct(
         FetchHtmlPlaylist $fetchHtmlPlaylist,
@@ -71,11 +71,9 @@ class LoadPlaylistData
     /**
      * { function_description }
      *
-     * @param      string                                 $id     The identifier
-     *
-     * @throws     \App\Exceptions\PlaylistNotFoundException  (description)
-     *
-     * @return     <type>                                 ( description_of_the_return_value )
+     * @param  string                                    $id             The identifier
+     * @throws \App\Exceptions\PlaylistNotFoundException (description)
+     * @return <type>                                    ( description_of_the_return_value )
      */
     public function execute(string $id)
     {
@@ -104,8 +102,6 @@ class LoadPlaylistData
             $this->cachePlaylist->set($playlist);
         }
 
-        return response()->json($playlist->songs)->send();
-
         return [
             'playlist' => $playlist,
             'sidebar'  => [
@@ -117,12 +113,10 @@ class LoadPlaylistData
     /**
      * Fetches and save playlist.
      *
-     * @param      \App\Models\NCTPlaylist                  $playlist  The playlist
-     *
-     * @throws     CrawlPlaylistFailException               (description)
-     * @throws     \App\Exceptions\UpdateSongFailException  (description)
-     *
-     * @return     boolean                                  And save playlist.
+     * @param  \App\Models\NCTPlaylist                 $playlist       The playlist
+     * @throws CrawlPlaylistFailException              (description)
+     * @throws \App\Exceptions\UpdateSongFailException (description)
+     * @return boolean                                 And save playlist.
      */
     private function fetchAndSavePlaylist(NCTPlaylist $playlist)
     {
@@ -143,11 +137,10 @@ class LoadPlaylistData
     /**
      * Fetches and save song.
      *
-     * @param      NCTPlaylist                                     $playlist  The playlist
-     *
-     * @throws     CrawlSongOfPlaylistFailedException          (description)
-     * @throws     CreatePlaylistSongRelationsFailedException  (description)
-     * @throws     CreateSongsFailedException                  (description)
+     * @param  NCTPlaylist                                $playlist       The playlist
+     * @throws CrawlSongOfPlaylistFailedException         (description)
+     * @throws CreatePlaylistSongRelationsFailedException (description)
+     * @throws CreateSongsFailedException                 (description)
      */
     private function fetchAndSaveSong(NCTPlaylist $playlist)
     {
@@ -156,7 +149,7 @@ class LoadPlaylistData
         }
 
         $songs = $this->extractPlaylistSongs->execute($array_song);
-        dd($songs);
+
         if ( ! is_array($songs)) {
             throw new CrawlSongOfPlaylistFailedException;
         }

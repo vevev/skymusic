@@ -44,7 +44,7 @@ class NCTPlaylist extends Model
     /**
      * [findByPlaylistIds description]
      *
-     * @param  array  $playlist_ids       [description]
+     * @param  array  $playlist_ids   [description]
      * @return [type] [description]
      */
     public function findByPlaylistIds(array $playlist_ids, array $get = ['*'])
@@ -55,10 +55,9 @@ class NCTPlaylist extends Model
     /**
      * { function_description }
      *
-     * @param      array   $playlist_ids  The song identifiers
-     * @param      array   $get       The get
-     *
-     * @return     <type>  ( description_of_the_return_value )
+     * @param  array  $playlist_ids The song identifiers
+     * @param  array  $get          The get
+     * @return <type> ( description_of_the_return_value )
      */
     public function findByPlaylistIdsWithOrder(array $playlist_ids, array $get = ['*'])
     {
@@ -70,9 +69,8 @@ class NCTPlaylist extends Model
     /**
      * { function_description }
      *
-     * @param      string  $playlist_id  The playlist identifier
-     *
-     * @return     <type>  ( description_of_the_return_value )
+     * @param  string $playlist_id The playlist identifier
+     * @return <type> ( description_of_the_return_value )
      */
     public function findById(string $playlist_id)
     {
@@ -82,7 +80,7 @@ class NCTPlaylist extends Model
     /**
      * { function_description }
      *
-     * @return     <type>  ( description_of_the_return_value )
+     * @return <type> ( description_of_the_return_value )
      */
     public function songs()
     {
@@ -103,7 +101,7 @@ class NCTPlaylist extends Model
     /**
      * Gets the listen attribute.
      *
-     * @return     <type>  The listen attribute.
+     * @return <type> The listen attribute.
      */
     public function getListenAttribute()
     {
@@ -115,11 +113,20 @@ class NCTPlaylist extends Model
     }
 
     /**
+     * Gets the single attribute.
+     *
+     * @return <type> The single attribute.
+     */
+    public function getSingleAttribute()
+    {
+        return implode(', ', json_decode($this->attributes['single']));
+    }
+
+    /**
      * Gets the song with listen is null.
      *
-     * @param      integer  $limit  The limit
-     *
-     * @return     <type>   The song with listen is null.
+     * @param  integer $limit The limit
+     * @return <type>  The song with listen is null.
      */
     public function getSongWithListenIsNull(int $limit = 20, array $get = ['*'])
     {
@@ -132,7 +139,7 @@ class NCTPlaylist extends Model
     /**
      * { function_description }
      *
-     * @return     <type>  ( description_of_the_return_value )
+     * @return <type> ( description_of_the_return_value )
      */
     public function listens()
     {
@@ -142,7 +149,7 @@ class NCTPlaylist extends Model
     /**
      * Determines if it has fetched.
      *
-     * @return     boolean  True if has fetched, False otherwise.
+     * @return boolean True if has fetched, False otherwise.
      */
     public function hasFetched()
     {
