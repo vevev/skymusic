@@ -9,7 +9,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="vi" />
     <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
-    <title>Tai nhac {{ $song->name }}</title>
+    <title>Tải bài hát {{ $song->name }}</title>
     <link rel="shortcut icon" href="/images/favicon.ico">
     <meta name="google-site-verification" content="eYW7hlOMPEryvJXAOdwvh-Q0Hln63WENSZrhbfmlgbg" />
     @csrf
@@ -28,7 +28,7 @@
         <a href="/"><img src="{{ asset('/images/tainhac.old.png?v=' . config('app.version')) }}" alt="" /></a>
         <div class="sub">
             <p><i style="color: red; font-size: 14px
-                ">Tai nhac mien phi...</i></p>
+                "><marquee>Tải nhạc miễn phí về máy</marquee></i></p>
         </div>
     </div>
     <div id="main">
