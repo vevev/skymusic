@@ -5,6 +5,7 @@ Route::pattern('query', '[^/]+');
 Route::pattern('querynonuni', '[a-z0-9\-]+');
 Route::pattern('single_slug', '[a-z0-9\-]+');
 Route::pattern('slug', '[^/]*');
+Route::pattern('page', '\d+');
 
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('/tai-bai-hat-{slug}-mp3/{id}.html', 'SongController@index')->name('song');
