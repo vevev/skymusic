@@ -62,7 +62,7 @@
     </div> --}}
     <div class="right-bar">
         <div class="cate">
-            <b class="ht">Tải Nhạc Mp3 Hay khác</b>
+            <b class="ht">Nhạc Mp3 Hay khác</b>
         </div>
         <div class="collapse-menu">
             @php
