@@ -110,21 +110,8 @@ class LoadPlaylistData
             } else {
                 $playlist->setRelation('songs', []);
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
         } else if ( ! $playlist->songs->count()) {
             $this->cachePlaylist->forget($id);
-=======
-=======
->>>>>>> origin/master
-        } else {
-            if ( ! $playlist->songs->count()) {
-                $this->cachePlaylist->forget($playlist);
-            }
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
         }
 
         return [
