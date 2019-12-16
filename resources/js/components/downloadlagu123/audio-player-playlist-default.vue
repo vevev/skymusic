@@ -186,6 +186,7 @@ export default {
                 display: flex;
                 align-items: center;
                 padding: 0px 5px;
+                flex-shrink: 0;
                 a {
                     display: flex;
                     align-items: center;
