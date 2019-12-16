@@ -34,7 +34,7 @@ class NCTPlaylist extends Model
         'updated_at',
     ];
 
-    protected $appends = ['detail_url'];
+    protected $appends = ['detail_url', 'listen'];
 
     public function scopeWithPlaylistIds(Builder $query, array $playlist_ids)
     {
@@ -101,15 +101,25 @@ class NCTPlaylist extends Model
     /**
      * Gets the listen attribute.
      *
-     * @return <type> The listen attribute.
+     * @return     <type>  The listen attribute.
      */
     public function getListenAttribute()
     {
         if (isset($this->relations['listens'])) {
-            return Helper::formatView($this->listens->listen) . ' lượt nghe';
+            return Helper::formatView($this->listens->listen);
         }
 
         return 0;
+    }
+
+    /**
+     * Gets the detail url attribute.
+     *
+     * @return     <type>  The detail url attribute.
+     */
+    public function getDetailUrlAttribute()
+    {
+        return route('playlist', ['slug' => $this->slug, 'id' => $this->playlist_id]);
     }
 
     /**

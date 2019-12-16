@@ -29,7 +29,7 @@ class CreatePlaylistSongRelations
      */
     public function execute(NCTPlaylist $playlist, array $songs)
     {
-
+        $relations = [];
         foreach ($songs as $song) {
             $relations[] = [
                 'playlist_id' => $playlist->playlist_id,

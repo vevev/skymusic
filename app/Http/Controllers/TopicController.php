@@ -27,18 +27,18 @@ class TopicController extends Controller
     public function index(Request $request, Core $core)
     {
         $slug = $request->route('slug', 'playlist-moi');
-        if ( ! $slug = config('topics.' . $slug)) {
+        if ( ! $topic = config('topics.' . $slug)) {
             throw new PlaylistNotFoundException;
         }
 
-        $data = $this->loadTopics->execute($slug['alias'], $request->page ?? 1);
+        $playlists = $this->loadTopics->execute($topic['alias'], $request->page ?? 1);
 
-        Page::$title       = $data['song']->name . ' | Tai nhac 123';
-        Page::$description = $data['song']->name . ' | Tai nhac 123';
+        Page::$title       = $topic['title'];
+        Page::$description = $topic['description'];
 
         return view(
             Core::viewPath('playlists'),
-            array_merge(['__core' => $core], $data)
+            ['__core' => $core, 'playlists' => $playlists, 'topic' => $topic]
         );
     }
 

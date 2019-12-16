@@ -43,7 +43,7 @@ class LoadTopicsData
             throw new CreatePlaylistsFailException;
         }
 
-        dd($playlists);
+        return $playlists;
     }
 
     /**

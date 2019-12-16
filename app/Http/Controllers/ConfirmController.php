@@ -46,6 +46,9 @@ class ConfirmController extends Controller
      */
     public function disclaimers()
     {
-        return view(Core::viewPath('rule'));
+        Page::$title       = 'Điều khoản sử dụng';
+        Page::$description = 'Điều khoản sử dụng.';
+
+        return view(Core::viewPath('rule'), ['__core' => $this->core]);
     }
 }

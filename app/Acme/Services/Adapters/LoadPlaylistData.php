@@ -98,6 +98,7 @@ class LoadPlaylistData
         // Nếu playlist chưa được cache thì thực hiện load listens cho danh sách bài hát
         // và cache lại
         if ( ! $playlist->cached) {
+            $playlist->load('songs');
             $playlist->songs->load('listens');
             $this->cachePlaylist->set($playlist);
         }
