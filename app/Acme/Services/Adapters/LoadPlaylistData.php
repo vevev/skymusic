@@ -110,8 +110,15 @@ class LoadPlaylistData
             } else {
                 $playlist->setRelation('songs', []);
             }
+<<<<<<< HEAD
         } else if ( ! $playlist->songs->count()) {
             $this->cachePlaylist->forget($id);
+=======
+        } else {
+            if ( ! $playlist->songs->count()) {
+                $this->cachePlaylist->forget($playlist);
+            }
+>>>>>>> origin/master
         }
 
         return [
@@ -182,7 +189,7 @@ class LoadPlaylistData
     /**
      * Sets the cache bulk stream url.
      *
-     * @param      array  $streamUrls  The stream urls
+     * @param array $streamUrls The stream urls
      */
     private function setCacheBulkStreamUrl(array $streamUrls)
     {
