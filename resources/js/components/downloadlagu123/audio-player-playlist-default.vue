@@ -186,7 +186,7 @@ export default {
                 display: flex;
                 align-items: center;
                 padding: 0px 5px;
-                flex-shrink: 0;
+
                 a {
                     display: flex;
                     align-items: center;
@@ -199,12 +199,14 @@ export default {
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
+
             .download {
                 font-size: 12px !important;
                 background: #ffffff00;
                 margin-right: 10px;
                 color: inherit;
                 cursor: pointer;
+                flex-shrink: 0;
                 &:before {
                     content: '\a021';
                     font-family: fonts;
