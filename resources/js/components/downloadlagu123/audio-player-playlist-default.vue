@@ -192,6 +192,12 @@ export default {
                     font-size: inherit;
                 }
             }
+            .single {
+                display: block !important;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
             .download {
                 font-size: 12px !important;
                 background: #ffffff00;
