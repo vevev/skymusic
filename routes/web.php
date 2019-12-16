@@ -11,9 +11,10 @@ Route::get('/tai-bai-hat-{slug}-mp3/{id}.html', 'SongController@index')->name('s
 Route::get('/mp3/{slug}/{id}.html', 'SongSkymusicController@index')->name('song-skymusic');
 
 Route::get('/danh-sach-phat-{slug}/{id}.html', 'PlaylistController@playlist')->name('playlist');
-Route::get('/playlists/{page?}', 'PlaylistController@index')->name('playlists');
+//Route::get('/playlists/{page?}', 'PlaylistController@index')->name('playlists');
 
-Route::get('/topics/{slug?}/{page?}', 'TopicController@index')->name('playlists');
+Route::get('/topics/{page?}', 'TopicController@index')->name('playlists');
+Route::get('/topics/{slug}/{page?}', 'TopicController@index')->name('playlists');
 
 Route::match(['get', 'post'], '/listen/{slug}.{id}.html', 'DownloadController@play')->name('listen');
 Route::get('/{slug}~{id}.html', 'ConfirmController@index')->name('confirm');

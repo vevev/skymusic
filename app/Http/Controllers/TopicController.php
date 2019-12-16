@@ -27,6 +27,7 @@ class TopicController extends Controller
     public function index(Request $request, Core $core)
     {
         $slug = $request->route('slug', 'playlist-moi');
+
         if ( ! $topic = config('topics.' . $slug)) {
             throw new PlaylistNotFoundException;
         }
