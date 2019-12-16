@@ -6,7 +6,7 @@
 @section('content')
 <div class="left-bar">
     <h1 class="ht">
-        <a href="">Tải bài hát {{ $playlist->name }} MP3 về máy</a>
+        <a href="">Playlist {{ $playlist->name }} </a>
     </h1>
     <div class="bh-top">
         <div class="bh-thumb detail-thumb">

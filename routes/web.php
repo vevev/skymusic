@@ -1,6 +1,6 @@
 <?php
 
-Route::pattern('id', '[\w\_\-]{12}');
+Route::pattern('id', '[\w\_\-]{5,15}');
 Route::pattern('query', '[^/]+');
 Route::pattern('querynonuni', '[a-z0-9\-]+');
 Route::pattern('single_slug', '[a-z0-9\-]+');

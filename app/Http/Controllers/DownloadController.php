@@ -18,8 +18,6 @@ class DownloadController extends Controller
 
     private $cache_key;
 
-    const CACHE_EXPIRES_MINUTES = 7200;
-
     /**
      * Create a new controller instance.
      *
@@ -34,7 +32,7 @@ class DownloadController extends Controller
         $this->request   = $request;
         $this->slug      = $request->route('slug');
         $this->id        = $request->route('id');
-        $this->cache_key = 'link:' . $this->id;
+        $this->cache_key = sprintf(config('cache.key.link_download.format'), $this->id);
         $this->re_cache  = $this->request->header('ReCache');
     }
 
@@ -106,7 +104,7 @@ class DownloadController extends Controller
         Cache::put(
             $this->cache_key,
             $link,
-            $this->carbon->addMinutes(self::CACHE_EXPIRES_MINUTES)
+            $this->carbon->addMinutes(config('cache.key.link_download.CACHE_EXPIRES_MINUTES'))
         );
     }
 

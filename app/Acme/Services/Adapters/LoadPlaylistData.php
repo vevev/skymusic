@@ -3,6 +3,8 @@
 namespace App\Acme\Services\Adapters;
 
 use App\Models\NCTPlaylist;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Cache;
 use App\Acme\Services\Interacts\GetSong;
 use App\Acme\Services\Fetchs\FetchHtmlSong;
 use App\Exceptions\UpdateSongFailException;
@@ -31,6 +33,7 @@ class LoadPlaylistData
     private $extractPlaylistSongs;
     private $createPlaylistSongRelations;
     private $cachePlaylist;
+    private $carbon;
     private $loadTop20Song;
 
     /**
@@ -54,7 +57,8 @@ class LoadPlaylistData
         FetchSongOfPlaylist $fetchSongOfPlaylist,
         ExtractPlaylistSongs $extractPlaylistSongs,
         CreatePlaylistSongRelations $createPlaylistSongRelations,
-        CachePlaylist $cachePlaylist
+        CachePlaylist $cachePlaylist,
+        Carbon $carbon
     ) {
         $this->fetchHtmlPlaylist           = $fetchHtmlPlaylist;
         $this->getPlaylist                 = $getPlaylist;
@@ -66,6 +70,7 @@ class LoadPlaylistData
         $this->extractPlaylistSongs        = $extractPlaylistSongs;
         $this->createPlaylistSongRelations = $createPlaylistSongRelations;
         $this->cachePlaylist               = $cachePlaylist;
+        $this->carbon                      = $carbon;
     }
 
     /**
@@ -149,7 +154,7 @@ class LoadPlaylistData
             throw new CrawlSongOfPlaylistFailedException;
         }
 
-        $songs = $this->extractPlaylistSongs->execute($array_song);
+        [$songs, $streamUrls] = $this->extractPlaylistSongs->execute($array_song);
 
         if ( ! is_array($songs)) {
             throw new CrawlSongOfPlaylistFailedException;
@@ -163,6 +168,24 @@ class LoadPlaylistData
             throw new CreatePlaylistSongRelationsFailedException;
         }
 
+        $this->setCacheBulkStreamUrl($streamUrls);
+
         return true;
+    }
+
+    /**
+     * Sets the cache bulk stream url.
+     *
+     * @param      array  $streamUrls  The stream urls
+     */
+    private function setCacheBulkStreamUrl(array $streamUrls)
+    {
+        foreach ($streamUrls as $song_id => $value) {
+            Cache::put(
+                sprintf(config('cache.key.link_download.format'), $song_id),
+                $value,
+                $this->carbon->addMinutes(config('cache.key.link_download.CACHE_EXPIRES_MINUTES'))
+            );
+        }
     }
 }

@@ -60,9 +60,8 @@ export default {
 
         onCLickMenu(index) {
             this.index = index;
-            this.$refs.audio.src = this.songs[index].detail_url
-                .replace('tai-bai-hat-', 'listen/')
-                .replace(/\/(.{12})\./, '.$1.');
+            this.$refs.audio.src =
+                '/listen/' + this.songs[index].slug + '.' + this.songs[index].song_id + '.html';
             this.$refs.audio.load();
             this.$refs.audio.play();
         },

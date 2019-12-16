@@ -30,8 +30,11 @@ class ExtractPlaylistSongs
     // }
     public function execute(array $songs)
     {
-        $songs = array_map(function ($song) {
-            if (preg_match('#/([^/]+?)\..{12}\.html#', $song->info, $match)) {
+        $streamUrls = [];
+        $songs      = array_map(function ($song) use (&$streamUrls) {
+            if (preg_match('#/([^/]+?)\.[^\.]{5,15}\.html#', $song->info, $match)) {
+                $streamUrls[$song->songKey] = $song->location;
+
                 return [
                     'slug'      => $match[1],
                     'real_id'   => $song->key,
@@ -44,6 +47,6 @@ class ExtractPlaylistSongs
             }
         }, $songs);
 
-        return array_filter($songs, function ($song) {return $song;});
+        return [array_filter($songs, function ($song) {return $song;}), $streamUrls];
     }
 }
