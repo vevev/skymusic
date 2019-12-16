@@ -13,7 +13,7 @@ class CachePlaylist
     /**
      * Constructs a new instance.
      *
-     * @param      \App\Models\NCTPlaylist  $playlist   The playlist
+     * @param \App\Models\NCTPlaylist $playlist The playlist
      */
     public function __construct(NCTPlaylist $playlist)
     {
@@ -23,9 +23,8 @@ class CachePlaylist
     /**
      * Gets the specified identifier.
      *
-     * @param      string  $id     The identifier
-     *
-     * @return     <type>  ( description_of_the_return_value )
+     * @param  string $id The identifier
+     * @return <type> ( description_of_the_return_value )
      */
     public function get(string $id)
     {
@@ -33,11 +32,21 @@ class CachePlaylist
     }
 
     /**
+     * Gets the specified identifier.
+     *
+     * @param  string $id The identifier
+     * @return <type> ( description_of_the_return_value )
+     */
+    public function forget(string $id)
+    {
+        return Cache::store('redis')->forget('playlist:' . $id);
+    }
+
+    /**
      * { function_description }
      *
-     * @param      \App\Models\NCTPlaylist  $playlist  The playlist
-     *
-     * @return     <type>                   ( description_of_the_return_value )
+     * @param  \App\Models\NCTPlaylist $playlist The playlist
+     * @return <type>                  ( description_of_the_return_value )
      */
     public function set(NCTPlaylist $playlist)
     {
