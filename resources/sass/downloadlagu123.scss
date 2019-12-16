@@ -445,6 +445,7 @@ audio {
     border: 0;
     padding: 0px 10px;
     margin: 5px auto;
+    width: 100%;
     &:after {
         display: block;
         content: '';
@@ -841,6 +842,16 @@ ul .item {
     display: flex;
 }
 
+.msg-error {
+    padding: 10px;
+    margin: 10px;
+    border: 1px dashed #af7900;
+    color: red;
+    background: #f3f3f3;
+    font-style: italic;
+    font-weight: 600;
+}
+
 @media screen and (max-width: 768px) {
     #main {
         max-width: 600px;
@@ -852,6 +863,8 @@ ul .item {
         background: #fff;
         float: none;
         margin: 10px 0;
+        display: flex;
+        flex-direction: column;
     }
     h1.ht {
         text-align: center;
