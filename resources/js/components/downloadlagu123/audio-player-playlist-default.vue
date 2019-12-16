@@ -42,7 +42,7 @@ export default {
         return {
             number_request: 0,
             MAX_NUMBER_REQUEST: 2,
-            index: 0,
+            index: -1,
             audio_src: null,
             songs: Array,
         };
@@ -60,13 +60,12 @@ export default {
 
         onCLickMenu(index) {
             this.index = index;
-            this.$refs.audio.src =
-                '/listen/' + this.songs[index].slug + '.' + this.songs[index].song_id + '.html';
-            this.$refs.audio.load();
-            this.$refs.audio.play();
         },
 
         onPlay() {
+            if (this.index === -1) {
+                return (this.index = 0);
+            }
             this.$set(this.songs[this.index], 'play', true);
         },
 
@@ -98,7 +97,13 @@ export default {
 
     watch: {
         index(n, o) {
-            this.$set(this.songs[o], 'play', false);
+            if (n != o) {
+                o != -1 && this.$set(this.songs[o], 'play', false);
+                this.$refs.audio.src =
+                    '/listen/' + this.songs[n].slug + '.' + this.songs[n].song_id + '.html';
+                this.$refs.audio.load();
+                this.$refs.audio.play();
+            }
         },
     },
 
