@@ -21,11 +21,14 @@
         </div>
     </div>
 
+    @if(empty($playlist->songs))
+    <div class="msg-error">Playlist Tạm Thời Bị Gián Đoạn, Mong Bạn Thông Cảm</div>
+    @else
     <div class="bh-audio">
         Nghe nhạc online (Bấm <i class="icon-play"></i> để nghe nhạc ...)<br>
         <div id="playlist-container" data-src="{{ route('listen', ['slug'=>$playlist->songs[0]->slug, 'id'=>$playlist->songs[0]->song_id]) }}" data-songs="{{ $playlist->songs }}"></div>
     </div>
-
+    @endif
 </div>
 @endsection
 
