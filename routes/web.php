@@ -1,10 +1,11 @@
 <?php
 
 Route::pattern('id', '[\w\_\-]{5,15}');
+Route::pattern('playlist_id', '[\w\_\-]{5,15}');
 Route::pattern('query', '[^/]+');
 Route::pattern('querynonuni', '[a-z0-9\-]+');
 Route::pattern('single_slug', '[a-z0-9\-]+');
-Route::pattern('slug', '[^/]*');
+Route::pattern('slug', '[^/\.]*');
 Route::pattern('page', '\d+');
 
 Route::get('/', 'IndexController@index')->name('index');
@@ -18,6 +19,8 @@ Route::get('/topics/{page?}', 'TopicController@index')->name('playlists');
 Route::get('/topics/{slug}/{page?}', 'TopicController@index')->name('playlists');
 
 Route::match(['get', 'post'], '/listen/{slug}.{id}.html', 'DownloadController@play')->name('listen');
+Route::match(['get', 'post'], '/listen/{slug}.{id}.{playlist_id}.html', 'DownloadController@playlist')->name('listen-playlist');
+
 Route::get('/{slug}~{id}.html', 'ConfirmController@index')->name('confirm');
 Route::get('/disclaimers.html', 'ConfirmController@disclaimers')->name('disclaimers');
 Route::get('/download/{slug}.{id}.html', 'DownloadController@play')->name('download');

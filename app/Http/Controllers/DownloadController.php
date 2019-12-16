@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
 use App\Acme\Services\Fetchs\CrawlDownloadLink;
+use App\Acme\Services\Adapters\LoadPlaylistData;
 
 class DownloadController extends Controller
 {
@@ -18,22 +19,26 @@ class DownloadController extends Controller
 
     private $cache_key;
 
+    private $loadPlaylist;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(CrawlDownloadLink $crawler, NCTSong $song, Carbon $carbon, Request $request)
+    public function __construct(CrawlDownloadLink $crawler, NCTSong $song, Carbon $carbon, Request $request, LoadPlaylistData $loadPlaylist)
     {
 
-        $this->crawler   = $crawler;
-        $this->song      = $song;
-        $this->carbon    = $carbon;
-        $this->request   = $request;
-        $this->slug      = $request->route('slug');
-        $this->id        = $request->route('id');
-        $this->cache_key = sprintf(config('cache.key.link_download.format'), $this->id);
-        $this->re_cache  = $this->request->header('ReCache');
+        $this->crawler      = $crawler;
+        $this->song         = $song;
+        $this->carbon       = $carbon;
+        $this->request      = $request;
+        $this->slug         = $request->route('slug');
+        $this->id           = $request->route('id');
+        $this->playlist_id  = $request->route('playlist_id');
+        $this->cache_key    = sprintf(config('cache.key.link_download.format'), $this->id);
+        $this->re_cache     = $this->request->header('ReCache');
+        $this->loadPlaylist = $loadPlaylist;
     }
 
     /**
@@ -78,6 +83,22 @@ class DownloadController extends Controller
         if ($link) {
             return $this->re_cache ? '' : redirect($link);
         }
+    }
+
+    /**
+     * { function_description }
+     *
+     * @return     <type>  ( description_of_the_return_value )
+     */
+    public function playlist()
+    {
+        if ($link = $this->getLinkFromCache()) {
+            return redirect($link);
+        } else {
+            $this->loadPlaylist->execute($this->playlist_id, true);
+        }
+
+        return $this->play();
     }
 
     /**

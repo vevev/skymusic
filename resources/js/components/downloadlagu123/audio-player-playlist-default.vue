@@ -51,6 +51,7 @@ export default {
     props: {
         src: String,
         propSongs: Array,
+        playlistid: String,
     },
 
     methods: {
@@ -75,9 +76,14 @@ export default {
 
         onEnded() {
             if (!this.songs[++this.index]) this.index = 0;
-            this.$refs.audio.src = this.songs[this.index].detail_url
-                .replace('tai-bai-hat-', 'listen/')
-                .replace(/\/(.{12})\./, '.$1.');
+            this.$refs.audio.src =
+                '/listen/' +
+                this.songs[this.index].slug +
+                '.' +
+                this.songs[this.index].song_id +
+                '.' +
+                this.playlistid +
+                '.html';
             this.$refs.audio.load();
             this.$refs.audio.play();
         },
@@ -100,7 +106,13 @@ export default {
             if (n != o) {
                 o != -1 && this.$set(this.songs[o], 'play', false);
                 this.$refs.audio.src =
-                    '/listen/' + this.songs[n].slug + '.' + this.songs[n].song_id + '.html';
+                    '/listen/' +
+                    this.songs[n].slug +
+                    '.' +
+                    this.songs[n].song_id +
+                    '.' +
+                    this.playlistid +
+                    '.html';
                 this.$refs.audio.load();
                 this.$refs.audio.play();
             }

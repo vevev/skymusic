@@ -80,7 +80,7 @@ class LoadPlaylistData
      * @throws \App\Exceptions\PlaylistNotFoundException (description)
      * @return <type>                                    ( description_of_the_return_value )
      */
-    public function execute(string $id)
+    public function execute(string $id, bool $re_cache_stream_url = false)
     {
         $playlist = $this->getPlaylist->execute($id);
 
@@ -95,26 +95,17 @@ class LoadPlaylistData
             throw new FetchPlaylistFailedException;
         }
 
-        // Nếu như không có danh sách bài hát thì cập nhật fetch danh sách bài hát cho playlist
-        if ( ! $playlist->songs->count() && ! $this->fetchAndSaveSong($playlist)) {
+        // Nếu như không có danh sách bài hát hoăc cần cache lại link play thì fetch
+        // danh sách bài hát cho playlist
+        if (( ! $playlist->songs->count() || $re_cache_stream_url) && ! $this->fetchAndSaveSong($playlist)) {
             throw new FetchSongOfPlaylistFailedException;
         }
 
         // Nếu playlist chưa được cache thì thực hiện load listens cho danh sách bài hát
         // và cache lại
-        if ( ! $playlist->cached) {
-            $playlist->load('songs');
-            $playlist->songs->load('listens');
-            if ($playlist->songs->count()) {
-                $this->cachePlaylist->set($playlist);
-            } else {
-                $playlist->setRelation('songs', []);
-            }
-        } else if ( ! $playlist->songs->count()) {
-            $this->cachePlaylist->forget($id);
-        }
+        $playlist = $this->handleCache($playlist);
 
-        return [
+        return $re_cache_stream_url ? true : [
             'playlist' => $playlist,
             'sidebar'  => [
                 'primary' => $this->loadTop20Song->execute('vn', 'bai-hat'),
@@ -193,5 +184,27 @@ class LoadPlaylistData
                 $this->carbon->addMinutes(config('cache.key.link_download.CACHE_EXPIRES_MINUTES'))
             );
         }
+    }
+
+    /**
+     * { function_description }
+     *
+     * @param      \App\Models\NCTPlaylist  $playlist  The playlist
+     */
+    private function handleCache(NCTPlaylist $playlist)
+    {
+        if ( ! $playlist->cached) {
+            $playlist->load('songs');
+            $playlist->songs->load('listens');
+            if ($playlist->songs->count()) {
+                $this->cachePlaylist->set($playlist);
+            } else {
+                $playlist->setRelation('songs', []);
+            }
+        } else if ( ! $playlist->songs->count()) {
+            $this->cachePlaylist->forget($playlist->playlist_id);
+        }
+
+        return $playlist;
     }
 }
