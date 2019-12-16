@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use App\Acme\Core;
 
 class PlaylistNotFoundException extends Exception
 {
@@ -11,8 +12,8 @@ class PlaylistNotFoundException extends Exception
      *
      * @return void
      */
-     public function report()
-     {
+    public function report()
+    {
         //
     }
 
@@ -24,6 +25,6 @@ class PlaylistNotFoundException extends Exception
      */
     public function render($request)
     {
-        //
+        return view(Core::viewPath('error'), ['message' => 'Playlist không tồn tại']);
     }
 }

@@ -142,6 +142,7 @@ export default {
         width: 40px;
         float: left;
         display: flex;
+        flex-shrink: 0;
         .pause,
         .playing {
             display: flex;
