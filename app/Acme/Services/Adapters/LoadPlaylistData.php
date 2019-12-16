@@ -106,7 +106,7 @@ class LoadPlaylistData
             $playlist->load('songs');
             $playlist->songs->load('listens');
             if ($playlist->songs->count()) {
-                $this->cachePlaylist->set($playlist);
+                $this->cachePlaylist->set($id);
             } else {
                 $playlist->setRelation('songs', []);
             }
