@@ -101,7 +101,7 @@ class NCTPlaylist extends Model
     /**
      * Gets the listen attribute.
      *
-     * @return     <type>  The listen attribute.
+     * @return <type> The listen attribute.
      */
     public function getListenAttribute()
     {
@@ -115,7 +115,7 @@ class NCTPlaylist extends Model
     /**
      * Gets the detail url attribute.
      *
-     * @return     <type>  The detail url attribute.
+     * @return <type> The detail url attribute.
      */
     public function getDetailUrlAttribute()
     {
@@ -133,15 +133,21 @@ class NCTPlaylist extends Model
     }
 
     /**
-     * Gets the song with listen is null.
+     * Gets the playlist with listen is null.
      *
      * @param  integer $limit The limit
-     * @return <type>  The song with listen is null.
+     * @param  array   $get   The get
+     * @return <type>  The playlist with listen is null.
      */
-    public function getSongWithListenIsNull(int $limit = 20, array $get = ['*'])
+    public function getPlaylistWithListenIsNull(int $limit = 20, array $get = ['*'])
     {
-        return $this->leftJoin('nct_listens', 'nct_listens.real_id', '=', 'nct_songs.real_id')
+        return $this->leftJoin(
+                        'nct_listens',
+                        'nct_listens.real_id',
+                        '=',
+                        'nct_playlists.real_id')
                     ->whereNull('nct_listens.real_id')
+                    ->orWhere('nct_listens.type', 'playlist')
                     ->limit($limit)
                     ->get($get);
     }

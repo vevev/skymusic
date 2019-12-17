@@ -2,17 +2,15 @@
 
 namespace App\Acme\Services\Adapters;
 
-use App\Models\NCTSong;
 use App\Models\NCTListen;
 use App\Models\NCTPlaylist;
 use App\Acme\Services\Fetchs\FetchJsonListen;
 
-class CrawlListen
+class CrawlPLaylistListen
 {
-    private $songModel;
+    private $playlistModel;
     private $fetchJsonListen;
     private $listenModel;
-    private $playlistModel;
 
     /**
      * Constructor
@@ -20,27 +18,20 @@ class CrawlListen
      * @param  [type]
      * @return [type]
      */
-    public function __construct(NCTSong $songModel, FetchJsonListen $fetchJsonListen, NCTListen $listenModel, NCTPlaylist $playlistModel)
+    public function __construct(NCTPlaylist $playlistModel, FetchJsonListen $fetchJsonListen, NCTListen $listenModel)
     {
-        $this->songModel       = $songModel;
+        $this->playlistModel   = $playlistModel;
         $this->fetchJsonListen = $fetchJsonListen;
         $this->listenModel     = $listenModel;
-        $this->playlistModel   = $playlistModel;
     }
 
     public function execute()
     {
-        $arrayRealIds = $this->songModel
-                             ->getSongWithListenIsNull(50, ['nct_songs.real_id'])
+        $arrayRealIds = $this->playlistModel
+                             ->getPlaylistWithListenIsNull(50, ['nct_playlists.real_id'])
                              ->pluck('real_id')
                              ->toArray();
-
-        $arrayPlaylistRealIds = $this->playlistModel
-                                     ->getPlaylistWithListenIsNull(50, ['nct_playlists.real_id'])
-        ;
-
-        return view(\Core::viewPath('error'));
-        $arrayListen = $this->fetchJsonListen->execute($arrayRealIds);
+        $arrayListen = $this->fetchJsonPlaylistListen->execute($arrayRealIds);
 
         if ( ! $arrayListen) {
             return;
