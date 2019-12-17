@@ -4,11 +4,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Thich ung tn123 -->
 <ins class="adsbygoogle"
-     style="display:block"
+     style="display:inline-block;width:350px;height:90px"
      data-ad-client="ca-pub-6109538742955032"
-     data-ad-slot="1124981812"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+     data-ad-slot="1124981812"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
