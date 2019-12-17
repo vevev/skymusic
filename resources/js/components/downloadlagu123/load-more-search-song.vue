@@ -18,18 +18,22 @@
                 </span>
             </div>
         </div>
-        <div v-if="!end" :class="{ 'icon-loading': true, show: loading }" ref="container"></div>
+        <div
+            v-if="page"
+            :class="{ loadmore: true, fetching: fetching, error: hasError }"
+            @click="onCLickLoadMore"
+        ></div>
     </div>
 </template>
 <script type="text/javascript">
+import searchAPI from '../../api/search';
 export default {
     data() {
         return {
             songs: [],
             page: 1,
-            loading: 0,
-            searching: 0,
-            end: 0,
+            fetching: 0,
+            hasError: false,
         };
     },
 
@@ -38,122 +42,94 @@ export default {
         api: String,
     },
 
-    watch: {
-        loading(n, o) {
-            n && this.fetchResult();
-        },
-    },
+    watch: {},
 
     methods: {
-        onScroll(e) {
-            console.log(e);
-        },
-
-        async fetchResult() {
-            if (this.searching || this.end) return;
-            try {
-                this.searching = 1;
-                const result = await axios.post(this.api, { q: this.query, page: this.page++ });
-
-                if (result.data.error === 'NOTHING') {
-                    return (this.end = 1);
-                } else if (result.data.results.length) {
-                    this.songs.push.apply(this.songs, result.data.results);
-                }
-            } catch (e) {
-            } finally {
-                this.searching = 0;
-                this.loading = 0;
-            }
-        },
-    },
-
-    mounted() {
-        const self = this;
-        window.addEventListener('scroll', e => {
-            if (self.searching || self.end) {
+        /**
+         * Called on c lick load more.
+         *
+         * @param      {<type>}  event   The event
+         */
+        onCLickLoadMore(event) {
+            if (this.fetching || this.hasError) {
                 return;
             }
 
-            const loading_offset =
-                this.$refs.container.offsetTop - e.target.scrollingElement.clientHeight;
-            if (loading_offset <= e.target.scrollingElement.scrollTop) {
-                self.loading = 1;
-            } else {
-                self.loading = 0;
+            ++this.fetching;
+            this.fetchResult().then(songs => {
+                if (songs.length) {
+                    this.songs.push.apply(this.songs, songs);
+                } else {
+                    this.page = 0;
+                }
+            });
+        },
+
+        /**
+         * Fetches a result.
+         *
+         * @return     {Promise}  The result.
+         */
+        async fetchResult() {
+            try {
+                const response = await searchAPI.fetchResult(this.api, {
+                    q: this.query,
+                    page: ++this.page,
+                });
+
+                if (!response.status == 200 || response.data.error) {
+                    throw 'Request Error';
+                }
+
+                return response.data;
+            } catch (e) {
+                this.hasError = 1;
+            } finally {
+                this.fetching = 0;
             }
-        });
+        },
     },
 };
 </script>
 <style lang="scss" scoped>
 .load-more-container {
 }
-.icon-loading {
-    display: block;
-    position: relative;
-    width: 20px;
-    height: 20px;
-    border: 3px solid #d2d2d2;
-    border-radius: 20px;
-    margin: 5px auto;
-    -webkit-animation: rotating 0.5s linear infinite;
-    -moz-animation: rotating 0.5s linear infinite;
-    -ms-animation: rotating 0.5s linear infinite;
-    -o-animation: rotating 0.5s linear infinite;
-    animation: rotating 0.5s linear infinite;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
+.loadmore {
+    display: flex;
+    flex-direction: column;
     &:before {
-        position: absolute;
-        width: 20px;
+        content: 'Xem Thêm';
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        margin-top: -1px;
+        background: #f7f7f7;
+        cursor: pointer;
+        font-weight: bold;
         height: 20px;
-        border: 3px solid transparent;
-        border-left: 3px solid #6d6d6d;
-        border-radius: 20px;
-        margin: 5px auto;
+        font-size: 13px;
+    }
+}
+.fetching {
+    &:before {
         content: '';
-        box-sizing: border-box;
-        top: -8px;
-        left: -3px;
+        background: #f7f7f7 url('/svg/search-loadmore-loading-type2.svg');
+        background-repeat: no-repeat;
+        background-size: 21px 21px;
+        background-position: center;
     }
 }
-.show {
-    opacity: 1;
-}
-@-webkit-keyframes rotating /* Safari and Chrome */ {
-    from {
-        -webkit-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
+.error {
+    &:before {
+        border-left: 4px solid red;
+        height: auto;
+        font-size: 12px;
+        font-weight: 400;
+        font-style: italic;
+        line-height: 1;
+        cursor: auto;
+        justify-content: left;
+        content: 'Hmm! Đã xảy ra lỗi không mong muốn. Lỗi này đã được ghi nhận và mình sẽ khắc phục sớm nhất có thể. Mong bạn thông cảm. ^^';
     }
-    to {
-        -webkit-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-@keyframes rotating {
-    from {
-        -ms-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    to {
-        -ms-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-.rotating {
-    -webkit-animation: rotating 2s linear infinite;
-    -moz-animation: rotating 2s linear infinite;
-    -ms-animation: rotating 2s linear infinite;
-    -o-animation: rotating 2s linear infinite;
-    animation: rotating 2s linear infinite;
 }
 </style>

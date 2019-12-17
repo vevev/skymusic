@@ -1,5 +1,16 @@
 require('./bootstrap');
 
+const store = new Vuex.Store({
+    state: {
+        count: 0,
+    },
+    mutations: {
+        increment(state) {
+            state.count++;
+        },
+    },
+});
+
 const Lyric = require('./components/' + process.env.APP_TEMPLATE + 'show-song-lyric').default;
 const Search = require('./components/' + process.env.APP_TEMPLATE + 'form-search').default;
 const AudioPlayer = require('./components/' + process.env.APP_TEMPLATE + 'audio-player').default;

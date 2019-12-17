@@ -61,7 +61,7 @@ class ExtractSongHtml
                 'song_id'   => $match[2],
                 'name'      => $match[3],
                 'key'       => $matchesKey[$index][1] ?? null,
-                'single'    => implode(',', $single[1]),
+                'single'    => implode(', ', $single[1]),
             ];
         }
 

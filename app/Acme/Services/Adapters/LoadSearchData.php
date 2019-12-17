@@ -3,10 +3,12 @@
 namespace App\Acme\Services\Adapters;
 
 use App\Models\NCTSong;
+use App\Exceptions\CrawlSearchException;
 use App\Acme\Services\Interacts\CacheSearch;
 use App\Acme\Services\Interacts\CreateSongs;
 use App\Acme\Services\Adapters\MergeSkyMusic;
 use App\Acme\Services\Fetchs\FetchHtmlSearch;
+use App\Exceptions\ExtractSearchHtmlException;
 use App\Acme\Services\Extracts\ExtractSearchHtml;
 use App\Acme\Services\Adapters\SkymusicLoadSearchData;
 
@@ -44,25 +46,12 @@ class LoadSearchData
             return $songs;
         }
 
-        if ( ! $html = $this->fetchHtmlSearch->execute($query, $page)) {
-            throw new CrawlSongFailException;
-        }
-
-        if ('NO_RESULT' !== $html) {
-            if ( ! $searchData = $this->extractSearchHtml->execute($html)) {
-                throw new ExtractSearchHtmlFailException;
-            }
-
-            //$this->skymusicLoadSearchData->execute($query);
-            //$searchData = $this->mergeSkyMusic->execute($query, $searchData);
-
-            if ( ! $songs = $this->createSongs->execute($searchData, true)) {
+        if ($results = $this->fetchResult($query, $page)) {
+            if ($songs = $this->createSongs->execute($results, true)) {
+                $results = $songs->load('listens');
+            } else {
                 throw new CreateSongsFailException;
             }
-
-            $results = $songs->load('listens');
-        } else {
-            $results = [];
         }
 
         return [
@@ -70,5 +59,36 @@ class LoadSearchData
             'query'   => $query,
             'page'    => $page,
         ];
+    }
+
+    /**
+     * Fetches a result.
+     *
+     * @param      string                                $query  The query
+     * @param      integer                               $page   The page
+     *
+     * @throws     ExtractSearchHtmlFailException        (description)
+     * @throws     \App\Exceptions\CrawlSearchException  (description)
+     */
+    private function fetchResult(string $query, int $page)
+    {
+        if ( ! $html = $this->fetchHtmlSearch->execute($query, $page)) {
+            throw new CrawlSearchException;
+        }
+
+        // ...
+        if ('NO_RESULT' === $html) {
+            return [];
+        }
+
+        // ..
+        elseif ( ! $searchData = $this->extractSearchHtml->execute($html)) {
+            throw new ExtractSearchHtmlException;
+        }
+
+        // moi chuyen ok thi return results
+        else {
+            return $searchData;
+        }
     }
 }

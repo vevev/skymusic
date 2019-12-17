@@ -25,7 +25,7 @@ class SongController extends Controller
             Page::$IS_ADSENSE = false;
         }
 
-        Page::$title       = 'Tải bài hát ' . $data['song']->name . ' Mp3 - Tải nhạc Mp3';
+        Page::$title       = 'Tải Bài Hát ' . $data['song']->name . ' Mp3 - Tải nhạc Mp3';
         Page::$description = 'Tải nhạc Mp3, Tải về bài hát ' . $data['song']->name . ' - ' . $data['song']->single . '.  Miễn phí tải về máy, Tải dễ dàng và nhanh chóng.';
 
         return view(

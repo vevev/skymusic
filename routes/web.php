@@ -24,8 +24,9 @@ Route::match(['get', 'post'], '/listen/{slug}.{id}.{playlist_id}.html', 'Downloa
 Route::get('/{slug}~{id}.html', 'ConfirmController@index')->name('confirm');
 Route::get('/disclaimers.html', 'ConfirmController@disclaimers')->name('disclaimers');
 Route::get('/download/{slug}.{id}.html', 'DownloadController@play')->name('download');
-Route::get('/tim-kiem/{query_string}', 'SearchController@index')->name('search-get');
+Route::get('/tim-kiem/{query_string}', 'SearchController@index')->name('search');
 Route::get('/search/{query_string}', 'SkymusicSearchController@index')->name('search-skymusic-get');
+Route::get('/search/', 'SearchController@get')->name('search-get');
 Route::post('/search/', 'SearchController@post')->name('search-post');
 
 Route::get('/bang-xep-hang-bai-hat-viet-nam.html', 'BXHController@songVN')->name('bxh-song-vn');
