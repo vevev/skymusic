@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use App\Acme\Core;
 
 class FetchJsonSearchSkymusicException extends Exception
 {

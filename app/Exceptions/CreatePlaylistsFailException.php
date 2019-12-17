@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use App\Acme\Core;
 
 class CreatePlaylistsFailException extends Exception
 {
