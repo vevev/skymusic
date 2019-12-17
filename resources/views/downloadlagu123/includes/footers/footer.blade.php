@@ -1,6 +1,7 @@
 <div class="clear"></div>
 </div><br>
 @if(Page::$IS_ADSENSE)
+<div class="center">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Thich ung tn123 -->
 <ins class="adsbygoogle"
@@ -10,6 +11,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+</div>
 @endif
 <div class="btnbox">
 @if (Page::$currentRouteName !== 'index')
