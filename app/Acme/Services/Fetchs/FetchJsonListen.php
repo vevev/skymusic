@@ -18,14 +18,14 @@ class FetchJsonListen
         $this->httpRequest = $httpRequest;
     }
 
-    public function execute(array $real_ids)
+    public function execute(array $real_ids, array $playlist_ids)
     {
         try {
-            $url_format = 'https://www.nhaccuatui.com/interaction/api/counter?listSongIds=%s';
-            $url        = sprintf($url_format, implode(',', $real_ids));
+            $url_format = 'https://www.nhaccuatui.com/interaction/api/counter?listSongIds=%s&listPlaylistIds=%s';
+            $url        = sprintf($url_format, implode(',', $real_ids), implode(',', $playlist_ids));
             $json       = $this->httpRequest->get($url);
 
-            return json_decode($json)->data->songs;
+            return json_decode($json)->data;
         } catch (Throwable $e) {
             return;
         }

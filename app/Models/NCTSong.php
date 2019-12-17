@@ -62,7 +62,7 @@ class NCTSong extends Model
     /**
      * { function_description }
      *
-     * @return     <type>  ( description_of_the_return_value )
+     * @return <type> ( description_of_the_return_value )
      */
     public function relates()
     {
@@ -76,7 +76,7 @@ class NCTSong extends Model
     /**
      * Gets the listen attribute.
      *
-     * @return     <type>  The listen attribute.
+     * @return <type> The listen attribute.
      */
     public function getListenAttribute()
     {
@@ -90,7 +90,7 @@ class NCTSong extends Model
     /**
      * Gets the detail url attribute.
      *
-     * @return     <type>  The detail url attribute.
+     * @return <type> The detail url attribute.
      */
     public function getDetailUrlAttribute()
     {
@@ -100,7 +100,7 @@ class NCTSong extends Model
     /**
      * Gets the confirm url attribute.
      *
-     * @return     <type>  The confirm url attribute.
+     * @return <type> The confirm url attribute.
      */
     public function getConfirmUrlAttribute()
     {
@@ -110,7 +110,7 @@ class NCTSong extends Model
     /**
      * Gets the download url attribute.
      *
-     * @return     <type>  The download url attribute.
+     * @return <type> The download url attribute.
      */
     public function getDownloadUrlAttribute()
     {
@@ -120,14 +120,17 @@ class NCTSong extends Model
     /**
      * Gets the song with listen is null.
      *
-     * @param      integer  $limit  The limit
-     *
-     * @return     <type>   The song with listen is null.
+     * @param  integer $limit The limit
+     * @return <type>  The song with listen is null.
      */
     public function getSongWithListenIsNull(int $limit = 20, array $get = ['*'])
     {
         return $this->leftJoin('nct_listens', 'nct_listens.real_id', '=', 'nct_songs.real_id')
                     ->whereNull('nct_listens.real_id')
+                    ->orWhere(function ($query) {
+                        $query->whereNotNull('nct_listens.real_id');
+                        $query->where('nct_listens.type', '!=', 'song');
+                    })
                     ->limit($limit)
                     ->get($get);
     }
@@ -135,7 +138,7 @@ class NCTSong extends Model
     /**
      * { function_description }
      *
-     * @return     <type>  ( description_of_the_return_value )
+     * @return <type> ( description_of_the_return_value )
      */
     public function listens()
     {
@@ -145,7 +148,7 @@ class NCTSong extends Model
     /**
      * { function_description }
      *
-     * @return     <type>  ( description_of_the_return_value )
+     * @return <type> ( description_of_the_return_value )
      */
     public function sky()
     {
@@ -155,7 +158,7 @@ class NCTSong extends Model
     /**
      * Determines if it has fetched.
      *
-     * @return     boolean  True if has fetched, False otherwise.
+     * @return boolean True if has fetched, False otherwise.
      */
     public function hasFetched()
     {

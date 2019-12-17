@@ -147,7 +147,10 @@ class NCTPlaylist extends Model
                         '=',
                         'nct_playlists.real_id')
                     ->whereNull('nct_listens.real_id')
-                    ->orWhere('nct_listens.type', 'playlist')
+                    ->orWhere(function ($query) {
+                        $query->whereNotNull('nct_listens.real_id');
+                        $query->where('nct_listens.type', '!=', 'playlist');
+                    })
                     ->limit($limit)
                     ->get($get);
     }

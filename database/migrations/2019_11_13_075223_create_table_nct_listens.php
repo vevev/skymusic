@@ -14,7 +14,7 @@ class CreateTableNctListens extends Migration
     public function up()
     {
         Schema::create('nct_listens', function (Blueprint $table) {
-            $table->integer('real_id')->unique();
+            $table->integer('real_id')->index();
             $table->bigInteger('listen');
             $table->string('type', 20);
         });
