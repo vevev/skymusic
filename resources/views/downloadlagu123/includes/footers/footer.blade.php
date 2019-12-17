@@ -4,7 +4,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Thich ung tn123 -->
 <ins class="adsbygoogle"
-     style="display:inline-block;width:350px;height:90px"
+     style="display:inline-block;width:350px;height:50px"
      data-ad-client="ca-pub-6109538742955032"
      data-ad-slot="1124981812"></ins>
 <script>
