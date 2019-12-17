@@ -31,7 +31,7 @@ class NotFoundHttpException extends Exception
 
         return view(
             Core::viewPath('404'),
-            ['message' => 'Bai Hat Khong Ton Tai']
+            ['message' => 'Không tìm thấy nội dung !']
         );
     }
 }

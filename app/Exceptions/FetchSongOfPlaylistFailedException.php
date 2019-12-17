@@ -11,8 +11,8 @@ class FetchSongOfPlaylistFailedException extends Exception
      *
      * @return void
      */
-     public function report()
-     {
+    public function report()
+    {
         //
     }
 
@@ -24,6 +24,6 @@ class FetchSongOfPlaylistFailedException extends Exception
      */
     public function render($request)
     {
-        //
+        return view(Core::viewPath('error'), ['message' => 'Lỗi hệ thống']);
     }
 }

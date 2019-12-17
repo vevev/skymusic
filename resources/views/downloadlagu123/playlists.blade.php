@@ -8,7 +8,7 @@
     </div>
 
     @foreach($playlists as $playlist)
-    <div class="menu">
+    <div class="playlist-item">
         <div class="detail-thumb thumb">
             <a title="{{ $playlist->name }}" href="{{ $playlist->detail_url }}">
                 <img alt="{{ $playlist->name }}" title="{{ $playlist->name }}" data-src="{{ $playlist->thumbnail }}" src="{{ asset('/images/audio_default.png') }}"/>

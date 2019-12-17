@@ -11,8 +11,8 @@ class CrawlSongOfPlaylistFailedException extends Exception
      *
      * @return void
      */
-     public function report()
-     {
+    public function report()
+    {
         //
     }
 
@@ -24,6 +24,6 @@ class CrawlSongOfPlaylistFailedException extends Exception
      */
     public function render($request)
     {
-        //
+        return view(Core::viewPath('error'), ['message' => 'Lỗi hệ thống']);
     }
 }

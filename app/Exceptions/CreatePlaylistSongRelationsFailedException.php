@@ -11,8 +11,8 @@ class CreatePlaylistSongRelationsFailedException extends Exception
      *
      * @return void
      */
-     public function report()
-     {
+    public function report()
+    {
         //
     }
 
@@ -24,6 +24,6 @@ class CreatePlaylistSongRelationsFailedException extends Exception
      */
     public function render($request)
     {
-        //
+        return view(Core::viewPath('error'), ['message' => 'Lỗi hệ thống']);
     }
 }

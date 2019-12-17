@@ -22,6 +22,8 @@ class Page
 
     public static $geo;
 
+    public static $IS_ADSENSE = true;
+
     public static $logo = [
         'src' => null,
         'alt' => null,
@@ -37,6 +39,11 @@ class Page
     const COOKIE_ADS_DATA    = true;
     const COOKIE_ADS_EXPRIES = 3600 * 12;
 
+    /**
+     * Constructs a new instance.
+     *
+     * @return     <type>  ( description_of_the_return_value )
+     */
     public function __construct()
     {
         if ($this->hasAds()) {
@@ -62,11 +69,19 @@ class Page
         }
     }
 
+    /**
+     * { function_description }
+     */
     public function cookie()
     {
         setcookie(self::COOKIE_ADS_NAME, self::COOKIE_ADS_DATA, time() + self::COOKIE_ADS_EXPRIES, '/');
     }
 
+    /**
+     * Determines if ads.
+     *
+     * @return     boolean  True if ads, False otherwise.
+     */
     public function hasAds()
     {
         return isset($_COOKIE[self::COOKIE_ADS_NAME]);
@@ -96,6 +111,11 @@ class Page
         return $client[$hash_key_from] = preg_match('#' . $from . '#', $request->headers->get('referer'));
     }
 
+    /**
+     * Determines if google speed insights.
+     *
+     * @return     boolean  True if google speed insights, False otherwise.
+     */
     public static function isGoogleSpeedInsights()
     {
         return  ! isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false;
