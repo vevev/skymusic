@@ -41,7 +41,7 @@ class ExtractTop20Song
         $songs = [];
         foreach ($matchesName as $index => $match) {
             $songs[] = [
-                'slug'      => $match[1],
+                'slug'      => mb_substr($match[1], 0, 250),
                 'real_id'   => $matchesRealId[$index][1],
                 'thumbnail' => $matchesSrc[$index][1],
                 'song_id'   => $match[2],

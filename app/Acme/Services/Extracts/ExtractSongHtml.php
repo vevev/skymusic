@@ -55,7 +55,7 @@ class ExtractSongHtml
             preg_match_all('#(?=<a[^>]+?>(.+?)</a>)#', $matchesSingle[$index][0], $single);
 
             $songs[] = [
-                'slug'      => $match[1],
+                'slug'      => mb_substr($match[1], 0, 250),
                 'real_id'   => $matchesRealId[$index][1],
                 'thumbnail' => $matchesSrc[$index][1],
                 'song_id'   => $match[2],
