@@ -1,5 +1,18 @@
 <div class="clear"></div>
 </div><br>
+@if(Page::$IS_ADSENSE)
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Thich ung tn123 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6109538742955032"
+     data-ad-slot="1124981812"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+@endif
 <div class="btnbox">
 @if (Page::$currentRouteName !== 'index')
 <br />
