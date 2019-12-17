@@ -71,6 +71,8 @@ textarea {
     box-shadow: 0 0 5px 1px rgba(204, 204, 204, 0.61);
     max-width: 100%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 #main {

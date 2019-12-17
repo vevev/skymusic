@@ -7,8 +7,8 @@
         <h1>Kết quả cho: {{ $query }}</h1>
     </div>
 
-    @if (isset($results->msg))
-    {{ $results->msg }}
+    @if (empty($results))
+    <div class="msg-error">Không tìm thấy bài hát nào, hãy thử tìm kiếm với từ khóa khác</div>
     @else
     @foreach($results as $song)
     <div class="menu">

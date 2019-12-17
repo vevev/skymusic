@@ -48,23 +48,25 @@ class LoadSearchData
             throw new CrawlSongFailException;
         }
 
-        if (1 === $html) {
-            return ['error' => 'NOTHING'];
-        }
+        if ('NO_RESULT' !== $html) {
+            if ( ! $searchData = $this->extractSearchHtml->execute($html)) {
+                throw new ExtractSearchHtmlFailException;
+            }
 
-        if ( ! $searchData = $this->extractSearchHtml->execute($html)) {
-            throw new ExtractSearchHtmlFailException;
-        }
+            //$this->skymusicLoadSearchData->execute($query);
+            //$searchData = $this->mergeSkyMusic->execute($query, $searchData);
 
-        //$this->skymusicLoadSearchData->execute($query);
-        //$searchData = $this->mergeSkyMusic->execute($query, $searchData);
+            if ( ! $songs = $this->createSongs->execute($searchData, true)) {
+                throw new CreateSongsFailException;
+            }
 
-        if ( ! $songs = $this->createSongs->execute($searchData, true)) {
-            throw new CreateSongsFailException;
+            $results = $songs->load('listens');
+        } else {
+            $results = [];
         }
 
         return [
-            'results' => $songs->load('listens'),
+            'results' => $results,
             'query'   => $query,
             'page'    => $page,
         ];

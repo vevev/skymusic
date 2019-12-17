@@ -33,7 +33,7 @@ class FetchHtmlSearch
             $json       = json_decode($html);
             $result     = trim($json->data);
 
-            return $result ? $result : 1;
+            return $result ? $result : 'NO_RESULT';
         } catch (Throwable $e) {
             return;
         }

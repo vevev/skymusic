@@ -31,7 +31,6 @@ class SearchController extends Controller
      */
     public function index(Request $request, Core $core)
     {
-
         $data           = $this->loadSearchData->execute($request->query_string, $request->page ?? 1);
         $data['__core'] = $core;
 
