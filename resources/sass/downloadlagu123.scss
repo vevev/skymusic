@@ -926,3 +926,29 @@ ul .item {
         font-style: italic;
     }
 }
+
+dl.rule {
+    margin: 0;
+    padding: 0;
+    color: #000 !important;
+    text-align: justify;
+    dt {
+        color: #000;
+        font-size: 18px;
+        margin: 0px 0 10px 0;
+        display: block;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    dd {
+        color: #000;
+        font-size: 15px;
+        display: block;
+        padding-left: 15px;
+        margin-bottom: 20px;
+        p {
+            margin: 10px 0;
+        }
+    }
+}
