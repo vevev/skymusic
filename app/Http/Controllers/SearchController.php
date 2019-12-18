@@ -38,6 +38,7 @@ class SearchController extends Controller
         Page::$title       = "Kết quả cho: " . $request->query_string;
         Page::$description = "Kết quả cho: " . $request->query_string;
         Page::$NO_INDEX    = 1;
+        Page::$IS_ADSENSE  = 0;
 
         return view(Core::viewPath('search'), $data);
     }
