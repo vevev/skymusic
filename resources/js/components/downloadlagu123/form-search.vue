@@ -9,9 +9,9 @@
     >
         <input type="hidden" name="_token" :value="token" />
         <div class="input-group" id="search-input">
+            <!-- @keyup.prevent="onKeyup"
+                @focus.prevent="onFocus" -->
             <input
-                @keyup.prevent="onKeyup"
-                @focus.prevent="onFocus"
                 autocomplete="off"
                 type="text"
                 ref="input"
