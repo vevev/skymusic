@@ -4,7 +4,9 @@ namespace App\Acme\Services\Fetchs;
 
 use stdClass;
 use Throwable;
-use App\Acme\Services\HttpRequest\HttpRequestByVpsProxy;
+use App\Acme\Services\HttpRequest;
+
+#use App\Acme\Services\HttpRequest\HttpRequestByVpsProxy;
 
 class CrawlDownloadLink
 {
@@ -14,7 +16,7 @@ class CrawlDownloadLink
      *
      * @param HttpRequestByVpsProxy $http_request [description]
      */
-    public function __construct(HttpRequestByVpsProxy $http_request)
+    public function __construct(HttpRequest $http_request)
     {
         $this->http_request = $http_request;
     }
