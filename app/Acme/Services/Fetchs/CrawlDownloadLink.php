@@ -4,7 +4,7 @@ namespace App\Acme\Services\Fetchs;
 
 use stdClass;
 use Throwable;
-use App\Acme\Services\HttpRequest;
+use App\Acme\Services\HttpRequest\HttpRequest;
 
 #use App\Acme\Services\HttpRequest\HttpRequestByVpsProxy;
 
