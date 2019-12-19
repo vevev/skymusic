@@ -26,7 +26,7 @@
     </div>
 
     <div class="info center">
-        <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->key]) }}" class="download" title="Tải bài hát">
+        <a href="{{ route('confirm-skymusic', ['slug'=>$song->slug, 'id'=>$song->key]) }}" class="download" title="Tải bài hát">
             <b></b>&nbsp;Download Mp3&nbsp;</a>
     </div>
 
