@@ -17,7 +17,7 @@ class NCTSong extends Model
 
     protected $fillable = ['lyric', 'listen', 'thumbnail', 'key'];
 
-    protected $appends = ['detail_url', 'listen'];
+    protected $appends = ['detail_url', 'listen', 'cached'];
 
     public function scopeWithSongIds(Builder $query, array $song_ids)
     {
@@ -74,17 +74,33 @@ class NCTSong extends Model
     }
 
     /**
+     * Gets the cached attribute.
+     *
+     * @return     <type>  The cached attribute.
+     */
+    public function getCachedAttribute()
+    {
+        return $this->appends['cached'] ?? null;
+    }
+
+    /**
+     * Sets the cached attribute.
+     *
+     * @param      <type>  $value  The value
+     */
+    public function setCachedAttribute($value)
+    {
+        $this->appends['cached'] = $value;
+    }
+
+    /**
      * Gets the listen attribute.
      *
      * @return <type> The listen attribute.
      */
     public function getListenAttribute()
     {
-        if (isset($this->relations['listens'])) {
-            return Helper::formatView($this->listens->listen);
-        }
-
-        return 0;
+        return Helper::formatView(optional($this->listens)->listen ?? 0);
     }
 
     /**

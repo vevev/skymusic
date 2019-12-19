@@ -20,8 +20,9 @@ class GetSongSkyMusic
 
     public function execute(string $id)
     {
-        $song = Cache::store('file')->get($id);
-        if (null != $song) {
+        if ($song = Cache::store('redis')->get($id)) {
+            $song->cached = true;
+
             return $song;
         }
 

@@ -10,10 +10,13 @@
     </h1>
     <div class="bh-top">
         <div class="bh-thumb detail-thumb">
-            <img  src="{{ asset('/images/audio_default.png') }}" alt="{{ $song->title }}" />
+            <img  src="{{ $song->thumbnail }}" alt="{{ $song->title }}" />
         </div>
         <div class="bh-info">
             <h2>{{ $song->title }} - {{ $song->artists }}</h2>
+            @if($song->listen)
+            <b class="play-count">{{ $song->listen }}</b>
+            @endif
         </div>
     </div>
 
@@ -29,6 +32,7 @@
 
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>
 
+    @if($song->relates->count())
     <div class="ht"><b>Bài Hát Hay Liên Quan :</b></div>
     <div class="collapse-menu">
     @foreach($song->relates as $_song)
@@ -55,6 +59,7 @@
     @endforeach
     <p class="collapse-view-more">Xem Thêm ...</p>
     </div>
+    @endif
 </div>
 @endsection
 
