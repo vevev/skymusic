@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\NCTSong;
 use Illuminate\Http\Request;
+use App\Models\SKYMUSIC_Song;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
 use App\Acme\Services\Fetchs\CrawlDownloadLink;
@@ -21,12 +22,14 @@ class DownloadController extends Controller
 
     private $loadPlaylist;
 
+    private $songSky;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(CrawlDownloadLink $crawler, NCTSong $song, Carbon $carbon, Request $request, LoadPlaylistData $loadPlaylist)
+    public function __construct(CrawlDownloadLink $crawler, NCTSong $song, Carbon $carbon, Request $request, LoadPlaylistData $loadPlaylist, SKYMUSIC_Song $songSky)
     {
 
         $this->crawler      = $crawler;
@@ -39,6 +42,7 @@ class DownloadController extends Controller
         $this->cache_key    = sprintf(config('cache.key.link_download.format'), $this->id);
         $this->re_cache     = $this->request->header('ReCache');
         $this->loadPlaylist = $loadPlaylist;
+        $this->songSky      = $songSky;
     }
 
     /**
@@ -77,6 +81,32 @@ class DownloadController extends Controller
 
         // lay link play
         elseif ($link = $this->crawler->crawlLinkPlay($song->key)) {
+            $this->setCacheLink($link);
+        }
+
+        if ($link) {
+            return $this->re_cache ? '' : redirect($link);
+        }
+    }
+
+    /**
+     * Tra lai link play cho client
+     *
+     * @return [type] [description]
+     */
+    public function skymusic()
+    {
+        if ($link = $this->getLinkFromCache()) {
+            return redirect($link);
+        }
+
+        // Kiểm tra xem trong DB có bài hát này hay chưa, nếu chưa sẽ trả lại
+        $song = $this->songSky->findByKey($this->id);
+        if ( ! $song || ! in_array($song->songType, [1, 2])) {
+            return '//';
+        }
+
+        if ($link = $this->crawler->getLinkSkymusic($song->skyKey)) {
             $this->setCacheLink($link);
         }
 

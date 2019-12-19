@@ -22,11 +22,11 @@
 
     <div class="bh-audio">
         Nghe nhạc online (Bấm <i class="icon-play"></i> để nghe nhạc ...)<br>
-        <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
+        <div id="audio-player-container" data-src="{{route('listen-skymusic', ['slug'=>$song->slug, 'id'=>$song->key])}}"></div>
     </div>
 
     <div class="info center">
-        <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
+        <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->key]) }}" class="download" title="Tải bài hát">
             <b></b>&nbsp;Download Mp3&nbsp;</a>
     </div>
 

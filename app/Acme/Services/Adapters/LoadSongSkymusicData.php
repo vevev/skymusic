@@ -30,7 +30,7 @@ class LoadSongSkymusicData
         if ( ! $song->cached) {
             $song->load(['song', 'listens']);
             $song->relates->load('listens');
-            //$this->cacheSkymusicSong->set($song);
+            $this->cacheSkymusicSong->set($song);
         }
 
         return [

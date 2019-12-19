@@ -41,6 +41,6 @@ class CacheSkymusicSong
      */
     public function set(SKYMUSIC_Song $song)
     {
-        return Cache::store('redis')->put('skysong:' . $song->song_id, $song, now()->addDays(7));
+        return Cache::store('redis')->put('skysong:' . $song->key, $song, now()->addDays(7));
     }
 }

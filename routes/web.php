@@ -18,6 +18,8 @@ Route::get('/danh-sach-phat-{slug}/{id}.html', 'PlaylistController@playlist')->n
 Route::get('/topics/{page?}', 'TopicController@index')->name('playlists');
 Route::get('/topics/{slug}/{page?}', 'TopicController@index')->name('playlists');
 
+Route::match(['get', 'post'], '/listen/{slug}-mp3.{id}.html', 'DownloadController@skymusic')->name('listen-skymusic');
+
 Route::match(['get', 'post'], '/listen/{slug}.{id}.html', 'DownloadController@play')->name('listen');
 Route::match(['get', 'post'], '/listen/{slug}.{id}.{playlist_id}.html', 'DownloadController@playlist')->name('listen-playlist');
 
