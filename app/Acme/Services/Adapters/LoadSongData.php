@@ -68,7 +68,8 @@ class LoadSongData
         }
 
         if ( ! $song->cached) {
-            $song->loadCount(['sky'])->relates->load('listens');
+            $song->loadCount(['sky']);
+            $song->relates->load('listens');
             $this->cacheSong->set($song);
         }
 
