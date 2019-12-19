@@ -18,11 +18,9 @@ class SkymusicLoadSearchData
     /**
      * Constructs a new instance.
      *
-     * @param CacheSearchSkymusic       $cacheSearchSkymusic The cache search skymusic
-     *
-     * @param FetchJsonSearchSkyMusic   $fetchJsonSearchSkymusic The fetch json search skymusic
-     *
-     * @param CreateSongsSkymusic       $createSongsSkymusic The create songs skymusic
+     * @param CacheSearchSkymusic     $cacheSearchSkymusic     The cache search skymusic
+     * @param FetchJsonSearchSkyMusic $fetchJsonSearchSkymusic The fetch json search skymusic
+     * @param CreateSongsSkymusic     $createSongsSkymusic     The create songs skymusic
      */
     public function __construct(
         CacheSearchSkymusic $cacheSearchSkymusic,
@@ -39,13 +37,11 @@ class SkymusicLoadSearchData
     /**
      * Thuc thi viec lay du lieu tim kiem tu api skymusic
      *
-     * @param      string                            $query  Tu Khoa tim kiem
-     * @param      integer                           $page   So trang
-     *
-     * @throws     CreateSongsSkymusicException
-     * @throws     FetchJsonSearchSkymusicException
-     *
-     * @return     array
+     * @param  string                             $query Tu Khoa tim kiem
+     * @param  integer                            $page  So trang
+     * @throws CreateSongsSkymusicException
+     * @throws FetchJsonSearchSkymusicException
+     * @return array
      */
     public function execute(string $query, int $page = 0)
     {
@@ -58,13 +54,13 @@ class SkymusicLoadSearchData
         }
 
         if (isset($json->code)) {
-            throw new FetchJsonSearchSkymusicException;
-        }
+            $songs = [];
+        } else {
+            [$keys, $songs] = $this->extractDataSearchSkymusic->execute($json);
 
-        [$keys, $songs] = $this->extractDataSearchSkymusic->execute($json);
-
-        if ( ! $this->createSongsSkymusic->execute($keys, $songs)) {
-            throw new CreateSongsSkymusicException;
+            if ( ! $this->createSongsSkymusic->execute($keys, $songs)) {
+                throw new CreateSongsSkymusicException;
+            }
         }
 
         return ['results' => $songs, 'query' => $query, 'page' => $page];

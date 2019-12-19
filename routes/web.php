@@ -10,7 +10,7 @@ Route::pattern('page', '\d+');
 
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('/tai-bai-hat-{slug}-mp3/{id}.html', 'SongController@index')->name('song');
-Route::get('/mp3/{slug}/{id}.html', 'SongSkymusicController@index')->name('song-skymusic');
+Route::get('/bai-hat/{slug}/{id}.html', 'SongSkymusicController@index')->name('song-skymusic');
 
 Route::get('/danh-sach-phat-{slug}/{id}.html', 'PlaylistController@playlist')->name('playlist');
 //Route::get('/playlists/{page?}', 'PlaylistController@index')->name('playlists');
@@ -24,7 +24,7 @@ Route::match(['get', 'post'], '/listen/{slug}.{id}.{playlist_id}.html', 'Downloa
 Route::get('/{slug}~{id}.html', 'ConfirmController@index')->name('confirm');
 Route::get('/disclaimers.html', 'ConfirmController@disclaimers')->name('disclaimers');
 Route::get('/download/{slug}.{id}.html', 'DownloadController@play')->name('download');
-Route::get('/tim-kiem/{query_string}', 'SearchController@index')->name('search');
+Route::get('/tim-kiem/{query_string}', 'SkymusicSearchController@index')->name('search');
 Route::get('/search/{query_string}', 'SkymusicSearchController@index')->name('search-skymusic-get');
 Route::get('/search/', 'SearchController@get')->name('search-get');
 Route::post('/search/', 'SearchController@post')->name('search-post');
