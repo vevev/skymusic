@@ -30,7 +30,7 @@
     </div>
 
     <div class="info center">
-        <div id="button-download-container" data-href="{{ route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-download="{{ $song->canDownload === 0 ? 0 : 1 }}"></div>
+        <div id="button-download-container" data-href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-download="{{ $song->canDownload === 0 ? 0 : 1 }}"></div>
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>
