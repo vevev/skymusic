@@ -3,27 +3,23 @@
 namespace App\Acme\Services\Adapters;
 
 use App\Models\NCTSong;
+use App\Acme\Services\Fetchs\FetchSong;
 use App\Acme\Services\Interacts\GetSong;
 use App\Exceptions\SongNotFoundException;
 use App\Acme\Services\Interacts\CacheSong;
-use App\Exceptions\CrawlSongFailException;
+use App\Acme\Services\Interacts\StoreSong;
 use App\Acme\Services\Fetchs\FetchHtmlSong;
-use App\Exceptions\SetRelatesFailException;
-use App\Exceptions\UpdateSongFailException;
 use App\Acme\Services\Interacts\CreateSongs;
 use App\Acme\Services\Adapters\LoadTop20Song;
 use App\Acme\Services\Extracts\ExtractSongHtml;
-use App\Exceptions\CreateRelationFailException;
 use App\Acme\Services\Interacts\CreateRelations;
 
 class LoadSongData
 {
-    private $fetchHtmlSong;
     private $getSong;
-    private $extractSongHtml;
-    private $createSongs;
-    private $createRelations;
     private $cacheSong;
+    private $fetchSong;
+    private $storeSong;
     private $loadTop20Song;
 
     /**
@@ -35,15 +31,18 @@ class LoadSongData
      * @param      \App\Acme\Services\Interacts\CreateSongs      $createSongs      The create songs
      * @param      \App\Acme\Services\Interacts\CreateRelations  $createRelations  The create relations
      */
-    public function __construct(FetchHtmlSong $fetchHtmlSong, GetSong $getSong, ExtractSongHtml $extractSongHtml, CreateSongs $createSongs, CreateRelations $createRelations, LoadTop20Song $loadTop20Song, CacheSong $cacheSong)
-    {
-        $this->fetchHtmlSong   = $fetchHtmlSong;
-        $this->getSong         = $getSong;
-        $this->extractSongHtml = $extractSongHtml;
-        $this->createSongs     = $createSongs;
-        $this->createRelations = $createRelations;
-        $this->loadTop20Song   = $loadTop20Song;
-        $this->cacheSong       = $cacheSong;
+    public function __construct(
+        GetSong $getSong,
+        LoadTop20Song $loadTop20Song,
+        CacheSong $cacheSong,
+        FetchSong $fetchSong,
+        StoreSong $storeSong
+    ) {
+        $this->getSong       = $getSong;
+        $this->loadTop20Song = $loadTop20Song;
+        $this->cacheSong     = $cacheSong;
+        $this->fetchSong     = $fetchSong;
+        $this->storeSong     = $storeSong;
     }
 
     /**
@@ -57,19 +56,17 @@ class LoadSongData
      */
     public function execute(string $id)
     {
-        $song = $this->getSong->execute($id);
-        if ( ! $song) {
+        // Neu khong ton tai bai hat thi the throw loi ma khong crawl
+        if ( ! $song = $this->getSong->execute($id)) {
             throw new SongNotFoundException;
         }
 
-        // Neu bai hat da crawl thi tra lai
-        elseif ( ! $song->hasFetched()) {
+        // Neu bai hat chua crawl day du hoac het han thi tien hanh crawl va save
+        elseif ( ! $song->hasFetched() || $song->expired()) {
             $this->fetchAndSaveSong($song);
-        }
 
-        if ( ! $song->cached) {
-            $song->loadCount(['sky']);
-            $song->relates->load('listens');
+            $song->load(['options', 'relates', 'sky']);
+            $song->relates->load(['listens']);
             $this->cacheSong->set($song);
         }
 
@@ -84,35 +81,19 @@ class LoadSongData
     /**
      * Fetches and save song.
      *
-     * @param      NCTSong                                      $song   The song
-     *
-     * @throws     \App\Exceptions\CrawlSongFailException       (description)
-     * @throws     \App\Exceptions\CreateRelationFailException  (description)
-     * @throws     \App\Exceptions\SetRelatesFailException      (description)
-     * @throws     \App\Exceptions\UpdateSongFailException      (description)
+     * @param      NCTSong  $song   The song
      */
     private function fetchAndSaveSong(NCTSong $song)
     {
-        $html = $this->fetchHtmlSong->execute($song);
+        [$songAttr, $arraySong] = $this->fetchSong->execute($song);
 
-        $data = $this->extractSongHtml->execute($html);
-        if ( ! is_array($data)) {
-            throw new CrawlSongFailException;
-        }
+        $song->updateOrInsertOption([
+            'song_id'     => $song->song_id,
+            'canDownload' => $songAttr['canDownload'],
+        ]);
 
-        [$_song, $_songs] = $data;
-        if ( ! $song->fill($_song)->save()) {
-            throw new UpdateSongFailException;
-        }
+        unset($songAttr['canDownload']);
 
-        if ( ! $this->createSongs->execute($_songs)) {
-            throw new SetRelatesFailException;
-        }
-
-        if ( ! $this->createRelations->execute($song, $_songs)) {
-            throw new CreateRelationFailException;
-        }
-
-        $song->load('relates');
+        $this->storeSong->execute($song, $songAttr, $arraySong);
     }
 }

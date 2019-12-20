@@ -13,11 +13,15 @@ class NCTSong extends Model
     public $incrementing = true;
     public $primaryKey   = 'real_id';
     public $timestamps   = true;
-    protected $hidden    = ['pivot', 'listens', 'id', 'created_at', 'updated_at', 'real_id', 'key', 'lyric'];
+    protected $hidden    = ['pivot', 'listens', 'id', 'created_at', 'updated_at', 'real_id', 'key', 'lyric', 'options'];
 
     protected $fillable = ['lyric', 'listen', 'thumbnail', 'key'];
 
-    protected $appends = ['detail_url', 'listen', 'cached'];
+    protected $appends = ['detail_url', 'listen'];
+
+    protected $cached = false;
+
+    const MAXIMUM_STORAGE_DAYS = 7;
 
     public function scopeWithSongIds(Builder $query, array $song_ids)
     {
@@ -56,7 +60,7 @@ class NCTSong extends Model
      */
     public function findById(string $song_id, array $get = ['*'])
     {
-        return $this->with('listens')->where('song_id', $song_id)->first($get);
+        return $this->with(['listens', 'options'])->where('song_id', $song_id)->first($get);
     }
 
     /**
@@ -80,7 +84,7 @@ class NCTSong extends Model
      */
     public function getCachedAttribute()
     {
-        return $this->appends['cached'] ?? null;
+        return $this->cached ?? null;
     }
 
     /**
@@ -90,7 +94,7 @@ class NCTSong extends Model
      */
     public function setCachedAttribute($value)
     {
-        $this->appends['cached'] = $value;
+        $this->cached = $value;
     }
 
     /**
@@ -172,6 +176,16 @@ class NCTSong extends Model
     }
 
     /**
+     * { function_description }
+     *
+     * @return <type> ( description_of_the_return_value )
+     */
+    public function options()
+    {
+        return $this->hasOne(NCTSongOption::class, 'song_id', 'song_id');
+    }
+
+    /**
      * Determines if it has fetched.
      *
      * @return boolean True if has fetched, False otherwise.
@@ -179,5 +193,83 @@ class NCTSong extends Model
     public function hasFetched()
     {
         return $this->key && $this->relates->count();
+    }
+
+    /**
+     * { function_description }
+     *
+     * @return     <type>  ( description_of_the_return_value )
+     */
+    public function expired()
+    {
+        return $this->updated_at->diffInMinutes(now()) > self::MAXIMUM_STORAGE_DAYS;
+    }
+
+    /**
+     * Gets the can download attribute.
+     *
+     * @return     <type>  The can download attribute.
+     */
+    public function getCanDownloadAttribute()
+    {
+        return optional($this->options)->canDownload;
+    }
+
+    /**
+     * Gets the has removed attribute.
+     *
+     * @return     <type>  The has removed attribute.
+     */
+    public function getHasRemovedAttribute()
+    {
+        return optional($this->options)->hasRemoved;
+    }
+
+    /**
+     * Gets the is dmca attribute.
+     *
+     * @return     <type>  The is dmca attribute.
+     */
+    public function getIsDmcaAttribute()
+    {
+        return optional($this->options)->isDmca;
+    }
+
+    /**
+     * Gets the has custom attribute.
+     *
+     * @return     <type>  The has custom attribute.
+     */
+    public function getHasCustomAttribute()
+    {
+        return optional($this->options)->hasCustom;
+    }
+
+    /**
+     * Gets the redirect to attribute.
+     *
+     * @return     <type>  The redirect to attribute.
+     */
+    public function getRedirectToAttribute()
+    {
+        return optional($this->options)->redirectTo;
+    }
+
+    /**
+     * { function_description }
+     *
+     * @param      array  $option  The option
+     */
+    public function updateOrInsertOption(array $option)
+    {
+        if (isset($this->relations['options'])) {
+            foreach ($option as $attribute => $value) {
+                $this->options->{$attribute} = $value;
+            }
+
+            $this->options->save();
+        } else {
+            $this->options()->insert($option);
+        }
     }
 }

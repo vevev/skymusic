@@ -2,6 +2,8 @@
 
 namespace App\Acme\Services\Extracts;
 
+use App\Exceptions\ExtractSongException;
+
 class ExtractSongHtml
 {
     /**
@@ -17,20 +19,27 @@ class ExtractSongHtml
         $song['lyric'] = $this->extractLyric($html);
         $song['key']   = $this->extractKey($html);
 
+        $song['canDownload'] = 1;
+
+        $patternCanDownload = '#<\!-- start license -->#i';
+        if (preg_match($patternCanDownload, $html, $matchesCanDownload)) {
+            $song['canDownload'] = 0;
+        }
+
         if ( ! preg_match('#<ul id="ulSongRecommend">.+?</ul>#is', $html, $ul)) {
-            return;
+            throw new ExtractSongException('ul not found', ['document' => $html]);
         }
 
         // Lọc ra các row bài hát, nếu không có thì trả lại null
         $patternName = '#(?=<h3.*href=".*/bai-hat/([^/]+?)\.([^/]+?).html">(.+?)</a></h3>)#';
         if ( ! preg_match_all($patternName, $ul[0], $matchesName, PREG_SET_ORDER)) {
-            return;
+            throw new ExtractSongException('name not found', ['document' => $ul[0]]);
         }
 
         // Lọc ra các single bài hát, nếu không có thì trả lại null
         $patternSingle = '#<h4 class="singer_song">.+?</h4>#is';
         if ( ! preg_match_all($patternSingle, $ul[0], $matchesSingle, PREG_SET_ORDER)) {
-            return;
+            throw new ExtractSongException('single not found', ['document' => $ul[0]]);
         }
 
         $patternKey = '#(?=<span keyEncrypt="([^"]+?)")#is';
@@ -38,16 +47,16 @@ class ExtractSongHtml
 
         $patternSrc = '#(?=data-src="([^"]+?)")#i';
         if ( ! preg_match_all($patternSrc, $ul[0], $matchesSrc, PREG_SET_ORDER)) {
-            return;
+            throw new ExtractSongException('src not found', ['document' => $ul[0]]);
         }
 
         $patternRealId = '#(?=song_img_(\d+))#i';
         if ( ! preg_match_all($patternRealId, $ul[0], $matchesRealId, PREG_SET_ORDER)) {
-            return;
+            throw new ExtractSongException('realid not found', ['document' => $ul[0]]);
         }
 
         if (count($matchesSingle) !== count($matchesName)) {
-            return;
+            throw new ExtractSongException('song array not equal', [$matchesSingle, $matchesName]);
         }
 
         $songs = [];

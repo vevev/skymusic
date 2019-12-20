@@ -36,7 +36,8 @@ class ConfirmController extends Controller
             abort(404);
         }
 
-        Page::$NO_INDEX = 1;
+        Page::$NO_INDEX   = 1;
+        Page::$IS_ADSENSE = $song->sky()->count();
 
         return view(Core::viewPath('confirm'), ['song' => $song, '__core' => $this->core]);
     }
@@ -55,7 +56,8 @@ class ConfirmController extends Controller
             abort(404);
         }
 
-        Page::$NO_INDEX = 1;
+        Page::$NO_INDEX   = 1;
+        Page::$IS_ADSENSE = 1;
 
         return view(Core::viewPath('confirm-skymusic'), ['song' => $song, '__core' => $this->core]);
     }
