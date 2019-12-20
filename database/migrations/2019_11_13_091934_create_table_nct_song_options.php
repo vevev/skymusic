@@ -14,7 +14,7 @@ class CreateTableNctSongOptions extends Migration
     public function up()
     {
         Schema::create('nct_song_options', function (Blueprint $table) {
-            $table->string('song_id', 20)->index();
+            $table->string('song_id', 20)->unique();
             $table->boolean('canDownload')->index();
             $table->boolean('hasRemoved', 20)->index();
             $table->boolean('isDmca')->index();
