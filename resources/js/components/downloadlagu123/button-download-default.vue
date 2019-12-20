@@ -34,7 +34,7 @@ export default {
     methods: {
         onCLick() {
             if (this.download == '1') {
-                return window.location.replace(this.href);
+                return (window.location.href = this.href);
             }
 
             this.dataHref = '#';
