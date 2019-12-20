@@ -15,11 +15,11 @@ class CreateTableNctSongOptions extends Migration
     {
         Schema::create('nct_song_options', function (Blueprint $table) {
             $table->string('song_id', 20)->unique();
-            $table->boolean('canDownload')->index();
-            $table->boolean('hasRemoved', 20)->index();
-            $table->boolean('isDmca')->index();
-            $table->boolean('hasCustom')->index();
-            $table->string('redirectTo', 20)->index();
+            $table->boolean('canDownload')->index()->nullable();
+            $table->boolean('hasRemoved', 20)->index()->nullable();
+            $table->boolean('isDmca')->index()->nullable();
+            $table->boolean('hasCustom')->index()->nullable();
+            $table->string('redirectTo', 20)->index()->nullable();
 
             $table->foreign('song_id')
                   ->references('song_id')
