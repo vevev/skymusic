@@ -26,13 +26,11 @@
         {{-- <audio controls preload="none" src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}">
             Trình duyệt của bạn không hỗ trợ nghe online !
         </audio> --}}
-        <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
+        <div id="audio-player-container" data-src="{{ route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-retry="{{ $song->canDownload === 0 ? 0 : 1 }}"></div>
     </div>
 
-
     <div class="info center">
-        <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
-            <b></b>&nbsp;Download Mp3&nbsp;</a>
+        <div id="button-download-container" data-href="{{ route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-download="{{ $song->canDownload === 0 ? 0 : 1 }}"></div>
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>

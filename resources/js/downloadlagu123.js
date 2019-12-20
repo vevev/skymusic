@@ -5,6 +5,7 @@ const Search = require('./components/downloadlagu123/form-search').default;
 const AudioPlayer = require('./components/downloadlagu123/audio-player-default').default;
 const AudioPlayerPlaylist = require('./components/downloadlagu123/audio-player-playlist-default')
     .default;
+const ButtonDownload = require('./components/downloadlagu123/button-download-default').default;
 const LoadMoreSearchSong = require('./components/downloadlagu123/load-more-search-song').default;
 var vm = null;
 
@@ -32,12 +33,24 @@ if ((vm = document.getElementById('search-form'))) {
     });
 }
 
+if ((vm = document.getElementById('button-download-container'))) {
+    const buttonDownload = new Vue({
+        el: '#button-download-container',
+        data: {
+            href: vm.dataset.href,
+            download: vm.dataset.download,
+        },
+        components: { ButtonDownload },
+        template: `<ButtonDownload :href="href" :download="download"></ButtonDownload>`,
+    });
+}
+
 if ((vm = document.getElementById('audio-player-container'))) {
     const audioPlayer = new Vue({
         el: '#audio-player-container',
-        data: { src: vm.dataset.src },
+        data: { src: vm.dataset.src, retry: vm.dataset.retry },
         components: { AudioPlayer },
-        template: `<AudioPlayer :src="src"></AudioPlayer>`,
+        template: `<AudioPlayer :src="src" :retry="retry"></AudioPlayer>`,
     });
 }
 
