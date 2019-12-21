@@ -60,7 +60,9 @@ class NCTSong extends Model
      */
     public function findById(string $song_id, array $get = ['*'])
     {
-        return $this->with(['listens', 'options'])->where('song_id', $song_id)->first($get);
+        return $this->with(['listens', 'options'])
+                    ->where('song_id', $song_id)
+                    ->first($get);
     }
 
     /**
@@ -68,13 +70,25 @@ class NCTSong extends Model
      *
      * @return <type> ( description_of_the_return_value )
      */
-    public function relates()
+    public function relates(array $columns = [])
     {
-        return $this->belongsToMany($this, 'nct_song_song', 'song_id', 'relate_id', 'song_id', 'song_id')->select(
-            array_map(function ($column) {
-                return 'nct_songs.' . $column;
-            }, ['song_id', 'real_id', 'name', 'slug', 'single', 'thumbnail', 'key'])
-        );
+        if (empty($columns)) {
+            $columns = [
+                'song_id', 'real_id', 'name', 'slug', 'single', 'thumbnail', 'key',
+            ];
+        }
+
+        return $this->belongsToMany(
+                        $this,
+                        'nct_song_song',
+                        'song_id',
+                        'relate_id',
+                        'song_id',
+                        'song_id'
+                    )
+                    ->select(array_map(function ($column) {
+                        return 'nct_songs.' . $column;
+                    }, $columns));
     }
 
     /**
@@ -202,7 +216,7 @@ class NCTSong extends Model
      */
     public function expired()
     {
-        return $this->updated_at->diffInMinutes(now()) > self::MAXIMUM_STORAGE_DAYS;
+        return $this->updated_at->diffInDays(now()) > self::MAXIMUM_STORAGE_DAYS;
     }
 
     /**
