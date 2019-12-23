@@ -61,6 +61,7 @@ class CrawlListen
         foreach ($listens as $index => $listen) {
             $insert[] = ['real_id' => $index, 'listen' => $listen, 'type' => $type];
         }
+        dd($insert);
 
         $this->listenModel->insert($insert);
     }
