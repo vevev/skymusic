@@ -160,7 +160,7 @@ class NCTSong extends Model
     public function getSongWithListenIsNull(int $limit = 20, array $get = ['*'])
     {
         return $this->leftJoin('nct_listens', 'nct_listens.real_id', '=', 'nct_songs.real_id')
-                    ->whereNull('nct_listens.lyric')
+                    ->whereNotNull('nct_songs.lyric')
                     ->where(function ($query) {
                         $query->whereNull('nct_listens.real_id')
                               ->orWhere(function ($query) {
