@@ -51,6 +51,6 @@ class LoadTop20Song
         $songs->load('listens');
         $this->cacheBXH->set($country, $type, $songs->toArray());
 
-        return response()->json($songs)->send();
+        return response()->json($songs);
     }
 }

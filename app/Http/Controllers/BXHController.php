@@ -75,6 +75,6 @@ class BXHController extends Controller
      */
     public function renew(string $country, $type)
     {
-        $this->loadTop20Song->execute($country, $type, true);
+        return $this->loadTop20Song->execute($country, $type, true);
     }
 }
