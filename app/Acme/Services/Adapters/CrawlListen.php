@@ -38,7 +38,7 @@ class CrawlListen
         $playlistIds = $this->getPlaylistIds();
 
         $response = $this->fetchJsonListen->execute($songIds, $playlistIds);
-        dd($response);
+
         if (isset($response->songs)) {
             $this->saveListen($response->songs, 'song');
         }
