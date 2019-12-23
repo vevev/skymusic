@@ -46,6 +46,7 @@ class CrawlListen
         if (isset($response->playlists)) {
             $this->saveListen($response->playlists, 'playlist');
         }
+        echo "string";
     }
 
     /**
