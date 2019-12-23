@@ -38,7 +38,7 @@ class CrawlListen
         $playlistIds = $this->getPlaylistIds();
 
         $response = $this->fetchJsonListen->execute($songIds, $playlistIds);
-
+        dd($response);
         if (isset($response->songs)) {
             $this->saveListen($response->songs, 'song');
         }
@@ -61,7 +61,6 @@ class CrawlListen
         foreach ($listens as $index => $listen) {
             $insert[] = ['real_id' => $index, 'listen' => $listen, 'type' => $type];
         }
-        dd($insert);
 
         $this->listenModel->insert($insert);
     }
