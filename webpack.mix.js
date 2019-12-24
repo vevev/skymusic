@@ -18,3 +18,7 @@ mix.js('resources/js/' + process.env.APP_TEMPLATE + '.js', 'public/js/app.min.js
     .copyDirectory('resources/fontello', 'public/fonts')
     .copyDirectory('resources/fontello', 'public/fonts')
     .copyDirectory('resources/svg', 'public/svg');
+
+if (process.env.APP_SOUNDCLOUD) {
+    mix.js('resources/js/soundcloud.js', 'public/js/splayer.min.js');
+}

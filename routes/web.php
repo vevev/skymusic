@@ -44,3 +44,4 @@ Route::get('/unpublish/crawl-listen', 'CrawlListenController@index')->name('craw
 Route::get('/unpublish/crawl-skymusic-database/{reload?}', 'UnpublishController@index')->name('crawl-skymusic-database');
 
 Route::get('/logos', 'IndexController@logos');
+Route::get('/splayer', 'IndexController@player');

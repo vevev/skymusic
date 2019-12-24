@@ -30,4 +30,9 @@ class IndexController extends Controller
     {
         return view(Core::viewPath('logos'));
     }
+
+    public function player()
+    {
+        return view(Core::viewPath('player'));
+    }
 }
