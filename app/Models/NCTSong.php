@@ -193,6 +193,16 @@ class NCTSong extends Model
     }
 
     /**
+     * Gets the has skymusic attribute.
+     *
+     * @return     <type>  The has skymusic attribute.
+     */
+    public function getHasSkymusicAttribute()
+    {
+        return optional($this->sky)->count() ?? 0;
+    }
+
+    /**
      * { function_description }
      *
      * @return <type> ( description_of_the_return_value )
