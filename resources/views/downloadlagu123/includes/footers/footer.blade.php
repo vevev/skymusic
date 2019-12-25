@@ -30,7 +30,7 @@
 <p class="center">
 
 <a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a>
-@if(Page::$IS_ADSENSE)
+@if(Page::$IS_ADSENSE || Route::is('search'))
 <br>Bản quyền sử dụng bài hát cung cấp bởi: <a target="_blank" rel="nofollow" href="https://skymusic.com.vn">Skymusic</a>
 @endif
 <br><br>
