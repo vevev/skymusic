@@ -21,7 +21,7 @@ class LoadIndexData
     {
         $main     = $this->loadTop20Song->execute('vn', 'bai-hat');
         $playlist = $this->getPlaylist->execute('iZ7XNosoPhJN');
-        $playlist->songs;
+        $playlist->load('songs');
 
         return [
             'main'    => $main,
