@@ -25,9 +25,9 @@ class LoadIndexData
     {
         //$main           = $this->loadTop20Song->execute('vn', 'bai-hat');
         //$playlist_songs = $this->getPlaylist->execute('iZ7XNosoPhJN')->songs;
-        $main = $this->getSongs('index_main_songs', ["OfxivlPraYwi", "mlnzEWoupew1", "3n5chYI99Lts", "tnvcYCYt7lmv", "iGFAaIkxyXe3", "dM7OTqcZfFgc", "UGn25z66rCyd", "vtEybe9NxLw7", "G1aGMabQAxT5I", "3eIk0vrDK6Wy", "fNLeUd3SjD7G", "AHX2SHdodJlR", "j3awUEpymF4A", "EwXszeMfcnwS", "L0G5DzIXoFf3", "3eIk0vrDK6Wy", "z36z4U6F0XwS", "iWJ2SQ9rUtMo", "FfM9sZqNPfzz", "yAUgLMi1A5jqr"]);
+        $main = $this->getSongs('index_main_songs', ["OfxivlPraYwi", "mlnzEWoupew1", "3n5chYI99Lts", "tnvcYCYt7lmv", "iGFAaIkxyXe3", "dM7OTqcZfFgc", "UGn25z66rCyd", "vtEybe9NxLw7", "G1aGMabQAxT5I", "3eIk0vrDK6Wy", "fNLeUd3SjD7G", "EwXszeMfcnwS", "L0G5DzIXoFf3", "z36z4U6F0XwS", "iWJ2SQ9rUtMo", "FfM9sZqNPfzz", "yAUgLMi1A5jqr"]);
 
-        $sidebar = $this->getSongs('index_sidebar_songs', ["5aki2rRJ3VHh", "j3awUEpymF4A", "K8zGqF0HBZmN", "iGFAaIkxyXe3", "c1TTbgotXL9T", "RrzSbtwkNO32", "AHX2SHdodJlR", "I340AgjHhO2n", "fNLeUd3SjD7G", "3ZQTDt8gdl4v", "Wbl0lGylnp5A", "HK91COzQOh4i", "vtEybe9NxLw7", "HX66tjrmb2KX", "tnvcYCYt7lmv", "szEi6RQwCuAj", "Xb0txCxrKSCh", "M8JCkdWRkcUq", "OaFVYaWeZ1mi", "oU0qaWPWljVh"]);
+        $sidebar = $this->getSongs('index_sidebar_songs', ["5aki2rRJ3VHh", "j3awUEpymF4A", "K8zGqF0HBZmN", "c1TTbgotXL9T", "RrzSbtwkNO32", "AHX2SHdodJlR", "I340AgjHhO2n", "3ZQTDt8gdl4v", "Wbl0lGylnp5A", "HK91COzQOh4i", "HX66tjrmb2KX", "szEi6RQwCuAj", "Xb0txCxrKSCh", "M8JCkdWRkcUq", "OaFVYaWeZ1mi", "oU0qaWPWljVh"]);
 
         return [
             'main'    => $main,
