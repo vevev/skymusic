@@ -1,18 +1,10 @@
 <template>
     <div id="audio-player-container" :class="{ errorMessage: error }">
-        <iframe
-            width="auto"
-            height="auto"
-            scrolling="no"
-            frameborder="no"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/652493990&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-            ref="scplayer"
-        ></iframe>
         <div :class="{ player: true, canplay: canplay }">
             <div class="btn-play" v-if="isPause" @click="onClickPlayBtn"></div>
             <div class="btn-pause" v-if="isPlay" @click="onClickPauseBtn"></div>
             <div class="currentText">{{ currentText }}</div>
-            <div ref="progress-bar" class="progress-bar" @click.stop.prevent="onCLickProgressBar">
+            <div ref="progress-bar" class="progress-bar" @click="onCLickProgressBar">
                 <div class="buffered" v-bind:style="bufferedStyle"></div>
                 <div class="current" v-bind:style="currentStyle"></div>
             </div>
@@ -25,6 +17,14 @@
                 <div class="btn-volume" v-if="!muted" @click="onClickVolumeBtn"></div>
             </div>
         </div>
+        <iframe
+            width="auto"
+            height="auto"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            ref="scplayer"
+        ></iframe>
     </div>
 </template>
 <script type="text/javascript">
@@ -37,64 +37,62 @@ export default {
             volume: 30,
             muted: false,
             buffered: 0,
-            canplay: false,
+            canplay: 0,
+            loadiframe: false,
             currentTime: 0,
             duration: 0,
-            ratio: 0,
             error: false,
             progressBarEloffsetWidth: null,
         };
     },
 
     props: {
-        src: String,
-    },
-
-    created() {
-        // console.log(this.$refs['scplayer']);
-        // this.SC_Player = SC.Widget(this.$refs.scplayer);
-        // console.log(
-        //     this.SC_Player.getSound(val => {
-        //         console.log(val);
-        //     })
-        // );
-        // this.initAudioEvent();
-        // // this.SC_Player = SC.Widget(this.$refs.scplayer);
-        // // console.log(this.SC_Player);
-        // // this.initAudioEvent();
+        ids: 0,
     },
 
     mounted() {
+        this.$refs.scplayer.src = this.src;
         this.SC_Player = SC.Widget(this.$refs.scplayer);
         this.initAudioEvent();
-        if (this.canplay) this.progressBarEloffsetWidth = this.$refs['progress-bar'].offsetWidth;
     },
 
     watch: {
-        isPlay(newVal, oldVal) {
-            if (newVal) {
+        isPlay(newValue, oldValue) {
+            if (newValue) {
                 this.SC_Player.play();
-            } else if (oldVal) {
+            } else if (oldValue) {
                 this.SC_Player.pause();
             }
         },
 
         muted(n, o) {
-            this.SC_Player.muted = n;
+            if (n) {
+                this.SC_Player.setVolume(0);
+            } else if (o) {
+                this.SC_Player.setVolume(this.volume);
+            }
         },
 
         volume(n, o) {
-            this.SC_Player.volume = n / 100;
+            this.SC_Player.setVolume(n);
         },
     },
 
     computed: {
+        src() {
+            return (
+                'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' +
+                this.ids +
+                '&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false'
+            );
+        },
+
         isPause: function() {
             return !this.isPlay;
         },
 
         currentPercent: function() {
-            return (100 * this.currentTime) / 1;
+            return (100 * this.currentTime) / this.duration;
         },
 
         currentStyle: function() {
@@ -114,7 +112,7 @@ export default {
         },
 
         durationText() {
-            return this.secondToTime(this.duration / 1000);
+            return this.secondToTime(this.duration);
         },
     },
 
@@ -131,36 +129,50 @@ export default {
         initAudioEvent() {
             let self = this;
             this.SC_Player.bind(SC.Widget.Events.READY, () => {
-                this.canplay = 1;
-                this.volume++;
+                this.SC_Player.getCurrentSound(sound => {
+                    if (!sound.streamable) {
+                        this.isPlay = false;
+                        this.canplay = false;
+                        this.error = true;
+                    } else {
+                        this.canplay = 1;
+                        this.volume++;
+                        this.progressBarEloffsetWidth = this.$refs['progress-bar'].offsetWidth;
+                    }
+                });
 
                 this.SC_Player.getDuration(val => {
-                    this.duration = val;
-                    this.ratio = this.progressBarEloffsetWidth / this.duration;
+                    this.duration = val / 1000;
                 });
 
-                this.SC_Player.bind(SC.Widget.Events.PLAY_PROGRESS, () => {
-                    // self.currentTime = this.currentTime;
-                    // self.buffered =
-                    //     (100 * this.buffered.end(this.buffered.length - 1)) / this.duration;
+                this.SC_Player.bind(SC.Widget.Events.PLAY_PROGRESS, e => {
+                    this.currentTime = e.currentPosition / 1000;
+                    this.buffered = e.loadedProgress * 100;
+                });
+
+                this.SC_Player.bind(SC.Widget.Events.LOAD_PROGRESS, e => {
+                    //console.log('loading');
+                });
+
+                this.SC_Player.bind(SC.Widget.Events.PLAY, e => {
+                    //this.SC_Player.pause();
+                });
+
+                this.SC_Player.bind(SC.Widget.Events.FINISH, e => {
+                    this.isPlay = false;
+                });
+
+                this.SC_Player.bind(SC.Widget.Events.ERROR, e => {
+                    this.isPlay = false;
+                    this.canplay = false;
+                    this.error = true;
                 });
             });
-
-            // this.SC_Player.addEventListener('canplaythrough', function(e) {});
-            // this.SC_Player.addEventListener('error', function(e) {
-            //     self.isPlay = false;
-            //     self.canplay = false;
-            //     self.error = true;
-            // });
-            // this.SC_Player.addEventListener('ended', function(e) {
-            //     self.isPlay = false;
-            // });
         },
 
         onCLickProgressBar(event) {
-            this.progressBarEloffsetWidth = this.$refs['progress-bar'].offsetWidth;
-            this.ratio = this.progressBarEloffsetWidth / this.SC_Player.duration;
-            this.SC_Player.currentTime = event.offsetX / this.ratio;
+            this.currentTime = (event.offsetX * this.duration) / this.progressBarEloffsetWidth;
+            this.SC_Player.seekTo(this.currentTime * 1000);
             !this.isPlay && this.SC_Player.pause();
         },
 
@@ -198,10 +210,9 @@ div#audio-player-container {
     border-radius: 3px;
     position: relative;
     iframe {
-        z-index: 1;
-        position: fixed;
-        top: 50px;
-        width: 622px;
+        z-index: -1;
+        position: absolute;
+        opacity: 0;
     }
     .player {
         display: flex;
@@ -242,16 +253,28 @@ div#audio-player-container {
             margin-left: 10px;
         }
         .progress-bar {
-            height: 4px;
+            height: 100%;
             flex-grow: 1;
             margin: 0;
-            background: #c1c3c3;
-            border-radius: 5px;
+            background: transparent;
             position: relative;
+            &:before {
+                content: '';
+                background: #c1c3c3;
+                width: 100%;
+                height: 4px;
+                display: block;
+                position: absolute;
+                border-radius: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
             .buffered,
             .current {
                 position: absolute;
-                height: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 4px;
                 border-radius: 5px;
             }
 
