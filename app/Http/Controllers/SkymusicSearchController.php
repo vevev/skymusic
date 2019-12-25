@@ -38,6 +38,10 @@ class SkymusicSearchController extends Controller
         Page::$NO_INDEX    = 1;
         Page::$IS_ADSENSE  = 0;
 
+        if (\Route::is('search') && ! empty($data['results'])) {
+            Page::$SEARCH_ADS = 1;
+        }
+
         return view(Core::viewPath('search-skymusic'), $data);
     }
 }

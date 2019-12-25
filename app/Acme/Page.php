@@ -24,6 +24,8 @@ class Page
 
     public static $IS_ADSENSE = true;
 
+    public static $SEARCH_ADS = false;
+
     public static $logo = [
         'src' => null,
         'alt' => null,
