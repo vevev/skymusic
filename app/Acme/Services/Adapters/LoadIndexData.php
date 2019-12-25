@@ -19,14 +19,16 @@ class LoadIndexData
 
     public function execute()
     {
-        $main = $this->loadTop20Song->execute('vn', 'bai-hat');
+        $main     = $this->loadTop20Song->execute('vn', 'bai-hat');
+        $playlist = $this->getPlaylist->execute('iZ7XNosoPhJN');
+        $playlist->songs;
 
         return [
             'main'    => $main,
             'sidebar' => [
                 //'primary'   => $this->loadTop20Song->execute('us', 'bai-hat'),
                 //'secondary' => $this->loadTop20Song->execute('kr', 'bai-hat'),
-                'playlist' => $this->getPlaylist->execute('iZ7XNosoPhJN')->songs,
+                'playlist' => $playlist,
             ],
         ];
     }
