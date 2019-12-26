@@ -24,7 +24,7 @@ class SongController extends Controller
         if ($data['song']->hasSkymusic) {
             Page::$IS_ADSENSE = 1;
         } else {
-            abort(404);
+            return redirect('/');
         }
 
         Page::$title       = 'Tải Bài Hát ' . $data['song']->name . ' Mp3 - Tải nhạc Mp3';
