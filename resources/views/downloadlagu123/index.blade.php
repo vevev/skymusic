@@ -3,7 +3,7 @@
 @section('content')
 <div class="left-bar">
     <div class="cate">
-        <h2 class="ht">Tải Nhạc Mp3 Hay - BXH</h2>
+        <h2 class="ht">Tải Nhạc Hay - BXH</h2>
     </div>
     {{-- <div class="collapse-menu"> --}}
     @foreach($data['main'] as $index => $song)
@@ -34,7 +34,7 @@
 @section('sidebar')
     <div class="right-bar">
         <div class="cate">
-            <b class="ht">Nhạc Mp3 Hay khác</b>
+            <b class="ht">Nhạc Hay khác</b>
         </div>
         <div class="collapse-menu">
         @foreach($data['sidebar']['playlist'] as $index => $song)
