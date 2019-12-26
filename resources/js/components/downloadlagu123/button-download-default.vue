@@ -2,7 +2,7 @@
     <div class="download-container">
         <a @click.prevent="onCLick" :href="dataHref" class="download" title="Tải bài hát">
             <b></b>
-            &nbsp;Download Mp3&nbsp;
+            &nbsp;Download&nbsp;
         </a>
         <div class="error-modal-wrapper" v-if="errorDisplay" @click="errorDisplay = false">
             <div class="error-modal">
