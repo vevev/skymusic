@@ -6,7 +6,7 @@
 @section('content')
 <div class="left-bar">
     <h1 class="ht">
-        <a href="">Tải bài hát {{ $song->name }} MP3 về máy</a>
+        <a href="">Tải bài hát {{ $song->name }} về máy</a>
     </h1>
     <div class="bh-top">
         <div class="bh-thumb detail-thumb">
@@ -31,7 +31,7 @@
 
     <div class="info center">
         {{-- <div id="button-download-container" data-href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-download="{{ $song->canDownload === 0 ? 0 : 1 }}"></div> --}}
-        <div id="button-download-container" data-href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-download="{{ optional($song->sky)->count() ? 1 : 0 }}"></div>
+        <div id="button-download-container" data-href="{{ route('download', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-download="{{ optional($song->sky)->count() ? 1 : 0 }}"></div>
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>
@@ -41,13 +41,13 @@
     @foreach($song->relates as $_song)
     <div class="menu">
         <div class="detail-thumb thumb">
-            <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download Mp3 {{ $_song->name }}">
-                <img data-src="{{ $_song->thumbnail }}" alt="Download Mp3 {{ $_song->name }}" title="Download Mp3 {{ $_song->name }}" src="{{ asset('/images/audio_default.png') }}" />
+            <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download {{ $_song->name }}">
+                <img data-src="{{ $_song->thumbnail }}" alt="Download {{ $_song->name }}" title="Download {{ $_song->name }}" src="{{ asset('/images/audio_default.png') }}" />
             </a>
         </div>
         <div class="detail-info">
             <b class="ab ellipsis dli block">
-                <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download Mp3 {{ $_song->name }}">
+                <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download {{ $_song->name }}">
                     {{ $_song->name }}
                 </a>
             </b>

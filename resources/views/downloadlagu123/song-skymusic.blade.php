@@ -6,7 +6,7 @@
 @section('content')
 <div class="left-bar">
     <h1 class="ht">
-        <a href="">Tải bài hát {{ $song->title }} MP3 về máy</a>
+        <a href="">Tải bài hát {{ $song->title }} về máy</a>
     </h1>
     <div class="bh-top">
         <div class="bh-thumb detail-thumb">
@@ -26,8 +26,8 @@
     </div>
 
     <div class="info center">
-        <a href="{{ route('confirm-skymusic', ['slug'=>$song->slug, 'id'=>$song->key]) }}" class="download" title="Tải bài hát">
-            <b></b>&nbsp;Download Mp3&nbsp;</a>
+        <a href="{{ route('dwonload', ['slug'=>$song->slug, 'id'=>$song->key]) }}" class="download" title="Tải bài hát">
+            <b></b>&nbsp;Download&nbsp;</a>
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>
@@ -38,13 +38,13 @@
     @foreach($song->relates as $_song)
     <div class="menu">
         <div class="detail-thumb thumb">
-            <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download Mp3 {{ $_song->name }}">
-                <img data-src="{{ $_song->thumbnail }}" alt="Download Mp3 {{ $_song->name }}" title="Download Mp3 {{ $_song->name }}" src="{{ asset('/images/audio_default.png') }}" />
+            <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download {{ $_song->name }}">
+                <img data-src="{{ $_song->thumbnail }}" alt="Download {{ $_song->name }}" title="Download {{ $_song->name }}" src="{{ asset('/images/audio_default.png') }}" />
             </a>
         </div>
         <div class="detail-info">
             <b class="ab ellipsis dli block">
-                <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download Mp3 {{ $_song->name }}">
+                <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download {{ $_song->name }}">
                     {{ $_song->name }}
                 </a>
             </b>

@@ -1,31 +1,18 @@
 <div class="clear"></div>
 </div><br>
-@if(Page::$IS_ADSENSE)
-<div class="center">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Thich ung tn123 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:350px;height:50px"
-     data-ad-client="ca-pub-6109538742955032"
-     data-ad-slot="1124981812"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-@endif
 <div class="btnbox">
 @if (Page::$currentRouteName !== 'index')
 <br />
-<a href="/"  title="Tải nhạc mp3 miễn phí" class="btnind center">Trang Chủ</a>
+<a href="/"  title="Tải nhạc miễn phí" class="btnind center">Trang Chủ</a>
 </div><br />
 @endif
 
 <div id="footer">
-    <div class="center"><h3 class="f15">Trang web tải bài hát mới nhất, Download kho bài hát mp3 miễn phí</h3></div>
+    <div class="center"><h3 class="f15">Trang web tải bài hát mới nhất, Download kho bài hát miễn phí</h3></div>
 
 <p align="center">
 </p><br />
-{{-- <p align="center"><b><a href="/">TaiNhac123.Com</a></b> là trang web <i><u>Tải nhạc Mp3 Miễn Phí</u></i>, tải nhạc mp3 chất lượng cao, trang web cập nhật bảng xếp hạng âm nhạc chính xác và nhanh nhất,  kho bài hát lớn nhất có thể đáp ứng tất cả các nhu cầu của bạn, là lựa chọn hàng đầu cho bạn.
+{{-- <p align="center"><b><a href="/">TaiNhac123.Com</a></b> là trang web <i><u>Tải nhạc Miễn Phí</u></i>, tải nhạc chất lượng cao, trang web cập nhật bảng xếp hạng âm nhạc chính xác và nhanh nhất,  kho bài hát lớn nhất có thể đáp ứng tất cả các nhu cầu của bạn, là lựa chọn hàng đầu cho bạn.
 <br></p> --}}
 <p class="center">
 
@@ -34,7 +21,7 @@
 <br>Bản quyền sử dụng bài hát cung cấp bởi: <a target="_blank" rel="nofollow" href="https://skymusic.com.vn">Skymusic</a>
 @endif
 <br><br>
-  <a href="/" aria-label="Tải nhạc mp3 miễn phí"><img src="/images/icon-tainhac.png" width="50px" alt="Tải nhạc 123"></a><br>
+  <a href="/" aria-label="Tải nhạc miễn phí"><img src="/images/icon-tainhac.png" width="50px" alt="Tải nhạc 123"></a><br>
 <b><a href="/">TaiNhac123</a></b> <font size="4">✪</font><br>
 Contact: ad.tainhac123@gmail.com<br>
 {{-- ♪ <b>FULL SONG FOR YOU</b> ♫<br> --}}
