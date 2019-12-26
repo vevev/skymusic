@@ -1,7 +1,7 @@
 <div id="header">
     <div class="logo">
         <a href="/" id="logowrapper">
-            <img src="{{ asset(Page::$logo['src'] ?? '/images/tainhac.png?v=' . config('app.version')) }}" alt="{{ Page::$logo['alt'] ? Page::$logo['alt'] : 'Tainhac123 - Tải nhạc miễn phí - Tai nhac 123' }}" />
+            <img src="{{ asset(Page::$logo['src'] ?? '/images/tainhac.png?v=' . config('app.version')) }}" alt="{{ Page::$logo['alt'] ? Page::$logo['alt'] : 'Tainhac123 - Tải nhạc - Tai nhac 123' }}" />
         </a>
         <script type="text/javascript">
             var logowrapper = document.getElementById('logowrapper');
@@ -18,10 +18,10 @@
     <div class="pc90">
         <div class="header_info">
             <h1 class="slog">
-                <a href="/">Tải Nhạc Miễn Phí CỰC NHANH Về Điện Thoại</a>
+                <a href="/">Tải Nhạc CỰC NHANH Về Điện Thoại</a>
             </h1>
             <p class="tip">
-                <b>Gợi ý: </b>Nhập tên bài hát vào ô tìm kiếm để tìm &amp; tải miễn phí bất kỳ bài hát nào bạn muốn tải về máy.<br>
+                <b>Gợi ý: </b>Nhập tên bài hát vào ô tìm kiếm để tìm &amp; tải bất kỳ bài hát nào bạn muốn tải về máy.<br>
             </p>
         </div>
         <div id="search-form" action="{{ route('search-post') }}" query="{{ !isset($query) ? '' : $query }}" suggest-route="{{ route('search', ['query_string' => '']) }}"></div>
