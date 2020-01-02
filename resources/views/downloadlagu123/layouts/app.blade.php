@@ -1,3 +1,4 @@
+{{ Page::$IS_ADSENSE = 0; }}
 <!DOCTYPE html>
 <html lang="vi">
 <head>
