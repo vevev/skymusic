@@ -31,7 +31,7 @@
     </div>
     @endforeach
     @if(count($results) > 9)
-    <div id="load-more-result" data-query="{{ $query }}" data-api="{{ route("search-post") }}"></div>
+    <div id="load-more-result" data-query="{{ $query }}" data-api="{{ route("search-get") }}"></div>
     @endif
     @endif
 </div>

@@ -26,12 +26,12 @@
         {{-- <audio controls preload="none" src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}">
             Trình duyệt của bạn không hỗ trợ nghe online !
         </audio> --}}
-        <div id="audio-player-container" data-src="{{ route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-retry="{{ $song->canDownload === 0 ? 0 : 1 }}"></div>
+        <div id="audio-player-container" data-src="{{ route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-retry="1"></div>
     </div>
 
     <div class="info center">
-        {{-- <div id="button-download-container" data-href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-download="{{ $song->canDownload === 0 ? 0 : 1 }}"></div> --}}
-        <div id="button-download-container" data-href="{{ route('download', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-download="{{ optional($song->sky)->count() ? 1 : 0 }}"></div>
+        <div id="button-download-container" data-href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-download="{{ $song->canDownload === 0 ? 0 : 1 }}"></div>
+        {{-- <div id="button-download-container" data-href="{{ route('download', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" data-download="{{ optional($song->sky)->count() ? 1 : 0 }}"></div> --}}
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>

@@ -28,8 +28,8 @@ Route::get('/download/{slug}.{id}.html', 'DownloadController@play')->name('downl
 Route::get('/{slug}-mp3~{id}.html', 'ConfirmController@skymusic')->name('confirm-skymusic');
 Route::get('/{slug}~{id}.html', 'ConfirmController@index')->name('confirm');
 Route::get('/disclaimers.html', 'ConfirmController@disclaimers')->name('disclaimers');
-Route::get('/tim-kiem/{query_string}', 'SkymusicSearchController@index')->name('search');
-Route::get('/search/{query_string}', 'SearchController@index')->name('search-skymusic-get');
+Route::get('/tim-kiem/{query_string}', 'SearchController@index')->name('search');
+Route::get('/search/{query_string}', 'SkymusicSearchController@index')->name('search-skymusic-get');
 Route::get('/search-api/', 'SearchController@get')->name('search-get');
 Route::post('/search/', 'SearchController@post')->name('search-post');
 

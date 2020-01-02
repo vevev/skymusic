@@ -21,11 +21,11 @@ class SongController extends Controller
         $data = $this->loadSongData->execute($request->id);
 
         // Nếu không có skymusic thì không hiển thị adsense
-        if ($data['song']->hasSkymusic) {
-            Page::$IS_ADSENSE = 1;
-        } else {
-            return redirect('/');
-        }
+        // if ($data['song']->hasSkymusic) {
+        //     Page::$IS_ADSENSE = 1;
+        // } else {
+        //     return redirect('/');
+        // }
 
         Page::$title       = 'Tải Bài Hát ' . $data['song']->name . ' - Tải nhạc';
         Page::$description = 'Tải nhạc, Tải về bài hát ' . $data['song']->name . ' - ' . $data['song']->single . '. Tải về máy, Tải dễ dàng và nhanh chóng.';

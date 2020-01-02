@@ -1,6 +1,3 @@
-@php
-Page::$IS_ADSENSE = 0;
-@endphp
 <!DOCTYPE html>
 <html lang="vi">
 <head>

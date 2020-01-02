@@ -29,7 +29,7 @@
         <div class="clear"></div>
     </div>
 </div>
-@if(Page::$IS_ADSENSE)
+{{-- @if(Page::$IS_ADSENSE)
 <div class="center">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Thich ung tn123 -->
@@ -41,5 +41,5 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-@endif
+@endif --}}
 <div id="main">
