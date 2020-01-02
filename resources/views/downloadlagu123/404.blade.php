@@ -1,3 +1,6 @@
+@php
+redirect('/')->send();
+@endphp
 <html lang="id"><head>
 <title>Không tìm thấy nội dung</title>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
