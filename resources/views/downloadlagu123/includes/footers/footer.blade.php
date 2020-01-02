@@ -8,7 +8,7 @@
 @endif
 
 <div id="footer">
-    <div class="center"><h3 class="f15">Trang web tải bài hát mới nhất, Tải kho bài hát mp3 miễn phí</h3></div>
+    <div class="center"><h3 class="f15">Trang web tải bài hát mới nhất, Download nhạc - kho bài hát mp3 miễn phí</h3></div>
 
 <p align="center">
 </p><br />
