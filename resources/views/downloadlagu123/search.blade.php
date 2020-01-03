@@ -30,7 +30,7 @@
         </div>
     </div>
     @endforeach
-    <div id="load-more-result" data-query="{{ $query }}" data-api="{{ route("search-post") }}"></div>
+    <div id="load-more-result" data-query="{{ $query }}" data-api="{{ route("search-get") }}"></div>
     @endif
 </div>
 @endsection
