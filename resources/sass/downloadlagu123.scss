@@ -12,12 +12,10 @@ img {
 body {
     margin: auto;
 }
-
 .ab a,
 .ellipsis {
     text-overflow: ellipsis;
 }
-
 #uptop a:hover,
 a {
     text-decoration: none;
@@ -32,14 +30,12 @@ body {
     font-size: 15px;
     color: #000;
 }
-
 h1 {
     font-size: 18px;
     a {
         color: red;
     }
 }
-
 button,
 input,
 textarea {
@@ -71,8 +67,13 @@ textarea {
     box-shadow: 0 0 5px 1px rgba(204, 204, 204, 0.61);
     max-width: 100%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
 }
-
+.main {
+    background: #fff;
+    padding: 10px;
+}
 #main {
     max-width: 1100px;
     margin: 1vw auto;
@@ -97,7 +98,6 @@ textarea {
         clear: both;
     }
 }
-
 .left-bar,
 .right-bar {
     background: #fff;
@@ -117,12 +117,10 @@ textarea {
         margin-top: 10px;
     }
 }
-
 .center,
 .table {
     text-align: center;
 }
-
 .header_info {
     width: 45%;
     float: left;
@@ -135,17 +133,14 @@ textarea {
         padding: 15px 0 0 0;
     }
 }
-
 .search {
     width: 45%;
     float: right;
 }
-
 .bh-thumb,
 .left {
     float: left;
 }
-
 .table {
     border-collapse: collapse;
     margin: 5px auto;
@@ -162,7 +157,6 @@ textarea {
         }
     }
 }
-
 .plmenu {
     padding: 5px 0;
     &:nth-child(2n + 1) > td:nth-child(1) {
@@ -179,11 +173,9 @@ textarea {
         border-bottom: 0;
     }
 }
-
 .collapse-menu {
     position: relative;
 }
-
 .collapse-view-more {
     display: none;
     width: 100%;
@@ -196,7 +188,6 @@ textarea {
     color: #065fd4;
     text-decoration: underline;
 }
-
 .menu {
     display: block;
     height: 100%;
@@ -223,7 +214,6 @@ textarea {
         margin-left: 38px;
     }
 }
-
 .detail-thumb {
     width: 60px;
     height: 60px;
@@ -263,7 +253,6 @@ textarea {
         margin-top: 0;
     }
 }
-
 .dli {
     margin: 0;
 }
@@ -284,11 +273,9 @@ textarea {
         }
     }
 }
-
 .listen::before {
     content: '';
 }
-
 .info {
     border-bottom: 1px solid #e9e9e9;
     padding-bottom: 30px;
@@ -296,7 +283,6 @@ textarea {
         font-size: 17px;
     }
 }
-
 .sg {
     margin-top: 2px;
     color: #606060;
@@ -325,7 +311,6 @@ textarea {
         color: #ccc;
     }
 }
-
 .ab a,
 .ht:first-child {
     margin-top: 0;
@@ -340,7 +325,6 @@ textarea {
         padding-right: 5px;
     }
 }
-
 .single {
     padding: 1px;
     font-weight: 400;
@@ -351,7 +335,6 @@ textarea {
     font-family: fonts;
     padding-right: 5px;
 }
-
 .ab a {
     color: blue;
     font-size: 16px;
@@ -366,7 +349,6 @@ textarea {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-
 .ht {
     display: block;
     padding: 0 10px 10px 10px;
@@ -392,14 +374,12 @@ h1.ht {
     color: #555;
     padding-left: 5px;
 }
-
 dd,
 dl,
 dt {
     display: inline;
     padding: 0;
 }
-
 dl {
     margin: 0 3px 0 0;
     font-size: 12px;
@@ -415,7 +395,6 @@ dl {
         font-size: 14px;
     }
 }
-
 a {
     color: #00f;
 }
@@ -435,23 +414,21 @@ a {
         margin-top: 0px;
     }
 }
-
 .lr,
 audio {
     width: 100%;
 }
-
 .bh-top {
     border: 0;
     padding: 0px 10px;
     margin: 5px auto;
+    width: 100%;
     &:after {
         display: block;
         content: '';
         clear: both;
     }
 }
-
 .bh-caption {
     border: 0;
     padding: 0px 10px;
@@ -463,12 +440,10 @@ audio {
         margin: 0;
     }
 }
-
 .bxh-ico,
 .lr {
     border-radius: 0px;
 }
-
 .bh-info {
     margin-left: 70px;
     color: #333;
@@ -485,16 +460,13 @@ audio {
         margin-top: 10px;
     }
 }
-
 .bh-audio {
     padding: 30px 10px;
 }
-
 .bh-lyric {
     padding: 2px 5px;
     overflow-y: hidden;
 }
-
 .lr {
     padding: 10px 10px 30px 10px;
     box-sizing: border-box;
@@ -513,7 +485,6 @@ audio {
         cursor: pointer;
     }
 }
-
 .bxh-ico {
     font-size: 20px;
     padding: 2px;
@@ -580,7 +551,6 @@ a.lcbtn {
     margin-top: 15px;
     margin-bottom: 0;
 }
-
 .btnind,
 .btnl {
     padding: 8px 4px;
@@ -607,7 +577,6 @@ a.lcbtn {
     height: 13px;
     margin-right: 5px;
 }
-
 .logo {
     background: #1bb5f3;
     min-width: 30%;
@@ -635,7 +604,6 @@ a.lcbtn {
         }
     }
 }
-
 .search {
     margin: 10px 0;
     min-width: 50%;
@@ -647,7 +615,6 @@ a.lcbtn {
         margin: 0;
     }
 }
-
 .qr {
     border: 0;
     height: 30px;
@@ -694,7 +661,6 @@ a.lcbtn {
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
 .red {
     color: red;
 }
@@ -706,7 +672,6 @@ a.lcbtn {
     color: rgba(3, 119, 243, 0.99) !important;
     padding-top: 10px;
 }
-
 .cs {
     background: rgba(201, 201, 201, 0.39);
     color: #ff00e9;
@@ -769,11 +734,9 @@ a.lcbtn {
         }
     }
 }
-
 .ab a:visited {
     color: #1a0dab;
 }
-
 .progress {
     position: fixed;
     left: 0;
@@ -840,7 +803,15 @@ ul .item {
     border-bottom: 1px solid #f5f5f5;
     display: flex;
 }
-
+.msg-error {
+    padding: 10px;
+    margin: 10px;
+    border: 1px dashed #af7900;
+    color: red;
+    background: #f3f3f3;
+    font-style: italic;
+    font-weight: 600;
+}
 @media screen and (max-width: 768px) {
     #main {
         max-width: 600px;
@@ -852,6 +823,8 @@ ul .item {
         background: #fff;
         float: none;
         margin: 10px 0;
+        display: flex;
+        flex-direction: column;
     }
     h1.ht {
         text-align: center;
@@ -860,29 +833,24 @@ ul .item {
     }
     .form {
     }
-
     .pc90 {
         max-width: 600px;
         margin: auto;
         display: block;
         padding: 10px 1%;
     }
-
     .header_info,
     .search {
         width: 100%;
         float: none;
     }
-
     .collapse-menu {
         position: relative;
         padding-bottom: 40px;
     }
-
     .collapse-view-more {
         display: none;
     }
-
     .collapse-menu .menu:nth-of-type(n + 30) {
         display: none;
         height: 0%;
@@ -905,5 +873,29 @@ ul .item {
     }
     .header_info .tip {
         font-style: italic;
+    }
+}
+dl.rule {
+    margin: 0;
+    padding: 0;
+    color: #000 !important;
+    text-align: justify;
+    dt {
+        color: #000;
+        font-size: 18px;
+        margin: 0px 0 10px 0;
+        display: block;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    dd {
+        color: #000;
+        font-size: 15px;
+        display: block;
+        padding-left: 15px;
+        margin-bottom: 20px;
+        p {
+            margin: 10px 0;
+        }
     }
 }
