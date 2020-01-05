@@ -34,7 +34,7 @@
         <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
             <b></b>&nbsp;Download Mp3&nbsp;</a>
         @if(Page::$IS_ADSENSE)
-        <br><p align="center">
+        <br><br><p align="center">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle"
              style="display:block"
@@ -46,7 +46,6 @@
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
         </p>
-        @endif
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>
