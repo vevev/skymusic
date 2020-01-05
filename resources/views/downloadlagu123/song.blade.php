@@ -46,6 +46,7 @@
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
         </p>
+        @endif
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>
