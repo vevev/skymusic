@@ -27,10 +27,23 @@
     <div class="header">
         <a href="/"><img src="{{ asset('/images/tainhac.old.png?v=' . config('app.version')) }}" alt="" /></a>
         <div class="sub">
-            <p><i style="color: red; font-size: 14px
-                "><marquee>Tải nhạc miễn phí về máy</marquee></i></p>
+            <p><i style="color: red; font-size: 14px"><marquee>Tải nhạc miễn phí về máy</marquee></i></p>
         </div>
     </div>
+    @if(Page::$IS_ADSENSE)
+    <p align="center">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6109538742955032"
+     data-ad-slot="1124981812"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+    @endif
     <div id="main">
         <div class="main">
             <div id="vue-container" style="width: auto; max-width: 100%;">
@@ -84,7 +97,11 @@
         <p class="center">
             <span class="life">▂ ▅ ▇ ♪♫ MUSIC IS MY LIFE ♪♫ ▇ ▅ ▂</span><br><br>
             <a href="/"><img src="/images/icon-tainhac.png" width="50px"></a><br>
-            <b><a href="/">TaiNhac123.Com</a></b></br><br>
+            <b><a href="/">TaiNhac123.Com</a></b>
+            @if(Page::$IS_ADSENSE)
+            Bản quyền nội dung cung cấp bởi <b><a rel="nofollow" href="https://skymusic.com.vn/">SkyMusic</a></b>
+            @endif
+            </br><br>
             Contact: ad.tainhac123@gmail.com<br>
         </p>
     </div>

@@ -17,9 +17,15 @@
 <p class="center">
 
 <a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a>
-<br><br>
+<br>
+<br>
   <a href="/" aria-label="Tải nhạc mp3 miễn phí"><img src="/images/icon-tainhac.png" width="50px" alt="Tải nhạc 123"></a><br>
 Blog <b><a href="/">TaiNhac123</a></b> <font size="4">✪</font><br>
+@if(Page::$IS_ADSENSE)
+Bản quyền nội dung cung cấp bởi <b><a rel="nofollow" href="https://skymusic.com.vn/">SkyMusic</a></b>
+@endif
+<br>
+<br>
 Contact: ad.tainhac123@gmail.com<br>
 ♪ <b>FULL SONG FOR YOU</b> ♫<br>
 <font size="5">💖</font></p>

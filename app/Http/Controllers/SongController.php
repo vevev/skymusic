@@ -23,6 +23,11 @@ class SongController extends Controller
         Page::$title       = 'Tải bài hát ' . $data['song']->name . ' - Tải nhạc Mp3';
         Page::$description = 'Tải nhạc Mp3, Tải về bài hát ' . $data['song']->name . ' - ' . $data['song']->single . '.  Miễn phí tải về máy, Tải dễ dàng và nhanh chóng.';
 
+        // Nếu không có skymusic thì không hiển thị adsense
+        if ( ! $data['song']->hasSkymusic) {
+            Page::$IS_ADSENSE = 0;
+        }
+
         return view(
             Core::viewPath('song'),
             array_merge(['__core' => $core], $data)

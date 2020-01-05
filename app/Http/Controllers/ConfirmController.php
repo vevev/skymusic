@@ -32,6 +32,10 @@ class ConfirmController extends Controller
             abort(404);
         }
 
+        // Nếu không có skymusic thì không hiển thị adsense
+        if ( ! $song->hasSkymusic) {
+            Page::$IS_ADSENSE = 0;
+        }
         Page::$NO_INDEX = 1;
 
         return view(Core::viewPath('confirm'), ['song' => $song, '__core' => $this->core]);

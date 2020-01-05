@@ -161,4 +161,14 @@ class NCTSong extends Model
     {
         return $this->key && $this->relates->count();
     }
+
+    /**
+     * Gets the has skymusic attribute.
+     *
+     * @return     <type>  The has skymusic attribute.
+     */
+    public function getHasSkymusicAttribute()
+    {
+        return optional($this->sky)->count() ?? 0;
+    }
 }
