@@ -18,6 +18,10 @@ class SongController extends Controller
 
     public function index(Request $request, Core $core)
     {
+        if ($request->slug_unverify) {
+            return view(Core::viewPath('song-slug'));
+        }
+
         $data = $this->loadSongData->execute($request->id);
 
         Page::$title       = 'Tải bài hát ' . $data['song']->name . ' - Tải nhạc Mp3';
