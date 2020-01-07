@@ -98,7 +98,7 @@
             <a href="/"><img src="/images/icon-tainhac.png" width="50px"></a><br>
             <b><a href="/">TaiNhac123.Com</a></b>
             @if(Page::$IS_ADSENSE)
-            Bản quyền nội dung cung cấp bởi <b><a rel="nofollow" href="https://skymusic.com.vn/">SkyMusic</a></b>
+            Bản quyền nội dung cung cấp bởi <b><a rel="nofollow" target="_blank" href="https://skymusic.com.vn/">SkyMusic</a></b>
             @endif
             </br><br>
             Contact: ad.tainhac123@gmail.com<br>

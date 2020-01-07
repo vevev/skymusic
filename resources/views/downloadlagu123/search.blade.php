@@ -3,7 +3,7 @@
 @endsection
 
 @section('section')
-<p style="text-align: center;margin-top: 10px;">
+<p style="text-align: center;margin: 10px auto">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Qc ngang 123 -->
 <ins class="adsbygoogle"
