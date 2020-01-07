@@ -1,7 +1,7 @@
 @extends('downloadlagu123.layouts.app')
 
 @section('section')
-<p style="align: center">
+<p style="text-align: center">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Qc ngang 123 -->
 <ins class="adsbygoogle"
