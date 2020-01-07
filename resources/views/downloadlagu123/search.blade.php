@@ -3,7 +3,8 @@
 @endsection
 
 @section('section')
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<p style="align: center">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Qc ngang 123 -->
 <ins class="adsbygoogle"
      style="display:inline-block;width:320px;height:100px"
@@ -12,6 +13,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+</p>
 <br>
 @endsection
 
