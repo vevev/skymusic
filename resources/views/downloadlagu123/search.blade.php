@@ -3,7 +3,7 @@
 @endsection
 
 @section('section')
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-6109538742955032"
@@ -13,7 +13,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<br>
+<br> --}}
 @endsection
 
 @section('content')
