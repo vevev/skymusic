@@ -13,7 +13,7 @@
         @include('downloadlagu123.includes.footers.footer')
     </div>
     @yield('after_body_script')
-    <script type="text/javascript" src="{{ asset("/js/app.min.js?v=" . config('app.version')) }}" async></script>
+    <script type="text/javascript" src="{{ asset("/js/app.min.js?v=" . config('app.version')) }}"></script>
     @include('downloadlagu123.includes.script')
 </body>
 </html>
