@@ -12,7 +12,6 @@
     <title>Tải bài hát {{ $song->name }}</title>
     <link rel="shortcut icon" href="/images/favicon.ico">
     <meta name="google-site-verification" content="eYW7hlOMPEryvJXAOdwvh-Q0Hln63WENSZrhbfmlgbg" />
-    @csrf
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="MobileOptimized" content="width" />
@@ -46,7 +45,7 @@
     @endif
     <div id="main">
         <div class="main">
-            <div style="width: auto; max-width: 100%;">
+            <div>
                 <table class="name">
                     <tbody>
                         <tr>
