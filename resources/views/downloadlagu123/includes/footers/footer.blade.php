@@ -11,7 +11,7 @@
     <div class="center"><h3 class="f15">Trang web tải bài hát hay mới nhất. Download nhạc mp3 - kho bài hát miễn phí</h3></div>
 <p align="center">
 </p><br />
-<p align="center"><b><a href="/">TaiNhac123.Com</a></b> là trang web <i><u>Tải nhạc Mp3 Miễn Phí</u></i> về thẻ nhớ, tải nhạc mp3 chất lượng cao, trang web cập nhật bảng xếp hạng âm nhạc chính xác và nhanh nhất,  kho bài hát lớn nhất có thể đáp ứng tất cả các nhu cầu của bạn, là lựa chọn hàng đầu cho bạn.
+<p align="center"><b><a href="/">TaiNhac123.Com</a></b> là trang web <i><u>Tải nhạc Mp3 Miễn Phí</u></i> về thẻ nhớ cho máy android và iphone, tải nhạc mp3 chất lượng cao, trang web cập nhật bảng xếp hạng âm nhạc chính xác và nhanh nhất,  kho bài hát lớn nhất có thể đáp ứng tất cả các nhu cầu của bạn, là lựa chọn hàng đầu cho bạn.
 <br></p>
 <p class="center">
 <a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a>
