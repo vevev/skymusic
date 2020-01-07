@@ -46,7 +46,7 @@
     @endif
     <div id="main">
         <div class="main">
-            <div id="vue-container" style="width: auto; max-width: 100%;">
+            <div style="width: auto; max-width: 100%;">
                 <table class="name">
                     <tbody>
                         <tr>
