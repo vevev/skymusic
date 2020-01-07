@@ -14,7 +14,6 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </p>
-<br>
 @endsection
 
 @section('content')
