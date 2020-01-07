@@ -3,17 +3,16 @@
 @endsection
 
 @section('section')
-{{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Qc ngang 123 -->
 <ins class="adsbygoogle"
-     style="display:block"
+     style="display:inline-block;width:320px;height:100px"
      data-ad-client="ca-pub-6109538742955032"
-     data-ad-slot="6349445803"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+     data-ad-slot="6349445803"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<br> --}}
+<br>
 @endsection
 
 @section('content')
