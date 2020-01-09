@@ -9,7 +9,7 @@ Route::pattern('slug', '[^/\.]*');
 Route::pattern('page', '\d+');
 
 Route::get('/', 'IndexController@index')->name('index');
-Route::get('/tai-bai-hat-{slug}-mp3/{id}.html', 'SongController@index')->name('song')->middleware('verifyslugsong');
+Route::get('/tai-bai-hat-{slug}-mp3/{id}.html', 'SongController@index')->name('song'); //->middleware('verifyslugsong');
 Route::get('/bai-hat/{slug}/{id}.html', 'SongSkymusicController@index')->name('song-skymusic');
 
 Route::get('/danh-sach-phat-{slug}/{id}.html', 'PlaylistController@playlist')->name('playlist');
