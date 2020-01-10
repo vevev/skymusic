@@ -3,17 +3,7 @@
 @endsection
 
 @section('section')
-<p style="text-align: center;margin: 10px auto">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Qc ngang 123 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:320px;height:100px"
-     data-ad-client="ca-pub-6109538742955032"
-     data-ad-slot="6349445803"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</p>
+
 @endsection
 
 @section('content')
