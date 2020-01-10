@@ -1,1 +1,2 @@
 User-agent: *
+Sitemap: https://tainhac123.com/sitemap.xml
