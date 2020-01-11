@@ -4,6 +4,7 @@ namespace App\Acme\Services\Fetchs;
 
 use stdClass;
 use Throwable;
+use Illuminate\Support\Facades\Log;
 use App\Acme\Services\HttpRequest\HttpRequestByVpsProxy;
 
 class CrawlDownloadLink
