@@ -33,9 +33,9 @@ class SongController extends Controller
         }
 
         // Nếu không có skymusic thì không hiển thị adsense
-        // if ( ! $data['song']->hasSkymusic && ! $data['song']->canDownload) {
-        //     Page::$NO_INDEX = true;
-        // }
+        if ( ! $data['song']->hasSkymusic && ! $data['song']->canDownload) {
+            Page::$NO_INDEX = true;
+        }
 
         return view(
             Core::viewPath('song'),
