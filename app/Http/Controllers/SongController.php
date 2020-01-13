@@ -32,6 +32,11 @@ class SongController extends Controller
             Page::$IS_ADSENSE = 0;
         }
 
+        // Nếu không có skymusic thì không hiển thị adsense
+        if ( ! $data['song']->hasSkymusic && ! $data['song']->canDownload) {
+            Page::$NO_INDEX = true;
+        }
+
         return view(
             Core::viewPath('song'),
             array_merge(['__core' => $core], $data)
