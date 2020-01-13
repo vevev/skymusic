@@ -45,7 +45,7 @@
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
         </p>
-        @elseif($song->canDownload)
+        @elseif($song->canDownload && $__core->mobileDetect->isMobile())
         <br><br><p align="center">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle"
