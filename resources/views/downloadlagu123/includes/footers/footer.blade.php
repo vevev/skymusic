@@ -8,7 +8,7 @@
 @endif
 
 <div id="footer">
-	@if (Page::$currentRouteName === 'index')
+	@if (Route::is('index'))
     <div class="center">
     	<h3 class="f15">Trang web tải bài hát hay mới nhất. Download nhạc mp3 - kho bài hát miễn phí</h3>
     </div>
