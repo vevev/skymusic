@@ -29,7 +29,6 @@
         <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
     </div>
 
-
     <div class="info center">
         <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
             <b></b>&nbsp;Download Mp3&nbsp;</a>
@@ -40,6 +39,19 @@
              style="display:block"
              data-ad-client="ca-pub-6109538742955032"
              data-ad-slot="1124981812"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </p>
+        @elseif($song->canDownload)
+        <br><br><p align="center">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6109538742955032"
+             data-ad-slot="5765656710"
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
         <script>
