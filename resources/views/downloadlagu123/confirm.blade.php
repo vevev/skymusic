@@ -115,6 +115,7 @@
             @endif
             </br><br>
             Contact: ad.tainhac123@gmail.com<br>
+            <a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a>
         </p>
     </div>
     <script type="text/javascript" src="{{ asset("/js/app.min.js?v=" . config('app.version')) }}"></script>
