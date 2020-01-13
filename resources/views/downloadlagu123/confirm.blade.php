@@ -43,7 +43,7 @@
 </script>
 </p>
     @elseif($song->canDownload && $__core->mobileDetect->isMobile())
-    <br><br><p align="center">
+    <p align="center">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <ins class="adsbygoogle"
          style="display:block"
