@@ -29,6 +29,7 @@ Bản quyền nội dung cung cấp bởi <b><a rel="nofollow" href="https://sky
 Contact: ad.tainhac123@gmail.com<br>
 ♪ <b>FULL SONG FOR YOU</b> ♫<br>
 <font size="5">💖</font>
+<br>
 <a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a>
 </p>
 </div>
