@@ -28,6 +28,7 @@ Bản quyền nội dung cung cấp bởi <b><a rel="nofollow" href="https://sky
 @endif
 Contact: ad.tainhac123@gmail.com<br>
 ♪ <b>FULL SONG FOR YOU</b> ♫<br>
-<font size="5">💖</font></p>
+<font size="5">💖</font>
 <a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a>
+</p>
 </div>
