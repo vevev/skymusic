@@ -68,13 +68,13 @@
     @foreach($song->relates as $_song)
     <div class="menu">
         <div class="detail-thumb thumb">
-            <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download Mp3 {{ $_song->name }}">
-                <img data-src="{{ $_song->thumbnail }}" alt="Download Mp3 {{ $_song->name }}" title="Download Mp3 {{ $_song->name }}" src="{{ asset('/images/audio_default.png') }}" />
+            <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Tải bài hát {{ $_song->name }}">
+                <img data-src="{{ $_song->thumbnail }}" alt="Tải bài hát {{ $_song->name }}" title="Tải bài hát {{ $_song->name }}" src="{{ asset('/images/audio_default.png') }}" />
             </a>
         </div>
         <div class="detail-info">
             <b class="ab ellipsis dli block">
-                <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Download Mp3 {{ $_song->name }}">
+                <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Tải bài hát {{ $_song->name }}">
                     {{ $_song->name }}
                 </a>
             </b>
@@ -101,13 +101,13 @@
     @foreach($sidebar['primary'] as $song)
     <div class="menu">
         <div class="detail-thumb thumb">
-            <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
-                <img alt="{{ $song['name'] }}" title="{{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
+            <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
+                <img alt="Tải bài hát {{ $song['name'] }}" title="Tải bài hát {{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
             </a>
         </div>
         <div class="detail-info">
             <h3 class="ab ellipsis dli">
-                <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">{{ $song['name'] }}</a>
+                <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">{{ $song['name'] }}</a>
             </h3>
             <span class="sg">
                 <b class="single">{{ $song['single'] }}</b>
