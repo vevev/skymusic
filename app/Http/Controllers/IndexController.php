@@ -21,7 +21,7 @@ class IndexController extends Controller
         $data = ['__core' => $core, 'data' => $this->loadIndexData->execute()];
 
         Page::$title       = 'Tải Nhạc Mp3 Miễn Phí CỰC NHANH Về Máy, Nhạc Hay 2020';
-        Page::$description = 'Tải nhạc miễn phí về máy điện thoại ♫, tải nhạc về thẻ nhớ, tải nhạc Mp3 dễ dàng ♫. Download nhạc HAY NHẤT, nghe nhạc online và tải về nhanh chóng ♫.';
+        Page::$description = 'Tải nhạc miễn phí về máy điện thoại ♫, tải nhạc chất lượng cao, tải nhạc về thẻ nhớ, tải nhạc Mp3 dễ dàng ♫. Download nhạc HAY NHẤT, nghe nhạc online và tải về nhanh chóng ♫.';
 
         return view(Core::viewPath('index'), $data);
     }
