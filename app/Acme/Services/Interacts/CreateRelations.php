@@ -16,6 +16,8 @@ class CreateRelations
 
     public function execute(NCTSong $song, array $songs)
     {
+        $this->nctRelate->where('song_id', $song->song_id)->delete();
+
         foreach ($songs as $_song) {
             $relations[] = ['song_id' => $song->song_id, 'relate_id' => $_song['song_id']];
         }
