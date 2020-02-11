@@ -14,12 +14,14 @@ class CreateRelations
         $this->nctRelate = $nctRelate;
     }
 
-    public function execute(NCTSong $song, array $songs)
+    public function execute(NCTSong $song, array $relationSongs)
     {
-        $this->nctRelate->where('song_id', $song->song_id)->delete();
+        if ( ! empty($relationSongs)) {
+            $this->nctRelate->where('song_id', $song->song_id)->delete();
+        }
 
-        foreach ($songs as $_song) {
-            $relations[] = ['song_id' => $song->song_id, 'relate_id' => $_song['song_id']];
+        foreach ($relationSongs as $relationSong) {
+            $relations[] = ['song_id' => $song->song_id, 'relate_id' => $relationSong['song_id']];
         }
 
         return $this->nctRelate->insert($relations);
