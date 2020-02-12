@@ -30,7 +30,7 @@ Contact: ad.tainhac123@gmail.com<br>
 ♪ <b>FULL SONG FOR YOU</b> ♫<br>
 <font size="5">💖</font>
 <br>
-<a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a>
+<a href="/disclaimers.html" style="color:blue">Giới thiệu và Điều khoản</a><br>
 <a href="/sitemap.xml" style="color:blue">SITEMAP</a>
 </p>
 </div>

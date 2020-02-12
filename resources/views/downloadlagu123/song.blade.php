@@ -39,7 +39,7 @@
         <a href="">Tải bài hát {{ $song->name }} MP3 về máy</a>
     </h1>
     <div class="bh-top">
-        <div class="bh-thumb detail-thumb">
+        <div class="bh-thumb detail-thumb" id="disco">
             <img  src="{{ $song->thumbnail }}" alt="{{ $song->name }}" />
         </div>
         <div class="bh-info">

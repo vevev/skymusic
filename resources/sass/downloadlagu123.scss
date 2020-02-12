@@ -221,7 +221,7 @@ textarea {
     margin-left: 0px;
     float: left;
     display: block;
-    border-radius: 3px;
+    border-radius: 60px;
     font-size: 10px;
     color: #888;
     line-height: 1;
@@ -901,4 +901,44 @@ dl.rule {
             margin: 10px 0;
         }
     }
+}
+
+@-webkit-keyframes disco {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes disco {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.disco {
+    -webkit-animation: disco 4s linear infinite forwards;
+    -moz-animation: disco 4s linear infinite forwards;
+    -ms-animation: disco 4s linear infinite forwards;
+    -o-animation: disco 4s linear infinite forwards;
+    animation: disco 4s linear infinite forwards;
+}
+
+.pause {
+    animation-play-state: paused;
 }
