@@ -65,7 +65,10 @@
 
     <div class="ht"><b>Bài Hát Hay Liên Quan :</b></div>
     <div class="collapse-menu">
-    @foreach($song->relates as $_song)
+    @foreach($song->relates as $num=>$_song)
+    @if($num > 20)
+    @break
+    @endif
     <div class="menu">
         <div class="detail-thumb thumb">
             <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Tải bài hát {{ $_song->name }}">
@@ -99,9 +102,6 @@
     </div>
     <div class="collapse-menu">
     @foreach($sidebar['primary'] as $num => $song)
-    @if($num > 20)
-    @break
-    @endif
     <div class="menu">
         <div class="detail-thumb thumb">
             <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
