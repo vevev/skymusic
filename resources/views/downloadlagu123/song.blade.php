@@ -15,6 +15,7 @@
    "position": 1,
    "item":
    {
+    "@type": "url",
     "@id": "{{ route('index') }}",
     "name": "Trang Chủ"
     }
@@ -24,6 +25,7 @@
   "position": 2,
   "item":
    {
+    "@type": "url",
      "@id": "{{route('song', ['slug'=>$song->slug, 'id'=>$song->song_id])}}",
      "name": "{{ $song->name }}"
    }
