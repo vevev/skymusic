@@ -98,7 +98,10 @@
         <h3 class="ht">Nhac HOT</h3>
     </div>
     <div class="collapse-menu">
-    @foreach($sidebar['primary'] as $song)
+    @foreach($sidebar['primary'] as $num => $song)
+    @if($num > 20)
+    @break
+    @endif
     <div class="menu">
         <div class="detail-thumb thumb">
             <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
