@@ -15,7 +15,7 @@
    "position": 1,
    "item":
    {
-    "@id": "{{ route('/') }}",
+    "@id": "{{ route('index') }}",
     "name": "Trang Chủ"
     }
   },
