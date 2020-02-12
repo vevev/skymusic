@@ -126,6 +126,7 @@
 @endsection
 
 @section('sidebar')
+@if(!$__core->mobileDetect->isMobile())
 <div class="right-bar" id="song-right-bar">
     <div class="cate">
         <h3 class="ht">Nhac HOT</h3>
@@ -154,4 +155,5 @@
     <p class="collapse-view-more">Xem Thêm ...</p>
     </div>
 </div>
+@endif
 @endsection
