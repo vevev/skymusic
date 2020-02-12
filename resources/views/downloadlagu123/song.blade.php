@@ -126,7 +126,7 @@
 @endsection
 
 @section('sidebar')
-<div class="right-bar">
+<div class="right-bar" id="song-right-bar">
     <div class="cate">
         <h3 class="ht">Nhac HOT</h3>
     </div>

@@ -16,7 +16,7 @@ export default {
         return {
             isOpening: false,
             rows: 0,
-            NUM_ROW_DISPLAY: 9,
+            NUM_ROW_DISPLAY: 5,
         };
     },
     props: {
