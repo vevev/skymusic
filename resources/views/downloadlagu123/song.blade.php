@@ -3,6 +3,36 @@
 @section('link')
 @endsection
 
+@section('inject_script')
+<script type="application/ld+json">
+{
+ "@context": "http://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement":
+ [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "item":
+   {
+    "@id": "{{ route('/') }}",
+    "name": "Trang Chủ"
+    }
+  },
+  {
+   "@type": "ListItem",
+  "position": 2,
+  "item":
+   {
+     "@id": "{{route('song', ['slug'=>$song->slug, 'id'=>$song->song_id])}}",
+     "name": "{{ $song->name }}"
+   }
+  }
+ ]
+}
+</script>
+@endsection
+
 @section('content')
 <div class="left-bar">
     <h1 class="ht">
