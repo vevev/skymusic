@@ -1,2 +1,6 @@
 User-agent: *
 Sitemap: https://tainhac123.com/sitemap.xml
+Sitemap: https://tainhac123.com/sitemap.xml?page=1
+Sitemap: https://tainhac123.com/sitemap.xml?page=2
+Sitemap: https://tainhac123.com/sitemap.xml?page=3
+Sitemap: https://tainhac123.com/sitemap.xml?page=4
