@@ -62,38 +62,12 @@
     <div class="info center">
         <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
             <b></b>&nbsp;Download Mp3&nbsp;</a>
-       {{--  @if(Page::$IS_ADSENSE)
-        <br><br><p align="center">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-6109538742955032"
-             data-ad-slot="1124981812"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        </p>
-        @elseif($song->canDownload && $__core->mobileDetect->isMobile())
-        <br><br><p align="center">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-6109538742955032"
-             data-ad-slot="5765656710"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        </p>
-        @endif --}}
+
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}"></div>
 
-    <div class="ht"><b>Bài Hát Hay Liên Quan :</b></div>
+    <div class="ht"><b>Bài hát hay liên quan :</b></div>
     <div class="collapse-menu">
     @foreach($song->relates as $num=>$_song)
     @if($num > 20)
@@ -122,6 +96,33 @@
     @endforeach
     <p class="collapse-view-more">Xem Thêm ...</p>
     </div>
+    @if(Page::$IS_ADSENSE)
+      <br><br><p align="center">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-6109538742955032"
+           data-ad-slot="1124981812"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </p>
+      @elseif($song->canDownload && $__core->mobileDetect->isMobile())
+      <br><br><p align="center">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-6109538742955032"
+           data-ad-slot="5765656710"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </p>
+      @endif
 </div>
 @endsection
 
