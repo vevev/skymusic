@@ -37,8 +37,10 @@
     @endforeach
     <div id="load-more-result" data-query="{{ $query }}" data-api="{{ route("search-get") }}"></div>
     @endif
-    @if($__core->mobileDetect->isMobile())
-      <br><br><p align="center">
+</div>
+
+@if($__core->mobileDetect->isMobile())
+      <br><p align="center">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="adsbygoogle"
            style="display:block"
@@ -50,6 +52,6 @@
            (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
       </p>
+      <br>
     @endif
-</div>
 @endsection
