@@ -39,7 +39,10 @@
     @endif
 </div>
 
-@if($__core->mobileDetect->isMobile())
+@endsection
+
+@section('adsense')
+   @if($__core->mobileDetect->isMobile())
       <br><p align="center">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="adsbygoogle"
@@ -53,5 +56,6 @@
       </script>
       </p>
       <br>
-    @endif
+      @endif
+
 @endsection
