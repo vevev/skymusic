@@ -90,11 +90,7 @@
         </div>
         <div class="bh-info">
             <h2>{{ $song->name }} - {{ $song->single }}</h2>
-            @if($song->listen && $song->listen > 0)
             <b class="play-count">{{ $song->listen }}</b>
-            @else
-            <b class="play-count">Đang cập nhật</b>
-            @endif
             {{-- <b class="single">{{ $song->single }} </b> --}}
         </div>
     </div>

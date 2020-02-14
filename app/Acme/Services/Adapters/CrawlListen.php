@@ -49,7 +49,6 @@ class CrawlListen
             }
         }
 
-        dd($insert);
         $this->listenModel->insert($insert);
     }
 }

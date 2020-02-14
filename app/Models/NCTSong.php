@@ -141,7 +141,9 @@ class NCTSong extends Model
      */
     public function getListenAttribute()
     {
-        return Helper::formatView(optional($this->listens)->listen ?? 0);
+        $listen = optional($this->listens)->listen ?? 0;
+
+        return $listen > 0 ? Helper::formatView($listen) : 'Đang cập nhật';
     }
 
     /**
@@ -191,6 +193,21 @@ class NCTSong extends Model
                                     $query->where('nct_listens.type', '!=', 'song');
                                 });
                     })
+                    ->limit($limit)
+                    ->get($get);
+    }
+
+    /**
+     * Gets the song with listen is null.
+     *
+     * @param  integer $limit The limit
+     * @return <type>  The song with listen is null.
+     */
+    public function getSongWithListenNegativel(int $limit = 20, array $get = ['*'])
+    {
+        return $this->leftJoin('nct_listens', 'nct_listens.real_id', '=', 'nct_songs.real_id')
+                    ->where('nct_listens.type', '=', 'song')
+                    ->where('nct_listens.listen', '<', 0)
                     ->limit($limit)
                     ->get($get);
     }
