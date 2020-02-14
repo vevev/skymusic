@@ -9,6 +9,7 @@ Route::pattern('slug', '[^/\.]*');
 Route::pattern('page', '\d+');
 
 Route::get('/', 'IndexController@index')->name('index');
+Route::get('/music/{page?}', 'MusicController@index')->name('music');
 Route::get('/tai-bai-hat-{slug}-mp3/{id}.html', 'SongController@index')->name('song'); //->middleware('verifyslugsong');
 Route::get('/bai-hat/{slug}/{id}.html', 'SongSkymusicController@index')->name('song-skymusic');
 

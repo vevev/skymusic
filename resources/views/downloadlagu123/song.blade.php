@@ -24,6 +24,15 @@
   "position": 2,
   "item":
    {
+     "@id": "{{ route('music') }}",
+     "name": "Tải nhạc hay"
+   }
+  },
+  {
+   "@type": "ListItem",
+  "position": 3,
+  "item":
+   {
      "@id": "{{route('song', ['slug'=>$song->slug, 'id'=>$song->song_id])}}",
      "name": "{{ $song->name }}"
    }
@@ -52,7 +61,27 @@
 
 @section('content')
 <div class="left-bar">
-    <h1 class="ht">
+  <div class="breadcrum">
+      <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="{{ route('index') }}">
+                <span itemprop="name">Trang chủ</span>
+              </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <a itemprop="item" href="{{ route('music') }}">
+                  <span itemprop="name">Tải nhạc hay</span>
+              </a>
+              <meta itemprop="position" content="2" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <span itemprop="text">{{ $song->name }}</span>
+              <meta itemprop="position" content="3" />
+          </li>
+      </ol>
+  </div>
+    <h1 class="ht song">
         <a href="">Tải bài hát {{ $song->name }} MP3 về máy</a>
     </h1>
     <div class="bh-top">

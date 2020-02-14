@@ -1,10 +1,12 @@
 <?php
 namespace App\Acme;
 
+use Illuminate\Support\Facades\URL;
 use GeoIp2\Exception\AddressNotFoundException;
 
 class Page
 {
+    public static $CANONICAL          = "";
     public static $NO_INDEX           = false;
     public static $IS_MOBILE          = false;
     public static $IS_OPERA           = false;
@@ -33,6 +35,8 @@ class Page
      */
     public function __construct()
     {
+        self::$CANONICAL = URL::current();
+
         if ($this->hasAds()) {
             self::$showAds = false;
         } else {

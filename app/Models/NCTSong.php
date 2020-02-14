@@ -58,6 +58,29 @@ class NCTSong extends Model
      * @param  array  $song_ids       [description]
      * @return [type] [description]
      */
+    public function selectWithPage(int $page, int $limit)
+    {
+        return $this->offset(($page - 1) * $limit)
+                    ->limit($limit)
+                    ->get();
+    }
+
+    public function getTotalRow()
+    {
+        return \DB::table('INFORMATION_SCHEMA.TABLES')
+            ->where('TABLE_NAME', $this->table)
+            ->where('TABLE_SCHEMA', config('database.connections.mysql.database'))
+            ->get(['TABLE_ROWS'])
+            ->first()
+            ->TABLE_ROWS;
+    }
+
+    /**
+     * [findBySongIds description]
+     *
+     * @param  array  $song_ids       [description]
+     * @return [type] [description]
+     */
     public function findById(string $song_id, array $get = ['*'])
     {
         return $this->with(['listens', 'options'])

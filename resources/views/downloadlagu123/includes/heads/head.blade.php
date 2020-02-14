@@ -17,7 +17,7 @@
 <meta name="msapplication-navbutton-color" content="#186f92">
 <meta name="apple-mobile-web-app-status-bar-style" content="#186f92">
 <meta http-equiv="content-language" content="vi"/>
-<link rel="canonical" href="{{ URL::current() }}" />
+<link rel="canonical" href="{{ Page::$CANONICAL }}" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="google-site-verification" content="eYW7hlOMPEryvJXAOdwvh-Q0Hln63WENSZrhbfmlgbg" />
 @yield('meta')

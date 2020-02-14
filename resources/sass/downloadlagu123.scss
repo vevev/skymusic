@@ -70,6 +70,12 @@ textarea {
     display: flex;
     flex-direction: column;
 }
+.main_music {
+    max-width: 600px;
+    background: #fff;
+    margin: auto;
+    box-shadow: 0 0 5px 1px rgba(204, 204, 204, 0.61);
+}
 .main {
     background: #fff;
     padding: 10px;
@@ -176,6 +182,38 @@ textarea {
 .collapse-menu {
     position: relative;
 }
+
+.breadcrum {
+    padding: 10px 10px 5px;
+    border-bottom: 1px solid #ededed;
+    ol {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        li {
+            display: inline-block;
+            font-size: 13px;
+            overflow: hidden;
+            white-space: nowrap;
+            &:not(:last-child) {
+            }
+            &:not(:first-child) {
+                margin-left: 5px;
+            }
+            &:not(:last-child):after {
+                content: '›';
+                margin-left: 5px;
+            }
+            &:last-child {
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+h1.ht.song {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
 .collapse-view-more {
     display: none;
     width: 100%;
@@ -213,7 +251,63 @@ textarea {
     p {
         margin-left: 38px;
     }
+    span[itemprop='text'] {
+        color: #666;
+    }
 }
+
+.pagenavi ul {
+    display: inline-block;
+    background: #fff;
+    padding: 0;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.pagenavi {
+    text-align: center;
+    background: #fff;
+    padding-top: 5px;
+    ul {
+        li {
+            display: block;
+            float: left;
+            padding: 0;
+            margin: 2px;
+            list-style: none;
+            font-size: 15px;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            overflow: hidden;
+            a:active {
+                background: rgb(255, 241, 174);
+            }
+        }
+        .active {
+            background: #f1f1f1;
+            border: solid 1px rgba(128, 128, 128, 0.3);
+            border-radius: 5px;
+        }
+    }
+    a {
+        display: block;
+        height: 30px;
+        color: blue;
+        border: solid 1px rgba(128, 128, 128, 0.3);
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    span {
+        display: block;
+        background: rgba(128, 128, 128, 0.3);
+        color: black;
+        height: 38px;
+    }
+}
+
 .detail-thumb {
     width: 60px;
     height: 60px;
