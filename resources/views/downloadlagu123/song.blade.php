@@ -114,7 +114,7 @@
     <div class="ht"><b>Bài hát hay liên quan :</b></div>
     <div class="collapse-menu">
     @foreach($song->relates as $num=>$_song)
-    @if($num > 20)
+    @if($num > 15)
     @break
     @endif
     <div class="menu">
