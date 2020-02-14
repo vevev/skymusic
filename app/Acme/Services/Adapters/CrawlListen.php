@@ -38,10 +38,18 @@ class CrawlListen
         }
 
         $insert = [];
-        foreach ($arrayListen as $index => $listen) {
-            $insert[] = ['real_id' => $index, 'listen' => $listen, 'type' => 'song'];
+        foreach ($arrayListen as $id => $listen) {
+            $insert[] = ['real_id' => $id, 'listen' => $listen, 'type' => 'song'];
         }
 
+        $fakeListen = -(date('dmY'));
+        foreach ($arrayRealIds as $id) {
+            if ( ! isset($arrayListen->{$id})) {
+                $insert[] = ['real_id' => $id, 'listen' => $fakeListen, 'type' => 'song'];
+            }
+        }
+
+        dd($insert);
         $this->listenModel->insert($insert);
     }
 }
