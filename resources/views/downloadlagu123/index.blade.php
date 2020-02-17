@@ -1,6 +1,7 @@
 @extends('downloadlagu123.layouts.app')
 
 @section('section')
+@if($__core->mobileDetect->isMobile())
 <p style="text-align: center; margin: 10px auto">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Qc ngang 123 -->
@@ -12,6 +13,7 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </p>
+@endif
 @endsection
 
 @section('content')
