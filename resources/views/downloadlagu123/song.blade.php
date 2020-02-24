@@ -76,7 +76,7 @@
               <meta itemprop="position" content="2" />
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-              <span itemprop="text">{{ $song->name }}</span>
+              <span itemprop="name">{{ $song->name }}</span>
               <meta itemprop="position" content="3" />
           </li>
       </ol>
