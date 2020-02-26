@@ -43,7 +43,7 @@
 @endsection
 
 @section('adsense')
-   @if(Page::$IS_ADSENSE || ($song->canDownload && $__core->mobileDetect->isMobile()))
+   @if((Page::$IS_ADSENSE && $__core->mobileDetect->isMobile()) || ($song->canDownload && $__core->mobileDetect->isMobile()))
       <br><p align="center">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="adsbygoogle"
