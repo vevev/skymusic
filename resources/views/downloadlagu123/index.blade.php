@@ -1,9 +1,7 @@
 @extends('downloadlagu123.layouts.app')
 
 @section('inject_script')
-@if($__core->accessFromGoogle() && $__core->mobileDetect->isMobile())
-    <script type="text/javascript" src="{{ asset("/js/dbk.js") }}"></script>
-@endif
+
 @endsection
 
 @section('section')

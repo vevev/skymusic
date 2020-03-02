@@ -4,6 +4,7 @@ namespace App\Acme\Services\Adapters;
 
 use App\Models\NCTSong;
 use App\Acme\Services\Interacts\GetSong;
+use App\Acme\Services\Interacts\StoreTag;
 use App\Exceptions\SongNotFoundException;
 use App\Acme\Services\Interacts\CacheSong;
 use App\Acme\Services\Interacts\StoreSong;
@@ -26,6 +27,7 @@ class LoadSongData
     private $createRelations;
     private $cacheSong;
     private $storeSong;
+    private $storeTag;
     private $loadTop20Song;
 
     /**
@@ -37,7 +39,7 @@ class LoadSongData
      * @param      \App\Acme\Services\Interacts\CreateSongs      $createSongs      The create songs
      * @param      \App\Acme\Services\Interacts\CreateRelations  $createRelations  The create relations
      */
-    public function __construct(FetchHtmlSong $fetchHtmlSong, GetSong $getSong, ExtractSongHtml $extractSongHtml, CreateSongs $createSongs, CreateRelations $createRelations, LoadTop20Song $loadTop20Song, CacheSong $cacheSong, StoreSong $storeSong)
+    public function __construct(FetchHtmlSong $fetchHtmlSong, GetSong $getSong, ExtractSongHtml $extractSongHtml, CreateSongs $createSongs, CreateRelations $createRelations, LoadTop20Song $loadTop20Song, CacheSong $cacheSong, StoreSong $storeSong, StoreTag $storeTag)
     {
         $this->fetchHtmlSong   = $fetchHtmlSong;
         $this->getSong         = $getSong;
@@ -47,6 +49,7 @@ class LoadSongData
         $this->loadTop20Song   = $loadTop20Song;
         $this->cacheSong       = $cacheSong;
         $this->storeSong       = $storeSong;
+        $this->storeTag        = $storeTag;
     }
 
     /**
