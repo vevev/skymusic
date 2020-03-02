@@ -10,7 +10,6 @@
         @include('downloadlagu123.includes.sections.section')
         @include('downloadlagu123.includes.contents.content')
         @include('downloadlagu123.includes.sidebars.sidebar')
-        @yield('adsense')
         @include('downloadlagu123.includes.footers.footer')
     </div>
     @yield('after_body_script')

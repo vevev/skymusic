@@ -47,7 +47,6 @@
 @endsection
 
 @section('adsense')
-    <div class="clear"></div>
     <div class="tag">
     Search Keyword: <b>Tải bài hát {{ $song->name }}, download {{ $song->name }}, {{ $song->name }} mp3, tải về bài hát {{ $song->name }} mp3 miễn phí</b>
     {{-- @foreach($song->tags as $tag)
