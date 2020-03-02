@@ -47,6 +47,14 @@
 @endsection
 
 @section('adsense')
+  @if($__core->mobileDetect->isMobile() && !empty($song->tags))
+  <div class="tag">
+  Search Keyword: <b>Tải bài hát {{ $song->name }}, download {{ $song->name }}, {{ $song->name }} mp3, tải về bài hát {{ $song->name }} mp3 miễn phí</b>
+  {{-- @foreach($song->tags as $tag)
+      <a href="{{ route('search', ['query_string' => $tag->tag]) }}">{!! $tag->tag !!}</a>,
+  @endforeach --}}
+  </div>
+  @endif
    @if((Page::$IS_ADSENSE && $__core->mobileDetect->isMobile()) || ($song->canDownload && $__core->mobileDetect->isMobile()))
       <br><p align="center">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -145,14 +153,7 @@
     <p class="collapse-view-more">Xem Thêm ...</p>
     </div>
 </div>
-@if($__core->mobileDetect->isMobile() && !empty($song->tags))
-<div class="tag">
-Search Keyword: <b>Tải bài hát {{ $song->name }}, download {{ $song->name }}, {{ $song->name }} mp3, tải về bài hát {{ $song->name }} mp3 miễn phí</b>
-{{-- @foreach($song->tags as $tag)
-    <a href="{{ route('search', ['query_string' => $tag->tag]) }}">{!! $tag->tag !!}</a>,
-@endforeach --}}
-</div>
-@endif
+
 @endsection
 
 @section('sidebar')
