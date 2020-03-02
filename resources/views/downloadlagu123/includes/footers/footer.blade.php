@@ -1,6 +1,7 @@
 <div class="clear"></div>
+</div>
 @yield('adsense')
-</div><br>
+<br>
 <div class="btnbox">
 @if (Page::$currentRouteName !== 'index')
 <br />
