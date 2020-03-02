@@ -48,7 +48,7 @@
 
 @section('adsense')
     <div class="tag">
-    Search Keyword: <b>Tải bài hát {{ $song->name }}, download {{ $song->name }}, {{ $song->name }} mp3, tải về bài hát {{ $song->name }} mp3 miễn phí</b>
+    Search Keyword: <b>Tải bài hát <a href="{{ url()->current() }}">{{ $song->name }}</a>, download <a href="{{ url()->current() }}">{{ $song->name }}</a>, <a href="{{ url()->current() }}">{{ $song->name }}</a> mp3, tải về bài hát <a href="{{ url()->current() }}">{{ $song->name }}</a> mp3 miễn phí</b>
     {{-- @foreach($song->tags as $tag)
         <a href="{{ route('search', ['query_string' => $tag->tag]) }}">{!! $tag->tag !!}</a>,
     @endforeach --}}
