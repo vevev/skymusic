@@ -117,26 +117,26 @@
 
     <div class="ht"><b>Bài hát hay liên quan :</b></div>
     <div class="collapse-menu">
-    @foreach($song->relates as $num=>$_song)
+    @foreach($song->relates as $num=>$relateSong)
     @if($num > 15)
     @break
     @endif
     <div class="menu">
         <div class="detail-thumb thumb">
-            <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Tải bài hát {{ $_song->name }}">
-                <img data-src="{{ $_song->thumbnail }}" alt="Tải bài hát {{ $_song->name }}" title="Tải bài hát {{ $_song->name }}" src="{{ asset('/images/audio_default.png') }}" />
+            <a href="{{ route('song', ['slug'=>$relateSong->slug, 'id'=>$relateSong->song_id]) }}" title="Tải bài hát {{ $relateSong->name }}">
+                <img data-src="{{ $relateSong->thumbnail }}" alt="Tải bài hát {{ $relateSong->name }}" title="Tải bài hát {{ $relateSong->name }}" src="{{ asset('/images/audio_default.png') }}" />
             </a>
         </div>
         <div class="detail-info">
             <b class="ab ellipsis dli block">
-                <a href="{{ route('song', ['slug'=>$_song->slug, 'id'=>$_song->song_id]) }}" title="Tải bài hát {{ $_song->name }}">
-                    {{ $_song->name }}
+                <a href="{{ route('song', ['slug'=>$relateSong->slug, 'id'=>$relateSong->song_id]) }}" title="Tải bài hát {{ $relateSong->name }}">
+                    {{ $relateSong->name }}
                 </a>
             </b>
             <span class="sg">
-                <b class="single">{{ $_song->single }}</b>
-                @if($_song->listen)
-                <b class="play-count">{{ $_song->listen }}</b>
+                <b class="single">{{ $relateSong->single }}</b>
+                @if($relateSong->listen)
+                <b class="play-count">{{ $relateSong->listen }}</b>
                 @endif
             </span>
         </div>
@@ -145,6 +145,14 @@
     <p class="collapse-view-more">Xem Thêm ...</p>
     </div>
 </div>
+@if($__core->mobileDetect->isMobile() && !empty($song->tags))
+<div class="tag">
+  Tag:
+@foreach($song->tags as $tag)
+    <a href="{{ route('search', ['query_string' => $tag->tag]) }}">{!! $tag->tag !!}</a>,
+@endforeach
+</div>
+@endif
 @endsection
 
 @section('sidebar')

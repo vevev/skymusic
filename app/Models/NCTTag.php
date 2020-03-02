@@ -10,7 +10,7 @@ class NCTTag extends Model
 
     public $timestamps = false;
 
-    protected $table = 'nct_tagw';
+    protected $table = 'nct_tags';
 
     protected $fillable = ['tag', 'id'];
 

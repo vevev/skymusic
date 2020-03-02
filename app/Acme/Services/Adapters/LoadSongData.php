@@ -71,10 +71,11 @@ class LoadSongData
         // Neu bai hat chua crawl day du hoac het han thi tien hanh crawl va save
         elseif ( ! $song->hasFetched() || $song->expired()) {
             $this->fetchAndSaveSong($song);
+            $this->loadRelationAndCache($song);
+        }
 
-            $song->load(['options', 'relates', 'sky']);
-            $song->relates->load(['listens']);
-            $this->cacheSong->set($song);
+        if ($this->storeTag->execute($id)) {
+            $this->loadRelationAndCache($song);
         }
 
         return [
@@ -108,5 +109,21 @@ class LoadSongData
         unset($songAttr['canDownload']);
 
         $this->storeSong->execute($song, $songAttr, $arraySong);
+    }
+
+    /**
+     * Loads a relation and cache.
+     *
+     * @param      \App\Models\NCTSong  $song   The song
+     *
+     * @return     \App\Models\NCTSong  ( description_of_the_return_value )
+     */
+    private function loadRelationAndCache(NCTSong $song)
+    {
+        $song->load(['options', 'relates', 'sky', 'tags']);
+        $song->relates->load(['listens']);
+        $this->cacheSong->set($song);
+
+        return $song;
     }
 }

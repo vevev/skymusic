@@ -123,6 +123,19 @@ textarea {
         margin-top: 10px;
     }
 }
+
+.tag {
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-style: italic;
+    a {
+        color: #786002;
+    }
+}
+
 .center,
 .table {
     text-align: center;

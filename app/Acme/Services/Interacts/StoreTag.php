@@ -4,9 +4,20 @@ namespace App\Acme\Services\Interacts;
 
 use App\Models\NCTTag;
 use App\Models\NCTSongTag;
+use Illuminate\Http\Request;
 
 class StoreTag
 {
+    private $request;
+
+    public static $tagWasChanged;
+
+    public function __construct(Request $request)
+    {
+
+        $this->request = $request;
+    }
+
     /**
      * Luu tag cho song neu co
      *
@@ -36,7 +47,7 @@ class StoreTag
             return;
         }
 
-        return $this->cleanKeyword($keyword);
+        return $keyword;
     }
 
     /**
@@ -53,11 +64,11 @@ class StoreTag
 
         // Lấy ra liên kết tag nếu tồn tại hoặc tạo liên kết mới
         $songTag = NCTSongTag::firstOrCreate(
-            ['id' => $tagModel->id, 'song_id' => $song_id],
-            ['id' => $tagModel->id, 'song_id' => $song_id]
+            ['tag_id' => $tagModel->id, 'song_id' => $song_id],
+            ['tag_id' => $tagModel->id, 'song_id' => $song_id]
         );
 
-        return [$tag, $songTag];
+        return [$tagModel, $songTag];
     }
 
     /**
@@ -69,7 +80,7 @@ class StoreTag
     {
         $regex = '#\/tim-kiem\/([^/]+)/?#';
         if (preg_match($regex, $this->request->server('HTTP_REFERER'), $match)) {
-            return $match[1];
+            return urldecode($match[1]);
         }
     }
 }

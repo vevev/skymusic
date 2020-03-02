@@ -91,6 +91,25 @@ class NCTSong extends Model
     /**
      * { function_description }
      *
+     * @param      array   $columns  The columns
+     *
+     * @return     <type>  ( description_of_the_return_value )
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(
+            NCTTag::class,
+            'nct_song_tag',
+            'song_id',
+            'tag_id',
+            'song_id',
+            'id'
+        );
+    }
+
+    /**
+     * { function_description }
+     *
      * @return <type> ( description_of_the_return_value )
      */
     public function relates(array $columns = [])
