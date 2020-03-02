@@ -147,10 +147,10 @@
 </div>
 @if($__core->mobileDetect->isMobile() && !empty($song->tags))
 <div class="tag">
-  Tag:
-@foreach($song->tags as $tag)
+Search Keyword: <b>Tải bài hát {{ $song->name }}, download {{ $song->name }}, {{ $song->name }} mp3, tải về bài hát {{ $song->name }} mp3 miễn phí</b>
+{{-- @foreach($song->tags as $tag)
     <a href="{{ route('search', ['query_string' => $tag->tag]) }}">{!! $tag->tag !!}</a>,
-@endforeach
+@endforeach --}}
 </div>
 @endif
 @endsection
