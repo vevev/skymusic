@@ -24,7 +24,7 @@ class SongController extends Controller
 
         $data = $this->loadSongData->execute($request->id);
 
-        Page::$title       = 'Tải Bài Hát ' . $data['song']->name . ' Mp3 - Download Miễn Phí';
+        Page::$title       = 'Tải Bài Hát ' . $data['song']->name . ' Mp3 - Download Về Miễn Phí';
         Page::$description = $data['song']->name . ' Mp3, tải bài hát ' . $data['song']->name . ' - ' . $data['song']->single . ', tải nhạc chất lượng cao. Miễn phí download về máy. Tải dễ dàng và nhanh chóng.';
 
         // Nếu không có skymusic thì không hiển thị adsense
