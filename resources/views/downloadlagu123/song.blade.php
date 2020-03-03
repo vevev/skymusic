@@ -29,7 +29,7 @@
   "item":
    {
      "@id": "{{ route('music') }}",
-     "name": "Tải nhạc hay"
+     "name": "Tải Nhạc Hay"
    }
   },
   {
@@ -82,7 +82,7 @@
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
               <a itemprop="item" href="{{ route('music') }}">
-                  <span itemprop="name">Tải nhạc hay</span>
+                  <span itemprop="name">Tải Nhạc Hay</span>
               </a>
               <meta itemprop="position" content="2" />
           </li>
