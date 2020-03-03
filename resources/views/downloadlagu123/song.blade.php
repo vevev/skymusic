@@ -38,7 +38,7 @@
   "item":
    {
      "@id": "{{route('song', ['slug'=>$song->slug, 'id'=>$song->song_id])}}",
-     "name": "{{ $song->name }}"
+     "name": "{{ $song->name }} mp3"
    }
   }
  ]
@@ -87,7 +87,7 @@
               <meta itemprop="position" content="2" />
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-              <span itemprop="name">{{ $song->name }}</span>
+              <span itemprop="name">{{ $song->name }} mp3</span>
               <meta itemprop="position" content="3" />
           </li>
       </ol>
@@ -130,13 +130,13 @@
     @endif
     <div class="menu">
         <div class="detail-thumb thumb">
-            <a href="{{ route('song', ['slug'=>$relateSong->slug, 'id'=>$relateSong->song_id]) }}" title="Tải bài hát {{ $relateSong->name }}">
-                <img data-src="{{ $relateSong->thumbnail }}" alt="Tải bài hát {{ $relateSong->name }}" title="Tải bài hát {{ $relateSong->name }}" src="{{ asset('/images/audio_default.png') }}" />
+            <a href="{{ route('song', ['slug'=>$relateSong->slug, 'id'=>$relateSong->song_id]) }}" title="Tải bài hát {{ $relateSong->name }} Mp3">
+                <img data-src="{{ $relateSong->thumbnail }}" alt="Tải bài hát {{ $relateSong->name }} Mp3" title="Tải bài hát {{ $relateSong->name }} Mp3" src="{{ asset('/images/audio_default.png') }}" />
             </a>
         </div>
         <div class="detail-info">
             <b class="ab ellipsis dli block">
-                <a href="{{ route('song', ['slug'=>$relateSong->slug, 'id'=>$relateSong->song_id]) }}" title="Tải bài hát {{ $relateSong->name }}">
+                <a href="{{ route('song', ['slug'=>$relateSong->slug, 'id'=>$relateSong->song_id]) }}" title="Tải bài hát {{ $relateSong->name }} Mp3">
                     {{ $relateSong->name }}
                 </a>
             </b>
