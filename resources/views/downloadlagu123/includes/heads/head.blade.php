@@ -12,7 +12,7 @@
 <meta property="og:image" content="{{ asset('/images/tai-nhac-123.jpg') }}" />
 <meta property="og:title" content="{{ Page::$title }}" />
 <meta property="og:description" content="{{ Page::$description }}" />
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="shortcut icon" href="/fav.ico">
 <meta name="theme-color" content="#186f92">
 <meta name="msapplication-navbutton-color" content="#186f92">
 <meta name="apple-mobile-web-app-status-bar-style" content="#186f92">
