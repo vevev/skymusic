@@ -38,7 +38,7 @@
   "item":
    {
      "@id": "{{route('song', ['slug'=>$song->slug, 'id'=>$song->song_id])}}",
-     "name": "{{ $song->name }} mp3"
+     "name": "{{ $song->name }} Mp3"
    }
   }
  ]
@@ -87,7 +87,7 @@
               <meta itemprop="position" content="2" />
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-              <span itemprop="name">{{ $song->name }} mp3</span>
+              <span itemprop="name">{{ $song->name }} Mp3</span>
               <meta itemprop="position" content="3" />
           </li>
       </ol>
