@@ -12,7 +12,8 @@ class ReCrawlListen
     private $fetchJsonListen;
     private $listenModel;
     private $signed;
-    const LIMIT_STATE_PATH = '/home/recrawl-limit';
+    const LIMIT_STATE_PATH = '/home/nginx/recrawl-offset';
+    const LIMIT            = 100;
     /**
      * Constructor
      *
@@ -30,63 +31,84 @@ class ReCrawlListen
 
     public function execute()
     {
+        $offset = $this->getOffset();
 
-        echo $this->getLimit();
-        echo $this->setLimit(1111);
-        echo $this->getLimit();
-        // $arrayRealIds = $this->songModel
-        //                      ->getSongWithListenIsNull(50, ['nct_songs.real_id'])
-        //                      ->pluck('real_id')
-        //                      ->toArray();
-        // $arrayListen = $this->fetchJsonListen->execute($arrayRealIds);
+        // neu offset hon hon 0 thi ngung lai
+        if ($offset + 0 < 0) {
+            return;
+        }
 
-        // if ( ! $arrayListen) {
-        //     return;
-        // }
+        $arrayRealIds = $this->listenModel
+                             ->where('type', 'song')
+                             ->offset($offset)
+                             ->limit(self::LIMIT)
+                             ->orderBy('real_id')
+                             ->select(['real_id'])
+                             ->pluck('real_id')
+                             ->toArray();
 
-        // $insert = [];
-        // foreach ($arrayListen as $id => $listen) {
-        //     $insert[] = ['real_id' => $id, 'listen' => $listen, 'type' => 'song'];
-        // }
+        $arrayListen = $this->fetchJsonListen->execute($arrayRealIds);
 
-        // $fakeListen = -(date('dmY'));
-        // foreach ($arrayRealIds as $id) {
-        //     if ( ! isset($arrayListen->{$id})) {
-        //         $insert[] = ['real_id' => $id, 'listen' => $fakeListen, 'type' => 'song'];
-        //     }
-        // }
+        if ( ! $arrayListen) {
+            return;
+        }
 
-        // $this->listenModel->insert($insert);
+        $inserts = [];
+        $ids     = [];
+        foreach ($arrayListen as $id => $listen) {
+            $ids[]     = $id;
+            $inserts[] = ['real_id' => $id, 'listen' => $listen, 'type' => 'song'];
+        }
+
+        // xoa cac bai hat theo id
+        $this->listenModel->whereIn('real_id', $ids)->delete();
+
+        // insert cac bai theo id;
+        $this->listenModel->insert($inserts);
+
+        if (count($arrayRealIds) == self::LIMIT) {
+            $this->setOffset($offset + self::LIMIT);
+        } else {
+            // Neu offset khong bawng so luong row thi tuc la da het, vay nen set offset
+            // thanh so nho hon 0
+            $this->setOffset(-($offset + self::LIMIT));
+        }
     }
 
     /**
-     * Gets the limit.
+     * Gets the offset.
      *
-     * @return     <type>  The limit.
+     * @return     <type>  The offset.
      */
-    private function getLimit()
+    private function getOffset()
     {
-        $command = sprintf('grep -oP "%d (\d+)" < %s | awk "{print $2}"', $this->signed, self::LIMIT_STATE_PATH);
+        $command = sprintf('grep -oP "%d \K-?\d+" < %s', $this->signed, self::LIMIT_STATE_PATH);
 
-        return shell_exec($command);
+        if ($offset = shell_exec($command)) {
+            return trim($offset);
+        }
+
+        $command = sprintf('echo "%s %d" > %s', $this->signed, $offset, self::LIMIT_STATE_PATH);
+        shell_exec($command);
+
+        return 0;
     }
 
     /**
-     * Sets the limit.
+     * Sets the offset.
      *
-     * @param      integer  $limit  The limit
+     * @param      integer  $offset  The offset
      */
-    private function setLimit(int $limit)
+    private function setOffset(int $offset)
     {
         // Kiem tra xem neu nhu chua co
-        $command = sprintf('grep -oP "%s" < %s | awk "{print $1}"', $this->signed, self::LIMIT_STATE_PATH);
+        $command = sprintf('grep -oP "%s" < %s', $this->signed, self::LIMIT_STATE_PATH);
         if (shell_exec($command) == '') {
             // thi them vao
-            $command = sprintf('echo "%s %d" > %s', $this->signed, $limit, self::LIMIT_STATE_PATH);
-            shell_exec($command);
+            $command = sprintf('echo "%s %d" > %s', $this->signed, 0, self::LIMIT_STATE_PATH);
         } else {
             // nguoc lai thi thay the
-            $command = sprintf('sed -r "s/%s\s[0-9]+/%s %d/" %s', $this->signed, $this->signed, 0, self::LIMIT_STATE_PATH);
+            $command = sprintf('sed -r -i "s/%s\s[0-9]+/%s %s/" %s', $this->signed, $this->signed, $offset, self::LIMIT_STATE_PATH);
             shell_exec($command);
         }
     }

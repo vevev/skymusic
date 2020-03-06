@@ -13,4 +13,5 @@ class NCTListen extends Model
     protected $hidden    = ['pivot'];
 
     protected $fillable = ['real_id', 'listen', 'type'];
+
 }
