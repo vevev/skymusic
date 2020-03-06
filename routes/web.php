@@ -42,6 +42,7 @@ Route::get('/bang-xep-hang-bai-hat-han-quoc.html', 'BXHController@songKR')->name
 Route::get('/unpublish/{country}/{type}.html', 'BXHController@renew')->name('renew-bxh-cache');
 
 Route::get('/unpublish/crawl-listen', 'CrawlListenController@index')->name('crawl-listen');
+Route::get('/unpublish/recrawl-listen', 'CrawlListenController@recrawl')->name('recrawl-listen');
 
 Route::get('/unpublish/crawl-skymusic-database/{reload?}', 'UnpublishController@index')->name('crawl-skymusic-database');
 
