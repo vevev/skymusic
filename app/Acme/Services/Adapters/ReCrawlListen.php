@@ -42,7 +42,7 @@ class ReCrawlListen
                              ->where('type', 'song')
                              ->offset($offset)
                              ->limit(self::LIMIT)
-                             ->orderBy('real_id')
+                             //->orderBy('real_id')
                              ->select(['real_id'])
                              ->pluck('real_id')
                              ->toArray();
