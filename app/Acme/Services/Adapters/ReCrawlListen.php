@@ -47,6 +47,14 @@ class ReCrawlListen
                              ->pluck('real_id')
                              ->toArray();
 
+        if (count($arrayRealIds) == self::LIMIT) {
+            $this->setOffset($offset + self::LIMIT);
+        } else {
+            // Neu offset khong bawng so luong row thi tuc la da het, vay nen set offset
+            // thanh so nho hon 0
+            $this->setOffset(-($offset + self::LIMIT));
+        }
+
         $arrayListen = $this->fetchJsonListen->execute($arrayRealIds);
 
         if ( ! $arrayListen) {
@@ -65,20 +73,12 @@ class ReCrawlListen
 
         // insert cac bai theo id;
         $this->listenModel->insert($inserts);
-
-        if (count($arrayRealIds) == self::LIMIT) {
-            $this->setOffset($offset + self::LIMIT);
-        } else {
-            // Neu offset khong bawng so luong row thi tuc la da het, vay nen set offset
-            // thanh so nho hon 0
-            $this->setOffset(-($offset + self::LIMIT));
-        }
     }
 
     /**
      * Gets the offset.
      *
-     * @return     <type>  The offset.
+     * @return <type> The offset.
      */
     private function getOffset()
     {
@@ -97,7 +97,7 @@ class ReCrawlListen
     /**
      * Sets the offset.
      *
-     * @param      integer  $offset  The offset
+     * @param integer $offset The offset
      */
     private function setOffset(int $offset)
     {
