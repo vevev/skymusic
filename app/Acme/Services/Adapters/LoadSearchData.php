@@ -51,7 +51,7 @@ class LoadSearchData
 
         if (1 === $html) {
             $results      = new stdClass;
-            $results->msg = "Khong tim thay ket qua";
+            $results->msg = "Không tìm thấy bài hát nào như từ khóa bạn đã nhập, hãy thử lại với từ khóa khác nhé.";
 
             return [
                 'results' => $results,

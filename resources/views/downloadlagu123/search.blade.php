@@ -13,7 +13,7 @@
     </div>
 
     @if (isset($results->msg))
-    {{ $results->msg }}
+    <p style="padding: 10px">{{ $results->msg }}</p>
     @else
     @foreach($results as $song)
     <div class="menu">
