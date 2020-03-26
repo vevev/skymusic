@@ -2,6 +2,7 @@
 
 namespace App\Acme\Services\Adapters;
 
+use stdClass;
 use App\Models\NCTSong;
 use App\Acme\Services\Interacts\CacheSearch;
 use App\Acme\Services\Interacts\CreateSongs;
@@ -49,8 +50,11 @@ class LoadSearchData
         }
 
         if (1 === $html) {
+            $results      = new stdClass;
+            $results->msg = "Khong tim thay ket qua";
+
             return [
-                'results' => [],
+                'results' => $results,
                 'query'   => $query,
                 'page'    => $page,
             ];
