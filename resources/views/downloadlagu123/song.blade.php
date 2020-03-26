@@ -5,7 +5,7 @@
 
 @section('ads_under_header')
 @if(Page::$IS_ADSENSE && !$__core->mobileDetect->isMobile())
-<br>
+<div style="margin-bottom: 3px"></div>
 <p align="center">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
