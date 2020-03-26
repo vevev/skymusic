@@ -49,7 +49,11 @@ class LoadSearchData
         }
 
         if (1 === $html) {
-            return ['error' => 'NOTHING'];
+            return [
+                'results' => [],
+                'query'   => $query,
+                'page'    => $page,
+            ];
         }
 
         if ( ! $searchData = $this->extractSearchHtml->execute($html)) {
