@@ -18,7 +18,7 @@
 </script>
 </p>
 @endif
-@section
+@endsection
 
 @section('inject_script')
 @if($__core->accessFromGoogle() && $__core->mobileDetect->isMobile())
