@@ -29,4 +29,5 @@
         <div class="clear"></div>
     </div>
 </div>
+@yield('ads_under_header')
 <div id="main">
