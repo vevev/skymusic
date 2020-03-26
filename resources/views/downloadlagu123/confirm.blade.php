@@ -29,6 +29,7 @@
             <p><i style="color: red; font-size: 14px"><marquee>Tải nhạc miễn phí về máy</marquee></i></p>
         </div>
     </div>
+    <br>
     @if(Page::$IS_ADSENSE)
     <p align="center">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
