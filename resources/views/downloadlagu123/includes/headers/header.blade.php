@@ -25,6 +25,9 @@
             </p>
         </div>
         <div id="search-form" action="{{ route('search-post') }}" query="{{ !isset($query) ? '' : $query }}" suggest-route="{{ route('search', ['query_string' => '']) }}">
+            <style type="text/css">@charset "UTF-8";
+form[role=search]{display:block;width:100%}form div#search-input{display:-webkit-box;display:flex;position:relative}form div#search-input button,form div#search-input input{border:none;background:#fff;margin:0;padding:0;outline:0;padding:5px 5px}form div#search-input input{width:100%;padding:10px;padding-right:55px;font-size:15px;background:#fff;border-radius:3px;border:1px solid #ced4da}form div#search-input button{position:absolute;height:100%;right:0;background:0 0}form div#search-input .search-btn{background:#007bff;color:#fff;border-top-right-radius:3px;border-bottom-right-radius:3px;padding:0 20px;font-size:16px;font-weight:600}form div#search-input .search-btn:before{content:"ꀅ";font-family:fonts;width:25px;display:none;font-size:14px}form div#search-input .cancel-btn:before{content:"ꀓ";font-family:fonts;width:25px;display:block}form div#search-input ul#suggest-result{position:absolute;z-index:10;top:40px;width:100%;background:#fdfdfd;box-shadow:0 5px 10px -2px #cecece;border:1px solid #ebebeb;border-radius:3px;overflow:hidden;padding:3px 0}form div#search-input ul#suggest-result li{padding:6px 5px}form div#search-input ul#suggest-result li a{color:#333;text-decoration:none}form div#search-input ul#suggest-result .active{background:#00a0e0}form div#search-input ul#suggest-result .active a{color:#fff}
+</style>
             <form role="search" action="{{ route('search-post') }}" method="POST" class="form">
                 @csrf
                 <div id="search-input" class="input-group">
