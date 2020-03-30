@@ -211,6 +211,7 @@ textarea {
             overflow: hidden;
             white-space: nowrap;
             &:not(:last-child) {
+                flex-shrink: 0;
             }
             &:not(:first-child) {
                 margin-left: 5px;
