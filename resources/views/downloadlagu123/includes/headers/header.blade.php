@@ -24,7 +24,15 @@
                 <b>Gợi ý: </b>Nhập tên bài hát vào ô tìm kiếm để tìm &amp; tải miễn phí bất kỳ bài hát nào bạn muốn tải về máy.<br>
             </p>
         </div>
-        <div id="search-form" action="{{ route('search-post') }}" query="{{ !isset($query) ? '' : $query }}" suggest-route="{{ route('search', ['query_string' => '']) }}"></div>
+        <div id="search-form" action="{{ route('search-post') }}" query="{{ !isset($query) ? '' : $query }}" suggest-route="{{ route('search', ['query_string' => '']) }}">
+            <form role="search" action="https://tainhac123.com/search" method="POST" class="form">
+                <input type="hidden" name="_token" value="@csrf_token">
+                <div id="search-input" class="input-group">
+                    <input autocomplete="off" type="text" value="" name="q" placeholder="Nhập tên bài hát rồi bấm nút TÌM..." class="form-control">
+                    <button type="submit" class="btn search-btn">TÌM</button>
+                </div>
+            </form>
+        </div>
 
         <div class="clear"></div>
     </div>
