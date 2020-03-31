@@ -2,9 +2,11 @@
 
 namespace App\Acme;
 
+use App\Acme\Page;
 use Illuminate\Http\Request;
 use Illuminate\Cookie\CookieJar;
 use App\Acme\Helpers\MobileDetect;
+use Illuminate\Support\Facades\URL;
 
 class Core
 {
@@ -14,23 +16,24 @@ class Core
     /**
      * Constructor
      *
-     * @param      \App\Acme\Helpers\MobileDetect  $mobileDetect  The mobile detect
-     * @param      \Illuminate\Http\Request        $request       The request
-     * @param      [type]
-     * @return     [type]
+     * @param  \App\Acme\Helpers\MobileDetect $mobileDetect The mobile detect
+     * @param  \Illuminate\Http\Request       $request      The request
+     * @param  [type]
+     * @return [type]
      */
     public function __construct(MobileDetect $mobileDetect, Request $request, CookieJar $cookieJar)
     {
         $this->mobileDetect = $mobileDetect;
         $this->request      = $request;
+
+        Page::$CANONICAL = URL::current();
     }
 
     /**
      * { function_description }
      *
-     * @param      string  $viewName  The view name
-     *
-     * @return     <type>  ( description_of_the_return_value )
+     * @param  string $viewName The view name
+     * @return <type> ( description_of_the_return_value )
      */
     public static function viewPath(string $viewName)
     {
@@ -40,7 +43,7 @@ class Core
     /**
      * Determines if uc browser.
      *
-     * @return     boolean  True if uc browser, False otherwise.
+     * @return boolean True if uc browser, False otherwise.
      */
     public function isUcBrowser()
     {
@@ -56,7 +59,7 @@ class Core
     /**
      * { function_description }
      *
-     * @return     <type>  ( description_of_the_return_value )
+     * @return <type> ( description_of_the_return_value )
      */
     public function accessFromGoogle()
     {
@@ -72,7 +75,7 @@ class Core
     /**
      * Determines if animate logo.
      *
-     * @return     boolean  True if animate logo, False otherwise.
+     * @return boolean True if animate logo, False otherwise.
      */
     public function isAnimateLogo()
     {

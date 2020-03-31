@@ -1,7 +1,6 @@
 <?php
 namespace App\Acme;
 
-use Illuminate\Support\Facades\URL;
 use GeoIp2\Exception\AddressNotFoundException;
 
 class Page
@@ -31,11 +30,10 @@ class Page
     /**
      * Constructs a new instance.
      *
-     * @return     <type>  ( description_of_the_return_value )
+     * @return <type> ( description_of_the_return_value )
      */
     public function __construct()
     {
-        self::$CANONICAL = URL::current();
 
         if ($this->hasAds()) {
             self::$showAds = false;
@@ -67,7 +65,7 @@ class Page
     /**
      * Determines if ads.
      *
-     * @return     boolean  True if ads, False otherwise.
+     * @return boolean True if ads, False otherwise.
      */
     public function hasAds()
     {
@@ -99,7 +97,7 @@ class Page
     /**
      * Determines if google speed insights.
      *
-     * @return     boolean  True if google speed insights, False otherwise.
+     * @return boolean True if google speed insights, False otherwise.
      */
     public static function isGoogleSpeedInsights()
     {
