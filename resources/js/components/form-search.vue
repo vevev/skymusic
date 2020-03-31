@@ -20,7 +20,7 @@
                 name="q"
                 placeholder="Masukkan nama lagu dan klik cari ..."
             />
-            <button type="submit" class="btn search-btn"></button>
+            <button type="button" class="btn search-btn" @click="onClickSubmitButton"></button>
             <!-- <button type="button" class="btn cancel-btn"></button> -->
             <ul id="suggest-result" v-if="suggest_keywords.length">
                 <li
@@ -145,6 +145,11 @@ export default {
         onKeyupEnter(e) {
             return this.$refs.form.submit();
         },
+
+        onClickSubmitButton(e){
+            console.log(e);
+            return false;
+        }
 
         /**
          * Called on keyup.

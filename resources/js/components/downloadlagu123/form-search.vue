@@ -16,11 +16,11 @@
                 type="text"
                 ref="input"
                 value=""
-                class="form-control"
+                :class="{ 'form-control': true, error: isKeywordEmpty }"
                 name="q"
                 placeholder="Nhập tên bài hát rồi bấm nút TÌM..."
             />
-            <button type="submit" class="btn search-btn">TÌM</button>
+            <button @click="onClickSubmitButton" type="button" class="btn search-btn">TÌM</button>
             <!-- <button type="button" class="btn cancel-btn"></button> -->
             <ul id="suggest-result" v-if="suggest_keywords.length">
                 <li
@@ -42,13 +42,16 @@ export default {
             focus_index: -1,
             token: '',
             loading: false,
+            isKeywordEmpty: false,
         };
     },
+
     props: {
         query: String,
         action: String,
         suggestRoute: String,
     },
+
     mounted() {
         this.$refs.input.value = this.query;
         this.token = window.axios.defaults.headers.common['X-CSRF-TOKEN'];
@@ -71,7 +74,24 @@ export default {
         },
     },
 
+    watch: {
+        query: function(n, o) {
+            if (n) {
+                this.isKeywordEmpty = false;
+            }
+        },
+    },
+
     methods: {
+        onClickSubmitButton(e) {
+            if (this.$refs.input.value.trim().length > 0) {
+                return this.$refs.form.submit();
+            }
+
+            this.isKeywordEmpty = true;
+            return this.$refs.input.focus();
+        },
+
         /**
          * { function_description }
          *
@@ -162,6 +182,7 @@ export default {
 
             if (this.loading) return;
             this.loading = true;
+            this.query = this.$refs.input.value;
 
             const url =
                 'https://suggestqueries.google.com/complete/search?q=' +
@@ -265,6 +286,10 @@ form {
             font-family: 'fonts';
             width: 25px;
             display: block;
+        }
+
+        .error {
+            border: 1px solid red !important;
         }
 
         ul#suggest-result {
