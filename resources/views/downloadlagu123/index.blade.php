@@ -30,7 +30,7 @@
     <div class="menu">
         <div class="detail-thumb thumb">
             <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
-                <img alt="Tải bài hát {{ $song['name'] }}" title="Tải bài hát {{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
+                <img alt="Tải bài hát {{ $song['name'] }}" title="Tải bài hát {{ $song['name'] }}" src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
             </a>
         </div>
         <div class="detail-info">
@@ -95,7 +95,7 @@
         <div class="menu">
             <div class="detail-thumb thumb">
                 <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
-                    <img alt="Tải bài hát {{ $song['name'] }}" title="Tải bài hát {{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
+                    <img alt="Tải bài hát {{ $song['name'] }}" title="Tải bài hát {{ $song['name'] }}" src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
                 </a>
             </div>
             <div class="detail-info">

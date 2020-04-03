@@ -122,7 +122,7 @@ class LoadSongData
     {
         $song->load(['options', 'relates', 'sky', 'tags']);
         $song->relates->load(['listens']);
-        $this->cacheSong->set($song);
+        //$this->cacheSong->set($song);
 
         return $song;
     }
