@@ -128,6 +128,7 @@ class NCTSong extends Model
                         'song_id',
                         'song_id'
                     )
+                    ->with('listens')
                     ->select(array_map(function ($column) {
                         return 'nct_songs.' . $column;
                     }, $columns));
