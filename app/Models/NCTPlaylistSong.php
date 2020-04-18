@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NCTPLaylistSong extends Model
+class NCTPlaylistSong extends Model
 {
     protected $table     = 'nct_playlist_song';
     public $incrementing = true;
