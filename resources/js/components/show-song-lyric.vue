@@ -5,6 +5,13 @@
             <li v-for="row_content in _rows">
                 {{ row_content }}
             </li>
+            <li>
+                <br />
+                <br />
+                Bạn có thể nghe, download Mp3 (tải nhạc), tải bài hát
+                <b>{{ name }}</b>
+                do ca sĩ {{ single }} thể hiện tại TaiNhac123.Com.
+            </li>
             <li id="lr-more" v-if="showViewMore" @click="onClickViewMore" :class="bindClassMoreBtn">
                 {{ viewMoreText }}
             </li>
@@ -22,6 +29,8 @@ export default {
     },
     props: {
         lyric: String,
+        name: String,
+        single: String,
     },
 
     methods: {
