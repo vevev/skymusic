@@ -8,12 +8,13 @@
             </i>
         </p>
 
-        <br />
-        <br />
-        Bạn có thể nghe, download Mp3 (tải nhạc), tải bài hát
-        <b>{{ name }}</b>
-        do ca sĩ {{ single }} thể hiện tại TaiNhac123.Com.
-
+        <div v-if="isOpening">
+            <br />
+            <br />
+            Bạn có thể nghe, download Mp3 (tải nhạc), tải bài hát
+            <b>{{ name }}</b>
+            do ca sĩ {{ single }} thể hiện tại TaiNhac123.Com.
+        </div>
         <div v-if="showViewMore" @click="onClickViewMore" class="more">{{ viewMoreText }}</div>
     </div>
 </template>
