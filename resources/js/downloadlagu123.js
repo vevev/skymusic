@@ -13,9 +13,11 @@ if ((vm = document.getElementById('lyric'))) {
         el: '#lyric',
         data: {
             lyric: vm.dataset.lyric,
+            name: vm.dataset.name,
+            single: vm.dataset.single,
         },
         components: { lyric: Lyric },
-        template: `<lyric :lyric="lyric"> </lyric>`,
+        template: `<lyric :lyric="lyric" :name="name" :single="single"> </lyric>`,
     });
 }
 

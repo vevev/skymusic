@@ -138,7 +138,7 @@
 
     </div>
 
-    <div id="lyric" data-lyric="{{ $song->lyric }}" :name="{{ $song->name }}" :single="{{ $song->single }}"></div>
+    <div id="lyric" data-lyric="{{ $song->lyric }}" data-name="{{ $song->name }}" data-single="{{ $song->single }}"></div>
 
     <div class="ht"><b>Bài hát hay liên quan :</b></div>
     <div class="collapse-menu">
