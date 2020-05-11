@@ -101,10 +101,12 @@
                 </table>
             </div>
             <br>
+            <hr>
+            <br>
             <div class="ht"><b>Bài hát hay liên quan :</b></div>
             <div class="collapse-menu">
             @foreach($song->relates as $num=>$relateSong)
-            @if($num > 15)
+            @if($num > 10)
             @break
             @endif
             <div class="menu">
