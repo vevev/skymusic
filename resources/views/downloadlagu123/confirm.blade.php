@@ -77,6 +77,21 @@
                         </tr>
                         <tr>
                             <td colspan="2">
+                                @if($__core->mobileDetect->isMobile())
+                                <br><p align="center">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <ins class="adsbygoogle"
+                                   style="display:block"
+                                   data-ad-client="ca-pub-6109538742955032"
+                                   data-ad-slot="5765656710"
+                                   data-ad-format="auto"
+                                   data-full-width-responsive="true"></ins>
+                                <script>
+                                   (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                                </p>
+                                <br>
+                                @endif
                                 <div id="vue-container" style="width: auto; max-width: 100%;">
                                     <a class="btn-a" href="{{ route('download', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}">
                                         <i class="icon-download"></i>
@@ -101,12 +116,11 @@
                 </table>
             </div>
             <br>
-            <hr>
             <br>
             <div class="ht"><b>Bài hát hay liên quan :</b></div>
             <div class="collapse-menu">
             @foreach($song->relates as $num=>$relateSong)
-            @if($num > 10)
+            @if($num > 9)
             @break
             @endif
             <div class="menu">
