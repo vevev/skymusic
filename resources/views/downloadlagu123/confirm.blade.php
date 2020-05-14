@@ -77,21 +77,6 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                @if($__core->mobileDetect->isMobile())
-                                <br><p align="center">
-                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                <ins class="adsbygoogle"
-                                   style="display:block"
-                                   data-ad-client="ca-pub-6109538742955032"
-                                   data-ad-slot="5765656710"
-                                   data-ad-format="auto"
-                                   data-full-width-responsive="true"></ins>
-                                <script>
-                                   (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
-                                </p>
-                                <br>
-                                @endif
                                 <div id="vue-container" style="width: auto; max-width: 100%;">
                                     <a class="btn-a" href="{{ route('download', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}">
                                         <i class="icon-download"></i>
