@@ -132,7 +132,7 @@
         <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
     </div>
     @if($__core->mobileDetect->isMobile())
-    <br><p align="center">
+    <p align="center">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <ins class="adsbygoogle"
        style="display:block"
@@ -144,6 +144,7 @@
        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
     </p>
+    <br>
     <br>
     @endif
     <div class="info center">
