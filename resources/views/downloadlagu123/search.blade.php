@@ -17,7 +17,7 @@
        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
     </p>
-
+    <br>
     @endif
 @endsection
 
