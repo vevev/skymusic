@@ -131,7 +131,19 @@
             @endforeach
             <p class="collapse-view-more">Xem Thêm ...</p>
             </div>
-
+            @if($__core->mobileDetect->isMobile())
+            <br><p align="center">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- lien ket -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6109538742955032"
+                 data-ad-slot="5228218095"
+                 data-ad-format="link"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script></p><br>
+            @endif
             <br>
             <center>
                 <a onclick="window.history.back();" class="back" href="{{ Request::header('referer', '/') }}">&nbsp;&nbsp;Back&nbsp;&nbsp;</a>
