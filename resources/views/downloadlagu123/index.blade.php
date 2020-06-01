@@ -93,7 +93,6 @@
        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
     </p>
-    <br>
     @endif
     <div class="right-bar">
         <div class="cate">
