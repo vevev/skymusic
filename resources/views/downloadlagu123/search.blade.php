@@ -4,6 +4,7 @@
 
 @section('section')
 @if($__core->mobileDetect->isMobile())
+<br>
     <p align="center">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <ins class="adsbygoogle"
@@ -16,7 +17,7 @@
        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
     </p>
-    <br>
+
     @endif
 @endsection
 
