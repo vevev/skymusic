@@ -154,7 +154,19 @@
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}" data-name="{{ $song->name }}" data-single="{{ $song->single }}"></div>
-
+    @if($__core->mobileDetect->isMobile())
+    <br><p align="center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- lien ket -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="5228218095"
+         data-ad-format="link"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script></p><br>
+    @endif
     <div class="ht"><b>Bài hát hay liên quan :</b></div>
     <div class="collapse-menu">
     @foreach($song->relates as $num=>$relateSong)
