@@ -65,13 +65,6 @@
 @endsection
 
 @section('adsense')
-    <div class="tag">
-    Search Keyword: <b><a href="{{ url()->current() }}">Tải bài hát {{ $song->name }}</a>,<a href="{{ url()->current() }}"> download {{ $song->name }}</a>, <a href="{{ url()->current() }}">{{ $song->name }} mp3</a>,<a href="{{ url()->current() }}"> tải về bài hát {{ $song->name }} mp3 miễn phí</a></b>
-    {{-- @foreach($song->tags as $tag)
-        <a href="{{ route('search', ['query_string' => $tag->tag]) }}">{!! $tag->tag !!}</a>,
-    @endforeach --}}
-    </div>
-
    @if((Page::$IS_ADSENSE && $__core->mobileDetect->isMobile()) || ($song->canDownload && $__core->mobileDetect->isMobile()))
       <br><p align="center">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -86,6 +79,14 @@
       </script>
       </p>
       @endif
+
+    <div class="tag">
+    Search Keyword: <b><a href="{{ url()->current() }}">Tải bài hát {{ $song->name }}</a>,<a href="{{ url()->current() }}"> download {{ $song->name }}</a>, <a href="{{ url()->current() }}">{{ $song->name }} mp3</a>,<a href="{{ url()->current() }}"> tải về bài hát {{ $song->name }} mp3 miễn phí</a></b>
+    {{-- @foreach($song->tags as $tag)
+        <a href="{{ route('search', ['query_string' => $tag->tag]) }}">{!! $tag->tag !!}</a>,
+    @endforeach --}}
+    </div>
+
 @endsection
 
 @section('content')
