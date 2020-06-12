@@ -163,7 +163,7 @@ class NCTSong extends Model
     {
         $listen = optional($this->listens)->listen ?? 0;
 
-        return $listen > 0 ? Helper::formatView($listen) : 'Đang cập nhật';
+        return $listen > 0 ? Helper::formatView($listen) : '-';
     }
 
     /**
