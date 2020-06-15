@@ -24,7 +24,7 @@ class FetchJsonListen
             $url_format = 'https://www.nhaccuatui.com/interaction/https/v2/counter?listSongIds=%s';
             $url        = sprintf($url_format, implode(',', $real_ids));
             $json       = $this->httpRequest->get($url);
-            file_put_contents("/home/nginx/"+time(), $json);
+            //file_put_contents("/home/nginx/"+time(), $json);
 
             return json_decode($json)->data->songs;
         } catch (Throwable $e) {
