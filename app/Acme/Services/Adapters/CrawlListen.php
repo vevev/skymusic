@@ -31,11 +31,12 @@ class CrawlListen
                              ->getSongWithListenIsNull(50, ['nct_songs.real_id'])
                              ->pluck('real_id')
                              ->toArray();
-        $arrayListen = $this->fetchJsonListen->execute($arrayRealIds);
 
-        if ( ! $arrayListen) {
+        if ( ! $arrayRealIds) {
             return;
         }
+
+        $arrayListen = $this->fetchJsonListen->execute($arrayRealIds);
 
         $insert = [];
         foreach ($arrayListen as $id => $listen) {
