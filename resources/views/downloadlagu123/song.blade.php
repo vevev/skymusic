@@ -134,17 +134,16 @@
     </div>
     @if($__core->mobileDetect->isMobile())
     <p align="center">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- lien ket -->
     <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-6109538742955032"
-       data-ad-slot="5765656710"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="5228218095"
+         data-ad-format="link"></ins>
     <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    </p>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script></p>
     <br>
     <br>
     @endif
