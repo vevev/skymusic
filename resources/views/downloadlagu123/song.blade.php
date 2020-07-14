@@ -149,7 +149,7 @@
     @endif
     <div class="info center">
         <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
-            <b></b>&nbsp;Download Mp3&nbsp;</a>
+            <b></b>&nbsp;Tải Về&nbsp;</a>
 
     </div>
 
