@@ -148,23 +148,7 @@
         </audio> --}}
         <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
     </div>
-    @if($__core->mobileDetect->isMobile())
     @if($song->hasSkymusic)
-    <p align="center">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- lien ket -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6109538742955032"
-         data-ad-slot="5228218095"
-         data-ad-format="link"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </p>
-    <br>
-    <br>
-    @elseif($song->canDownload)
     <p align="center">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <!-- lksk -->
@@ -180,7 +164,21 @@
       </p>
     <br>
     <br>
-    @endif
+    @elseif($song->canDownload && $__core->mobileDetect->isMobile())
+    <p align="center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- lien ket -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="5228218095"
+         data-ad-format="link"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </p>
+    <br>
+    <br>
     @endif
     <div class="info center">
         <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
@@ -189,22 +187,7 @@
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}" data-name="{{ $song->name }}" data-single="{{ $song->single }}"></div>
-    @if($__core->mobileDetect->isMobile())
     @if($song->hasSkymusic)
-    <br><p align="center">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- lien ket -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6109538742955032"
-         data-ad-slot="5228218095"
-         data-ad-format="link"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </p>
-    <br>
-    @elseif($song->canDownload)
     <br><p align="center">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <!-- lksk -->
@@ -219,7 +202,20 @@
       </script>
       </p>
     <br>
-    @endif
+    @elseif($song->canDownload && $__core->mobileDetect->isMobile())
+    <br><p align="center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- lien ket -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="5228218095"
+         data-ad-format="link"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </p>
+    <br>
     @endif
     <div class="ht"><b>Bài hát hay liên quan :</b></div>
     <div class="collapse-menu">
