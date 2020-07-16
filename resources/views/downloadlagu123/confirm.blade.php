@@ -32,17 +32,18 @@
     <div style="margin-bottom: 8px"></div>
     @if(Page::$IS_ADSENSE)
     <p align="center">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6109538742955032"
-     data-ad-slot="1124981812"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</p>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- thichungsk -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="1881633786"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    </p>
     @elseif($song->canDownload && $__core->mobileDetect->isMobile())
     <p align="center">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -131,21 +132,37 @@
             @endforeach
             <p class="collapse-view-more">Xem Thêm ...</p>
             </div>
-            @if($__core->mobileDetect->isMobile())
-            <p align="center">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-6109538742955032"
-               data-ad-slot="5765656710"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-            <script>
-               (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            </p>
-            <br>
-            @endif
+
+                @if($song->hasSkymusic)
+                <p align="center">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- thichungsk -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-6109538742955032"
+                     data-ad-slot="1881633786"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                </p>
+                <br>
+                @elseif($song->canDownload && $__core->mobileDetect->isMobile())
+                <p align="center">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-6109538742955032"
+                    data-ad-slot="5765656710"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                </p>
+                <br>
+                @endif
             <center>
                 <a onclick="window.history.back();" class="back" href="{{ Request::header('referer', '/') }}">&nbsp;&nbsp;Back&nbsp;&nbsp;</a>
             </center>

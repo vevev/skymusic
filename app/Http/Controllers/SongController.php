@@ -32,7 +32,7 @@ class SongController extends Controller
             Page::$IS_ADSENSE = 0;
         }
 
-        // Nếu không có skymusic thì không hiển thị adsense
+        // Nếu không có skymusic thì không index
         if ( ! $data['song']->hasSkymusic && ! $data['song']->canDownload) {
             Page::$NO_INDEX = true;
         }
