@@ -47,15 +47,16 @@
     @elseif($song->canDownload && $__core->mobileDetect->isMobile())
     <p align="center">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6109538742955032"
-         data-ad-slot="5765656710"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+<!-- thichungkpsk -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6109538742955032"
+     data-ad-slot="9706253107"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
     </p>
     @endif
     <div id="main">
@@ -151,15 +152,16 @@
                 @elseif($song->canDownload && $__core->mobileDetect->isMobile())
                 <p align="center">
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-6109538742955032"
-                    data-ad-slot="5765656710"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+<!-- thichungkpsk -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6109538742955032"
+     data-ad-slot="9706253107"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
                 </p>
                 <br>
                 @endif
