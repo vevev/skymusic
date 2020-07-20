@@ -15,9 +15,7 @@ class VerifySlugSong
      */
     public function handle($request, Closure $next)
     {
-        if ($this->verifySlug($request->slug)) {
-            $request->slug_unverify = true;
-        }
+        $request->slug_unverify = $this->verifySlug($request->slug);
 
         return $next($request);
     }

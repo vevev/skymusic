@@ -18,7 +18,7 @@ class SongController extends Controller
 
     public function index(Request $request, Core $core)
     {
-        if ($request->slug_unverify) {
+        if ($request->slug_unverify || $request->id_unverify) {
             return view(Core::viewPath('song-slug'));
         }
 
