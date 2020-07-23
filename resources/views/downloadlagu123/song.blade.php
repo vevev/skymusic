@@ -209,16 +209,16 @@
     @elseif($song->canDownload && $__core->mobileDetect->isMobile())
     <br><p align="center">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- lkkpsk -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6109538742955032"
-     data-ad-slot="3013686394"
-     data-ad-format="link"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <!-- lkkpsk -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="3013686394"
+         data-ad-format="link"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </p>
     <br>
     @endif
