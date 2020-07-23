@@ -83,16 +83,16 @@
     @elseif($song->canDownload && $__core->mobileDetect->isMobile())
     <br><p align="center">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- thichungkpsk -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6109538742955032"
-     data-ad-slot="9706253107"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <!-- thichungkpsk -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="9706253107"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     </p>
     @endif
 
@@ -149,6 +149,7 @@
         </audio> --}}
         <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
     </div>
+
     @if($song->hasSkymusic)
     <p align="center">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -168,20 +169,21 @@
     @elseif($song->canDownload && $__core->mobileDetect->isMobile())
     <p align="center">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- lkkpsk -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6109538742955032"
-     data-ad-slot="3013686394"
-     data-ad-format="link"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-  </p>
+    <!-- lkkpsk -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="3013686394"
+         data-ad-format="link"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+      </p>
     <br>
     <br>
     @endif
+
     <div class="info center">
         <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
             <b></b>&nbsp;Tải Về&nbsp;</a>
