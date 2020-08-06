@@ -80,6 +80,7 @@ class SitemapController extends Controller
         return $this->songModel
                     ->offset($this->page * $limit)
                     ->limit($limit)
+                    ->orderBy('id', 'DESC')
                     ->get(['name', 'slug', 'song_id']);
     }
 
