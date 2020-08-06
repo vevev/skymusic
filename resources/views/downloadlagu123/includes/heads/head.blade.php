@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="eYW7hlOMPEryvJXAOdwvh-Q0Hln63WENSZrhbfmlgbg" />
 @yield('meta')
 @yield('link')
-<link rel="preload" href="{{ asset("/fonts/css/fonts.css?v=" . config('app.version')) }}" media="screen" />
+<link rel="stylesheet" href="{{ asset("/fonts/css/fonts.css?v=" . config('app.version')) }}" media="screen" />
 <link rel="stylesheet" href="{{ asset("/css/app.min.css?v=" . config('app.version')) }}" media="screen" />
 @yield('inject_script')
 @yield('social')
