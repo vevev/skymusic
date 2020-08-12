@@ -22,7 +22,11 @@ class VerifyIdSong
 
     private function verifyId($id)
     {
-        $list = ['b2ki2Wga0XWX'];
+        $list = [
+            'b2ki2Wga0XWX', '2Lv43QXMeumT', 'lGg0mLsOT3qm', 'aCQIv6EGgdM8', 'wk1C93W74Gnf',
+            'wFxBcbOz14GV', 'PKDK5YVEdgWH', 'iOYzPfp6lchL', '5z6HLpEj8AKI', 'BSthd9FKKLm3',
+            'Hyda6ukMOr1t',
+        ];
 
         return in_array($id, $list);
     }
