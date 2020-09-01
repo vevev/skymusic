@@ -25,7 +25,7 @@ class VerifyIdSong
         $list = [
             'b2ki2Wga0XWX', '2Lv43QXMeumT', 'lGg0mLsOT3qm', 'aCQIv6EGgdM8', 'wk1C93W74Gnf',
             'wFxBcbOz14GV', 'PKDK5YVEdgWH', 'iOYzPfp6lchL', '5z6HLpEj8AKI', 'BSthd9FKKLm3',
-            'Hyda6ukMOr1t',
+            'Hyda6ukMOr1t', 'PWAHV0oEsD', 'Twdo2DGj5gtH',
         ];
 
         return in_array($id, $list);
