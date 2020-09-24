@@ -30,7 +30,7 @@
         </div>
     </div>
     <div style="margin-bottom: 8px"></div>
-    @if(Page::$IS_ADSENSE)
+    {{-- @if(Page::$IS_ADSENSE)
     <p align="center">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- thichungsk -->
@@ -58,7 +58,7 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
     </p>
-    @endif
+    @endif --}}
     <div id="main">
         <div class="main">
             <div>
@@ -134,7 +134,7 @@
             <p class="collapse-view-more">Xem Thêm ...</p>
             </div>
 
-                @if($song->hasSkymusic)
+                {{-- @if($song->hasSkymusic)
                 <p align="center">
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- thichungsk -->
@@ -164,7 +164,7 @@
 </script>
                 </p>
                 <br>
-                @endif
+                @endif --}}
             <center>
                 <a onclick="window.history.back();" class="back" href="{{ Request::header('referer', '/') }}">&nbsp;&nbsp;Back&nbsp;&nbsp;</a>
             </center>
