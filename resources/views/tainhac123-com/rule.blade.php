@@ -6,9 +6,6 @@
     <dt>BẢN QUYỀN</dt>
     <dd>
     <p>
-    • Bản quyền nội dung trên TaiNhac123.Com được cung cấp bởi <b><a href="https://skymusic.com.vn/">SkyMusic</a></b>.
-    </p>
-    <p>
     • Nếu bạn không mong muốn nội dung mà bạn sở hữu xuất hiện trên TaiNhac123.Com thì xin vui lòng liên hệ qua email:
         <b>ad.tainhac123@gmail.com</b>
     để được gỡ xuống
@@ -26,9 +23,6 @@
     <dd>
         <p>
             <b>Khuyến cáo: không khuyến khích trẻ em dưới 16 tuổi sử dụng website này.</b>
-        </p>
-        <p>
-            - Nguồn nhạc trên trang được hỗ trợ bởi <b style="display: inline"><a href="https://skymusic.com.vn/">SkyMusic</a></b>. Tải về điện thoại và máy tính hoàn toàn miễn phí. Chúng tôi không thu bất cứ 1 khoản phí nào.
         </p>
         <p>
             - Nghiêm cấm việc hành vi tải nhạc về để kinh doanh buôn bán dưới mọi hình thức khi chưa có sự cho phép của tác giả bài hát.
