@@ -20,7 +20,7 @@ switch (config('app.domain')) {
         break;
 
     case 'tainhac123.com':
-        Route::domain('skymusic.dev')
+        Route::domain('tainhac123.com')
             ->group(base_path('routes/domains/tainhac123.com.php'));
         break;
 }
