@@ -16,11 +16,11 @@
                 type="text"
                 ref="input"
                 value=""
-                class="form-control"
+                :class="{ 'form-control': true, error: isKeywordEmpty }"
                 name="q"
-                placeholder="Masukkan nama lagu dan klik cari ..."
+                placeholder="Nhập tên bài hát rồi bấm nút TÌM..."
             />
-            <button type="button" class="btn search-btn" @click="onClickSubmitButton"></button>
+            <button @click="onClickSubmitButton" type="button" class="btn search-btn">TÌM</button>
             <!-- <button type="button" class="btn cancel-btn"></button> -->
             <ul id="suggest-result" v-if="suggest_keywords.length">
                 <li
@@ -34,7 +34,7 @@
     </form>
 </template>
 <script type="text/javascript">
-require('../protos/String');
+require('../../protos/String');
 export default {
     data() {
         return {
@@ -42,13 +42,16 @@ export default {
             focus_index: -1,
             token: '',
             loading: false,
+            isKeywordEmpty: false,
         };
     },
+
     props: {
         query: String,
         action: String,
         suggestRoute: String,
     },
+
     mounted() {
         this.$refs.input.value = this.query;
         this.token = window.axios.defaults.headers.common['X-CSRF-TOKEN'];
@@ -71,7 +74,24 @@ export default {
         },
     },
 
+    watch: {
+        query: function(n, o) {
+            if (n) {
+                this.isKeywordEmpty = false;
+            }
+        },
+    },
+
     methods: {
+        onClickSubmitButton(e) {
+            if (this.$refs.input.value.trim().length > 0) {
+                return this.$refs.form.submit();
+            }
+
+            this.isKeywordEmpty = true;
+            return this.$refs.input.focus();
+        },
+
         /**
          * { function_description }
          *
@@ -146,11 +166,6 @@ export default {
             return this.$refs.form.submit();
         },
 
-        onClickSubmitButton(e){
-            console.log(e);
-            return false;
-        }
-
         /**
          * Called on keyup.
          *
@@ -167,6 +182,7 @@ export default {
 
             if (this.loading) return;
             this.loading = true;
+            this.query = this.$refs.input.value;
 
             const url =
                 'https://suggestqueries.google.com/complete/search?q=' +
@@ -223,7 +239,6 @@ form {
     width: 100%;
     div#search-input {
         display: flex;
-        width: 100%;
         position: relative;
         input,
         button {
@@ -237,10 +252,12 @@ form {
 
         input {
             width: 100%;
-            padding-right: 50px;
+            padding: 10px;
+            padding-right: 55px;
             font-size: 15px;
-            background: #ebebeb;
+            background: #fff;
             border-radius: 3px;
+            border: 1px solid #ced4da;
         }
         button {
             position: absolute;
@@ -249,15 +266,18 @@ form {
             background: transparent;
         }
         .search-btn {
-            background: #0000ff;
+            background: #007bff;
             color: #fff;
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
+            padding: 0px 20px;
+            font-size: 16px;
+            font-weight: 600;
             &:before {
                 content: '\A005';
                 font-family: 'fonts';
                 width: 25px;
-                display: block;
+                display: none;
                 font-size: 14px;
             }
         }
@@ -268,10 +288,14 @@ form {
             display: block;
         }
 
+        .error {
+            border: 1px solid red !important;
+        }
+
         ul#suggest-result {
             position: absolute;
             z-index: 10;
-            top: 30px;
+            top: 40px;
             width: 100%;
             background: #fdfdfd;
             box-shadow: 0px 5px 10px -2px #cecece;
@@ -280,7 +304,7 @@ form {
             overflow: hidden;
             padding: 3px 0;
             li {
-                padding: 3px 5px;
+                padding: 6px 5px;
                 a {
                     color: #333;
                     text-decoration: none;

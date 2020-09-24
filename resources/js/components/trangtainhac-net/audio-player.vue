@@ -20,7 +20,7 @@
     </div>
 </template>
 <script type="text/javascript">
-require('../protos/String');
+require('../../protos/String');
 export default {
     data() {
         return {

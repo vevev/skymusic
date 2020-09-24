@@ -65,11 +65,40 @@ class SearchController extends Controller
      */
     public function get(Request $request)
     {
-        if ( ! $query_string = $request->get('q')) {
-            throw new KeywordNotFoundInSearchRequestException;
-        }
+        $query_string = $this->getQueryParams($request);
+
         $response = $this->loadSearchData->execute($query_string, $request->page ?? 1);
 
         return response()->json($response['results']);
+    }
+
+    /**
+     * { function_description }
+     *
+     * @param      \Illuminate\Http\Request  $request  The request
+     */
+    public function redirectQueryToSlug(Request $request)
+    {
+        $url = route('search', ['query_string' => $this->getQueryParams($request)]);
+
+        return redirect($url)->send();
+    }
+
+    /**
+     * Gets the query parameters.
+     *
+     * @param      <type>                                                   $request  The request
+     *
+     * @throws     \App\Exceptions\KeywordNotFoundInSearchRequestException  (description)
+     *
+     * @return     <type>                                                   The query parameters.
+     */
+    private function getQueryParams($request)
+    {
+        if ( ! $query_string = $request->get('q')) {
+            throw new KeywordNotFoundInSearchRequestException;
+        }
+
+        return $query_string;
     }
 }

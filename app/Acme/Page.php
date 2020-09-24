@@ -79,9 +79,6 @@ class Page
      */
     public function clientFrom($request, $from)
     {
-        /**
-         * @var array
-         */
         static $client = [];
         $hash_key_from = md5($from);
         if (isset($client[$hash_key_from])) {

@@ -21,6 +21,8 @@ return [
 
     'template'            => env('APP_TEMPLATE', 'default'),
 
+    'domain'              => env('APP_DOMAIN', 'tainhac123.com'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

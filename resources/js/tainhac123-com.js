@@ -1,11 +1,11 @@
 require('./bootstrap');
 
-const Lyric = require('./components/downloadlagu123/show-song-lyric').default;
-const Search = require('./components/downloadlagu123/form-search').default;
-const AudioPlayer = require('./components/downloadlagu123/audio-player-default').default;
-const AudioPlayerPlaylist = require('./components/downloadlagu123/audio-player-playlist-default')
+const Lyric = require('./components/tainhac123-com/show-song-lyric').default;
+const Search = require('./components/tainhac123-com/form-search').default;
+const AudioPlayer = require('./components/tainhac123-com/audio-player-default').default;
+const AudioPlayerPlaylist = require('./components/tainhac123-com/audio-player-playlist-default')
     .default;
-const LoadMoreSearchSong = require('./components/downloadlagu123/load-more-search-song').default;
+const LoadMoreSearchSong = require('./components/tainhac123-com/load-more-search-song').default;
 var vm = null;
 
 if ((vm = document.getElementById('lyric'))) {

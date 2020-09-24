@@ -30,7 +30,7 @@ class BXHController extends Controller
      */
     public function songVN(Request $request, Core $core)
     {
-        $data['songs']  = $this->loadTop20Song->execute('vn', 'bai-hat');
+        $data['songs']  = $this->loadTop20Song->execute('vn', 'bai-hat') ?? [];
         $data['__core'] = $core;
 
         return view(Core::viewPath('bxh-song'), $data);
@@ -45,7 +45,7 @@ class BXHController extends Controller
      */
     public function songUS(Request $request, Core $core)
     {
-        $data['songs']  = $this->loadTop20Song->execute('us', 'bai-hat');
+        $data['songs']  = $this->loadTop20Song->execute('us', 'bai-hat') ?? [];
         $data['__core'] = $core;
 
         return view(Core::viewPath('bxh-song'), $data);
@@ -60,7 +60,7 @@ class BXHController extends Controller
      */
     public function songKR(Request $request, Core $core)
     {
-        $data['songs']  = $this->loadTop20Song->execute('kr', 'bai-hat');
+        $data['songs']  = $this->loadTop20Song->execute('kr', 'bai-hat') ?? [];
         $data['__core'] = $core;
 
         return view(Core::viewPath('bxh-song'), $data);

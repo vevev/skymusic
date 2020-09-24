@@ -14,7 +14,11 @@ const mix = require('laravel-mix');
 mix.js('resources/js/' + process.env.APP_TEMPLATE + '.js', 'public/js/app.min.js')
     .sass('resources/sass/' + process.env.APP_TEMPLATE + '.scss', 'public/css/app.min.css')
     .copyDirectory('resources/images', 'public/images')
+    .copyDirectory('resources/views/' + process.env.APP_TEMPLATE + '/images', 'public/images')
     .copyDirectory('resources/svg', 'public/svg')
     .copyDirectory('resources/fontello', 'public/fonts')
     .copyDirectory('resources/fontello', 'public/fonts')
-    .copyDirectory('resources/svg', 'public/svg');
+    .copyDirectory('resources/svg', 'public/svg')
+    .options({
+        processCssUrls: false,
+    });
