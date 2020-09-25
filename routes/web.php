@@ -19,6 +19,11 @@ switch (config('app.domain')) {
             ->group(base_path('routes/domains/trangtainhac.net.php'));
         break;
 
+    case 'test.tainhac123.com':
+        Route::domain('trangtainhacnet.dev')
+            ->group(base_path('routes/domains/trangtainhac.net.php'));
+        break;
+
     case 'tainhac123.com':
         Route::domain('tainhac123.com')
             ->group(base_path('routes/domains/tainhac123.com.php'));
