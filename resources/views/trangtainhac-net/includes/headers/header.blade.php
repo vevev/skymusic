@@ -28,7 +28,7 @@
         <div id="nav-none-main">
             <div class="container-default">
                 <div class="nav-menu">
-                    <a href="{{ route('bxh-song-vn') }}">nhạc hay</a>
+                    <a class="active" href="{{ route('bxh-song-vn') }}">nhạc hay</a>
                     <a href="{{ route('bxh-song-vn') }}">top 100</a>
                     <a href="{{ route('bxh-song-vn') }}">chủ đề</a>
                     <a href="{{ route('bxh-song-vn') }}">album</a>

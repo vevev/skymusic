@@ -1,6 +1,6 @@
 <template>
     <div class="info lr">
-        <b class="f15">Lời Bài Hát:</b>
+        <div class="header-title"><b>Lời Bài Hát:</b></div>
         <br />
         <p>
             <i class="lr-line" v-for="row_content in _rows">
@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .lr {
-    padding: 10px 10px 10px;
+    padding-bottom: 20px;
     box-sizing: border-box;
     margin-bottom: 0px;
 
@@ -82,6 +82,7 @@ export default {
     p {
         height: auto;
         overflow: hidden;
+        padding: 0 10px;
         &.full {
             height: 100%;
         }

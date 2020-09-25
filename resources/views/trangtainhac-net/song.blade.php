@@ -50,7 +50,7 @@
 @endsection
 
 @section('adsense')
-    <div class="tag container-default">
+    <div class="tag container-default margin-block">
     Search Keyword: <b><a href="{{ url()->current() }}">Tải bài hát {{ $song->name }}</a>,<a href="{{ url()->current() }}"> download {{ $song->name }}</a>, <a href="{{ url()->current() }}">{{ $song->name }} mp3</a>,<a href="{{ url()->current() }}"> tải về bài hát {{ $song->name }} mp3 miễn phí</a></b>
     </div>
 @endsection

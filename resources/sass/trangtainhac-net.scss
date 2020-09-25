@@ -2,6 +2,9 @@ a {
     text-decoration: none;
     color: blue;
 }
+
+$google-color-primary: #f1f3f4;
+
 audio {
     width: 100%;
 }
@@ -39,15 +42,16 @@ div#nav-none-main {
         display: flex;
         padding: 0 10px;
         a {
-            padding: 5px 15px 10px;
+            padding: 5px 10px 10px;
             text-transform: uppercase;
             font-size: 12px;
             font-weight: 500;
-            color: #0000008a;
+            color: #000000;
             text-decoration: none;
-            border-bottom: 2px solid transparent;
-            &:first-child {
+            border-bottom: 3px solid transparent;
+            &.active {
                 border-bottom-color: blue;
+                color: blue;
             }
         }
     }
@@ -136,7 +140,7 @@ div#nav-main-menu {
     display: flex;
     padding: 15px 10px;
     &:not(:nth-last-child(1)) {
-        box-shadow: 0 1px 0 0px #f9f9f9;
+        box-shadow: 0 1px 0 0px $google-color-primary;
     }
     .thumbnail {
         width: 40px;
@@ -204,6 +208,10 @@ div#nav-main-menu {
             }
         }
     }
+}
+
+.tag {
+    padding: 10px;
 }
 
 dd {
@@ -520,13 +528,12 @@ a {
     font-weight: normal;
 }
 
-$header-title-bg-color: #f1f3f4;
 .header-title {
     position: relative;
     display: flex;
     padding-left: 20px;
     overflow: hidden;
-    border-bottom: 2px solid $header-title-bg-color;
+    border-bottom: 2px solid $google-color-primary;
     color: #000;
     &:after,
     &:before {
@@ -538,7 +545,7 @@ $header-title-bg-color: #f1f3f4;
         height: 50%;
         left: 0;
         bottom: 0;
-        background: $header-title-bg-color;
+        background: $google-color-primary;
     }
     &:after {
         width: 100%;
@@ -552,10 +559,10 @@ $header-title-bg-color: #f1f3f4;
 
     b {
         font-size: 15px;
-        font-weight: 500;
+        font-weight: 600;
         width: 200px;
         text-transform: uppercase;
-        background: $header-title-bg-color;
+        background: $google-color-primary;
         padding: 10px 10px 5px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -844,8 +851,7 @@ $header-title-bg-color: #f1f3f4;
 }
 #footer {
     border-top: 1px solid #c9c9c9;
-    padding: 20px;
-    line-height: 1.25;
+    padding: 20px 10px;
 }
 
 div#bh-main {

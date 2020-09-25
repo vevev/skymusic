@@ -6,17 +6,17 @@
     <dt>BẢN QUYỀN</dt>
     <dd>
     <p>
-    • Bản quyền nội dung trên TaiNhac123.Com được cung cấp bởi <b><a href="https://skymusic.com.vn/">SkyMusic</a></b>.
+    • Bản quyền nội dung trên TrangTaiNhac.Net được cung cấp bởi <b><a href="https://skymusic.com.vn/">SkyMusic</a></b>.
     </p>
     <p>
-    • Nếu bạn không mong muốn nội dung mà bạn sở hữu xuất hiện trên TaiNhac123.Com thì xin vui lòng liên hệ qua email:
+    • Nếu bạn không mong muốn nội dung mà bạn sở hữu xuất hiện trên TrangTaiNhac.Net thì xin vui lòng liên hệ qua email:
         <b>ad.tainhac123@gmail.com</b>
     để được gỡ xuống
     </p>
     </dd>
-    <dt>Giới thiệu về <b>TaiNhac123.Com</b></dt>
+    <dt>Giới thiệu về <b>TrangTaiNhac.Net</b></dt>
     <dd>
-    <p><b>TaiNhac123.Com</b> là một trang web có tính năng tìm và tải nhạc, giúp các bạn có thể tải nhạc về máy 1 cách dễ dàng hơn, tải nhạc hoàn toàn miễn phí trên mobile và cả máy tính PC laptop.
+    <p><b>TrangTaiNhac.Net</b> là một trang web có tính năng tìm và tải nhạc, giúp các bạn có thể tải nhạc về máy 1 cách dễ dàng hơn, tải nhạc hoàn toàn miễn phí trên mobile và cả máy tính PC laptop.
     </p>
     <p>
     Bạn có thể tải nhạc trực tiếp về các máy điện thoại: Nokia JAVA, Samsung, LG, HTC, Asus, Oppo, Iphone IOS 13</b>.
@@ -38,14 +38,14 @@
     </dd>
     <dt>* Chính sách bảo mật</dt>
     <dd>
-    <p>&#8211; TaiNhac123.Com tôn trọng sự riêng tư của mọi người và cam kết bảo vệ sự riêng tư này phù hợp với chính sách bảo mật.
+    <p>&#8211; TrangTaiNhac.Net tôn trọng sự riêng tư của mọi người và cam kết bảo vệ sự riêng tư này phù hợp với chính sách bảo mật.
         </p>
     <p>
-    &#8211; Chính sách bảo mật này giải thích việc chúng tôi xử lý thông tin cá nhân (của bạn) đã được thu thập trong quá trình bạn hoạt động trên website hay làm việc với phần mềm, chơi game đọc tryện..v…v trên TaiNhac123.Com
+    &#8211; Chính sách bảo mật này giải thích việc chúng tôi xử lý thông tin cá nhân (của bạn) đã được thu thập trong quá trình bạn hoạt động trên website hay làm việc với phần mềm, chơi game đọc tryện..v…v trên TrangTaiNhac.Net
     </p>
     <p>
-        <b>1. TaiNhac123.Com</b><br>
-        Sẽ Không thu thập hoặc sử dụng bất kỳ thông tin nào về người truy cập website này. Không Thu phí, không quản lí người dùng sản phẩm trên TaiNhac123.Com<br />
+        <b>1. TrangTaiNhac.Net</b><br>
+        Sẽ Không thu thập hoặc sử dụng bất kỳ thông tin nào về người truy cập website này. Không Thu phí, không quản lí người dùng sản phẩm trên TrangTaiNhac.Net<br />
         Các đại lý của bên thứ ba, bao gồm Google, sẽ sử dụng cookie để phân phát quảng cáo dựa trên các lượt truy cập trước đó của người dùng vào trên trang web của chúng tôi.
     </p>
     <p>
@@ -54,11 +54,11 @@
     </p>
     <p>
         <b>3. LIÊN KẾT ĐẾN NHỮNG TRANG KHÁC</b><br>
-        Website này có thể chứa những liên kết tới các trang web khác. TaiNhac123.Com không giám sát hoặc kiểm soát nội dung những trang này cũng như việc thu thập, xử lý dữ liệu cá nhân của bạn tại đó. TaiNhac123.Com không chịu trách nhiệm hoặc nghĩa vụ pháp lý nào nào đối với các thông tin trên website đó và đề nghị bạn nên xem xét chính sách bảo mật riêng của từng website.
+        Website này có thể chứa những liên kết tới các trang web khác. TrangTaiNhac.Net không giám sát hoặc kiểm soát nội dung những trang này cũng như việc thu thập, xử lý dữ liệu cá nhân của bạn tại đó. TrangTaiNhac.Net không chịu trách nhiệm hoặc nghĩa vụ pháp lý nào nào đối với các thông tin trên website đó và đề nghị bạn nên xem xét chính sách bảo mật riêng của từng website.
     </p>
     <p>
         <b>4. THAY ĐỔI VỚI CHÍNH SÁCH NÀY</b><br>
-        TaiNhac123.Com có thể cập nhật chính sách bảo mật. Mọi thay đổi sẽ được đưa lên website này, vì vậy chúng tôi khuyến khích bạn thi thoảng nên xem lại chính sách bảo mật của chúng tôi.<br />
+        TrangTaiNhac.Net có thể cập nhật chính sách bảo mật. Mọi thay đổi sẽ được đưa lên website này, vì vậy chúng tôi khuyến khích bạn thi thoảng nên xem lại chính sách bảo mật của chúng tôi.<br />
     </p>
     <b>Chúc các bạn online vui vẻ !</b>
     </dd>

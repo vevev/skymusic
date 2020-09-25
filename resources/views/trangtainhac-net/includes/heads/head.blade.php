@@ -1,6 +1,6 @@
 <title>{{ Page::$title }}</title>
 <meta name="description" content="{{ Page::$description }}" />
-@if(Page::$NO_INDEX)
+@if(Page::$NO_INDEX || config('app.debug'))
 <meta name="robots" content="noindex">
 @endif
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
