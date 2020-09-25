@@ -8,24 +8,25 @@ Route::pattern('single_slug', '[a-z0-9\-]+');
 Route::pattern('slug', '[^/\.]*');
 Route::pattern('page', '\d+');
 
-switch (config('app.domain')) {
+$domain = config('app.domain');
+switch ($domain) {
     case 'skymusic.dev':
-        Route::domain('skymusic.dev')
+        Route::domain($domain)
             ->group(base_path('routes/domains/trangtainhac.net.php'));
         // ->group(base_path('routes/domains/tainhac123.com.php'));
         break;
     case 'trangtainhacnet.dev':
-        Route::domain('trangtainhacnet.dev')
+        Route::domain($domain)
             ->group(base_path('routes/domains/trangtainhac.net.php'));
         break;
 
     case 'test.tainhac123.com':
-        Route::domain('trangtainhacnet.dev')
+        Route::domain($domain)
             ->group(base_path('routes/domains/trangtainhac.net.php'));
         break;
 
     case 'tainhac123.com':
-        Route::domain('tainhac123.com')
+        Route::domain($domain)
             ->group(base_path('routes/domains/tainhac123.com.php'));
         break;
 }
