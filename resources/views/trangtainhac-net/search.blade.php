@@ -27,8 +27,8 @@
             </h3>
             <span class="group">
                 <b class="single">{{ $song['single'] }}</b>
-                @if($song['listen'])
-                <b class="play-count">{{ $song['listen'] }}</b>
+                @if($song['listen'] && $song['listen'] != "-")
+                <b class="play-count">• {{ $song['listen'] }}</b>
                 @endif
             </span>
         </div>

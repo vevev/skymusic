@@ -4,14 +4,13 @@ a {
 }
 audio {
     width: 100%;
-    background: #333;
 }
 /*** cssbang-xep-hang */
 body {
     margin: auto;
     background: #fafbfc;
     padding: 0;
-    font-family: 'Roboto', sans-serif, Arial, Helvetica;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
     line-height: 1.4;
     font-size: 15px;
     color: rgba(0, 0, 0, 0.8);
@@ -135,9 +134,9 @@ div#nav-main-menu {
 
 .item {
     display: flex;
-    padding: 10px;
-    &:not(:nth-last-child(2)) {
-        box-shadow: 0 1px 0 0px #f0f0f0;
+    padding: 15px 10px;
+    &:not(:nth-last-child(1)) {
+        box-shadow: 0 1px 0 0px #f9f9f9;
     }
     .thumbnail {
         width: 40px;
@@ -145,7 +144,6 @@ div#nav-main-menu {
         margin-right: 10px;
         border-radius: 3px;
         overflow: hidden;
-        box-shadow: 0 0 3px 0 #c0c0c0;
         flex-shrink: 0;
         img {
             display: block;
@@ -153,18 +151,56 @@ div#nav-main-menu {
     }
 
     .metadata {
-        display: flex;
+        min-width: 0;
         flex-direction: column;
+        display: flex;
+        justify-content: center;
         .songname {
             line-height: 1.1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             a {
                 font-size: 16px;
+                font-weight: 600;
+                color: #0000ce;
             }
         }
         .group {
+            display: flex;
+            min-width: 0;
+            flex-direction: row;
+            margin-top: 5px;
             b {
                 font-weight: normal;
                 font-size: 12px;
+                color: #747474;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                &:last-child:not(:nth-child(1)) {
+                    flex-shrink: 0;
+                }
+
+                // &:not(:first-child):before {
+                //     content: '•';
+                //     margin: 0 5px;
+                // }
+                &:not(:first-child) {
+                    margin-left: 12px;
+                }
+                &:before {
+                    font-family: 'fonts';
+                    margin-right: 5px;
+                    font-size: 12px;
+                    color: #c3c3c3;
+                }
+                &.single:before {
+                    content: '\A022';
+                }
+                &.play-count:before {
+                    content: '\A001';
+                }
             }
         }
     }
@@ -195,9 +231,7 @@ dt {
 }
 
 .main-lists {
-    // box-shadow: 0 0 3px 0 #ccc;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     border-radius: 3px;
 }
@@ -299,17 +333,50 @@ a {
     .bh-thumb {
         width: 60px;
         height: 60px;
+        flex-shrink: 0;
         img {
             display: block;
+            border-radius: 3px;
         }
     }
     .bh-info {
         flex: 1;
         margin-left: 10px;
-        b.songname {
-            white-space: nowrap;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .songname {
+            white-space: normal;
             overflow: hidden;
             text-overflow: ellipsis;
+            font-size: 16px;
+            color: #000;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            max-height: 44px;
+        }
+        .group {
+            display: flex;
+            min-width: 0;
+            flex-direction: row;
+            b {
+                font-weight: normal;
+                font-size: 12px;
+                color: #878787;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                &:last-child:not(:nth-child(1)) {
+                    flex-shrink: 0;
+                }
+
+                &:not(:first-child):before {
+                    content: '•';
+                    margin: 0 5px;
+                }
+            }
         }
     }
 }
@@ -479,14 +546,14 @@ $header-title-bg-color: #f1f3f4;
         background: #fff;
         z-index: 1;
         bottom: 0;
-        right: -220px;
+        right: -240px;
         border-bottom-left-radius: 10px;
     }
 
     b {
         font-size: 15px;
         font-weight: 500;
-        width: 180px;
+        width: 200px;
         text-transform: uppercase;
         background: $header-title-bg-color;
         padding: 10px 10px 5px;
@@ -509,20 +576,6 @@ $header-title-bg-color: #f1f3f4;
             border-bottom-right-radius: 10px;
         }
     }
-}
-
-.ht {
-    padding: 10px;
-    color: #333;
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: uppercase;
-    b {
-        font-weight: 500;
-    }
-}
-.ht h1 {
-    font-size: 18px;
 }
 
 .inline {

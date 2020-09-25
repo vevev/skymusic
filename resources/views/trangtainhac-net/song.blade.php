@@ -4,22 +4,6 @@
 @endsection
 
 @section('ads_under_header')
-@if($song->hasSkymusic && !$__core->mobileDetect->isMobile())
-<div style="margin-bottom: 3px"></div>
-<p align="center">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- thichungsk -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6109538742955032"
-         data-ad-slot="1881633786"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</p>
-@endif
 @endsection
 
 @section('inject_script')
@@ -66,44 +50,9 @@
 @endsection
 
 @section('adsense')
-    @if($song->hasSkymusic)
-    <br><p align="center">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- thichungsk -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6109538742955032"
-         data-ad-slot="1881633786"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    </p>
-    @elseif($song->canDownload && $__core->mobileDetect->isMobile())
-    <br><p align="center">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- thichungkpsk -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6109538742955032"
-         data-ad-slot="9706253107"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    </p>
-    @endif
-
-
-    <div class="tag">
+    <div class="tag container-default">
     Search Keyword: <b><a href="{{ url()->current() }}">Tải bài hát {{ $song->name }}</a>,<a href="{{ url()->current() }}"> download {{ $song->name }}</a>, <a href="{{ url()->current() }}">{{ $song->name }} mp3</a>,<a href="{{ url()->current() }}"> tải về bài hát {{ $song->name }} mp3 miễn phí</a></b>
-    {{-- @foreach($song->tags as $tag)
-        <a href="{{ route('search', ['query_string' => $tag->tag]) }}">{!! $tag->tag !!}</a>,
-    @endforeach --}}
     </div>
-
 @endsection
 
 @section('content')
@@ -113,17 +62,16 @@
             <img  src="{{ $song->thumbnail }}" alt="{{ $song->name }}" />
         </div>
         <div class="bh-info">
-            <b class="songname">{{ $song->name }}</b>
-            <b class="single">{{ $song->single }} </b> •
-            <b class="play-count">{{ $song->listen }}</b>
+            <h2 class="songname">{{ $song->name }}</h2>
+            <div class="group">
+                <b class="single">{{ $song->single }} </b>
+                <b class="play-count">{{ $song->listen }}</b>
+            </div>
         </div>
     </div>
 
     <div class="bh-audio">
         Nghe nhạc online (Bấm <i class="icon-play"></i> để nghe nhạc ...)<br>
-        {{-- <audio controls preload="none" src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}">
-            Trình duyệt của bạn không hỗ trợ nghe online !
-        </audio> --}}
         <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
     </div>
 
@@ -154,48 +102,14 @@
             </h3>
             <span class="group">
                 <b class="single">{{ $relateSong->single }}</b>
-                @if($relateSong->listen)
+                @if($relateSong->listen && $relateSong->listen != '-')
                 <b class="play-count">{{ $relateSong->listen }}</b>
                 @endif
             </span>
         </div>
     </div>
     @endforeach
-    <p class="collapse-view-more">Xem Thêm ...</p>
     </div>
 </div>
 
-@endsection
-
-@section('sidebar')
-@if(!$__core->mobileDetect->isMobile())
-<div class="right-bar" id="song-right-bar">
-    <div class="cate">
-        <h3 class="ht">Nhac HOT</h3>
-    </div>
-    <div class="collapse-menu">
-    @foreach($sidebar['primary'] as $num => $song)
-    <div class="menu">
-        <div class="detail-thumb thumb">
-            <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
-                <img alt="Tải bài hát {{ $song['name'] }}" title="Tải bài hát {{ $song['name'] }}" src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
-            </a>
-        </div>
-        <div class="detail-info">
-            <h3 class="ab ellipsis dli">
-                <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">{{ $song['name'] }}</a>
-            </h3>
-            <span class="sg">
-                <b class="single">{{ $song['single'] }}</b>
-                @if($song['listen'])
-                <b class="play-count">{{ $song['listen'] }}</b>
-                @endif
-            </span>
-        </div>
-    </div>
-    @endforeach
-    <p class="collapse-view-more">Xem Thêm ...</p>
-    </div>
-</div>
-@endif
 @endsection

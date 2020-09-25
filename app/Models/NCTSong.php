@@ -163,7 +163,7 @@ class NCTSong extends Model
     {
         $listen = optional($this->listens)->listen ?? 0;
 
-        return $listen > 0 ? '• ' . Helper::formatView($listen) : '';
+        return $listen > 0 ? Helper::formatView($listen) : '-';
     }
 
     /**

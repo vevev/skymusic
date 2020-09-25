@@ -4,7 +4,22 @@
 @endsection
 
 @section('ads_under_header')
-
+{{-- @if($song->hasSkymusic && !$__core->mobileDetect->isMobile())
+<div style="margin-bottom: 3px"></div>
+<p align="center">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- thichungsk -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="1881633786"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</p>
+@endif --}}
 @endsection
 
 @section('inject_script')
@@ -135,6 +150,40 @@
         <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
     </div>
 
+{{--     @if($song->hasSkymusic)
+    <p align="center">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- lksk -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-6109538742955032"
+           data-ad-slot="4507797120"
+           data-ad-format="link"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </p>
+    <br>
+    <br>
+    @elseif($song->canDownload && $__core->mobileDetect->isMobile())
+    <p align="center">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- lkkpsk -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="3013686394"
+         data-ad-format="link"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+      </p>
+    <br>
+    <br>
+    @endif --}}
+
     <div class="info center">
         <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
             <b></b>&nbsp;Tải Về&nbsp;</a>
@@ -142,7 +191,37 @@
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}" data-name="{{ $song->name }}" data-single="{{ $song->single }}"></div>
-
+{{--     @if($song->hasSkymusic)
+    <br><p align="center">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- lksk -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-6109538742955032"
+           data-ad-slot="4507797120"
+           data-ad-format="link"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </p>
+    <br>
+    @elseif($song->canDownload && $__core->mobileDetect->isMobile())
+    <br><p align="center">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- lkkpsk -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="3013686394"
+         data-ad-format="link"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </p>
+    <br>
+    @endif --}}
     <div class="ht"><b>Bài hát hay liên quan :</b></div>
     <div class="collapse-menu">
     @foreach($song->relates as $num=>$relateSong)

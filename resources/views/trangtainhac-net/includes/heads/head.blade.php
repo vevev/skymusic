@@ -12,7 +12,7 @@
 <meta name="google-site-verification" content="zNuY7fHFkM8qjpiY-jvuRR7fAs-0gbWPsPRTeM99fTY" />
 <meta name="referrer" content="no-referrer">
 <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset("/fonts/css/fonts.css?v=0.0.0.50") }}" media="screen" />
 <link rel="stylesheet" href="{{ asset("/css/app.min.css?v=" . config('app.version')) }}" media="screen" />
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta http-equiv="content-language" content="vi"/>
