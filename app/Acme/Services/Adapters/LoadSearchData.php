@@ -71,10 +71,14 @@ class LoadSearchData
             throw new CreateSongsFailException;
         }
 
-        return [
+        $out = [
             'results' => $songs->load('listens'),
             'query'   => $query,
             'page'    => $page,
         ];
+
+        $this->cacheSearch->set($query, $page, $out);
+
+        return $out;
     }
 }
