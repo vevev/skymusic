@@ -3,6 +3,7 @@
 namespace App\Acme\Services\Interacts;
 
 use App\Models\NCTSong;
+use Illuminate\Support\Facades\Cache;
 
 class GetSong
 {
