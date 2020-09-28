@@ -76,7 +76,8 @@
     </div>
 
     <div class="info center">
-        <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
+        {{-- <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát"> --}}
+        <a href="{{ route('download', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
             <b></b>&nbsp;Tải Về&nbsp;
           </a>
     </div>
@@ -102,7 +103,7 @@
             </h3>
             <span class="group">
                 <b class="single">{{ $relateSong->single }}</b>
-                @if($relateSong->listen && $relateSong->listen != '-')
+                @if($relateSong->listen > 0)
                 <b class="play-count">{{ $relateSong->listen }}</b>
                 @endif
             </span>

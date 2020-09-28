@@ -118,27 +118,6 @@ div#nav-main-menu .top-menu .top-menu-item a::before {
   margin-right: 15px;
 }
 
-.menu {
-  display: -webkit-box;
-  display: flex;
-  padding: 10px;
-  border-bottom: 1px solid #f4f4f4;
-}
-.menu .thumb {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-  border-radius: 3px;
-  overflow: hidden;
-  box-shadow: 0 0 3px 0 #c0c0c0;
-}
-.menu .thumb a {
-  display: block;
-}
-.menu .thumb a img {
-  display: block;
-}
-
 .item {
   display: -webkit-box;
   display: flex;
@@ -213,6 +192,40 @@ div#nav-main-menu .top-menu .top-menu-item a::before {
 }
 .item .metadata .group b.play-count:before {
   content: "ꀁ";
+}
+
+.playlist .position {
+  -webkit-box-pack: center;
+          justify-content: center;
+  width: 40px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  flex-shrink: 0;
+}
+.playlist .metadata {
+  -webkit-box-flex: 1;
+          flex-grow: 1;
+}
+.playlist .thumbnail {
+  margin-right: 0px;
+  margin-left: 10px;
+  -webkit-box-ordinal-group: 2;
+          order: 1;
+}
+
+.sontung-page .header-title {
+  margin-top: 10px;
+}
+.sontung-page .header-title b,
+.sontung-page .header-title h1,
+.sontung-page .header-title h2,
+.sontung-page .header-title h3 {
+  width: 270px;
+}
+.sontung-page .header-title:after {
+  right: -310px;
 }
 
 .tag {
@@ -621,7 +634,10 @@ img {
   right: -240px;
   border-bottom-left-radius: 10px;
 }
-.header-title b {
+.header-title b,
+.header-title h1,
+.header-title h2,
+.header-title h3 {
   font-size: 15px;
   font-weight: 600;
   width: 200px;
@@ -634,11 +650,20 @@ img {
   display: -webkit-box;
   display: flex;
 }
-.header-title b:before, .header-title b:after {
+.header-title b:before, .header-title b:after,
+.header-title h1:before,
+.header-title h1:after,
+.header-title h2:before,
+.header-title h2:after,
+.header-title h3:before,
+.header-title h3:after {
   content: "";
   position: absolute;
 }
-.header-title b:before {
+.header-title b:before,
+.header-title h1:before,
+.header-title h2:before,
+.header-title h3:before {
   width: 40px;
   height: 60%;
   background: #fff;

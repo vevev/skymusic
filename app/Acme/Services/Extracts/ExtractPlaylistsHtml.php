@@ -12,6 +12,13 @@ class ExtractPlaylistsHtml
      */
     public function __construct() {}
 
+    /**
+     * { function_description }
+     *
+     * @param      string  $html   The html
+     *
+     * @return     void|array   ( description_of_the_return_value )
+     */
     public function execute(string $html)
     {
         //https://www.nhaccuatui.com/ajax/get-media-info?key2=79e36a956d4f2b764a7ad25d329b6219

@@ -28,10 +28,14 @@
         <div id="nav-none-main">
             <div class="container-default">
                 <div class="nav-menu">
-                    <a class="active" href="{{ route('bxh-song-vn') }}">nhạc hay</a>
-                    <a href="{{ route('bxh-song-vn') }}">top 100</a>
-                    <a href="{{ route('bxh-song-vn') }}">chủ đề</a>
-                    <a href="{{ route('bxh-song-vn') }}">album</a>
+                    @if(Route::is('song'))
+                    <a class="{{ Route::is('song') ? "active" : "" }}" href="#">Bài hát</a>
+                    @else
+                    <a href="{{ route('home') }}">Home</a>
+                    @endif
+                    <a class="{{ Route::is('bxh-song-vn') ? "active" : "" }}" href="{{ route('bxh-song-vn') }}">nhạc hay</a>
+                    <a class="{{ Route::is('top-100-nhac-tre') ? "active" : "" }}" href="{{ route('top-100-nhac-tre') }}">top 100</a>
+                    <a class="{{ Route::is('playlists-default') ? "active" : "" }}" href="{{ route('playlists-default') }}">album</a>
                 </div>
             </div>
         </div>
@@ -43,10 +47,10 @@
 <div id="nav-main-menu" class="container-default margin-block">
     <div class="top-menu">
         <div class="top-menu-item-first"><h2>Tải Nhạc Hay</h2></div>
-            <div class="top-menu-item"><span class="btn"></span> <a href="{{ route('bxh-song-vn') }}" title="Nhạc Sơn Tùng MTP Hay Nhất">Tải Nhạc Sơn Tùng MTP</a></div>
+            <div class="top-menu-item"><span class="btn"></span> <a href="{{ route('nhac-son-tung-mtp') }}" title="Nhạc Sơn Tùng MTP Hay Nhất">Tải Nhạc Sơn Tùng MTP</a></div>
             <div class="top-menu-item"><span class="btn"></span> <a href="{{ route('bxh-song-vn') }}" title="Tải nhạc hay nhất">Tải nhạc hay nhất tuần</a></div>
-            <div class="top-menu-item"><span class="btn"></span> <a href="{{ route('bxh-song-vn') }}" title="Tải nhạc trong TOP 100 bài hát hay nhất">Tải nhạc trong top 100</a></div>
-            <div class="top-menu-item"><span class="btn"></span> <a href="{{ route('bxh-song-vn') }}" title="Tải nhạc theo album mới và thịnh hành">Tải nhạc theo album</a>
+            <div class="top-menu-item"><span class="btn"></span> <a href="{{ route('top-100-nhac-tre') }}" title="Tải nhạc trong TOP 100 bài hát hay nhất">Tải nhạc trong top 100</a></div>
+            <div class="top-menu-item"><span class="btn"></span> <a href="{{ route('playlists-default') }}" title="Tải nhạc theo album mới và thịnh hành">Tải nhạc theo album</a>
         </div>
     </div>
 </div>

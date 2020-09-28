@@ -28,14 +28,13 @@ class PlaylistController extends Controller
      */
     public function index(Request $request, Core $core)
     {
-        $data = $this->loadPlaylistsData->execute($request->page ?? 1);
-
-        Page::$title       = $data['song']->name . ' | Tai nhac 123';
-        Page::$description = $data['song']->name . ' | Tai nhac 123';
+        $data              = $this->loadPlaylistsData->execute($request->page ?? 1);
+        Page::$title       = "Playlist";
+        Page::$description = "Playlist";
 
         return view(
             Core::viewPath('playlists'),
-            array_merge(['__core' => $core], $data)
+            ['__core' => $core, 'playlists' => $data]
         );
     }
 

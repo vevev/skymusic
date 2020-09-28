@@ -8,7 +8,7 @@ Route::group([], function () {
     Route::get('/bai-hat/{slug}/{id}.html', 'SongSkymusicController@index')->name('song-skymusic');
 
     Route::get('/danh-sach-phat-{slug}/{id}.html', 'PlaylistController@playlist')->name('playlist');
-//Route::get('/playlists/{page?}', 'PlaylistController@index')->name('playlists');
+    Route::get('/playlists.html', 'PlaylistController@index')->name('playlists-default');
 
     Route::get('/topics/{page?}', 'TopicController@index')->name('playlists');
     Route::get('/topics/{slug}/{page?}', 'TopicController@index')->name('playlists');
@@ -34,7 +34,10 @@ Route::group([], function () {
     Route::get('/bang-xep-hang-bai-hat-au-my.html', 'BXHController@songUS')->name('bxh-song-us');
     Route::get('/bang-xep-hang-bai-hat-han-quoc.html', 'BXHController@songKR')->name('bxh-song-kr');
 
+    Route::get('/top-100-nhac-tre.html', 'Top100Controller@nhactre')->name('top-100-nhac-tre');
+
     Route::get('/unpublish/{country}/{type}.html', 'BXHController@renew')->name('renew-bxh-cache');
+    Route::get('/unpublish/top100/{category}/{category_id}.html', 'Top100Controller@renew')->name('renew-top-100-cache');
 
     Route::get('/unpublish/crawl-listen', 'CrawlListenController@index')->name('crawl-listen');
     Route::get('/unpublish/recrawl-listen', 'CrawlListenController@recrawl')->name('recrawl-listen');
@@ -43,4 +46,6 @@ Route::group([], function () {
 
     Route::get('/logos', 'IndexController@logos');
     Route::get('/splayer', 'IndexController@player');
+
+    Route::get('/nhac-son-tung-mtp.html', 'CustomPageController@nhacSonTungMtp')->name('nhac-son-tung-mtp');
 });

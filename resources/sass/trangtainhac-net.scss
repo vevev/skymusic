@@ -115,27 +115,6 @@ div#nav-main-menu {
     }
 }
 
-.menu {
-    display: flex;
-    padding: 10px;
-    border-bottom: 1px solid #f4f4f4;
-
-    .thumb {
-        width: 40px;
-        height: 40px;
-        margin-right: 10px;
-        border-radius: 3px;
-        overflow: hidden;
-        box-shadow: 0 0 3px 0 #c0c0c0;
-        a {
-            display: block;
-            img {
-                display: block;
-            }
-        }
-    }
-}
-
 .item {
     display: flex;
     padding: 15px 10px;
@@ -206,6 +185,39 @@ div#nav-main-menu {
                     content: '\A001';
                 }
             }
+        }
+    }
+}
+
+.playlist {
+    .position {
+        justify-content: center;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+    .metadata {
+        flex-grow: 1;
+    }
+    .thumbnail {
+        margin-right: 0px;
+        margin-left: 10px;
+        order: 1;
+    }
+}
+
+.sontung-page {
+    .header-title {
+        margin-top: 10px;
+        b,
+        h1,
+        h2,
+        h3 {
+            width: 270px;
+        }
+        &:after {
+            right: -310px;
         }
     }
 }
@@ -557,7 +569,10 @@ a {
         border-bottom-left-radius: 10px;
     }
 
-    b {
+    b,
+    h1,
+    h2,
+    h3 {
         font-size: 15px;
         font-weight: 600;
         width: 200px;

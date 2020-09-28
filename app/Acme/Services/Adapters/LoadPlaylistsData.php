@@ -26,9 +26,13 @@ class LoadPlaylistsData
     /**
      * { function_description }
      *
-     * @param  string                                    $id             The identifier
-     * @throws \App\Exceptions\PlaylistNotFoundException (description)
-     * @return <type>                                    ( description_of_the_return_value )
+     * @param      int                                        $page   The page
+     * @param      string  $id     The identifier
+     *
+     * @throws     \App\Exceptions\PlaylistNotFoundException  (description)
+     * @throws     CreatePlaylistsFailException               (description)
+     *
+     * @return     array                                     ( description_of_the_return_value )
      */
     public function execute(int $page = 1)
     {

@@ -113,16 +113,6 @@ class NCTPlaylist extends Model
     }
 
     /**
-     * Gets the single attribute.
-     *
-     * @return <type> The single attribute.
-     */
-    public function getSingleAttribute()
-    {
-        return implode(', ', json_decode($this->attributes['single']));
-    }
-
-    /**
      * Gets the song with listen is null.
      *
      * @param  integer $limit The limit

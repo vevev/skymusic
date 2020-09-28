@@ -101,7 +101,7 @@ export default {
         cursor: pointer;
         font-weight: bold;
         font-size: 13px;
-        margin: 0 10px;
+        margin: 10px;
         border-radius: 30px;
         transition: box-shadow 250ms ease-in-out;
     }

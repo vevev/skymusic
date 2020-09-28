@@ -15,19 +15,19 @@
             <b>Tải Nhạc Mp3 Hay - BXH</b>
         </h2>
         @foreach($data['main'] as $index => $song)
-        <div class="menu">
-            <div class="detail-thumb thumb">
+        <div class="item">
+            <div class="thumbnail">
                 <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
                     <img alt="Tải bài hát {{ $song['name'] }}" title="Tải bài hát {{ $song['name'] }}" src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
                 </a>
             </div>
-            <div class="detail-info">
-                <h3 class="ab ellipsis dli">
+            <div class="metadata">
+                <h3 class="songname">
                     <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">{{ $song['name'] }}</a>
                 </h3>
-                <span class="sg">
+                <span class="group">
                     <b class="single">{{ $song['single'] }}</b>
-                    @if($song['listen'])
+                    @if($song['listen'] > 0)
                     <b class="play-count">{{ $song['listen'] }}</b>
                     @endif
                 </span>
