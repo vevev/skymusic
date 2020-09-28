@@ -50,4 +50,5 @@ Route::group([], function () {
     Route::get('/nhac-son-tung-mtp.html', 'CustomPageController@nhacSonTungMtp')->name('nhac-son-tung-mtp');
 
     Route::get('/bai-hat/{zing_slug}.{zing_id}.html', 'RedirectController@redirectZingDetailToSearch');
+    Route::get('/tai-bai-hat-{slug}-mp3/{id}.htm', 'RedirectController@blank')->name('blank');
 });

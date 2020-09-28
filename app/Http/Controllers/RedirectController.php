@@ -21,4 +21,14 @@ class RedirectController extends Controller
 
         return redirect($url, 302)->send();
     }
+
+    /**
+     * { function_description }
+     *
+     * @return     string  ( description_of_the_return_value )
+     */
+    public function blank()
+    {
+        return "";
+    }
 }

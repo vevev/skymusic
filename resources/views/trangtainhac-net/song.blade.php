@@ -77,7 +77,11 @@
 
     <div class="info center">
         {{-- <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát"> --}}
-        <a href="{{ route('download', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
+          @if($__core->mobileDetect->isMobile())
+          <a href="{{ route('download', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
+          @else
+          <a href="{{ route('blank', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát">
+          @endif
             <b></b>&nbsp;Tải Về&nbsp;
           </a>
     </div>
