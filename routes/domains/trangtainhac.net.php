@@ -48,4 +48,6 @@ Route::group([], function () {
     Route::get('/splayer', 'IndexController@player');
 
     Route::get('/nhac-son-tung-mtp.html', 'CustomPageController@nhacSonTungMtp')->name('nhac-son-tung-mtp');
+
+    Route::get('/bai-hat/{zing_slug}.{zing_id}.html', 'RedirectController@redirectZingDetailToSearch');
 });

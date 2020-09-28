@@ -14,7 +14,7 @@
                 </h3>
                 <span class="group">
                     <b class="single">{{ song.single }}</b>
-                    <b class="play-count" v-if="song.listen">{{ song.listen }}</b>
+                    <b class="play-count" v-if="song.listen > 0">{{ song.listen }}</b>
                 </span>
             </div>
         </div>

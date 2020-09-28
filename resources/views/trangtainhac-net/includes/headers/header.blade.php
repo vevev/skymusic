@@ -19,8 +19,8 @@
         <div class="search">
             <u>Hướng dẫn tải nhạc</u> : nhập tên <b>bài hát</b> vào ô bên dưới rồi nhấn nút <b>Tìm bài hát</b> để tải nhạc về máy.
             <form id="qr" action="{{ route('form-url-search') }}" method="get">
-                <input id="q" type="text" name="q" placeholder="Nhập tên bài hát..." />
-                <button type="submit" class="search_btn">Tìm Bài Hát</button>
+                <input id="q" type="text" name="q" placeholder="Nhập tên bài hát..." autocomplete="off" />
+                <button type="submit" class="search_btn icon-search"></button>
             </form>
         </div>
     </div>
