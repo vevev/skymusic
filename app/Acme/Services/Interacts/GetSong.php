@@ -19,11 +19,11 @@ class GetSong
 
     public function execute(string $id)
     {
-        // if ($song = Cache::store('redis')->get('song:' . $id)) {
-        //     $song->cached = true;
+        if ($song = Cache::store('redis')->get('song:' . $id)) {
+            $song->cached = true;
 
-        //     return $song;
-        // }
+            return $song;
+        }
 
         return $this->song->findById($id);
     }
