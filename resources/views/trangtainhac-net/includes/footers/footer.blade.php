@@ -11,4 +11,17 @@ và cho phép <i>tải nhạc</i> về với chất lượng cao nhất 128kps, 
     Liên hệ: <b>adm.trangtainhac@gmail.com</b> <br>
     &copy; TAINHAC 2019</p>
 <br /><p align="center"><b><a href="/gioi-thieu-dieu-khoan" style="color:bue;">Giới thiệu và Điều khoản</a></b> <br><br>
+</p>
 </div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108510054-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108510054-1');
+</script>
+</div>
+</body>
+</html>
