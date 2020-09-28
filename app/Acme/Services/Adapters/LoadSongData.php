@@ -81,7 +81,7 @@ class LoadSongData
         return [
             'song'    => $song,
             'sidebar' => [
-                'primary' => $this->loadTop20Song->execute('vn', 'bai-hat') ?? [],
+                // 'primary' => $this->loadTop20Song->execute('vn', 'bai-hat') ?? [],
             ],
         ];
     }
@@ -122,7 +122,7 @@ class LoadSongData
     {
         $song->load(['options', 'relates', 'sky', 'tags']);
         $song->relates->load(['listens']);
-        //$this->cacheSong->set($song);
+        $this->cacheSong->set($song);
 
         return $song;
     }
