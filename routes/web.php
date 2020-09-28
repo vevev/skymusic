@@ -20,6 +20,11 @@ switch ($domain) {
             ->group(base_path('routes/domains/trangtainhac.net.php'));
         break;
 
+    case 'trangtainhac.net':
+        Route::domain($domain)
+            ->group(base_path('routes/domains/trangtainhac.net.php'));
+        break;
+
     case 'test.tainhac123.com':
         Route::domain($domain)
             ->group(base_path('routes/domains/trangtainhac.net.php'));
