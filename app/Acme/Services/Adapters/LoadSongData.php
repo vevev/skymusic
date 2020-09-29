@@ -74,7 +74,7 @@ class LoadSongData
             $this->loadRelationAndCache($song);
         }
 
-        if ($this->storeTag->execute($id)) {
+        if ($this->storeTag->execute($id) || ! $song->cached) {
             $this->loadRelationAndCache($song);
         }
 
