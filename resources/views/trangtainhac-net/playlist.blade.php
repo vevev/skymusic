@@ -4,8 +4,8 @@
 @endsection
 
 @section('content')
-<div class="left-bar">
-    <h1 class="ht">
+<div class="main-lists container-default margin-block">
+    <h1 style="font-size: 17px; padding: 10px">
         <a href="">Tải bài hát {{ $playlist->name }} MP3 về máy</a>
     </h1>
     <div class="bh-top">
@@ -22,40 +22,25 @@
     </div>
 
     <div class="bh-audio">
+        @if($playlist->songs->count() == 0)
+        <style type="text/css">
+            pre {
+    white-space: normal;
+    text-align: justify;
+    font-size: 13px;
+    padding: 10px;
+    border: 1px dashed;
+    color: red;
+}
+
+        </style>
+            <pre >Các bài hát trong album có đính bản quyền âm nhạc và nó không khả dụng cho quý vị.
+            Quý vị vui lòng chọn album khác để thưởng thức. Chúng tôi xin lỗi vì sự bất tiện này</pre>
+        @else
         Nghe nhạc online (Bấm <i class="icon-play"></i> để nghe nhạc ...)<br>
-        <div id="playlist-container" data-src="{{ route('listen', ['slug'=>$playlist->songs[0]->slug, 'id'=>$playlist->songs[0]->song_id]) }}" data-songs="{{ $playlist->songs }}"></div>
+        <div id="playlist-container" data-playlist="{{ route('playlist-info', ['slug'=>$playlist->slug, 'id'=>$playlist->playlist_id]) }}" data-songs="{{ $playlist->songs }}"></div>
+        @endif
     </div>
 
-</div>
-@endsection
-
-@section('sidebar')
-<div class="right-bar">
-    <div class="cate">
-        <h3 class="ht">Nhac HOT</h3>
-    </div>
-    <div class="collapse-menu">
-    @foreach($sidebar['primary'] as $song)
-    <div class="item">
-        <div class="thumbnail">
-            <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
-                <img alt="{{ $song['name'] }}" title="{{ $song['name'] }}" data-src="{{ $song['thumbnail'] }}" src="{{ asset('/images/audio_default.png') }}" />
-            </a>
-        </div>
-        <div class="metadata">
-            <h3 class="songname">
-                <a title="{{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">{{ $song['name'] }}</a>
-            </h3>
-            <span class="group">
-                <b class="single">{{ $song['single'] }}</b>
-                @if($song['listen'] > 0)
-                <b class="play-count">{{ $song['listen'] }}</b>
-                @endif
-            </span>
-        </div>
-    </div>
-    @endforeach
-    <p class="collapse-view-more">Xem Thêm ...</p>
-    </div>
 </div>
 @endsection

@@ -81,7 +81,7 @@ class LoadSongData
         return [
             'song'    => $song,
             'sidebar' => [
-                // 'primary' => $this->loadTop20Song->execute('vn', 'bai-hat') ?? [],
+                'primary' => $this->loadTop20Song->execute('vn', 'bai-hat') ?? [],
             ],
         ];
     }

@@ -49,6 +49,22 @@
 </script>
 @endsection
 
+@section('ads_under_header')
+@if($__core->mobileDetect->isMobile())
+    <p align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- pub-nmc-w1 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:320px;height:100px"
+     data-ad-client="ca-pub-6109538742955032"
+     data-ad-slot="8269342505"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+@endif
+@endsection
+
 @section('adsense')
     <div class="tag container-default margin-block">
     Search Keyword: <b><a href="{{ url()->current() }}">Tải bài hát {{ $song->name }}</a>,<a href="{{ url()->current() }}"> download {{ $song->name }}</a>, <a href="{{ url()->current() }}">{{ $song->name }} mp3</a>,<a href="{{ url()->current() }}"> tải về bài hát {{ $song->name }} mp3 miễn phí</a></b>
@@ -74,7 +90,19 @@
         Nghe nhạc online (Bấm <i class="icon-play"></i> để nghe nhạc ...)<br>
         <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
     </div>
-
+    @if ($__core->mobileDetect->isMobile())
+        <p align="center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- pub-nmc-w -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:336px;height:280px"
+             data-ad-client="ca-pub-6109538742955032"
+             data-ad-slot="5315876103"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </p><br>
+    @endif
     <div class="info center">
         {{-- <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát"> --}}
           @if($__core->mobileDetect->isMobile())
@@ -84,9 +112,26 @@
           @endif
             <b></b>&nbsp;Tải Về&nbsp;
           </a>
+          <br>
     </div>
 
     <div id="lyric" data-lyric="{{ $song->lyric }}" data-name="{{ $song->name }}" data-single="{{ $song->single }}"></div>
+
+    @if($__core->mobileDetect->isMobile())
+    <p align="center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- lien ket -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6109538742955032"
+         data-ad-slot="5228218095"
+         data-ad-format="link"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    </p>
+    @endif
+
     <div class="header-title"><b>Tải bài hát liên quan</b></div>
     <div class="collapse-menu">
     @foreach($song->relates as $num=>$relateSong)

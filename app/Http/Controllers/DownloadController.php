@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Throwable;
 use App\Models\NCTSong;
+use App\Models\NCTPlaylist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
 use App\Acme\Services\Fetchs\CrawlDownloadLink;
+use App\Acme\Services\Fetchs\FetchSongOfPlaylist;
 
 class DownloadController extends Controller
 {
@@ -14,9 +17,13 @@ class DownloadController extends Controller
 
     private $song;
 
+    private $playlist;
+
     private $carbon;
 
     private $cache_key;
+
+    private $fetchSongOfPlaylist;
 
     const CACHE_EXPIRES_MINUTES = 7200;
 
@@ -25,17 +32,19 @@ class DownloadController extends Controller
      *
      * @return void
      */
-    public function __construct(CrawlDownloadLink $crawler, NCTSong $song, Carbon $carbon, Request $request)
+    public function __construct(CrawlDownloadLink $crawler, NCTSong $song, NCTPlaylist $playlist, Carbon $carbon, Request $request, FetchSongOfPlaylist $fetchSongOfPlaylist)
     {
 
-        $this->crawler   = $crawler;
-        $this->song      = $song;
-        $this->carbon    = $carbon;
-        $this->request   = $request;
-        $this->slug      = $request->route('slug');
-        $this->id        = $request->route('id');
-        $this->cache_key = 'link:' . $this->id;
-        $this->re_cache  = $this->request->header('ReCache');
+        $this->crawler             = $crawler;
+        $this->song                = $song;
+        $this->playlist            = $playlist;
+        $this->carbon              = $carbon;
+        $this->request             = $request;
+        $this->slug                = $request->route('slug');
+        $this->id                  = $request->route('id');
+        $this->cache_key           = 'link:' . $this->id;
+        $this->re_cache            = $this->request->header('ReCache');
+        $this->fetchSongOfPlaylist = $fetchSongOfPlaylist;
     }
 
     /**
@@ -139,6 +148,22 @@ class DownloadController extends Controller
             Cache::put($this->cache_key, $link, $this->carbon->addMinutes(self::CACHE_EXPIRES_MINUTES));
 
             return redirect($link);
+        }
+    }
+
+    /**
+     * { function_description }
+     *
+     * @return     <type>  ( description_of_the_return_value )
+     */
+    public function playlistInfo()
+    {
+        try {
+            return array_map(function ($e) {
+                return ['id' => $e->songKey, 'url' => $e->location];
+            }, $this->fetchSongOfPlaylist->execute($this->playlist->findKeyById($this->id)));
+        } catch (Throwable $e) {
+            return response()->json([])->send();
         }
     }
 }

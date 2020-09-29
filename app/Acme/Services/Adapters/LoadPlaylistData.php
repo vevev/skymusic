@@ -162,6 +162,8 @@ class LoadPlaylistData
             throw new CreatePlaylistSongRelationsFailedException;
         }
 
+        $playlist->load('songs');
+
         return true;
     }
 }

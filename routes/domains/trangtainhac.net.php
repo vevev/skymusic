@@ -8,6 +8,7 @@ Route::group([], function () {
     Route::get('/bai-hat/{slug}/{id}.html', 'SongSkymusicController@index')->name('song-skymusic');
 
     Route::get('/danh-sach-phat-{slug}/{id}.html', 'PlaylistController@playlist')->name('playlist');
+    Route::get('/danh-sach-phat-{slug}.{id}.html', 'DownloadController@playlistInfo')->name('playlist-info');
     Route::get('/playlists.html', 'PlaylistController@index')->name('playlists-default');
 
     Route::get('/topics/{page?}', 'TopicController@index')->name('playlists');

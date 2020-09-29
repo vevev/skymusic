@@ -3,7 +3,6 @@
         <audio
             controls
             preload="none"
-            :src="audio_src"
             @error="onError"
             v-on:pause="onPause"
             v-on:play="onPlay"
@@ -45,11 +44,12 @@ export default {
             index: 0,
             audio_src: null,
             songs: Array,
+            locations: null,
         };
     },
 
     props: {
-        src: String,
+        playlist: String,
         propSongs: Array,
     },
 
@@ -58,13 +58,24 @@ export default {
             return `Download Mp3 ${name}`;
         },
 
-        onCLickMenu(index) {
+        async onCLickMenu(index) {
             this.index = index;
-            this.$refs.audio.src = this.songs[index].detail_url
-                .replace('tai-bai-hat-', 'listen/')
-                .replace(/\/(.{12})\./, '.$1.');
-            this.$refs.audio.load();
-            this.$refs.audio.play();
+
+            if (!this.locations) {
+                let res = await axios.get(this.playlist);
+                if (res.data.length) this.locations = res.data;
+            }
+
+            this.locations.map(
+                function(location) {
+                    if (location.id == this.songs[index].song_id) {
+                        this.$refs.audio.pause();
+                        this.$refs.audio.src = location.url;
+                        this.$refs.audio.load();
+                        this.$refs.audio.play();
+                    }
+                }.bind(this)
+            );
         },
 
         onPlay() {
@@ -87,13 +98,13 @@ export default {
         async onError() {
             if (this.number_request >= this.MAX_NUMBER_REQUEST) return;
             this.number_request++;
-            try {
-                const response = await axios.post(this.src, {}, { headers: { ReCache: 1 } });
-                this.$refs.audio.load();
-                this.$refs.audio.play();
-            } catch (e) {
-                console.log(e);
-            }
+            // try {
+            //     //const response = await axios.post(this.audio_src, {}, { headers: { ReCache: 1 } });
+            //     this.$refs.audio.load();
+            //     this.$refs.audio.play();
+            // } catch (e) {
+            //     console.log(e);
+            // }
         },
     },
 
@@ -104,7 +115,6 @@ export default {
     },
 
     created() {
-        this.audio_src = this.src;
         this.songs = this.propSongs.slice();
     },
 };

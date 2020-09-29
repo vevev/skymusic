@@ -35,7 +35,7 @@
                     @endif
                     <a class="{{ Route::is('bxh-song-vn') ? "active" : "" }}" href="{{ route('bxh-song-vn') }}">nhạc hay</a>
                     <a class="{{ Route::is('top-100-nhac-tre') ? "active" : "" }}" href="{{ route('top-100-nhac-tre') }}">top 100</a>
-                    <a class="{{ Route::is('playlists-default') ? "active" : "" }}" href="{{ route('playlists-default') }}">album</a>
+                    <a class="{{ Route::is('playlists-default') || Route::is('playlist') ? "active" : "" }}" href="{{ route('playlists-default') }}">album</a>
                     @if(Route::is('search'))
                     <a class="active" href="#">Search</a>
                     @endif

@@ -46,9 +46,9 @@ if ((vm = document.getElementById('audio-player-container'))) {
 if ((vm = document.getElementById('playlist-container'))) {
     const audioPlayerPlaylist = new Vue({
         el: '#playlist-container',
-        data: { src: vm.dataset.src, songs: JSON.parse(vm.dataset.songs) },
+        data: { playlist: vm.dataset.playlist, songs: JSON.parse(vm.dataset.songs) },
         components: { AudioPlayerPlaylist },
-        template: `<AudioPlayerPlaylist :src="src" :prop-songs="songs"></AudioPlayerPlaylist>`,
+        template: `<AudioPlayerPlaylist :playlist="playlist" :prop-songs="songs"></AudioPlayerPlaylist>`,
     });
 }
 

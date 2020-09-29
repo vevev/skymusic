@@ -80,6 +80,18 @@ class NCTPlaylist extends Model
     /**
      * { function_description }
      *
+     * @param      string  $playlist_id  The playlist identifier
+     *
+     * @return     <type>  ( description_of_the_return_value )
+     */
+    public function findKeyById(string $playlist_id)
+    {
+        return $this->where('playlist_id', $playlist_id)->first(['key']);
+    }
+
+    /**
+     * { function_description }
+     *
      * @return <type> ( description_of_the_return_value )
      */
     public function songs()

@@ -4,8 +4,63 @@
 
 @endsection
 
-@section('section')
+@section('ads_under_header')
+@if($__core->mobileDetect->isMobile())
+    @if(random_int(0, 1))
+        <br><p align="center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- lien ket -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6109538742955032"
+             data-ad-slot="5228218095"
+             data-ad-format="link"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script></p><br>
+    @else
+        <br><p align="center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- lien ket -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6109538742955032"
+             data-ad-slot="5228218095"
+             data-ad-format="link"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script></p><br>
+    @endif
+@endif
+@endsection
 
+@section('adsense')
+@if($__core->mobileDetect->isMobile())
+    @if(random_int(0, 1))
+        <br><p align="center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- lien ket -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6109538742955032"
+             data-ad-slot="5228218095"
+             data-ad-format="link"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script></p><br>
+    @else
+        <br><p align="center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- pub-nmc-w -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:336px;height:280px"
+             data-ad-client="ca-pub-6109538742955032"
+             data-ad-slot="5315876103"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script></p><br>
+    @endif
+@endif
 @endsection
 
 @section('content')

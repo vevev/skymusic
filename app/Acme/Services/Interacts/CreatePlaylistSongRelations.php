@@ -29,6 +29,9 @@ class CreatePlaylistSongRelations
      */
     public function execute(NCTPlaylist $playlist, array $songs)
     {
+        if ( ! count($songs)) {
+            return true;
+        }
 
         foreach ($songs as $song) {
             $relations[] = [
