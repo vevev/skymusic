@@ -3,6 +3,7 @@
 @endsection
 
 @section('adsense')
+<br>
 @if($__core->mobileDetect->isMobile())
 <p align="center">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -20,6 +21,7 @@
 
 @section('ads_under_header')
 @if($__core->mobileDetect->isMobile())
+<br>
     <p align="center">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- pub-nmc-w1 -->
@@ -66,9 +68,5 @@
     <div id="load-more-result" data-query="{{ $query }}" data-api="{{ route("search-get") }}"></div>
     @endif
 </div>
-
-@endsection
-
-@section('adsense')
 
 @endsection
