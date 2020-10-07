@@ -2,6 +2,7 @@
 
 namespace App\Acme\Services\Extracts;
 
+use Exception;
 use App\Exceptions\ExtractSongException;
 
 class ExtractSongHtml
