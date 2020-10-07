@@ -31,7 +31,7 @@ class FetchHtmlSearch
             $url        = sprintf($url_format, urlencode($query), $page < 1 ? 1 : $page);
             $html       = $this->httpRequest->getMobile($url);
             $json       = json_decode($html);
-            $result     = trim($json->data);
+            $result     = optional($json)->data;
 
             return $result ? $result : 1;
         } catch (Throwable $e) {
