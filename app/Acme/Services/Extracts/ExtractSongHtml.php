@@ -21,7 +21,11 @@ class ExtractSongHtml
 
         $song['canDownload'] = 1;
 
-        preg_match('#<span id="icon-play" key="([^"]+)"#', $html, $id) && $id = $id[1];
+        if ( ! preg_match('#<span id="icon-play" key="([^"]+)"#', $html, $id)) {
+            throw new Exception("Hello");
+        }
+
+        $id = $id[1];
 
         $patternCanDownload = '#<\!-- start license -->#i';
         if (preg_match($patternCanDownload, $html, $matchesCanDownload)) {
