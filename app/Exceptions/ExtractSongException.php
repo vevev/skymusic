@@ -13,7 +13,7 @@ class ExtractSongException extends Exception
      */
     public function report()
     {
-        //
+        Log::debug($this->message);
     }
 
     /**
