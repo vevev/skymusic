@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Exception;
 use App\Acme\Core;
 use App\Acme\Page;
+use RedisException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -16,7 +17,7 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        //
+        RedisException::class,
     ];
 
     /**
