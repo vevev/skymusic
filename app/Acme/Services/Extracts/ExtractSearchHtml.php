@@ -11,6 +11,7 @@ class ExtractSearchHtml
 
     public function execute(string $html)
     {
+
         // Lọc ra các row bài hát, nếu không có thì trả lại null
         $patternName = '#(?=<h3.*href=".*/bai-hat/([^/]+?)\.([^/]+?).html">(.+?)</a></h3>)#';
         if ( ! preg_match_all($patternName, $html, $matchesName, PREG_SET_ORDER)) {
@@ -23,7 +24,7 @@ class ExtractSearchHtml
             return;
         }
 
-        $patternKey = '#(?=<span keyEncrypt="([^"]+?)")#is';
+        $patternKey = '#(?=<li class="song_item_single">.+?lp="([^"]+?)".+?<span keyEncrypt="([^"]+?)")#is';
         if ( ! preg_match_all($patternKey, $html, $matchesKey, PREG_SET_ORDER)) {
             return;
         }
@@ -48,6 +49,10 @@ class ExtractSearchHtml
 
         $songs = [];
         foreach ($matchesName as $index => $match) {
+            if ("false" == $matchesKey[$index][1]) {
+                continue;
+            }
+
             preg_match_all('#(?=<a[^>]+?>(.+?)</a>)#', $matchesSingle[$index][0], $single);
             $thumb   = $matchesSrc[$index][1] ? $matchesSrc[$index][1] : $matchesPrimarySrc[$index][1];
             $songs[] = [
@@ -56,7 +61,7 @@ class ExtractSearchHtml
                 'thumbnail' => $thumb,
                 'song_id'   => $match[2],
                 'name'      => $match[3],
-                'key'       => $matchesKey[$index][1],
+                'key'       => $matchesKey[$index][2],
                 'single'    => implode(',', $single[1]),
             ];
         }
