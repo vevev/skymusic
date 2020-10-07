@@ -21,25 +21,30 @@ class ExtractSongHtml
 
         $song['canDownload'] = 1;
 
+        preg_match('#<span id="icon-play" key="([^"]+)"#', $html, $id) && $id = $id[1];
+
         $patternCanDownload = '#<\!-- start license -->#i';
         if (preg_match($patternCanDownload, $html, $matchesCanDownload)) {
             $song['canDownload'] = 0;
         }
 
         if ( ! preg_match('#<ul id="ulSongRecommend">.+?</ul>#is', $html, $ul)) {
-            throw new ExtractSongException(json_encode(['ul not found', ['document' => $html]]));
+            file_put_contents('/home/skymusic-errors/' . $id, "URL NOT FOUND\n\n\n\n\n\n\n" . $html);
+            throw new ExtractSongException('ul not found');
         }
 
         // Lọc ra các row bài hát, nếu không có thì trả lại null
         $patternName = '#(?=<h3.*href=".*/bai-hat/([^/]+?)\.([^/]+?).html">(.+?)</a></h3>)#';
         if ( ! preg_match_all($patternName, $ul[0], $matchesName, PREG_SET_ORDER)) {
-            throw new ExtractSongException(json_encode(['name not found', ['document' => $ul[0]]]));
+            file_put_contents('/home/skymusic-errors/' . $id, "name not found\n\n\n\n\n\n\n" . $ul[0]);
+            throw new ExtractSongException('name not found');
         }
 
         // Lọc ra các single bài hát, nếu không có thì trả lại null
         $patternSingle = '#<h4 class="singer_song">.+?</h4>#is';
         if ( ! preg_match_all($patternSingle, $ul[0], $matchesSingle, PREG_SET_ORDER)) {
-            throw new ExtractSongException(json_encode(['single not found', ['document' => $ul[0]]]));
+            file_put_contents('/home/skymusic-errors/' . $id, "SINGLE NOT FOUND\n\n\n\n\n\n\n" . $ul[0]);
+            throw new ExtractSongException('SINGLE NOT FOUND');
         }
 
         $patternKey = '#(?=<span keyEncrypt="([^"]+?)")#is';
@@ -47,16 +52,19 @@ class ExtractSongHtml
 
         $patternSrc = '#(?=data-src="([^"]+?)")#i';
         if ( ! preg_match_all($patternSrc, $ul[0], $matchesSrc, PREG_SET_ORDER)) {
-            throw new ExtractSongException(json_encode(['src not found', ['document' => $ul[0]]]));
+            file_put_contents('/home/skymusic-errors/' . $id, "SRC NOT FOUND\n\n\n\n\n\n\n" . $ul[0]);
+            throw new ExtractSongException('SRC NOT FOUND');
         }
 
         $patternRealId = '#(?=song_img_(\d+))#i';
         if ( ! preg_match_all($patternRealId, $ul[0], $matchesRealId, PREG_SET_ORDER)) {
-            throw new ExtractSongException(json_encode(['realid not found', ['document' => $ul[0]]]));
+            file_put_contents('/home/skymusic-errors/' . $id, "REALID not found\n\n\n\n\n\n\n" . $ul[0]);
+            throw new ExtractSongException('REALID not found');
         }
 
         if (count($matchesSingle) !== count($matchesName)) {
-            throw new ExtractSongException(json_encode(['song array not equal', [$matchesSingle, $matchesName]]));
+            file_put_contents('/home/skymusic-errors/' . $id, "song array not equal\n\n\n\n\n\n\n" . json_encode([$matchesSingle, $matchesName]));
+            throw new ExtractSongException('song array not equal');
         }
 
         $songs = [];
