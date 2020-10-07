@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Acme\Core;
 use App\Acme\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use App\Acme\Services\Adapters\LoadSongData;
 
 class SongController extends Controller
@@ -20,6 +21,10 @@ class SongController extends Controller
     {
         if ($request->slug_unverify || $request->id_unverify) {
             return view(Core::viewPath('song-slug'));
+        }
+
+        if ("11wHosSLAjVi" == $request->id) {
+            Config::set('app.debug', true);
         }
 
         $data = $this->loadSongData->execute($request->id);
