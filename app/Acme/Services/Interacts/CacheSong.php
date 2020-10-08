@@ -13,7 +13,7 @@ class CacheSong
     /**
      * Constructs a new instance.
      *
-     * @param      \App\Models\NCTSong  $song   The song
+     * @param \App\Models\NCTSong $song The song
      */
     public function __construct(NCTSong $song)
     {
@@ -23,24 +23,24 @@ class CacheSong
     /**
      * Gets the specified identifier.
      *
-     * @param      string  $id     The identifier
-     *
-     * @return     <type>  ( description_of_the_return_value )
+     * @param  string $id The identifier
+     * @return <type> ( description_of_the_return_value )
      */
     public function get(string $id)
     {
-        return Cache::store('redis')->get('song:' . $id);
+        return Cache::get('song:' . $id);
+        // return Cache::store('redis')->get('song:' . $id);
     }
 
     /**
      * { function_description }
      *
-     * @param      \App\Models\NCTSong  $song   The song
-     *
-     * @return     <type>               ( description_of_the_return_value )
+     * @param  \App\Models\NCTSong $song The song
+     * @return <type>              ( description_of_the_return_value )
      */
     public function set(NCTSong $song)
     {
-        return Cache::store('redis')->put('song:' . $song->song_id, $song, now()->addDays(7));
+        return Cache::put('song:' . $song->song_id, $song, now()->addDays(7));
+        // return Cache::store('redis')->put('song:' . $song->song_id, $song, now()->addDays(7));
     }
 }
