@@ -28,8 +28,8 @@ class CacheSong
      */
     public function get(string $id)
     {
-        return Cache::get('song:' . $id);
-        // return Cache::store('redis')->get('song:' . $id);
+        // return Cache::get('song:' . $id);
+        return Cache::store('redis')->get('song:' . $id);
     }
 
     /**
@@ -40,7 +40,7 @@ class CacheSong
      */
     public function set(NCTSong $song)
     {
-        return Cache::put('song:' . $song->song_id, $song, now()->addDays(7));
-        // return Cache::store('redis')->put('song:' . $song->song_id, $song, now()->addDays(7));
+        // return Cache::put('song:' . $song->song_id, $song, now()->addDays(7));
+        return Cache::store('redis')->put('song:' . $song->song_id, $song, now()->addDays(7));
     }
 }
