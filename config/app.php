@@ -23,6 +23,8 @@ return [
 
     'domain'              => env('APP_DOMAIN', 'tainhac123.com'),
 
+    'cache_song'          => env('APP_CACHE_SONG', 'file'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
