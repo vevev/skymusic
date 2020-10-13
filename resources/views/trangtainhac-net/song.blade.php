@@ -50,7 +50,7 @@
 @endsection
 
 @section('ads_under_header')
-@if($__core->mobileDetect->isMobile())
+{{-- @if($__core->mobileDetect->isMobile())
     <p align="center">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- pub-nmc-w1 -->
@@ -62,7 +62,7 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </p>
-@endif
+@endif --}}
 @endsection
 
 @section('adsense')
@@ -90,7 +90,7 @@
         Nghe nhạc online (Bấm <i class="icon-play"></i> để nghe nhạc ...)<br>
         <div id="audio-player-container" data-src="{{route('listen', ['slug'=>$song->slug, 'id'=>$song->song_id])}}"></div>
     </div>
-    @if ($__core->mobileDetect->isMobile())
+    {{-- @if ($__core->mobileDetect->isMobile())
         <p align="center">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- pub-nmc-w -->
@@ -102,7 +102,7 @@
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
         </p><br>
-    @endif
+    @endif --}}
     <div class="info center">
         {{-- <a href="{{ route('confirm', ['slug'=>$song->slug, 'id'=>$song->song_id]) }}" class="download" title="Tải bài hát"> --}}
           @if($__core->mobileDetect->isMobile())
@@ -117,7 +117,7 @@
 
     <div id="lyric" data-lyric="{{ $song->lyric }}" data-name="{{ $song->name }}" data-single="{{ $song->single }}"></div>
 
-    @if($__core->mobileDetect->isMobile())
+    {{-- @if($__core->mobileDetect->isMobile())
     <p align="center">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- lien ket -->
@@ -130,7 +130,7 @@
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
     </p>
-    @endif
+    @endif --}}
 
     <div class="header-title"><b>Tải bài hát liên quan</b></div>
     <div class="collapse-menu">
