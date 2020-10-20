@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Acme\Core;
 use App\Acme\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use App\Acme\Services\Adapters\LoadSongData;
 
 class SongController extends Controller
