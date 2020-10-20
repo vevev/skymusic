@@ -22,6 +22,10 @@ class ExtractSongHtml
 
         $song['canDownload'] = 1;
 
+        if (preg_match('#<p class="txt_404">404</p>#', $html)) {
+            abort(404);
+        }
+
         if ( ! preg_match('#<span id="icon-play" key="([^"]+)"#', $html, $id)) {
             throw new Exception("Hello");
         }
