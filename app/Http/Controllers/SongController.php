@@ -22,9 +22,9 @@ class SongController extends Controller
             return view(Core::viewPath('song-slug'));
         }
 
-        // if ("11wHosSLAjVi" == $request->id) {
-        //     Config::set('app.debug', true);
-        // }
+        if ("NyfHSqDdNWs3" == $request->id) {
+            Config::set('app.debug', true);
+        }
 
         $data = $this->loadSongData->execute($request->id);
 
