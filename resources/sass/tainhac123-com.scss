@@ -370,11 +370,12 @@ h1.ht.song {
 .download {
     color: #fff;
     font-weight: 600;
-    background: #0a7610;
+    background: #04bc0f;
     border-radius: 3px;
-    padding: 4px 12px;
+    padding: 6px 22px;
     font-size: 15px !important;
     display: inline-block;
+
     b {
         &::before {
             //content: '\A020';
