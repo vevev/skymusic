@@ -80,7 +80,7 @@
         <p class="collapse-view-more">Xem Thêm ...</p>
         </div>
     </div> --}}
-    @if($__core->mobileDetect->isMobile())
+    {{-- @if($__core->mobileDetect->isMobile())
     <p align="center">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <ins class="adsbygoogle"
@@ -93,7 +93,7 @@
        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
     </p>
-    @endif
+    @endif --}}
     <div class="right-bar">
         <div class="cate">
             <b class="ht">Tải Nhạc Mp3 Hay khác</b>
