@@ -17,18 +17,22 @@ class HttpRequestByVpsProxy {
 	}
 
 	public function get(string $url) {
-		return $this->curl('method=get&url=' . base64_encode($url));
+		return $this->curl($url);
+		// return $this->curl('method=get&url=' . base64_encode($url));
 	}
 
 	public function getFile(string $url) {
-		return $this->curl('method=getFile&url=' . base64_encode($url));
+		return $this->curl($url);
+		// return $this->curl('method=getFile&url=' . base64_encode($url));
 	}
 
 	public function getJsonMobile(string $url) {
-		return $this->curl('method=getJsonMobile&url=' . base64_encode($url));
+		return $this->curl($url);
+		// return $this->curl('method=getJsonMobile&url=' . base64_encode($url));
 	}
 
 	public function getMobile(string $url) {
-		return $this->curl('method=getMobile&url=' . base64_encode($url));
+		return $this->curl($url);
+		// return $this->curl('method=getMobile&url=' . base64_encode($url));
 	}
 }
