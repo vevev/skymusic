@@ -56,7 +56,7 @@
 
 @endsection
 
-{{-- @section('adsense')
+@section('adsense')
    @if($__core->mobileDetect->isMobile())
       <br><p align="center">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -71,4 +71,4 @@
       </script>
       </p>
       @endif
-@endsection --}}
+@endsection
