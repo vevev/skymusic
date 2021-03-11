@@ -26,4 +26,6 @@
 <link rel="stylesheet" href="{{ asset("/css/app.min.css?v=" . config('app.version')) }}" media="screen" />
 @yield('inject_script')
 @yield('social')
+@if($__core->mobileDetect->isMobile())
 <script data-ad-client="ca-pub-6109538742955032" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+@endif
