@@ -181,7 +181,9 @@
                 <div class="pc90">
                     <div class="header_info">
                         <p class="tip" style="margin-left: 0;">
+                            <br>
                             <b>Tìm bài hát: </b>Nhập tên bài hát vào ô tìm kiếm để tìm &amp; tải miễn phí bất kỳ bài hát nào bạn muốn tải về máy.<br>
+                            <br>
                         </p>
                     </div>
                     <div id="search-form" action="{{ route('search-post') }}" query="{{ !isset($query) ? '' : $query }}" suggest-route="{{ route('search', ['query_string' => '']) }}">
@@ -195,15 +197,14 @@
                     <button type="submit" class="btn search-btn">TÌM</button>
                 </div>
             </form>
+            <br>
         </div>
 
                     <div class="clear"></div>
                 </div>
 
                 </div>
-            <center>
-                <a onclick="window.history.back();" class="back" href="{{ Request::header('referer', '/') }}">&nbsp;&nbsp;Back&nbsp;&nbsp;</a>
-            </center>
+
         </div>
     </div>
     <div id="footer">
