@@ -177,10 +177,10 @@
                 </p>
                 <br>
                 @endif --}}
-                <div class="menu">
+                <div class="menu" style="     border-top: 1px solid #ededed;">
                 <div class="pc90">
                     <div class="header_info">
-                        <p class="tip" style="margin-left: 0;     border-top: 1px solid #ededed;">
+                        <p class="tip" style="margin-left: 0;">
                             <b>Tìm bài hát: </b>Nhập tên bài hát vào ô tìm kiếm để tìm &amp; tải miễn phí bất kỳ bài hát nào bạn muốn tải về máy.<br>
                         </p>
                     </div>
