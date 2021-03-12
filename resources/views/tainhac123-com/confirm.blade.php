@@ -197,9 +197,9 @@
                     <button type="submit" class="btn search-btn">TÌM</button>
                 </div>
             </form>
-            <br>
-        </div>
 
+        </div>
+<br>
                     <div class="clear"></div>
                 </div>
 
