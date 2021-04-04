@@ -209,8 +209,8 @@
     </div>
     <div id="footer">
         <p class="center">
-            <span class="life">▂ ▅ ▇ ♪♫ MUSIC IS MY LIFE ♪♫ ▇ ▅ ▂</span><br><br>
             <a href="/"><img src="/images/icon-tainhac.png" width="50px"></a><br>
+            <span class="life">▂ ▅ ▇ ♪♫ MUSIC IS MY LIFE ♪♫ ▇ ▅ ▂</span><br><br>
             <b><a href="/">TaiNhac123.Com</a></b>
             @if(Page::$IS_ADSENSE)
             Bản quyền nội dung cung cấp bởi <b><a rel="nofollow" target="_blank" href="https://skymusic.com.vn/">SkyMusic</a></b>
