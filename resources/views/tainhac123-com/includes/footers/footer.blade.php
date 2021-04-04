@@ -24,7 +24,7 @@
   <a href="/" aria-label="Tải nhạc mp3 miễn phí"><img src="/images/icon-tainhac.png" width="50px" alt="Tải nhạc 123"></a><br>
 <b><a href="/">TaiNhac123</a></b> <font size="4">✪</font><br>
 {{-- @if(Page::$IS_ADSENSE)
-Bản quyền nội dung cung cấp bởi <b><a rel="nofollow" href="https://skymusic.com.vn/" target="_blank">SkyMusic</a></b>
+Bản quyền nội dung cung cấp bởi <b><a rel="nofollow" href="https://skymusic.com.vn/" target="_blank">SkyMusic.</a></b>
 <br>
 <br>
 @endif --}}
