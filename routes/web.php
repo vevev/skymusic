@@ -8,6 +8,10 @@ Route::pattern('single_slug', '[a-z0-9\-]+');
 Route::pattern('slug', '[^/\.]*');
 Route::pattern('page', '\d+');
 
+if(preg_match('~BlackPink~i', $_SERVER['REQUEST_URI'])){
+    abort(404);
+}
+   
 $domain = config('app.domain');
 switch ($domain) {
 case 'skymusic.dev':
