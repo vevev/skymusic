@@ -17,7 +17,7 @@ case 'skymusic.dev':
 	break;
 case 'skymusic.com':
 	Route::domain($domain)
-		->group(base_path('routes/domains/trangtainhac.net.php'));
+		->group(base_path('routes/domains/tainhac123.com.php'));
 	// ->group(base_path('routes/domains/tainhac123.com.php'));
 	break;
 case 'trangtainhacnet.dev':
