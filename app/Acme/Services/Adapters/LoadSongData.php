@@ -99,7 +99,7 @@ class LoadSongData {
 
 		$song->updateOrInsertOption([
 			'song_id' => $song->song_id,
-			'canDownload' => $songAttr['canDownload'] ?: true,
+			'canDownload' => isset($songAttr['canDownload']) ? $songAttr['canDownload'] : true,
 		]);
 
 		unset($songAttr['canDownload']);
