@@ -21,7 +21,7 @@ class NCTSong extends Model
 
     protected $cached = false;
 
-    const MAXIMUM_STORAGE_DAYS = 30;
+    const MAXIMUM_STORAGE_DAYS = 0.2;
 
     public function scopeWithSongIds(Builder $query, array $song_ids)
     {
@@ -354,7 +354,7 @@ class NCTSong extends Model
             //     $this->options->{$attribute} = $value;
             // }
 
-            // $this->options->save();
+            $this->options()->update($option);
         } else {
             $this->options()->insert($option);
         }
