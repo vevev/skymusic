@@ -350,11 +350,11 @@ class NCTSong extends Model
     public function updateOrInsertOption(array $option)
     {
         if (isset($this->relations['options'])) {
-            foreach ($option as $attribute => $value) {
-                $this->options->{$attribute} = $value;
-            }
+            // foreach ($option as $attribute => $value) {
+            //     $this->options->{$attribute} = $value;
+            // }
 
-            $this->options->save();
+            // $this->options->save();
         } else {
             $this->options()->insert($option);
         }
