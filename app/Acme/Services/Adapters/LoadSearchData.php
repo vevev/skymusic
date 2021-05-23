@@ -9,6 +9,7 @@ use App\Acme\Services\Interacts\CreateSongs;
 use App\Acme\Services\Adapters\MergeSkyMusic;
 use App\Acme\Services\Fetchs\FetchHtmlSearch;
 use App\Acme\Services\Extracts\ExtractSearchHtml;
+use App\Exceptions\ExtractSearchHtmlFailException;
 use App\Acme\Services\Adapters\SkymusicLoadSearchData;
 
 class LoadSearchData
