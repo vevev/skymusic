@@ -8,7 +8,7 @@ Route::pattern('single_slug', '[a-z0-9\-]+');
 Route::pattern('slug', '[^/\.]*');
 Route::pattern('page', '\d+');
 
-if (isset($_SERVER['REQUEST_URI']) && preg_match('~BlackPink~i', $_SERVER['REQUEST_URI'])) {
+if (isset($_SERVER['REQUEST_URI']) && preg_match('~BlackPink|he-said-she-said~i', $_SERVER['REQUEST_URI'])) {
     abort(404);
 }
 
