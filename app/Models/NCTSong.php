@@ -341,22 +341,4 @@ class NCTSong extends Model
     {
         return optional($this->options)->redirectTo;
     }
-
-    /**
-     * { function_description }
-     *
-     * @param      array  $option  The option
-     */
-    public function updateOrInsertOption(array $option)
-    {
-        if (isset($this->relations['options'])) {
-            // foreach ($option as $attribute => $value) {
-            //     $this->options->{$attribute} = $value;
-            // }
-
-            $this->options()->update($option);
-        } else {
-            $this->options()->insert($option);
-        }
-    }
 }
