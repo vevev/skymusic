@@ -93,10 +93,11 @@ class LoadSongData {
 		$html = $this->fetchHtmlSong->execute($song);
 		[$songAttr, $arraySong] = $this->extractSongHtml->execute($html);
 
-		$song->song_id && NCTSongOption::updateOrCreate(
-			['song_id' => $song->song_id],
-			['canDownload' => isset($songAttr['canDownload']) ? $songAttr['canDownload'] : true]
-		);
+		if($song->song_id){
+			optional(NCTSongOption::where('song_id', $song->song_id)->first(), function($option){
+				$option->update(['canDownload' => isset($songAttr['canDownload']) ? $songAttr['canDownload'] : true]);
+			});
+		}
 
 		unset($songAttr['canDownload']);
 
