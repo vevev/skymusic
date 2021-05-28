@@ -16,7 +16,7 @@ class ExtractSearchHtml
             return;
         }
 
-        $song = [];
+        $songs = [];
         foreach ($matchesLi[0] as $index => $li) {
             // Lọc ra các row bài hát, nếu không có thì trả lại null
             $patternName = '#(?=<h3.*href=".*/bai-hat/([^/]+?)\.([^/]+?).html">(.+?)</a></h3>)#';
