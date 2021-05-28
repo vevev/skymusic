@@ -99,8 +99,8 @@ class LoadSongData {
 		[$songAttr, $arraySong] = $this->extractSongHtml->execute($html);
 
 		NCTSongOption::updateOrCreate(
-			['canDownload' => isset($songAttr['canDownload']) ? $songAttr['canDownload'] : true],
-			['song_id' => $song->song_id]
+			['song_id' => $song->song_id],
+			['canDownload' => isset($songAttr['canDownload']) ? $songAttr['canDownload'] : true]
 		);
 
 		unset($songAttr['canDownload']);
