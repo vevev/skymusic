@@ -87,18 +87,13 @@ class LoadSongData {
 	/**
 	 * Fetches and save song.
 	 *
-	 * @param      NCTSong                                      $song   The song
-	 *
-	 * @throws     \App\Exceptions\CrawlSongFailException       (description)
-	 * @throws     \App\Exceptions\CreateRelationFailException  (description)
-	 * @throws     \App\Exceptions\SetRelatesFailException      (description)
-	 * @throws     \App\Exceptions\UpdateSongFailException      (description)
+	 * @param      NCTSong  $song   The song
 	 */
 	private function fetchAndSaveSong(NCTSong $song) {
 		$html = $this->fetchHtmlSong->execute($song);
 		[$songAttr, $arraySong] = $this->extractSongHtml->execute($html);
 
-		NCTSongOption::updateOrCreate(
+		$song->song_id && NCTSongOption::updateOrCreate(
 			['song_id' => $song->song_id],
 			['canDownload' => isset($songAttr['canDownload']) ? $songAttr['canDownload'] : true]
 		);
