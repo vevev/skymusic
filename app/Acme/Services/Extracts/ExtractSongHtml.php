@@ -66,7 +66,7 @@ class ExtractSongHtml {
 			throw new ExtractSongException('REALID not found');
 		}
 
-		if (count($matchesSingle) !== count($matchesName)) {
+		if (count($matchesSingle) !== count($matchesName) || count($matchesSingle) !== count($matchesSrc)) {
 			file_put_contents('/home/skymusic-errors/' . $id, "song array not equal\n\n\n\n\n\n\n" . json_encode([$matchesSingle, $matchesName]));
 			throw new ExtractSongException('song array not equal');
 		}
