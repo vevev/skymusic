@@ -2,21 +2,22 @@
 
 namespace App\Acme\Services\Adapters;
 
+use App\Models\NCTSong;
+use App\Models\NCTSongOption;
+use App\Acme\Services\Interacts\GetSong;
+use App\Acme\Services\Interacts\StoreTag;
+use App\Exceptions\SongNotFoundException;
+use App\Acme\Services\Interacts\CacheSong;
+use App\Acme\Services\Interacts\StoreSong;
+use App\Exceptions\CrawlSongFailException;
+use App\Acme\Services\Fetchs\FetchHtmlSong;
+use App\Exceptions\SetRelatesFailException;
+use App\Exceptions\UpdateSongFailException;
+use App\Acme\Services\Interacts\CreateSongs;
 use App\Acme\Services\Adapters\LoadTop20Song;
 use App\Acme\Services\Extracts\ExtractSongHtml;
-use App\Acme\Services\Fetchs\FetchHtmlSong;
-use App\Acme\Services\Interacts\CacheSong;
-use App\Acme\Services\Interacts\CreateRelations;
-use App\Acme\Services\Interacts\CreateSongs;
-use App\Acme\Services\Interacts\GetSong;
-use App\Acme\Services\Interacts\StoreSong;
-use App\Acme\Services\Interacts\StoreTag;
-use App\Exceptions\CrawlSongFailException;
 use App\Exceptions\CreateRelationFailException;
-use App\Exceptions\SetRelatesFailException;
-use App\Exceptions\SongNotFoundException;
-use App\Exceptions\UpdateSongFailException;
-use App\Models\NCTSong;
+use App\Acme\Services\Interacts\CreateRelations;
 
 class LoadSongData {
 	private $fetchHtmlSong;
