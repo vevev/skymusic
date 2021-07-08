@@ -1,8 +1,8 @@
-@if(!$__core->mobileDetect->isMobile())
+{{-- @if(!$__core->mobileDetect->isMobile())
 @php
 exit;
 @endphp
-@endif
+@endif --}}
 
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "https://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="vi">
