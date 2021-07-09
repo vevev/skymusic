@@ -34,9 +34,9 @@ class SongController extends Controller {
 		}
 
 		// Nếu không có skymusic thì không index
-		if (!$data['song']->canDownload) {
-			Page::$NO_INDEX = true;
-		}
+		// if (!$data['song']->canDownload) {
+		// 	Page::$NO_INDEX = true;
+		// }
 
 		return view(
 			Core::viewPath('song'),
