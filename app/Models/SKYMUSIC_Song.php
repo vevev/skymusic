@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SKYMUSIC_Song extends Model
 {
     protected $table     = 'skymusic_songs';
-    public $incrementing = true;
+    public $incrementing = false;
     public $primaryKey   = 'real_id';
     public $timestamps   = true;
     protected $hidden    = ['pivot'];

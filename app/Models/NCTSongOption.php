@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class NCTSongOption extends Model
 {
     protected $table     = 'nct_song_options';
-    public $incrementing = true;
+    public $incrementing = false;
     public $primaryKey   = 'song_id';
     public $timestamps   = false;
     protected $hidden    = ['pivot'];
