@@ -16,6 +16,7 @@ use App\Exceptions\UpdateSongFailException;
 use App\Acme\Services\Interacts\CreateSongs;
 use App\Acme\Services\Adapters\LoadTop20Song;
 use App\Acme\Services\Extracts\ExtractSongHtml;
+use App\Acme\Services\Fetchs\CrawlDownloadLink;
 use App\Exceptions\CreateRelationFailException;
 use App\Acme\Services\Interacts\CreateRelations;
 
@@ -28,7 +29,9 @@ class LoadSongData {
 	private $cacheSong;
 	private $storeSong;
 	private $storeTag;
+	private $crawlLink;
 	private $loadTop20Song;
+
 
 	/**
 	 * Constructs a new instance.
@@ -38,8 +41,13 @@ class LoadSongData {
 	 * @param      \App\Acme\Services\Extracts\ExtractSongHtml   $extractSongHtml  The extract song html
 	 * @param      \App\Acme\Services\Interacts\CreateSongs      $createSongs      The create songs
 	 * @param      \App\Acme\Services\Interacts\CreateRelations  $createRelations  The create relations
+	 * @param      \App\Acme\Services\Adapters\LoadTop20Song     $loadTop20Song    The load top 20 song
+	 * @param      \App\Acme\Services\Interacts\CacheSong        $cacheSong        The cache song
+	 * @param      \App\Acme\Services\Interacts\StoreSong        $storeSong        The store song
+	 * @param      \App\Acme\Services\Interacts\StoreTag         $storeTag         The store tag
+	 * @param      \App\Acme\Services\Fetchs\CrawlDownloadLink   $crawler          The crawler
 	 */
-	public function __construct(FetchHtmlSong $fetchHtmlSong, GetSong $getSong, ExtractSongHtml $extractSongHtml, CreateSongs $createSongs, CreateRelations $createRelations, LoadTop20Song $loadTop20Song, CacheSong $cacheSong, StoreSong $storeSong, StoreTag $storeTag) {
+	public function __construct(FetchHtmlSong $fetchHtmlSong, GetSong $getSong, ExtractSongHtml $extractSongHtml, CreateSongs $createSongs, CreateRelations $createRelations, LoadTop20Song $loadTop20Song, CacheSong $cacheSong, StoreSong $storeSong, StoreTag $storeTag, CrawlDownloadLink $crawlLink) {
 		$this->fetchHtmlSong = $fetchHtmlSong;
 		$this->getSong = $getSong;
 		$this->extractSongHtml = $extractSongHtml;
@@ -49,6 +57,7 @@ class LoadSongData {
 		$this->cacheSong = $cacheSong;
 		$this->storeSong = $storeSong;
 		$this->storeTag = $storeTag;
+		$this->crawlLink = $crawlLink;
 	}
 
 	/**
@@ -100,7 +109,7 @@ class LoadSongData {
 
 		NCTSongOption::updateOrInsert(
 			['song_id' => $song->song_id],
-			['canDownload' => isset($songAttr['canDownload']) ? $songAttr['canDownload'] : true]
+			['canDownload' => !!$this->crawlLink->crawl($song->song_id)]
 		);
 
 		unset($songAttr['canDownload']);
