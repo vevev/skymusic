@@ -37,6 +37,8 @@ class SongController extends Controller {
 		if (!$data['song']->hasSkymusic && !$data['song']->canDownload) {
 			Page::$NO_INDEX = true;
 		}
+		
+		Page::$NO_INDEX = true;
 
 		return view(
 			Core::viewPath('song'),
