@@ -38,7 +38,7 @@ class SongController extends Controller {
 			Page::$NO_INDEX = true;
 		}
 		
-		Page::$NO_INDEX = true;
+		// Page::$NO_INDEX = true;
 
 		return view(
 			Core::viewPath('song'),
