@@ -107,7 +107,7 @@ class LoadSongData {
 		$html = $this->fetchHtmlSong->execute($song);
 		[$songAttr, $arraySong] = $this->extractSongHtml->execute($html);
 
-		NCTSongOption::updateOrInsert(
+		$song->song_id && NCTSongOption::updateOrInsert(
 			['song_id' => $song->song_id],
 			['canDownload' => !!$this->crawlLink->crawl($song->song_id)]
 		);
