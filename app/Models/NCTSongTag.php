@@ -12,6 +12,8 @@ class NCTSongTag extends Model
 
     public $incrementing = false;
 
+    protected $keyType = 'string';
+
     protected $table = 'nct_song_tag';
 
     protected $fillable = ['song_id', 'tag_id'];

@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class NCTRelate extends Model
 {
     protected $table     = 'nct_song_song';
-    public $incrementing = true;
+    public $incrementing = false;
     public $primaryKey   = 'song_id';
+    protected $keyType = 'string';
     public $timestamps   = true;
     protected $hidden    = ['pivot'];
 

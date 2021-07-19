@@ -11,6 +11,7 @@ class NCTSongOption extends Model
     protected $table     = 'nct_song_options';
     public $incrementing = false;
     public $primaryKey   = 'song_id';
+    protected $keyType = 'string';
     public $timestamps   = false;
     protected $hidden    = ['pivot'];
     protected $fillable  = ['song_id', 'canDownload', 'hasRemoved', 'isDmca', 'hasCustom', 'redirectTo'];

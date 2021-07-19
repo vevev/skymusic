@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Builder;
 class NCTSong extends Model
 {
     protected $table     = 'nct_songs';
-    public $incrementing = true;
+    public $incrementing = false;
     public $primaryKey   = 'real_id';
     public $timestamps   = true;
     protected $hidden    = ['pivot', 'listens', 'id', 'created_at', 'updated_at', 'real_id', 'key', 'lyric', 'options'];

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class NCTListen extends Model
 {
     protected $table     = 'nct_listens';
-    public $incrementing = true;
+    public $incrementing = false;
     public $primaryKey   = 'real_id';
     public $timestamps   = true;
     protected $hidden    = ['pivot'];

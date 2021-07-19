@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class NCTPlaylistSong extends Model
 {
     protected $table     = 'nct_playlist_song';
-    public $incrementing = true;
+    public $incrementing = false;
     public $primaryKey   = 'playist_id';
     public $timestamps   = true;
     protected $hidden    = ['pivot'];

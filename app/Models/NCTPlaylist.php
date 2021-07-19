@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Builder;
 class NCTPlaylist extends Model
 {
     protected $table     = 'nct_playlists';
-    public $incrementing = true;
+    public $incrementing = false;
     public $primaryKey   = 'real_id';
     public $timestamps   = true;
     protected $hidden    = [
