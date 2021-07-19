@@ -21,7 +21,7 @@ class NCTSong extends Model
 
     protected $cached = false;
 
-    const MAXIMUM_STORAGE_DAYS = 0.5;
+    const MAXIMUM_STORAGE_DAYS = 6;
 
     public function scopeWithSongIds(Builder $query, array $song_ids)
     {
@@ -289,7 +289,7 @@ class NCTSong extends Model
      */
     public function expired()
     {
-        return $this->updated_at->diffInDays(now()) > self::MAXIMUM_STORAGE_DAYS;
+        return $this->updated_at->diffInHours(now()) > self::MAXIMUM_STORAGE_DAYS;
     }
 
     /**
