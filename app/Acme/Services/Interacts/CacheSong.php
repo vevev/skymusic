@@ -41,6 +41,6 @@ class CacheSong
     public function set(NCTSong $song)
     {
         // return Cache::put('song:' . $song->song_id, $song, now()->addDays(7));
-        return Cache::store(config('app.cache_song'))->put('song:' . $song->song_id, $song, now()->addDays(7));
+        return Cache::store(config('app.cache_song'))->put('song:' . $song->song_id, $song, now()->addHours(NCTSong::MAXIMUM_STORAGE_DAYS));
     }
 }
