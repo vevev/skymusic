@@ -259,7 +259,7 @@ class NCTSong extends Model
      */
     public function getHasSkymusicAttribute()
     {
-        return optional($this->sky)->count() ?? 0;
+        return optional($this->sky)->skyKey ?? 0;
     }
 
     /**
