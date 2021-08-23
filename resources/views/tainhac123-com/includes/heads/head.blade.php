@@ -5,7 +5,7 @@
 <meta content="yes" name="apple-mobile-web-app-capable" />
 <title>{{ Page::$title }}</title>
 @if(Page::$NO_INDEX)
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex" />
 @endif
 <meta name="description" content="{{ Page::$description }}" />
 <meta property="og:type" content="article" />
