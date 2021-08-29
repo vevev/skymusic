@@ -38,7 +38,7 @@ class VerifyIdSong
             "M-si8qAX7Q", "7cyOhLLFPH", "tF0olHFEuHfw", "pl7EwCjb0D1p", "5s6hH3QnZlgK", "4ksZjyVWBIli", 
             "WFNJekVVE1", "yLMyRkjxWklO", "hMAmEXzxmc", "ASSzgqCB7C", "WjX2ycqO3vNl", "dFtuICkMngrj", 
             "YVVeTevlm2Z2", "sJHeWrjcKuf0", "QxO2arH6Pl", "6Pa5KcO2uYCY", "2Q3_0fbcol", "5uKlcCFjXQ", 
-            "PSuSL4PJCz", "i757BD2bh4", "oYAWOOMxgUJt", "Ir2soDCr3X"
+            "PSuSL4PJCz", "i757BD2bh4", "oYAWOOMxgUJt", "Ir2soDCr3X", "IqiMiJ7OzAXs", "3SMhVpuWLL71"
         ];
 
         return in_array($id, $list);
