@@ -41,7 +41,7 @@ class FetchTop20Song
             $url_format = 'https://www.nhaccuatui.com/%s/top-20.%s.html';
             $url        = sprintf($url_format, $type, $this->countries[$country]);
 
-            return $this->httpRequest->getMobile($url);
+            return $this->httpRequest->get($url);
         } catch (Throwable $e) {
             return;
         }
