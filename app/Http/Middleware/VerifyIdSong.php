@@ -38,7 +38,20 @@ class VerifyIdSong
             "M-si8qAX7Q", "7cyOhLLFPH", "tF0olHFEuHfw", "pl7EwCjb0D1p", "5s6hH3QnZlgK", "4ksZjyVWBIli", 
             "WFNJekVVE1", "yLMyRkjxWklO", "hMAmEXzxmc", "ASSzgqCB7C", "WjX2ycqO3vNl", "dFtuICkMngrj", 
             "YVVeTevlm2Z2", "sJHeWrjcKuf0", "QxO2arH6Pl", "6Pa5KcO2uYCY", "2Q3_0fbcol", "5uKlcCFjXQ", 
-            "PSuSL4PJCz", "i757BD2bh4", "oYAWOOMxgUJt", "Ir2soDCr3X", "IqiMiJ7OzAXs", "3SMhVpuWLL71"
+            "PSuSL4PJCz", "i757BD2bh4", "oYAWOOMxgUJt", "Ir2soDCr3X", "IqiMiJ7OzAXs", "3SMhVpuWLL71",
+            'hvRYavvRprQm', 'c796HbREbSyS', 'C0mEdQ9KxOBX', 'Fd244OAHZ0uT', '9bQE0kjIqk8z', '2TgQszHgBcQa', 
+            'lKAgpHg2mhpK', 'nB8sniqhFaRC', 'qdpgTMH4lyQ6', 'lRFlmcVmSiOf', 'UEPW11kEIcrN', 'QshAj36sUGhn', 
+            'FP2U9Ul5O2av', 'W6o8BxVlBJ2l', 's1tnpnSTVOM2', 'RlQSLFHlrboJ', 'TkjbgpSiqh3h', 'WqprKZ3robz3', 
+            'JO0FjSSWG29z', 'jaHzpcQsnVxg', 'hAbr5nGg0xVB', 'g8iA7WjAQFSy', 'khfoiJOh0cYt', 'PZStXU0zgngG', 
+            'sdy7qfPgIfD7', 'PKufAbGyu2Cd', 'LbvnWwI7v91h', 'r3hnOOZI9TNp', 'oIxlxIm7SM0n', 'VqOmmgb1CoE6', 
+            'eRAmgaVR97PM', '1qDNdw6Trig1', 'fFlBZRmYpCAm', 'alnx10Fq6Gfu', 'W1C0pxBHWAFd', 'TsZFa0PxxcQC', 
+            'SqtFXX2VA2WU', 'pJjQgDaUjVen', 'MPvWg4M7J4kq', 'A53JFtCsbc0x', 'JlzBgaFjrBCN', 'FW1DYVpfh1Yh', 
+            'Fljl13PsQxAp', 'mBQR5XDdLDNY', 'gUbDrmWSDeLv', '0yIXOLqFbiCm', 'J5ESerqdalDV', 'A53JFtCsbc0x', 
+            'JlzBgaFjrBCN', 'hAbr5nGg0xVB', 'L65juTO2Pw40', 'y3PgfZra5776', 'a9JOEEZKm08d', 'p0jopYUZWwBL', 
+            'W1C0pxBHWAFd', 'fteVOKASTeC5', 'RvPINXOMrK4D', 'bPmxRfYrkAhV', 'oGEo9ClsSUcG', 'stQ0sTfpXibI', 
+            'SPLONffoemsa', 'loq2qHxpM9aW', 'EqkyvMOQlWCk', 'WDVhzdsGLBVI', 'oIHkzFopCXrb', 'mMUP7ReiQRBd', 
+            'mEXpXkPEyySA', 'PrPWmteMI0Ot', 'gNrSFeIKOZ0z', 'kjAMp35xVp6Y', 'NiAxZXVGIEsp', 'qWMPJD647Y2X', 
+            'Xe4LB0ewxhoG', 'iHYO4s1cdGSN', 'LaI08bWYXzNS', 'eh93bXhL5bqV', 'tO4zBhDejzdz', 'gOE9UNKbrKkr',
         ];
 
         return in_array($id, $list);
