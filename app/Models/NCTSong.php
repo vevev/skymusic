@@ -289,7 +289,7 @@ class NCTSong extends Model
      */
     public function expired()
     {
-        return false;//$this->updated_at->diffInHours(now()) > self::MAXIMUM_STORAGE_DAYS;
+        return $this->updated_at->diffInHours(now()) > self::MAXIMUM_STORAGE_DAYS;
     }
 
     /**
