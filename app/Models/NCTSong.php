@@ -121,13 +121,13 @@ class NCTSong extends Model
         }
 
         return $this->belongsToMany(
-                        $this,
-                        'nct_song_song',
-                        'song_id',
-                        'relate_id',
-                        'song_id',
-                        'song_id'
-                    )
+            $this,
+            'nct_song_song',
+            'song_id',
+            'relate_id',
+            'song_id',
+            'song_id'
+        )
                     ->with('listens')
                     ->select(array_map(function ($column) {
                         return 'nct_songs.' . $column;
@@ -211,7 +211,7 @@ class NCTSong extends Model
                               ->orWhere(function ($query) {
                                     $query->whereNotNull('nct_listens.real_id');
                                     $query->where('nct_listens.type', '!=', 'song');
-                                });
+                              });
                     })
                     ->limit($limit)
                     ->get($get);
@@ -289,7 +289,7 @@ class NCTSong extends Model
      */
     public function expired()
     {
-        return false; //$this->updated_at->diffInHours(now()) > self::MAXIMUM_STORAGE_DAYS;
+        return $this->updated_at->diffInHours(now()) > self::MAXIMUM_STORAGE_DAYS;
     }
 
     /**
