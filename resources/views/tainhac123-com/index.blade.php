@@ -41,8 +41,328 @@
     <div class="cate">
         <h2 class="ht">Tải Nhạc Mp3 Hay - BXH</h2>
     </div>
+    <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Yêu Đương Khó Quá Thì Chạy Về Khóc Với Anh" href="https://tainhac123.com/tai-bai-hat-yeu-duong-kho-qua-thi-chay-ve-khoc-voi-anh-erik-mp3/B6rEC4ZEO7oD.html">
+                <img alt="Tải bài hát Yêu Đương Khó Quá Thì Chạy Về Khóc Với Anh" title="Tải bài hát Yêu Đương Khó Quá Thì Chạy Về Khóc Với Anh" src="https://avatar-nct.nixcdn.com/song/2022/01/26/4/e/f/e/1643184497199.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Yêu Đương Khó Quá Thì Chạy Về Khóc Với Anh" href="https://tainhac123.com/tai-bai-hat-yeu-duong-kho-qua-thi-chay-ve-khoc-voi-anh-erik-mp3/B6rEC4ZEO7oD.html">Yêu Đương Khó Quá Thì Chạy Về Khóc Với Anh</a>
+            </h3>
+            <span class="sg">
+                <b class="single">ERIK</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Đế Vương" href="https://tainhac123.com/tai-bai-hat-de-vuong-dinh-dung-ft-acv-mp3/w8lmuII1Yn2G.html">
+                <img alt="Tải bài hát Đế Vương" title="Tải bài hát Đế Vương" src="https://avatar-nct.nixcdn.com/song/2021/11/29/a/9/5/0/1638180197658.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Đế Vương" href="https://tainhac123.com/tai-bai-hat-de-vuong-dinh-dung-ft-acv-mp3/w8lmuII1Yn2G.html">Đế Vương</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Đình Dũng,ACV</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Chạy Về Nơi Phía Anh" href="https://tainhac123.com/tai-bai-hat-chay-ve-noi-phia-anh-khac-viet-mp3/K50N4xtWe5y4.html">
+                <img alt="Tải bài hát Chạy Về Nơi Phía Anh" title="Tải bài hát Chạy Về Nơi Phía Anh" src="https://avatar-nct.nixcdn.com/song/2022/02/10/2/a/7/7/1644475457323.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Chạy Về Nơi Phía Anh" href="https://tainhac123.com/tai-bai-hat-chay-ve-noi-phia-anh-khac-viet-mp3/K50N4xtWe5y4.html">Chạy Về Nơi Phía Anh</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Khắc Việt</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Hoa Tàn Tình Tan" href="https://tainhac123.com/tai-bai-hat-hoa-tan-tinh-tan-giang-jolee-mp3/zXk1DPKNei1T.html">
+                <img alt="Tải bài hát Hoa Tàn Tình Tan" title="Tải bài hát Hoa Tàn Tình Tan" src="https://avatar-nct.nixcdn.com/song/2022/01/15/8/f/8/5/1642210210125.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Hoa Tàn Tình Tan" href="https://tainhac123.com/tai-bai-hat-hoa-tan-tinh-tan-giang-jolee-mp3/zXk1DPKNei1T.html">Hoa Tàn Tình Tan</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Giang Jolee</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát có hẹn với thanh xuân" href="https://tainhac123.com/tai-bai-hat-co-hen-voi-thanh-xuan-monstar-mp3/B1Q3wlGhldTr.html">
+                <img alt="Tải bài hát có hẹn với thanh xuân" title="Tải bài hát có hẹn với thanh xuân" src="https://avatar-nct.nixcdn.com/song/2021/07/16/f/4/9/8/1626425507034.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát có hẹn với thanh xuân" href="https://tainhac123.com/tai-bai-hat-co-hen-voi-thanh-xuan-monstar-mp3/B1Q3wlGhldTr.html">có hẹn với thanh xuân</a>
+            </h3>
+            <span class="sg">
+                <b class="single">MONSTAR</b>
+                                <b class="play-count">192</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Yêu Em Hơn Mỗi Ngày" href="https://tainhac123.com/tai-bai-hat-yeu-em-hon-moi-ngay-andiez-mp3/pIoFBkhDBqiw.html">
+                <img alt="Tải bài hát Yêu Em Hơn Mỗi Ngày" title="Tải bài hát Yêu Em Hơn Mỗi Ngày" src="https://avatar-nct.nixcdn.com/song/2022/03/11/1/a/0/3/1647001991460.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Yêu Em Hơn Mỗi Ngày" href="https://tainhac123.com/tai-bai-hat-yeu-em-hon-moi-ngay-andiez-mp3/pIoFBkhDBqiw.html">Yêu Em Hơn Mỗi Ngày</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Andiez</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Thức Giấc" href="https://tainhac123.com/tai-bai-hat-thuc-giac-da-lab-mp3/uyQTq9aL9Nfr.html">
+                <img alt="Tải bài hát Thức Giấc" title="Tải bài hát Thức Giấc" src="https://avatar-nct.nixcdn.com/song/2021/07/14/8/c/f/9/1626231010810.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Thức Giấc" href="https://tainhac123.com/tai-bai-hat-thuc-giac-da-lab-mp3/uyQTq9aL9Nfr.html">Thức Giấc</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Da LAB</b>
+                                <b class="play-count">422</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Tệ Thật, Anh Nhớ Em" href="https://tainhac123.com/tai-bai-hat-te-that-anh-nho-em-thanh-hung-mp3/XPRKMZKQfBt5.html">
+                <img alt="Tải bài hát Tệ Thật, Anh Nhớ Em" title="Tải bài hát Tệ Thật, Anh Nhớ Em" src="https://avatar-nct.nixcdn.com/song/2022/03/03/0/1/3/6/1646267009685.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Tệ Thật, Anh Nhớ Em" href="https://tainhac123.com/tai-bai-hat-te-that-anh-nho-em-thanh-hung-mp3/XPRKMZKQfBt5.html">Tệ Thật, Anh Nhớ Em</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Thanh Hưng</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Ái Nộ" href="https://tainhac123.com/tai-bai-hat-ai-no-masew-ft-khoi-vu-mp3/AyqiSaUZD9Ey.html">
+                <img alt="Tải bài hát Ái Nộ" title="Tải bài hát Ái Nộ" src="https://avatar-nct.nixcdn.com/song/2021/08/30/2/1/a/e/1630316309035.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Ái Nộ" href="https://tainhac123.com/tai-bai-hat-ai-no-masew-ft-khoi-vu-mp3/AyqiSaUZD9Ey.html">Ái Nộ</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Masew,Khôi Vũ</b>
+                                <b class="play-count">379</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Mẹ Em Nhắc Anh" href="https://tainhac123.com/tai-bai-hat-me-em-nhac-anh-orange-ft-hamlet-truong-mp3/JbIyx2utqiFq.html">
+                <img alt="Tải bài hát Mẹ Em Nhắc Anh" title="Tải bài hát Mẹ Em Nhắc Anh" src="https://avatar-nct.nixcdn.com/song/2022/03/11/1/a/0/3/1647002269258.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Mẹ Em Nhắc Anh" href="https://tainhac123.com/tai-bai-hat-me-em-nhac-anh-orange-ft-hamlet-truong-mp3/JbIyx2utqiFq.html">Mẹ Em Nhắc Anh</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Orange,Hamlet Trương</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Và Ngày Nào Đó" href="https://tainhac123.com/tai-bai-hat-va-ngay-nao-do-studio-party-ft-quang-trung-ft-vu-thao-my-mp3/Y8JTjRN8ax1h.html">
+                <img alt="Tải bài hát Và Ngày Nào Đó" title="Tải bài hát Và Ngày Nào Đó" src="https://avatar-nct.nixcdn.com/song/2022/03/16/f/6/e/5/1647392906658.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Và Ngày Nào Đó" href="https://tainhac123.com/tai-bai-hat-va-ngay-nao-do-studio-party-ft-quang-trung-ft-vu-thao-my-mp3/Y8JTjRN8ax1h.html">Và Ngày Nào Đó</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Studio Party, Quang Trung, Vũ Thảo My</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Sao Tiếc Người Không Tốt" href="https://tainhac123.com/tai-bai-hat-sao-tiec-nguoi-khong-tot-hoai-lam-ft-vuong-anh-tu-mp3/ZktipDfnuj16.html">
+                <img alt="Tải bài hát Sao Tiếc Người Không Tốt" title="Tải bài hát Sao Tiếc Người Không Tốt" src="https://avatar-nct.nixcdn.com/song/2022/04/15/b/a/6/c/1649986538375.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Sao Tiếc Người Không Tốt" href="https://tainhac123.com/tai-bai-hat-sao-tiec-nguoi-khong-tot-hoai-lam-ft-vuong-anh-tu-mp3/ZktipDfnuj16.html">Sao Tiếc Người Không Tốt</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Hoài Lâm,Vương Anh Tú</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Cưới Thôi" href="https://tainhac123.com/tai-bai-hat-cuoi-thoi-masew-ft-masiu-ft-b-ray-ft-tap-mp3/SQTZSysfmPRJ.html">
+                <img alt="Tải bài hát Cưới Thôi" title="Tải bài hát Cưới Thôi" src="https://avatar-nct.nixcdn.com/song/2021/09/09/f/c/f/d/1631181753902.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Cưới Thôi" href="https://tainhac123.com/tai-bai-hat-cuoi-thoi-masew-ft-masiu-ft-b-ray-ft-tap-mp3/SQTZSysfmPRJ.html">Cưới Thôi</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Masew,Masiu,B Ray,TAP</b>
+                                <b class="play-count">12</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Từng Thương" href="https://tainhac123.com/tai-bai-hat-tung-thuong-phan-duy-anh-ft-acv-mp3/1iieLFxqIrys.html">
+                <img alt="Tải bài hát Từng Thương" title="Tải bài hát Từng Thương" src="https://avatar-nct.nixcdn.com/song/2022/04/19/e/7/3/c/1650360805680.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Từng Thương" href="https://tainhac123.com/tai-bai-hat-tung-thuong-phan-duy-anh-ft-acv-mp3/1iieLFxqIrys.html">Từng Thương</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Phan Duy Anh,ACV</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Tìm Được Nhau Khó Thế Nào (Original Movie Soundtrack From &quot;Chìa Khóa Trăm Tỷ”)" href="https://tainhac123.com/tai-bai-hat-tim-duoc-nhau-kho-the-nao-original-movie-soundtrack-from-chia-khoa-tram-ty-anh-tu-mp3/8R2wA48WhxIE.html">
+                <img alt="Tải bài hát Tìm Được Nhau Khó Thế Nào (Original Movie Soundtrack From &quot;Chìa Khóa Trăm Tỷ”)" title="Tải bài hát Tìm Được Nhau Khó Thế Nào (Original Movie Soundtrack From &quot;Chìa Khóa Trăm Tỷ”)" src="https://avatar-nct.nixcdn.com/song/2022/01/17/6/c/e/0/1642406689812.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Tìm Được Nhau Khó Thế Nào (Original Movie Soundtrack From &quot;Chìa Khóa Trăm Tỷ”)" href="https://tainhac123.com/tai-bai-hat-tim-duoc-nhau-kho-the-nao-original-movie-soundtrack-from-chia-khoa-tram-ty-anh-tu-mp3/8R2wA48WhxIE.html">Tìm Được Nhau Khó Thế Nào (Original Movie Soundtrack From &quot;Chìa Khóa Trăm Tỷ”)</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Anh Tú</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Tình Ca Tình Ta" href="https://tainhac123.com/tai-bai-hat-tinh-ca-tinh-ta-kis-mp3/ZX9AGveMTIIS.html">
+                <img alt="Tải bài hát Tình Ca Tình Ta" title="Tải bài hát Tình Ca Tình Ta" src="https://avatar-nct.nixcdn.com/song/2021/06/28/8/4/3/c/1624874356860.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Tình Ca Tình Ta" href="https://tainhac123.com/tai-bai-hat-tinh-ca-tinh-ta-kis-mp3/ZX9AGveMTIIS.html">Tình Ca Tình Ta</a>
+            </h3>
+            <span class="sg">
+                <b class="single">KIS</b>
+                                <b class="play-count">13</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Là Do Em Xui Thôi" href="https://tainhac123.com/tai-bai-hat-la-do-em-xui-thoi-khoi-ft-sofia-ft-chau-dang-khoa-mp3/JIxy8QxschdZ.html">
+                <img alt="Tải bài hát Là Do Em Xui Thôi" title="Tải bài hát Là Do Em Xui Thôi" src="https://avatar-nct.nixcdn.com/song/2022/01/06/3/8/5/b/1641464698758.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Là Do Em Xui Thôi" href="https://tainhac123.com/tai-bai-hat-la-do-em-xui-thoi-khoi-ft-sofia-ft-chau-dang-khoa-mp3/JIxy8QxschdZ.html">Là Do Em Xui Thôi</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Khói,Sofia,Châu Đăng Khoa</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Có Em Đây" href="https://tainhac123.com/tai-bai-hat-co-em-day-nhu-viet-mp3/XszwcKFqvC9P.html">
+                <img alt="Tải bài hát Có Em Đây" title="Tải bài hát Có Em Đây" src="https://avatar-nct.nixcdn.com/song/2022/01/12/f/c/b/f/1641968755745.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Có Em Đây" href="https://tainhac123.com/tai-bai-hat-co-em-day-nhu-viet-mp3/XszwcKFqvC9P.html">Có Em Đây</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Như Việt</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Tình Thương Phu Thê" href="https://tainhac123.com/tai-bai-hat-tinh-thuong-phu-the-chi-huong-mp3/dyuboCveJEDw.html">
+                <img alt="Tải bài hát Tình Thương Phu Thê" title="Tải bài hát Tình Thương Phu Thê" src="https://avatar-nct.nixcdn.com/song/2021/05/26/a/4/3/5/1622033146255.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Tình Thương Phu Thê" href="https://tainhac123.com/tai-bai-hat-tinh-thuong-phu-the-chi-huong-mp3/dyuboCveJEDw.html">Tình Thương Phu Thê</a>
+            </h3>
+            <span class="sg">
+                <b class="single">Chí Hướng</b>
+                                <b class="play-count">44</b>
+                            </span>
+        </div>
+    </div>
+        <div class="menu">
+        <div class="detail-thumb thumb">
+            <a title="Tải bài hát Trò Chơi Thua Cuộc" href="https://tainhac123.com/tai-bai-hat-tro-choi-thua-cuoc-jgkid-da-lab-mp3/gtP1xOX6dWXz.html">
+                <img alt="Tải bài hát Trò Chơi Thua Cuộc" title="Tải bài hát Trò Chơi Thua Cuộc" src="https://avatar-nct.nixcdn.com/song/2022/02/11/4/8/f/8/1644565772956.jpg" src="https://tainhac123.com/images/audio_default.png" />
+            </a>
+        </div>
+        <div class="detail-info">
+            <h3 class="ab ellipsis dli">
+                <a title="Tải bài hát Trò Chơi Thua Cuộc" href="https://tainhac123.com/tai-bai-hat-tro-choi-thua-cuoc-jgkid-da-lab-mp3/gtP1xOX6dWXz.html">Trò Chơi Thua Cuộc</a>
+            </h3>
+            <span class="sg">
+                <b class="single">JGKiD (Da LAB)</b>
+                                <b class="play-count">-</b>
+                            </span>
+        </div>
+    </div>
     {{-- <div class="collapse-menu"> --}}
-    @foreach($data['main'] as $index => $song)
+    {{-- @foreach($data['main'] as $index => $song)
     <div class="menu">
         <div class="detail-thumb thumb">
             <a title="Tải bài hát {{ $song['name'] }}" href="{{ route('song', ['slug'=>$song['slug'], 'id'=>$song['song_id']]) }}">
@@ -61,7 +381,7 @@
             </span>
         </div>
     </div>
-    @endforeach
+    @endforeach --}}
     {{-- <p class="collapse-view-more">Xem Thêm ...</p>
     </div> --}}
 </div>
