@@ -13,6 +13,7 @@ class HttpRequest
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_ENCODING, "gzip");
         curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_INTERFACE, "171.244.17.42");
 
         if ( ! empty($cookie)) {
             curl_setopt($ch, CURLOPT_COOKIEFILE, $cookie);
