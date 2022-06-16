@@ -92,8 +92,10 @@ class CrawlDownloadLink
                 return $json->data->stream_url;
             }
         } catch (Throwable $e) {
-            return false;
+            Log::error($e);
         }
+        
+        return false;
     }
 
     /**
@@ -104,13 +106,16 @@ class CrawlDownloadLink
      */
     public function crawlLinkPlay(string $key)
     {
-        $response = $this->fetchJson($key);
-        $json     = json_decode($response);
-
         try {
+            $response = $this->fetchJson($key);
+            $json     = json_decode($response);
+
             return $json->data->location;
         } catch (Throwable $e) {
+            Log::error($e);
         }
+
+        return false;
     }
 
     /**
@@ -142,8 +147,6 @@ class CrawlDownloadLink
             if ($this->isSongObjectValid($song_object)) {
                 return $song_object->data[0]->streamUrl;
             }
-
-            return false;
         } catch (Throwable $e) {
             Log::error(
                 'CRAWL_LINK_STREAM_SKY_MUSIC_BY_ERROR',
@@ -153,8 +156,9 @@ class CrawlDownloadLink
                 ]
             );
 
-            return false;
         }
+        
+        return false;
     }
 
     /**
