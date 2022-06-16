@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Throwable;
+use App\Acme\Core;
 use App\Models\NCTSong;
 use App\Models\NCTPlaylist;
 use Illuminate\Http\Request;
@@ -54,6 +55,10 @@ class DownloadController extends Controller
      */
     public function play()
     {
+        if (request()->slug_unverify || request()->id_unverify) {
+           return view(Core::viewPath('song-slug'));
+        }
+
         $link = $this->getLinkFromCache();
 
         if ($link) {

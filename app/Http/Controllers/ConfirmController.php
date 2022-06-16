@@ -28,6 +28,10 @@ class ConfirmController extends Controller
      */
     public function index(string $slug, string $id)
     {
+        if (request()->slug_unverify || request()->id_unverify) {
+	       return view(Core::viewPath('song-slug'));
+	    }
+		
         if ( ! $song = $this->song->findById($id)) {
             abort(404);
         }
