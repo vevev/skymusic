@@ -16,9 +16,9 @@ class VerifyIdSong
      */
     public function handle($request, Closure $next)
     {
-        if($this->verifyId($request->id)){
-            return view(Core::viewPath('song-slug'));
-        }
+        #if($this->verifyId($request->id)){
+        #    return view(Core::viewPath('song-slug'));
+        #}
             
         $request->id_unverify = $this->verifyId($request->id);
     
