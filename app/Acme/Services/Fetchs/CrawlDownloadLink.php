@@ -110,7 +110,7 @@ class CrawlDownloadLink
             $response = $this->fetchJson($key);
             $json     = json_decode($response);
 
-            return $json->data->location;
+            return optional($json)->data->location;
         } catch (Throwable $e) {
             Log::error($e);
         }
