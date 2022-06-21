@@ -26,7 +26,7 @@ class SongController extends Controller {
 
 		$data = $this->loadSongData->execute($request->id);
 
-		if (Page::$geo[1] && Page::$geo[1] != 'VN' && ! $data['song']->canDownload) {
+		if (isset(Page::$geo[1]) && Page::$geo[1] != 'VN' && ! $data['song']->canDownload) {
 			return view(Core::viewPath('song-slug'));
 		}
 
