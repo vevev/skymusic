@@ -10,11 +10,12 @@ use Illuminate\Http\Request;
 class SongController extends Controller {
 	private $loadSongData;
 
-	public function __construct(LoadSongData $loadSongData) {
+	public function __construct(LoadSongData $loadSongData, Page $page) {
 		$this->loadSongData = $loadSongData;
 	}
 
-	public function index(Request $request, Core $core) {
+	public function index(Request $request, Core $core) 
+	{
 		if ($request->slug_unverify || $request->id_unverify) {
 			return view(Core::viewPath('song-slug'));
 		}
@@ -24,6 +25,10 @@ class SongController extends Controller {
 		// }
 
 		$data = $this->loadSongData->execute($request->id);
+
+		if (Page::$geo[1] && Page::$geo[1] != 'VN' && ! $data['song']->canDownload) {
+			return view(Core::viewPath('song-slug'));
+		}
 
 		Page::$title = 'Tải Bài Hát ' . $data['song']->name . ' MP3 - Download Miễn Phí';
 		Page::$description = $data['song']->name . ' Mp3, tải bài hát ' . $data['song']->name . ' - ' . $data['song']->single . ', tải nhạc chất lượng cao. Miễn phí download về máy. Tải dễ dàng và nhanh chóng ♥';

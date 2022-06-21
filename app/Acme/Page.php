@@ -1,6 +1,8 @@
 <?php
 namespace App\Acme;
 
+use GeoIp2\Database\Reader;
+use Illuminate\Support\Facades\Cookie;
 use GeoIp2\Exception\AddressNotFoundException;
 
 class Page
@@ -34,18 +36,20 @@ class Page
      */
     public function __construct()
     {
-
         if ($this->hasAds()) {
             self::$showAds = false;
         } else {
             $this->cookie();
         }
-        if (cookie('_ci') && cookie('_co')) {
-            return self::$geo = [cookie('_ci'), cookie('_co')];
+
+        if (Cookie::get('_ci') && Cookie::get('_co')) {
+            return self::$geo = [Cookie::get('_ci'), Cookie::get('_co')];
         }
+
         try {
             $reader = new Reader('/usr/local/share/GeoIP/GeoLite2-City.mmdb');
             $record = $reader->city($_SERVER['REMOTE_ADDR']);
+            
             setcookie('_co', $record->country->isoCode, time() + 86400 * 30);
             setcookie('_ci', $record->city->name, time() + 86400 * 30);
             $return = [$record->country->isoCode, $record->city->name];

@@ -103,16 +103,25 @@ class LoadSongData {
 	 * @throws     \App\Exceptions\SetRelatesFailException      (description)
 	 * @throws     \App\Exceptions\UpdateSongFailException      (description)
 	 */
-	private function fetchAndSaveSong(NCTSong $song) {
+	private function fetchAndSaveSong(NCTSong $song) 
+	{
 		$html = $this->fetchHtmlSong->execute($song);
 		[$songAttr, $arraySong] = $this->extractSongHtml->execute($html);
 
 		if($song->song_id) {
-			$canDownload = $this->crawlLink->crawl($song->song_id);
-			NCTSongOption::updateOrInsert(
-				['song_id' => $song->song_id],
-				['canDownload' => !!$canDownload]
-			);
+			$canDownload = !!$this->crawlLink->crawl($song->song_id);
+
+			if (empty($song->options)) {
+				NCTSongOption::insert([
+					'song_id' => $song->song_id, 
+					'canDownload' => (int) $canDownload
+				]);
+			} 
+
+			elseif ($song->options->canDownload !== 0 && ! $canDownload ) {
+				NCTSongOption::where('song_id', $song->song_id)
+							->update(['canDownload' => 0]);
+			}
 		}
 		
 		unset($songAttr['canDownload']);
