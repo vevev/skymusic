@@ -26,6 +26,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        DB::connection()->disableQueryLog();
+        DB::listen(
+            function ($sql) {
+                if(preg_match('#update `nct_song_options`#', $sql->sql)) {
+                    \Log::debug('debug_nct_song_options', [$sql]);
+                }
+            }
+        );
     }
 }
