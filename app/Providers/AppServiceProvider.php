@@ -28,8 +28,8 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         DB::listen(
             function ($sql) {
-                if(preg_match('#update `nct_song_options`#', $sql->sql)) {
-                    \Log::debug('debug_nct_song_options', [$sql]);
+                if(preg_match('#update `nct_song_options`#', $sql->sql) && isset($sql->bindings[0]) && $sql->bindings[0] == 1) {
+                    \Log::debug('debug_nct_song_options', [$sql->sql, $sql->bindings, debug_backtrace()]);
                 }
             }
         );
