@@ -58,7 +58,7 @@ class VerifyIdSong
             'mEXpXkPEyySA', 'PrPWmteMI0Ot', 'gNrSFeIKOZ0z', 'kjAMp35xVp6Y', 'NiAxZXVGIEsp', 'qWMPJD647Y2X',
             'Xe4LB0ewxhoG', 'iHYO4s1cdGSN', 'LaI08bWYXzNS', 'eh93bXhL5bqV', 'tO4zBhDejzdz', 'gOE9UNKbrKkr',
             '1AMgWosQYfD9', 'hbwa6pjv6I', 'zreNkA8VHAYK', 'OxCgj7tA77', 'euqjK1kYf8', 'arFCM4dfP5Ty', 
-            'IlS4HfBcyT', 'qBDgB36Vvcgh'
+            'IlS4HfBcyT', 'qBDgB36Vvcgh', 'BtZQGzm7U7Jl', 'J7JxiG4qFhLe', 'RCWcGY0sUp8Z'
         ];
 
         return in_array($id, $list);
