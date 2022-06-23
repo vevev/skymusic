@@ -16,10 +16,10 @@ class SongController extends Controller {
 
 	public function index(Request $request, Core $core) 
 	{
-		if( ! $core->isMobile()) {
+		if( ! $core->mobileDetect->isMobile()) {
 			return;
 		}
-		
+
 		if ($request->slug_unverify || $request->id_unverify) {
 			return view(Core::viewPath('song-slug'));
 		}
