@@ -21,7 +21,7 @@ class NCTSong extends Model
 
     protected $cached = false;
 
-    const MAXIMUM_STORAGE_DAYS = 15;
+    const MAXIMUM_STORAGE_DAYS = 1;
 
     public function scopeWithSongIds(Builder $query, array $song_ids)
     {
