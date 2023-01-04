@@ -58,8 +58,14 @@ class VerifyIdSong
             'mEXpXkPEyySA', 'PrPWmteMI0Ot', 'gNrSFeIKOZ0z', 'kjAMp35xVp6Y', 'NiAxZXVGIEsp', 'qWMPJD647Y2X',
             'Xe4LB0ewxhoG', 'iHYO4s1cdGSN', 'LaI08bWYXzNS', 'eh93bXhL5bqV', 'tO4zBhDejzdz', 'gOE9UNKbrKkr',
             '1AMgWosQYfD9', 'hbwa6pjv6I', 'zreNkA8VHAYK', 'OxCgj7tA77', 'euqjK1kYf8', 'arFCM4dfP5Ty', 
-            'IlS4HfBcyT', 'qBDgB36Vvcgh', 'BtZQGzm7U7Jl', 'J7JxiG4qFhLe', 'RCWcGY0sUp8Z', 'MH1DEZ5OPy3z', 
-            'MbbMIH5vlzhe'
+            'IlS4HfBcyT', 'qBDgB36Vvcgh', 'BtZQGzm7U7Jl', 'J7JxiG4qFhLe', 'RCWcGY0sUp8Z', 'MH1DEZ5OPy3z',
+            '7AK8zPoAkCK2', 'g741QMJqW29L', 'RJ91yfpf6zHl', 'fyTv4iCItlNp', 'HFLRs1jKSCxK', 'flDKNJX4WDcr',
+            'mWCNNiPbVNDs', 'wruhznact4W9', 'oPgFEoqSiBit', '4YVty07LxSNV', 'cJaTqaVrYwTn', '02UiKcjKYcpe',
+            '50zdz8Xm81CM', 'DKgdemALEzZH', 'dpK3WNX0S6NT', 'Yytfx1rPzJVr', 'JAKLRCGiUM9D', 'wCnzeQtfYWbP',
+            'HKdnH9q6nnKv', '6Zpf26qB0mkD', 'kPYuXEtSVYqF', 'nkCLe5DWXbNI', 'FC4gl3BtXqdW', 'LssM102Vkl3v',
+            'tnykPtOT4KMf', 'HkJoufudXjqi', 'dV3iAYCuPRVS', '9iEdmUt1WQ92', 'QkDB5TwBnJs3', 'gZ3BfUum7c2j',
+            'rTTQNLDCGFqw', 'FHNn0aW5YntO', '8lrLE7X5arjg', 'Ba273ofqoFvp', 'N5jemv3lk4ch', 'nmizHSIX8K1w',
+            'HS7cKXJXSoKD', 'zsDOI4zkQVp4', '0iZbqrDG1pVE', 'ZHpGyIsAqVjt', 'MbbMIH5vlzhe'
         ];
 
         return in_array($id, $list);
